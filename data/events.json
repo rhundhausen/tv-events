@@ -46,217 +46,26 @@
     ]
   },
   {
-    "id": "00369af05ee9",
-    "title": "Community Resource Porch Pop-Up",
-    "start": "2026-11-04T09:00:00-07:00",
-    "end": "2026-11-04T11:00:00-07:00",
+    "id": "0f102e9047fc",
+    "title": "Idaho Reined Cow Horse Association",
+    "start": "2026-11-04T08:00:00-07:00",
+    "end": "2026-11-08T08:00:00-07:00",
     "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15793213",
-    "description": "The library's Community Resource Coordinator has partnered with local organizations and welcomed them to the library to connect library users with resources in the community. These pop-ups take place on the front patio of the downtown library. Library users have an opportunity to meet staff from...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15793213",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "b4566314592b",
-    "title": "Special Events Team",
-    "start": "2026-11-04T09:00:00-07:00",
-    "end": "2026-11-04T10:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise City Hall",
-    "venueKey": "boise-city-hall",
-    "city": "Boise",
-    "category": "community-civic",
-    "tags": [],
-    "size": "M",
-    "url": "https://www.cityofboise.org/events/community-engagement/2026/november/special-events-team/",
-    "sources": [
-      {
-        "name": "city-of-boise",
-        "url": "https://www.cityofboise.org/events/community-engagement/2026/november/special-events-team/",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "cbb7e612abc5",
-    "title": "Time for Twos Storytime",
-    "start": "2026-11-04T10:15:00-07:00",
-    "end": "2026-11-04T10:45:00-07:00",
-    "allDay": false,
-    "venue": "Nampa Public Library",
-    "venueKey": "nampa-public-library",
+    "venue": "Ford Idaho Center Horse Park & Sports Center",
+    "venueKey": "ford-idaho-center-horse-park-and-sports-center",
     "city": "Nampa",
-    "category": "learning-business",
+    "category": "sports",
     "tags": [
-      "kids",
-      "library-program"
+      "rodeo"
     ],
-    "size": "S",
-    "url": "https://nampalibrary.libcal.com/event/16156444",
-    "description": "Join us in the children's area for Toddler Storytime to explore STEM and early literacy skills! Geared for children ages 18 months - 3 years and their caregivers; featuring stories, songs, fingerplays and rhymes.",
+    "size": "L",
+    "url": "https://www.fordidahocenter.com/events/detail/ircha2022-19",
+    "description": "Idaho Reined Cowhorse Association Futurity/Derby/Horse Show The Idaho Reined Cow Horse Futurity is the highest paying NRCHA affiliate Futurity in the nation.",
     "sources": [
       {
-        "name": "nampa-public-library",
-        "url": "https://nampalibrary.libcal.com/event/16156444",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "676abd5530be",
-    "title": "Baby Stories and Play",
-    "start": "2026-11-04T10:30:00-07:00",
-    "end": "2026-11-04T11:30:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15301821",
-    "description": "Join us for Baby storytime every Wednesday at 10:30 am. These storytimes will include stories and songs and are designed for babies age 0-2 and their caregivers. A 20-minute storytime will be followed by 30 minutes of open play time.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15301821",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "6dd8b1a837b0",
-    "title": "Family Storytime",
-    "start": "2026-11-04T10:30:00-07:00",
-    "end": "2026-11-04T11:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17058583",
-    "description": "Join us in the Sagebrush Room at the Library! at Cole and Ustick for Family Storytime every Wednesday at 10:30am! These storytimes will include stories and songs and are designed for children ages 0-5 and their caregivers.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17058583",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "7bf054561a3f",
-    "title": "Family Storytime | Cole & Ustick Library!",
-    "start": "2026-11-04T10:30:00-07:00",
-    "end": "2026-11-04T11:00:00-07:00",
-    "allDay": false,
-    "venue": "Library! at Cole & Ustick",
-    "venueKey": "library-at-cole-and-ustick",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "family-friendly",
-      "free-admission",
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://boisemom.com/event/family-storytime-cole-ustick-library-2/2026-11-04/",
-    "description": "Join us in the Sagebrush Room at the Library! at Cole and Ustick for Family Storytime every Wednesday at 10:30am! These storytimes will include stories and songs and are designed for children ages 0-5 and their caregivers.",
-    "sources": [
-      {
-        "name": "boise-mom",
-        "url": "https://boisemom.com/event/family-storytime-cole-ustick-library-2/2026-11-04/",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
-    "id": "b8b6ea4d97f0",
-    "title": "Toddler Storytime | Bown Library!",
-    "start": "2026-11-04T10:30:00-07:00",
-    "end": "2026-11-04T11:00:00-07:00",
-    "allDay": false,
-    "venue": "Library! at Bown Crossing",
-    "venueKey": "library-at-bown-crossing",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "free-admission",
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://boisemom.com/event/toddler-storytime-bown-library/2026-11-04/",
-    "description": "Join the Library! at Bown Crossing staff for Toddler Storytime every Wednesday at 10:30am in the Martie Brennan Room. This program is designed for children ages 2-3 and their caregivers. Come enjoy songs, stories, and learning together!",
-    "sources": [
-      {
-        "name": "boise-mom",
-        "url": "https://boisemom.com/event/toddler-storytime-bown-library/2026-11-04/",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
-    "id": "e794b3136144",
-    "title": "Toddler Storytime",
-    "start": "2026-11-04T10:30:00-07:00",
-    "end": "2026-11-04T11:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15072619",
-    "description": "Join the Library! at Bown Crossing staff for Toddler Storytime every Wednesday at 10:30am in the Martie Brennan Room. This program is designed for children ages 2-3 and their caregivers. Come enjoy songs, stories, and learning together!",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15072619",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "fe031e75605c",
-    "title": "Fit and Fall Proof",
-    "start": "2026-11-04T10:30:00-07:00",
-    "end": "2026-11-04T11:30:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15106470",
-    "description": "™ is designed to help senior citizens prevent injuries and the subsequent loss of independence. Class participants learn simple exercises to increase strength, balance and endurance, which can help prevent the accidental falls and tripping sometimes associated with age. Registration is required....",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15106470",
-        "fetchedAt": "2026-11-04T06:01:16Z"
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/ircha2022-19",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -281,74 +90,6 @@
         "name": "visit-boise",
         "url": "https://www.bardenaydistilling.com/",
         "fetchedAt": "2026-11-03T17:00:01Z"
-      }
-    ]
-  },
-  {
-    "id": "a2578718cdcf",
-    "title": "Baby Storytime",
-    "start": "2026-11-04T11:15:00-07:00",
-    "end": "2026-11-04T11:45:00-07:00",
-    "allDay": false,
-    "venue": "Nampa Public Library",
-    "venueKey": "nampa-public-library",
-    "city": "Nampa",
-    "category": "learning-business",
-    "tags": [
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://nampalibrary.libcal.com/event/16156521",
-    "description": "Join us in the children's area for Baby Storytime to explore early literacy concepts! Geared for children ages 0 months - 18 months and their caregivers; featuring stories, songs, fingerplays and rhymes.",
-    "sources": [
-      {
-        "name": "nampa-public-library",
-        "url": "https://nampalibrary.libcal.com/event/16156521",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "1fe23b502441",
-    "title": "Creative Corner",
-    "start": "2026-11-04T12:00:00-07:00",
-    "end": "2026-11-04T14:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17122430",
-    "description": "Bring a creative project that you want to work on or try something new using our project starter supplies.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17122430",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "2be8f5b77128",
-    "title": "Tractor Tours",
-    "start": "2026-11-04T12:00:00-07:00",
-    "end": "2026-11-04T13:30:00-07:00",
-    "allDay": false,
-    "venue": "JUMP",
-    "venueKey": "jump",
-    "city": "Boise",
-    "category": "community-civic",
-    "tags": [],
-    "size": "M",
-    "url": "https://jumpboise.org/events/tour-tractors",
-    "sources": [
-      {
-        "name": "jump-boise",
-        "url": "https://jumpboise.org/events/tour-tractors",
-        "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
   },
@@ -954,6 +695,11 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/boise-state-mens-basketball-game/2026-11-04/",
         "fetchedAt": "2026-11-03T17:00:01Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "https://broncosports.com/sports/mens-basketball",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -976,30 +722,6 @@
         "name": "visit-boise",
         "url": "https://www.ticketsmarter.com/e/slothrust-tickets-boise-11-4-2026-the-shredder/3477624?utm_source=dmo&utm_medium=visitboise&utm_campaign=slothrust-3477624",
         "fetchedAt": "2026-11-03T23:26:24Z"
-      }
-    ]
-  },
-  {
-    "id": "98c5f45c112f",
-    "title": "Boise State Broncos Mens Basketball",
-    "start": "2026-11-04T19:00:00-07:00",
-    "end": "2027-03-03T20:00:00-07:00",
-    "allDay": false,
-    "venue": "ExtraMile Arena",
-    "venueKey": "extramile-arena",
-    "city": "Boise",
-    "category": "sports",
-    "tags": [
-      "college-sports"
-    ],
-    "size": "XL",
-    "url": "https://www.ticketsmarter.com/p/boise-state-broncos-mens-basketball-tickets?utm_source=dmo&utm_medium=visitboise&utm_campaign=boise-state-broncos-mens-basketball_recurring_20261104_20270303",
-    "description": "See the Boise State Broncos take the home court for a season of men’s college basketball at ExtraMile Arena. Each game brings the pace and competition of NCAA basketball, with the Broncos facing a visiting team before a crowd of home supporters. Visitors can expect live game action in Boise State...",
-    "sources": [
-      {
-        "name": "visit-boise",
-        "url": "https://www.ticketsmarter.com/p/boise-state-broncos-mens-basketball-tickets?utm_source=dmo&utm_medium=visitboise&utm_campaign=boise-state-broncos-mens-basketball_recurring_20261104_20270303",
-        "fetchedAt": "2026-11-03T17:00:01Z"
       }
     ]
   },
@@ -1266,6 +988,31 @@
         "name": "ticketmaster-metro",
         "url": "https://www.ticketweb.com/event/playdead-carrion-kids-mexico-city-neurolux-lounge-tickets/14406794",
         "fetchedAt": "2026-11-03T17:00:01Z"
+      }
+    ]
+  },
+  {
+    "id": "1ae80adea75b",
+    "title": "Late Nite Karaoke at Shrine Social Club",
+    "start": "2026-11-04T22:00:00-07:00",
+    "end": "2026-11-05T02:00:00-07:00",
+    "allDay": false,
+    "venue": "Shrine Social Club",
+    "venueKey": "shrine-social-club",
+    "city": "Boise",
+    "category": "food-drink",
+    "tags": [
+      "free-admission",
+      "karaoke"
+    ],
+    "size": "M",
+    "url": "https://findkaraoke.net/boise/venues/shrine-social-club-2",
+    "description": "Late Nite Karaoke every Wednesday, 10 PM to 2 AM in the Basement at Shrine Social Club on W Idaho Street in downtown Boise. 21+, no cover. Downtown Boise's after-hours karaoke home base. Head into the Basement, put in a song, and take the mic. \"Liquid Courage\" drink specials (shot and can combo)...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://findkaraoke.net/boise/venues/shrine-social-club-2",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -1538,6 +1285,30 @@
     ]
   },
   {
+    "id": "45d1f1ffe0ca",
+    "title": "Distillery Tour",
+    "start": "2026-11-05T11:00:00-07:00",
+    "end": "2026-11-05T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Bardenay Distilling Co.",
+    "venueKey": "bardenay-distilling-co",
+    "city": "Boise",
+    "category": "food-drink",
+    "tags": [
+      "brewery"
+    ],
+    "size": "S",
+    "url": "https://www.bardenaydistilling.com/",
+    "description": "Bardenay Distilling Co. — Idaho’s Original Craft Spirit Experience Established in Boise as the nation’s first restaurant-distillery post-Prohibition, Bardenay has been an Idaho icon for decades. Now, Bardenay Distilling Co. carries that pioneering spirit forward, offering complimentary tours that...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://www.bardenaydistilling.com/",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
     "id": "4db27ee57cfa",
     "title": "Liberty Park Groundbreaking Ceremony",
     "start": "2026-11-05T11:30:00-07:00",
@@ -1601,6 +1372,11 @@
         "name": "idaho-history",
         "url": "https://history.idaho.gov/event/midday-musings-with-aly-mcknight/",
         "fetchedAt": "2026-11-03T17:00:01Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "http://history.idaho.gov/events",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -1898,12 +1674,13 @@
     "venue": "JUMP",
     "venueKey": "jump",
     "city": "Boise",
-    "category": "community-civic",
+    "category": "arts-culture",
     "tags": [
       "kids"
     ],
     "size": "M",
-    "url": "https://www.cityofboise.org/events/arts-and-history/2026/november/open-arms-dance-project-family-boogie/",
+    "url": "https://www.boiseartsandhistory.org/calendar/event?key=open-arms-dance-project-family-boogie_20261105",
+    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot...",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -1915,8 +1692,7 @@
         "url": "https://www.cityofboise.org/events/arts-and-history/2026/november/open-arms-dance-project-family-boogie/",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
-    ],
-    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot..."
+    ]
   },
   {
     "id": "9da5edb125e8",
@@ -2802,7 +2578,7 @@
     ],
     "size": "M",
     "url": "https://nnusports.com/calendar.aspx?game_id=9537&sport_id=13",
-    "description": "Streaming Video: https://www.gnacnetwork.com/nnunighthawks/",
+    "description": "Streaming Video: https://www.gnacnetwork.com/nnunighthawks/ Tickets: https://northwest-nazarene-university-ogbx.vivenushop.com/event/mens-basketball-vs-walla-walla-uyir40",
     "sources": [
       {
         "name": "nnu-athletics",
@@ -2859,30 +2635,6 @@
     ]
   },
   {
-    "id": "2bb5ecc966a1",
-    "title": "Panel Power: A Comic Book Club for Teens!",
-    "start": "2026-11-06T16:00:00-07:00",
-    "end": "2026-11-06T17:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "kids"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17111946",
-    "description": "Panel Power is a every other week meeting for teen comic book fans. It happens after school on the 1st and 3rd Fridays of the month. This club will have history lessons, group discussions, craft activities, and more. Come down and meet with other nerds about graphic novels, superheroes, and all t...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17111946",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "3eb93ea65fc3",
     "title": "Sewing Club for Kids",
     "start": "2026-11-06T16:00:00-07:00",
@@ -2903,6 +2655,30 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15302392",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "883695bc9390",
+    "title": "CANCELED - Panel Power: A Comic Book Club for Teens!",
+    "start": "2026-11-06T16:00:00-07:00",
+    "end": "2026-11-06T17:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/17111946",
+    "description": "Panel Power is a every other week meeting for teen comic book fans. It happens after school on the 1st and 3rd Fridays of the month. This club will have history lessons, group discussions, craft activities, and more. Come down and meet with other nerds about graphic novels, superheroes, and all t...",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/17111946",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -2957,9 +2733,9 @@
     "id": "0e91eaddc76b",
     "title": "Holiday Makers Market",
     "start": "2026-11-06T17:00:00-07:00",
-    "end": "2026-11-06T21:00:00-07:00",
+    "end": "2026-11-07T16:00:00-07:00",
     "allDay": false,
-    "venue": "nampa civic center",
+    "venue": "Nampa Civic Center",
     "venueKey": "nampa-civic-center",
     "city": "Nampa",
     "category": "holiday-seasonal",
@@ -2971,8 +2747,7 @@
       "makers-market"
     ],
     "size": "M",
-    "url": "https://boisemom.com/event/holiday-makers-market/2026-11-06/",
-    "description": "Holiday Makers Market Holiday Makers Market Formerly Craft & Chocolate Affaire Nampa Civic Center November 6 | 5:00 PM – 9:00 PM November 7 | 9:00 AM – 4:00 PM Kick off the holiday season at one of Nampa’s most beloved events! Shop Local & Unique Get a head start on your holiday shopping and supp...",
+    "url": "https://www.mikebrowngroup.com/event/holiday-makers-market/",
     "sources": [
       {
         "name": "boise-mom",
@@ -2984,7 +2759,8 @@
         "url": "https://www.mikebrowngroup.com/event/holiday-makers-market/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "description": "Holiday Makers Market Holiday Makers Market Formerly Craft & Chocolate Affaire Nampa Civic Center November 6 | 5:00 PM – 9:00 PM November 7 | 9:00 AM – 4:00 PM Kick off the holiday season at one of Nampa’s most beloved events! Shop Local & Unique Get a head start on your holiday shopping and supp..."
   },
   {
     "id": "a6d90a4bd087",
@@ -4469,8 +4245,8 @@
     ]
   },
   {
-    "id": "91fddf8f164d",
-    "title": "Northwest Nazarene University Men's Basketball vs Walla Walla University - Exhibition | Homecoming",
+    "id": "3b0d96bace31",
+    "title": "Northwest Nazarene University Men's Basketball vs Walla Walla - Exhibition | Homecoming",
     "start": "2026-11-07T19:00:00-07:00",
     "end": "2026-11-07T21:00:00-07:00",
     "allDay": false,
@@ -4484,12 +4260,12 @@
     ],
     "size": "M",
     "url": "https://nnusports.com/calendar.aspx?game_id=9627&sport_id=2",
-    "description": "Streaming Video: https://www.gnacnetwork.com/nnunighthawks/",
+    "description": "Streaming Video: https://www.gnacnetwork.com/nnunighthawks/ Tickets: https://northwest-nazarene-university-ogbx.vivenushop.com/event/mens-basketball-vs-walla-walla-uyir40",
     "sources": [
       {
         "name": "nnu-athletics",
         "url": "https://nnusports.com/calendar.aspx?game_id=9627&sport_id=2",
-        "fetchedAt": "2026-11-02T21:24:51Z"
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -4707,6 +4483,29 @@
         "name": "mike-brown-group",
         "url": "https://www.mikebrowngroup.com/event/maris/",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "ae8fb6fc805f",
+    "title": "Jo Koy",
+    "start": "2026-11-07T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "performing-arts",
+    "tags": [
+      "comedy"
+    ],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/koy",
+    "description": "Jo Koy: Koy Meets World Tour Saturday, November 7, 2026 Age Restriction: Ages 12+",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/koy",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -7237,6 +7036,27 @@
     ]
   },
   {
+    "id": "e2ecf453b0ac",
+    "title": "Tractor Tours",
+    "start": "2026-11-11T12:00:00-07:00",
+    "end": "2026-11-11T13:30:00-07:00",
+    "allDay": false,
+    "venue": "JUMP",
+    "venueKey": "jump",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://jumpboise.org/events/tour-tractors",
+    "sources": [
+      {
+        "name": "jump-boise",
+        "url": "https://jumpboise.org/events/tour-tractors",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
     "id": "fb9ad85ceaa3",
     "title": "Idaho Humane Society | Dog Santa Photo Sessions",
     "start": "2026-11-11T15:00:00-07:00",
@@ -7621,12 +7441,12 @@
       "library-program"
     ],
     "size": "S",
-    "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-11-12/",
+    "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-3/2026-11-12/",
     "description": "Join us every Thursday at 10:30 AM for this kindergarten readiness storytime and craft! This storytime is designed for children ages 3-5 and their caregiver.",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-11-12/",
+        "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-3/2026-11-12/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
@@ -10792,7 +10612,7 @@
   },
   {
     "id": "9569a96c7da8",
-    "title": "Candlelight: Queen vs. ABBA",
+    "title": "Candlelight – Queen vs. ABBA",
     "start": "2026-11-14T17:30:00-07:00",
     "end": "2026-11-14T18:30:00-07:00",
     "allDay": false,
@@ -10804,8 +10624,7 @@
       "concert"
     ],
     "size": "M",
-    "url": "https://boisemom.com/event/candlelight-queen-vs-abba-2/2026-11-14/",
-    "description": "⭐ Candlelight concerts bring the magic of a live, multi-sensory musical experience to awe-inspiring locations like never seen before in Boise. Get your tickets now to discover the music of Queen vs. ABBA at The Egyptian Theatre under the gentle glow of candlelight. This is a tribute concert exper...",
+    "url": "https://www.mikebrowngroup.com/event/candlelight-queen-vs-abba/",
     "sources": [
       {
         "name": "boise-mom",
@@ -10817,7 +10636,8 @@
         "url": "https://www.mikebrowngroup.com/event/candlelight-queen-vs-abba/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "description": "⭐ Candlelight concerts bring the magic of a live, multi-sensory musical experience to awe-inspiring locations like never seen before in Boise. Get your tickets now to discover the music of Queen vs. ABBA at The Egyptian Theatre under the gentle glow of candlelight. This is a tribute concert exper..."
   },
   {
     "id": "2777bacb1e37",
@@ -10948,15 +10768,20 @@
       "concert"
     ],
     "size": "XL",
-    "url": "https://www.mikebrowngroup.com/event/three-days-grace/",
-    "description": "Three Days Grace brings the Alienation Tour to the Ford Idaho Center Arena with special guests I Prevail and The Funeral Portrait. Doors open one hour before the show.",
+    "url": "https://www.fordidahocenter.com/events/detail/tdg26",
     "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/tdg26",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      },
       {
         "name": "mike-brown-group",
         "url": "https://www.mikebrowngroup.com/event/three-days-grace/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       }
-    ]
+    ],
+    "description": "Three Days Grace brings the Alienation Tour to the Ford Idaho Center Arena with special guests I Prevail and The Funeral Portrait. Doors open one hour before the show."
   },
   {
     "id": "9771df7efda7",
@@ -11013,15 +10838,15 @@
     "id": "c2c7ce01a5a9",
     "title": "Boise PhotoGrid: The Midway Opening Reception",
     "start": "2026-11-14T19:00:00-07:00",
-    "end": "2026-11-14T21:00:00-07:00",
     "allDay": false,
     "venue": "MING Studios",
     "venueKey": "ming-studios",
     "city": "Boise",
-    "category": "community-civic",
+    "category": "arts-culture",
     "tags": [],
     "size": "S",
-    "url": "https://www.cityofboise.org/events/arts-and-history/2026/november/boise-photogrid-the-midway-opening-reception/",
+    "url": "https://www.boiseartsandhistory.org/calendar/event?key=boise-photogrid-the-midway-opening-reception_20261114",
+    "description": "The Midway marks the halfway point of Boise PhotoGrid, an ongoing collective project capturing Boise and Garden City amid rapid change. Through the perspectives of 15 photographers, the exhibition documents the places, details, and everyday scenes of the cities in transformation. This exhibition...",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -11034,7 +10859,7 @@
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ],
-    "description": "The Midway marks the halfway point of Boise PhotoGrid, an ongoing collective project capturing Boise and Garden City amid rapid change. Through the perspectives of 15 photographers, the exhibition documents the places, details, and everyday scenes of the cities in transformation. This exhibition..."
+    "end": "2026-11-14T21:00:00-07:00"
   },
   {
     "id": "bc4ab9b3bafc",
@@ -12806,30 +12631,6 @@
     ]
   },
   {
-    "id": "315a1b901a7e",
-    "title": "Crafternoons for Kids",
-    "start": "2026-11-17T16:00:00-07:00",
-    "end": "2026-11-17T17:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "kids"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15302247",
-    "description": "Join us at the Library! at Collister for a new arts and crafts project every week! Designed for kids ages 6-11. Younger children may need adult assistance.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15302247",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "684ddf45480b",
     "title": "Read to a Therapy Dog!",
     "start": "2026-11-17T16:00:00-07:00",
@@ -12850,6 +12651,30 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15700762",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "6c5d828e15cf",
+    "title": "Crafternoons for Kids Pipe Cleaner Sculptures",
+    "start": "2026-11-17T16:00:00-07:00",
+    "end": "2026-11-17T17:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/15302247",
+    "description": "Join us at the Library! at Collister for a new arts and crafts project every week! Designed for kids ages 6-11. Younger children may need adult assistance.",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/15302247",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -15792,26 +15617,32 @@
     "id": "60bf66a0ebee",
     "title": "Canyon County Christmas Show",
     "start": "2026-11-20T11:00:00-07:00",
-    "end": "2026-11-22T16:00:00-07:00",
+    "end": "2026-11-22T11:00:00-07:00",
     "allDay": false,
     "venue": "Ford Idaho Center Arena",
     "venueKey": "ford-idaho-center-arena",
     "city": "Nampa",
-    "category": "community-civic",
+    "category": "markets-shopping",
     "tags": [
       "family-friendly",
+      "home-show",
       "kids"
     ],
     "size": "XL",
-    "url": "https://www.mikebrowngroup.com/event/canyon-county-christmas-show-8/",
-    "description": "A family-friendly holiday shopping show in the Ford Idaho Center Arena. Hours: Fri and Sat 11 AM–7 PM, Sun 11 AM–4 PM.",
+    "url": "https://www.fordidahocenter.com/events/detail/canyon-county-christmas-show-5",
     "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/canyon-county-christmas-show-5",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      },
       {
         "name": "mike-brown-group",
         "url": "https://www.mikebrowngroup.com/event/canyon-county-christmas-show-8/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       }
-    ]
+    ],
+    "description": "A family-friendly holiday shopping show in the Ford Idaho Center Arena. Hours: Fri and Sat 11 AM–7 PM, Sun 11 AM–4 PM."
   },
   {
     "id": "88ffcce526f7",
@@ -15956,8 +15787,9 @@
     "venue": "Ford Idaho Center Arena",
     "venueKey": "ford-idaho-center-arena",
     "city": "Nampa",
-    "category": "community-civic",
+    "category": "markets-shopping",
     "tags": [
+      "home-show",
       "kids"
     ],
     "size": "XL",
@@ -15968,6 +15800,31 @@
         "name": "mike-brown-group",
         "url": "https://www.mikebrowngroup.com/event/idaho-snowmobile-show/",
         "fetchedAt": "2026-11-03T17:00:01Z"
+      }
+    ]
+  },
+  {
+    "id": "3564566afc99",
+    "title": "Idaho Snowmobile Show",
+    "start": "2026-11-20T15:00:00-07:00",
+    "end": "2026-11-21T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Horse Park & Sports Center",
+    "venueKey": "ford-idaho-center-horse-park-and-sports-center",
+    "city": "Nampa",
+    "category": "markets-shopping",
+    "tags": [
+      "home-show",
+      "kids"
+    ],
+    "size": "L",
+    "url": "https://www.fordidahocenter.com/events/detail/idaho-snowmobile-show-5",
+    "description": "00 - Advanced Ticket Price Children under 12 Free Military 50% off Tickets available at gate.",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/idaho-snowmobile-show-5",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -16020,6 +15877,30 @@
     ]
   },
   {
+    "id": "261ca8955cd7",
+    "title": "CANCELED - Panel Power: A Comic Book Club for Teens!",
+    "start": "2026-11-20T16:00:00-07:00",
+    "end": "2026-11-20T17:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/17111947",
+    "description": "Panel Power is a every other week meeting for teen comic book fans. It happens after school on the 1st and 3rd Fridays of the month. This club will have history lessons, group discussions, craft activities, and more. Come down and meet with other nerds about graphic novels, superheroes, and all t...",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/17111947",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
     "id": "29cb386346b7",
     "title": "Sewing Club for Kids",
     "start": "2026-11-20T16:00:00-07:00",
@@ -16061,30 +15942,6 @@
       {
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16458731",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "3ca60a3e5406",
-    "title": "Panel Power: A Comic Book Club for Teens!",
-    "start": "2026-11-20T16:00:00-07:00",
-    "end": "2026-11-20T17:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "kids"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17111947",
-    "description": "Panel Power is a every other week meeting for teen comic book fans. It happens after school on the 1st and 3rd Fridays of the month. This club will have history lessons, group discussions, craft activities, and more. Come down and meet with other nerds about graphic novels, superheroes, and all t...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17111947",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
@@ -18332,12 +18189,12 @@
       "holiday-event"
     ],
     "size": "L",
-    "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-7/",
+    "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-8/",
     "description": "“It is not what we say about our blessings, but how we use them – that is the true measure of Thanksgiving.” – W.T. Purkiser This is an opportunity for you to directly impact a family in need! Please consider helping us provide a Thanksgiving dinner for those who would otherwise be unable to affo...",
     "sources": [
       {
         "name": "expo-idaho",
-        "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-7/",
+        "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-8/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       },
       {
@@ -18619,6 +18476,30 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/indian-creek-plaza-ice-skating-3/2026-11-23/",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "3eb63f319d57",
+    "title": "Swing into Fun: Boise PAL at Topgolf",
+    "start": "2026-11-23T12:00:00-07:00",
+    "end": "2026-11-23T14:00:00-07:00",
+    "allDay": false,
+    "venue": "Topgolf",
+    "venueKey": "topgolf",
+    "city": "Meridian",
+    "category": "community-civic",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://boisemom.com/event/swing-into-fun-boise-pal-at-topgolf/",
+    "description": "Get ready to swing, play, and have fun with Boise PAL at Topgolf® in Meridian! This special event gives youth ages 9–17 the opportunity to enjoy a fun-filled afternoon, connect with Boise Police Officers, and make great memories. Participants will get to partner up with Boise Police Officers for...",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/swing-into-fun-boise-pal-at-topgolf/",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -19539,30 +19420,6 @@
     ]
   },
   {
-    "id": "5607ad8bbac1",
-    "title": "Crafternoons for Kids",
-    "start": "2026-11-24T16:00:00-07:00",
-    "end": "2026-11-24T17:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "kids"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15302248",
-    "description": "Join us at the Library! at Collister for a new arts and crafts project every week! Designed for kids ages 6-11. Younger children may need adult assistance.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15302248",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "8a3b761cac90",
     "title": "Junk Journaling",
     "start": "2026-11-24T16:00:00-07:00",
@@ -19607,6 +19464,30 @@
       }
     ],
     "description": "If you are age 12-17, join us for Teen Hangout every Tuesday at 5:00! We'll meet in the Collaboration Room on the 3rd Floor of the Downtown Library. Snacks provided!"
+  },
+  {
+    "id": "aac035d329b8",
+    "title": "Crafternoons for Kids Pine Cone Turkeys",
+    "start": "2026-11-24T16:00:00-07:00",
+    "end": "2026-11-24T17:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/15302248",
+    "description": "Join us at the Library! at Collister for a new arts and crafts project every week! Designed for kids ages 6-11. Younger children may need adult assistance.",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/15302248",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
   },
   {
     "id": "c128b6856636",
@@ -19951,7 +19832,7 @@
   },
   {
     "id": "cfd32596fd83",
-    "title": "STORY STORY NIGHT: TRiVIAL PURSUiTS - GEOGRAPHY",
+    "title": "Story Story Night: TRiViAL PURSUiTS: GEOGRAPHY",
     "start": "2026-11-24T19:00:00-07:00",
     "end": "2026-11-24T21:00:00-07:00",
     "allDay": false,
@@ -19961,7 +19842,7 @@
     "category": "community-civic",
     "tags": [],
     "size": "M",
-    "url": "https://jumpboise.org/events/story-story-night-trivial-pursuits-geography",
+    "url": "https://www.cityofboise.org/events/arts-and-history/2026/november/story-story-night-trivial-pursuits-geography/",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -21044,6 +20925,32 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/9977453",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "5a6636168574",
+    "title": "Canyon County Festival of Trees",
+    "start": "2026-11-27T06:30:00-07:00",
+    "end": "2026-11-30T17:30:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Horse Park & Sports Center",
+    "venueKey": "ford-idaho-center-horse-park-and-sports-center",
+    "city": "Nampa",
+    "category": "festivals",
+    "tags": [
+      "festival",
+      "free-admission",
+      "kids"
+    ],
+    "size": "L",
+    "url": "https://www.fordidahocenter.com/events/detail/canyon-county-festival-of-trees-5",
+    "description": "View the trees, shop vendor booths, enjoy live entertainment and visit Santa! Cookies with Santa Friday, Nov 27. 6:30pm - 8:30pm. Enjoy a fun evening, which includes live entertainment, special story time with Santa, and memories that will last a lifetime, all for a great cause! Reservations requ...",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/canyon-county-festival-of-trees-5",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -23154,7 +23061,7 @@
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/elf-in-concert/",
+        "url": "https://boisemom.com/event/elf-in-concert-2/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       },
       {
@@ -26427,6 +26334,31 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/indian-creek-plaza-ice-skating-2/2026-12-04/",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "30592de4cb81",
+    "title": "Vintage Market Days",
+    "start": "2026-12-04T12:00:00-07:00",
+    "end": "2026-12-06T11:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Horse Park & Sports Center",
+    "venueKey": "ford-idaho-center-horse-park-and-sports-center",
+    "city": "Nampa",
+    "category": "markets-shopping",
+    "tags": [
+      "flea-market",
+      "home-show"
+    ],
+    "size": "L",
+    "url": "https://www.fordidahocenter.com/events/detail/vintage-market-days-5",
+    "description": "Vintage Market Days presents Ford Sports Center Friday 12pm to 5pm Saturday 10am to 5pm Sunday 10am to 5pm Tickets available at the gate.",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/vintage-market-days-5",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -31487,12 +31419,12 @@
     "category": "markets-shopping",
     "tags": [],
     "size": "L",
-    "url": "https://expoidaho.com/event/teddy-bear-classic-5/",
+    "url": "https://expoidaho.com/event/teddy-bear-classic-6/",
     "description": "See website for more information.",
     "sources": [
       {
         "name": "expo-idaho",
-        "url": "https://expoidaho.com/event/teddy-bear-classic-5/",
+        "url": "https://expoidaho.com/event/teddy-bear-classic-6/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       }
     ]
@@ -32381,6 +32313,29 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/breakfast-with-santa-at-zoo-boise-4/2026-12-12/",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "33d98995e422",
+    "title": "Great Idaho Gun Show",
+    "start": "2026-12-12T09:00:00-07:00",
+    "end": "2026-12-13T09:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Horse Park & Sports Center",
+    "venueKey": "ford-idaho-center-horse-park-and-sports-center",
+    "city": "Nampa",
+    "category": "markets-shopping",
+    "tags": [
+      "home-show"
+    ],
+    "size": "L",
+    "url": "https://www.fordidahocenter.com/events/detail/gigs-40",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/gigs-40",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -33575,6 +33530,41 @@
     ]
   },
   {
+    "id": "44cc0d4dfd91",
+    "title": "Mannheim Steamroller Christmas",
+    "start": "2026-12-13T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "community-civic",
+    "tags": [
+      "concert",
+      "family-friendly",
+      "symphony"
+    ],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/steamroller",
+    "description": "Mannheim Steamroller Christmas Ford Idaho Center Arena December 13, 2026 The holiday tradition continues! MANNHEIM STEAMROLLER CHRISTMAS by Chip Davis has been America’s favorite holiday tradition for over 40 years! Grammy Award winner Chip Davis has created a show that features Mannheim Steamrol...",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/steamroller",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      },
+      {
+        "name": "ford-idaho-center-arena",
+        "url": "https://www.ticketmaster.com/event/Z7r9jZ1AAZ7v3",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "ticketmaster-metro",
+        "url": "https://www.ticketmaster.com/event/Z7r9jZ1AAZ7v3",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      }
+    ]
+  },
+  {
     "id": "4b5d5e228182",
     "title": "Swiftgiving",
     "start": "2026-12-13T19:00:00-07:00",
@@ -33596,34 +33586,6 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/swiftgiving/",
         "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "c5f1ab528c8d",
-    "title": "Mannheim Steamroller",
-    "start": "2026-12-13T19:00:00-07:00",
-    "allDay": false,
-    "venue": "Ford Idaho Center Arena",
-    "venueKey": "ford-idaho-center-arena",
-    "city": "Nampa",
-    "category": "music",
-    "tags": [
-      "concert",
-      "symphony"
-    ],
-    "size": "XL",
-    "url": "https://www.ticketmaster.com/event/Z7r9jZ1AAZ7v3",
-    "sources": [
-      {
-        "name": "ford-idaho-center-arena",
-        "url": "https://www.ticketmaster.com/event/Z7r9jZ1AAZ7v3",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      },
-      {
-        "name": "ticketmaster-metro",
-        "url": "https://www.ticketmaster.com/event/Z7r9jZ1AAZ7v3",
-        "fetchedAt": "2026-11-03T17:00:01Z"
       }
     ]
   },
@@ -33826,6 +33788,35 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/winter-skate-at-the-village-4/2026-12-14/",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "13b5047edd3e",
+    "title": "Holiday Edition of the Meridian Monday Night Market",
+    "start": "2026-12-14T16:00:00-07:00",
+    "end": "2026-12-14T21:00:00-07:00",
+    "allDay": false,
+    "venue": "Downtown Meridian",
+    "venueKey": "downtown-meridian",
+    "city": "Meridian",
+    "category": "holiday-seasonal",
+    "tags": [
+      "concert",
+      "family-friendly",
+      "festival",
+      "free-admission",
+      "holiday-event",
+      "santa"
+    ],
+    "size": "L",
+    "url": "https://boisemom.com/event/holiday-edition-of-the-meridian-monday-night-market/",
+    "description": "The holidays are drawing near, soon it will be time for Christmas cheer! Located at NE 2nd Street & W Idaho Ave in downtown Meridian. (For easy map directions, look up Centennial Park or Generations Plaza) December 14th 2026, 4pm-9pm Complimentary Activities & Attractions include, but are not lim...",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/holiday-edition-of-the-meridian-monday-night-market/",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -34359,7 +34350,7 @@
   },
   {
     "id": "86fc4b83518d",
-    "title": "Kid’s Class: Ridiculous Reindeer",
+    "title": "Kids’ Class: Ridiculous Reindeer",
     "start": "2026-12-15T16:00:00-07:00",
     "end": "2026-12-15T17:00:00-07:00",
     "allDay": false,
@@ -34374,15 +34365,15 @@
       "library-program"
     ],
     "size": "S",
-    "url": "https://boisemom.com/event/kids-class-ridiculous-reindeer-2/",
+    "url": "https://boisemom.com/event/kids-class-ridiculous-reindeer/",
+    "description": "20261215 KIDS Ridiculous Reindeer long These reindeer might be too ridiculous to pull Santa’s sleigh, but they sure will be fun to make! Location: Community Hall, Eagle City Hall",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/kids-class-ridiculous-reindeer-2/",
+        "url": "https://boisemom.com/event/kids-class-ridiculous-reindeer/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ],
-    "description": "20261215 KIDS Ridiculous Reindeer long These reindeer might be too ridiculous to pull Santa’s sleigh, but they sure will be fun to make! Location: Community Hall, Eagle City Hall"
+    ]
   },
   {
     "id": "8881d84ca2e3",
@@ -36769,6 +36760,31 @@
     ]
   },
   {
+    "id": "ff889c43b980",
+    "title": "USA Wrestling",
+    "start": "2026-12-19T09:00:00-07:00",
+    "end": "2026-12-20T09:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Horse Park & Sports Center",
+    "venueKey": "ford-idaho-center-horse-park-and-sports-center",
+    "city": "Nampa",
+    "category": "sports",
+    "tags": [
+      "combat-sports",
+      "kids"
+    ],
+    "size": "L",
+    "url": "https://www.fordidahocenter.com/events/detail/idaway2023-7",
+    "description": "2026 Idaho Middle School State Championship 9am December 19, 2026 Ford Idaho Sports Center Event Information Christmas Clash Tryouts 6pm December 19, 2026 Ford Idaho Sports Center Event Information Kids Winter Festival 9am December 20, 2026 Ford Idaho Sports Center Arena Event Information",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/idaway2023-7",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
     "id": "f3b8f5657ea8",
     "title": "The Capital City Public Market",
     "start": "2026-12-19T09:30:00-07:00",
@@ -37054,6 +37070,28 @@
     ]
   },
   {
+    "id": "20c46fa4f154",
+    "title": "Multimedia Art with Diana",
+    "start": "2026-12-19T13:30:00-07:00",
+    "end": "2026-12-19T15:30:00-07:00",
+    "allDay": false,
+    "venue": "Nampa Public Library",
+    "venueKey": "nampa-public-library",
+    "city": "Nampa",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://nampalibrary.libcal.com/event/17360103",
+    "description": "Attention art enthusiasts and creative individuals! We invite you to attend our Multimedia Art Class, where you will have the opportunity to explore various mediums and techniques to unleash your creativity. Whether you’re passionate about painting, drawing with technical pens, creating collages,...",
+    "sources": [
+      {
+        "name": "nampa-public-library",
+        "url": "https://nampalibrary.libcal.com/event/17360103",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
     "id": "0c9795db134d",
     "title": "Kids’ Class: Cone Gnomes and Santas",
     "start": "2026-12-19T14:00:00-07:00",
@@ -37077,28 +37115,6 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/kids-class-cone-gnomes-and-santas/",
         "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
-    "id": "20c46fa4f154",
-    "title": "Multimedia Art with Diana",
-    "start": "2026-12-19T14:00:00-07:00",
-    "end": "2026-12-19T15:30:00-07:00",
-    "allDay": false,
-    "venue": "Nampa Public Library",
-    "venueKey": "nampa-public-library",
-    "city": "Nampa",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://nampalibrary.libcal.com/event/17360103",
-    "description": "Attention art enthusiasts and creative individuals! We invite you to attend our Multimedia Art Class, where you will have the opportunity to explore various mediums and techniques to unleash your creativity. Whether you’re passionate about painting, drawing with technical pens, creating collages,...",
-    "sources": [
-      {
-        "name": "nampa-public-library",
-        "url": "https://nampalibrary.libcal.com/event/17360103",
-        "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
   },
@@ -40070,12 +40086,12 @@
       "holiday-event"
     ],
     "size": "M",
-    "url": "https://boisemom.com/event/winter-garden-aglow-4/2026-12-26/",
+    "url": "https://boisemom.com/event/winter-garden-aglow-opening-2/2026-12-26/",
     "description": "Come Together.Glow Together. Bundle up and wander a Garden glowing with 900,000 holiday lights, from lit-up trees and pathways to the all-new Lake of Lights on Outlaw Field. The lights are just the beginning Not a drive-through. You walk it, together: lights wrap the trees, follow winding paths a...",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/winter-garden-aglow-4/2026-12-26/",
+        "url": "https://boisemom.com/event/winter-garden-aglow-opening-2/2026-12-26/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       }
     ]
@@ -42258,6 +42274,29 @@
     ]
   },
   {
+    "id": "441e85fa77a8",
+    "title": "Great Idaho Gun Show",
+    "start": "2027-01-02T09:00:00-07:00",
+    "end": "2027-01-03T09:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Horse Park & Sports Center",
+    "venueKey": "ford-idaho-center-horse-park-and-sports-center",
+    "city": "Nampa",
+    "category": "markets-shopping",
+    "tags": [
+      "home-show"
+    ],
+    "size": "L",
+    "url": "https://www.fordidahocenter.com/events/detail/gigs-39",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/gigs-39",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
     "id": "5e624c3b824e",
     "title": "OLD BOISE MODEL RAILROAD",
     "start": "2027-01-02T09:00:00-07:00",
@@ -43418,15 +43457,14 @@
     "venue": "JUMP",
     "venueKey": "jump",
     "city": "Boise",
-    "category": "arts-culture",
+    "category": "community-civic",
     "tags": [
       "family-friendly",
       "free-admission",
       "kids"
     ],
     "size": "M",
-    "url": "https://www.boiseartsandhistory.org/calendar/event?key=open-arms-dance-project-family-boogie_20270107",
-    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot...",
+    "url": "https://www.cityofboise.org/events/arts-and-history/2027/january/open-arms-dance-project-family-boogie/",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -43443,7 +43481,8 @@
         "url": "https://www.cityofboise.org/events/arts-and-history/2027/january/open-arms-dance-project-family-boogie/",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
-    ]
+    ],
+    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot..."
   },
   {
     "id": "d0610afccdf1",
@@ -43514,6 +43553,27 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/kids-fix-it-night-at-boise-bicycle-project/2027-01-07/",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "a4b7480ef624",
+    "title": "2027 Rollie Lane Invitational",
+    "start": "2027-01-08T09:00:00-07:00",
+    "end": "2027-01-09T09:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "community-civic",
+    "tags": [],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/rollie-27",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/rollie-27",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -45385,6 +45445,28 @@
     ]
   },
   {
+    "id": "573fe1578bb7",
+    "title": "Multimedia Art with Diana",
+    "start": "2027-01-16T13:30:00-07:00",
+    "end": "2027-01-16T15:30:00-07:00",
+    "allDay": false,
+    "venue": "Nampa Public Library",
+    "venueKey": "nampa-public-library",
+    "city": "Nampa",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://nampalibrary.libcal.com/event/17360104",
+    "description": "Attention art enthusiasts and creative individuals! We invite you to attend our Multimedia Art Class, where you will have the opportunity to explore various mediums and techniques to unleash your creativity. Whether you’re passionate about painting, drawing with technical pens, creating collages,...",
+    "sources": [
+      {
+        "name": "nampa-public-library",
+        "url": "https://nampalibrary.libcal.com/event/17360104",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
     "id": "f49b8af4021d",
     "title": "Public Skate at Idaho IceWorld",
     "start": "2027-01-16T13:30:00-07:00",
@@ -45407,28 +45489,6 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/public-skate-at-idaho-iceworld-2/2027-01-16/",
         "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
-    "id": "573fe1578bb7",
-    "title": "Multimedia Art with Diana",
-    "start": "2027-01-16T14:00:00-07:00",
-    "end": "2027-01-16T15:30:00-07:00",
-    "allDay": false,
-    "venue": "Nampa Public Library",
-    "venueKey": "nampa-public-library",
-    "city": "Nampa",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://nampalibrary.libcal.com/event/17360104",
-    "description": "Attention art enthusiasts and creative individuals! We invite you to attend our Multimedia Art Class, where you will have the opportunity to explore various mediums and techniques to unleash your creativity. Whether you’re passionate about painting, drawing with technical pens, creating collages,...",
-    "sources": [
-      {
-        "name": "nampa-public-library",
-        "url": "https://nampalibrary.libcal.com/event/17360104",
-        "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
   },
@@ -46991,6 +47051,31 @@
         "name": "jump-boise",
         "url": "https://jumpboise.org/events/idaho-film-fair",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "bf8989358fc9",
+    "title": "Canyon County Kids Expo",
+    "start": "2027-01-23T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "learning-business",
+    "tags": [
+      "family-friendly",
+      "kids",
+      "trade-show"
+    ],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/ccke-28",
+    "description": "Canyon County Kids Expo Saturday, January 23, 2027 Ford Idaho Center Arena 10AM - 5PM",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/ccke-28",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -49760,15 +49845,14 @@
     "venue": "JUMP",
     "venueKey": "jump",
     "city": "Boise",
-    "category": "arts-culture",
+    "category": "community-civic",
     "tags": [
       "family-friendly",
       "free-admission",
       "kids"
     ],
     "size": "M",
-    "url": "https://www.boiseartsandhistory.org/calendar/event?key=open-arms-dance-project-family-boogie_20270204",
-    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot...",
+    "url": "https://www.cityofboise.org/events/arts-and-history/2027/february/open-arms-dance-project-family-boogie/",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -49785,7 +49869,8 @@
         "url": "https://www.cityofboise.org/events/arts-and-history/2027/february/open-arms-dance-project-family-boogie/",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
-    ]
+    ],
+    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot..."
   },
   {
     "id": "c713c180e587",
@@ -50082,6 +50167,30 @@
     ]
   },
   {
+    "id": "87b3ab359897",
+    "title": "Canyon County Spring Home Show",
+    "start": "2027-02-05T17:00:00-07:00",
+    "end": "2027-02-07T11:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "markets-shopping",
+    "tags": [
+      "free-admission",
+      "home-show"
+    ],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/ccshg-27",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/ccshg-27",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
     "id": "8eb40b574e73",
     "title": "College of Idaho Women's Basketball vs Corban University (Ore.) - Legacy Night",
     "start": "2027-02-05T17:30:00-07:00",
@@ -50324,6 +50433,29 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/home-depot-kids-workshop-9/2027-02-06/",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "cdb44de085dd",
+    "title": "Great Idaho Gun Show",
+    "start": "2027-02-06T09:00:00-07:00",
+    "end": "2027-02-07T09:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Horse Park & Sports Center",
+    "venueKey": "ford-idaho-center-horse-park-and-sports-center",
+    "city": "Nampa",
+    "category": "markets-shopping",
+    "tags": [
+      "home-show"
+    ],
+    "size": "L",
+    "url": "https://www.fordidahocenter.com/events/detail/gigs-43",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/gigs-43",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -52440,6 +52572,30 @@
     ]
   },
   {
+    "id": "efde959d18ad",
+    "title": "Girls State Basketball Tournament",
+    "start": "2027-02-18T12:00:00-07:00",
+    "end": "2027-02-20T09:30:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "sports",
+    "tags": [
+      "youth-sports"
+    ],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/gsbb-27",
+    "description": "Girls State Basketball Tournament Thursday 11:00am Doors 12:00n Game 1 Begins Friday 11:00am Doors 12:00n Game 1 begins Saturday 8:30am Doors 9:30am Finals begin",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/gsbb-27",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
     "id": "3405e410a19c",
     "title": "Storytelling, Creative Writing, and Human Experience: A Year-Long Storytelling and Creative Writing Program",
     "start": "2027-02-18T17:00:00-07:00",
@@ -52796,6 +52952,28 @@
     ]
   },
   {
+    "id": "fead01735211",
+    "title": "Multimedia Art with Diana",
+    "start": "2027-02-20T13:30:00-07:00",
+    "end": "2027-02-20T15:30:00-07:00",
+    "allDay": false,
+    "venue": "Nampa Public Library",
+    "venueKey": "nampa-public-library",
+    "city": "Nampa",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://nampalibrary.libcal.com/event/17360105",
+    "description": "Attention art enthusiasts and creative individuals! We invite you to attend our Multimedia Art Class, where you will have the opportunity to explore various mediums and techniques to unleash your creativity. Whether you’re passionate about painting, drawing with technical pens, creating collages,...",
+    "sources": [
+      {
+        "name": "nampa-public-library",
+        "url": "https://nampalibrary.libcal.com/event/17360105",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
     "id": "dde2b600eeeb",
     "title": "Dungeons & Dragons",
     "start": "2027-02-20T14:00:00-07:00",
@@ -52813,28 +52991,6 @@
       {
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/17286184",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "fead01735211",
-    "title": "Multimedia Art with Diana",
-    "start": "2027-02-20T14:00:00-07:00",
-    "end": "2027-02-20T15:30:00-07:00",
-    "allDay": false,
-    "venue": "Nampa Public Library",
-    "venueKey": "nampa-public-library",
-    "city": "Nampa",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://nampalibrary.libcal.com/event/17360105",
-    "description": "Attention art enthusiasts and creative individuals! We invite you to attend our Multimedia Art Class, where you will have the opportunity to explore various mediums and techniques to unleash your creativity. Whether you’re passionate about painting, drawing with technical pens, creating collages,...",
-    "sources": [
-      {
-        "name": "nampa-public-library",
-        "url": "https://nampalibrary.libcal.com/event/17360105",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
@@ -54689,6 +54845,30 @@
     ]
   },
   {
+    "id": "abad67ec2507",
+    "title": "Boys State Basketball Tournament",
+    "start": "2027-03-04T12:00:00-07:00",
+    "end": "2027-03-06T09:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "sports",
+    "tags": [
+      "youth-sports"
+    ],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/bsbb-27",
+    "description": "Boys State Basketball Tournament Ford Idaho Center Arena Thursday 11:00am Doors 12:00n Game 1 Begins Friday 11:00am Doors 12:00n Game 1 begins Saturday 8:30am Doors 9:30am Finals begin Parking is free for this event.",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/bsbb-27",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
     "id": "4b5a74d927fe",
     "title": "Open Arms Dance Project: Family Boogie",
     "start": "2027-03-04T17:00:00-07:00",
@@ -54929,6 +55109,28 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/nature-journaling-2/2027-03-05/",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "d3c9b8672d48",
+    "title": "ICYC 2027",
+    "start": "2027-03-05T18:45:00-07:00",
+    "end": "2027-03-07T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Horse Park & Sports Center",
+    "venueKey": "ford-idaho-center-horse-park-and-sports-center",
+    "city": "Nampa",
+    "category": "community-civic",
+    "tags": [],
+    "size": "L",
+    "url": "https://www.fordidahocenter.com/events/detail/icyc-2027",
+    "description": "Idaho Catholic Youth Conference March 5-7, 2027 Ford Idaho Center Sports Center",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/icyc-2027",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -56811,6 +57013,30 @@
     ]
   },
   {
+    "id": "daaeb0e664dc",
+    "title": "Monster Jam Freestyle Mania presented by Spin Master",
+    "start": "2027-03-19T19:00:00-06:00",
+    "end": "2027-03-21T19:00:00-06:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "sports",
+    "tags": [
+      "motorsports"
+    ],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/mj27",
+    "description": "Monster Jam Freestyle Mania presented by Spin Master Ford Idaho Center Arena March 19 - 21, 2026",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/mj27",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
     "id": "391a257c70d6",
     "title": "Idaho Steelheads Home Game",
     "start": "2027-03-19T19:10:00-06:00",
@@ -57034,7 +57260,7 @@
   {
     "id": "066a147ce506",
     "title": "Multimedia Art with Diana",
-    "start": "2027-03-20T14:00:00-06:00",
+    "start": "2027-03-20T13:30:00-06:00",
     "end": "2027-03-20T15:30:00-06:00",
     "allDay": false,
     "venue": "Nampa Public Library",
@@ -57641,6 +57867,28 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/kids-fix-it-night-at-boise-bicycle-project/2027-03-25/",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "87af6deaf6cc",
+    "title": "First Robotics",
+    "start": "2027-03-26T08:00:00-06:00",
+    "end": "2027-03-27T08:00:00-06:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "community-civic",
+    "tags": [],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/first-robotics-2027",
+    "description": "Idaho Regionals Friday, March 26 - Saturday, March 27 at Ford Idaho Center",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/first-robotics-2027",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   },
@@ -60309,7 +60557,7 @@
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/heroes-a-video-game-symphony/",
+        "url": "https://boisemom.com/event/heroes-a-video-game-symphony-2/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       },
       {
@@ -61086,6 +61334,29 @@
     ]
   },
   {
+    "id": "d44d99028da6",
+    "title": "Great Idaho Gun Show",
+    "start": "2027-04-17T09:00:00-06:00",
+    "end": "2027-04-18T09:00:00-06:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "markets-shopping",
+    "tags": [
+      "home-show"
+    ],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/gigs-44",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/gigs-44",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
     "id": "a235bd4e582e",
     "title": "Guided Walk-In Capitol Tours",
     "start": "2027-04-17T10:30:00-06:00",
@@ -61159,6 +61430,28 @@
     ]
   },
   {
+    "id": "fa320214fcb8",
+    "title": "Multimedia Art with Diana",
+    "start": "2027-04-17T13:30:00-06:00",
+    "end": "2027-04-17T15:30:00-06:00",
+    "allDay": false,
+    "venue": "Nampa Public Library",
+    "venueKey": "nampa-public-library",
+    "city": "Nampa",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://nampalibrary.libcal.com/event/17360107",
+    "description": "Attention art enthusiasts and creative individuals! We invite you to attend our Multimedia Art Class, where you will have the opportunity to explore various mediums and techniques to unleash your creativity. Whether you’re passionate about painting, drawing with technical pens, creating collages,...",
+    "sources": [
+      {
+        "name": "nampa-public-library",
+        "url": "https://nampalibrary.libcal.com/event/17360107",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
     "id": "ad693e46c944",
     "title": "Dungeons & Dragons",
     "start": "2027-04-17T14:00:00-06:00",
@@ -61176,28 +61469,6 @@
       {
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/17286186",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "fa320214fcb8",
-    "title": "Multimedia Art with Diana",
-    "start": "2027-04-17T14:00:00-06:00",
-    "end": "2027-04-17T15:30:00-06:00",
-    "allDay": false,
-    "venue": "Nampa Public Library",
-    "venueKey": "nampa-public-library",
-    "city": "Nampa",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://nampalibrary.libcal.com/event/17360107",
-    "description": "Attention art enthusiasts and creative individuals! We invite you to attend our Multimedia Art Class, where you will have the opportunity to explore various mediums and techniques to unleash your creativity. Whether you’re passionate about painting, drawing with technical pens, creating collages,...",
-    "sources": [
-      {
-        "name": "nampa-public-library",
-        "url": "https://nampalibrary.libcal.com/event/17360107",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
@@ -62335,6 +62606,29 @@
     ]
   },
   {
+    "id": "3cf6c1a0e185",
+    "title": "BUNT.",
+    "start": "2027-04-25T19:00:00-06:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/bunt",
+    "description": "BUNT. Ford Idaho Center Arena April 25, 2027",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/bunt",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
     "id": "6acbba267ab9",
     "title": "LEGO© Club",
     "start": "2027-04-26T16:00:00-06:00",
@@ -63145,6 +63439,29 @@
         "name": "ticketmaster-metro",
         "url": "https://www.ticketmaster.com/event/Z7r9jZ1AAv__A",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "25c5a53bb6c9",
+    "title": "Third Day 30th Anniversary Tour",
+    "start": "2027-05-02T19:00:00-06:00",
+    "allDay": false,
+    "venue": "Ford Idaho Center Arena",
+    "venueKey": "ford-idaho-center-arena",
+    "city": "Nampa",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "XL",
+    "url": "https://www.fordidahocenter.com/events/detail/thirdday",
+    "description": "Third Day 30th Anniversary Tour with very special guest Zach Williams plus Scout and the Saints Ford Idaho Center Arena Sunday, May 2, 2027 Experience THIRD DAY, the iconic band that shaped Christian music, for the final leg of their 30th Anniversary Tour. Original members Mac Powell, Mark Lee, D...",
+    "sources": [
+      {
+        "name": "ford-idaho-center",
+        "url": "https://www.fordidahocenter.com/events/detail/thirdday",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   }
