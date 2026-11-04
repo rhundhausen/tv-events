@@ -1,79 +1,45 @@
 # tv-events
 
-Treasure Valley event aggregator. A nightly GitHub Actions workflow pulls events from venue, team, and community sources around Boise, Meridian, Nampa, Caldwell, and Eagle, and merges them into a single flat file. A Hugo site will publish the result; it is not built yet.
+tv-events is an automated reader of public event calendars in Idaho's Treasure Valley (Boise, Meridian, Nampa, Eagle, Caldwell, Garden City, Kuna, Star and nearby). It collects upcoming events into one non-commercial calendar. The public site is not live yet.
 
-## How it works
+This page is for site owners who see the tv-events bot in their logs.
 
-1. `ingestion/sources.json` lists each source and the adapter that reads it (ICS feed, The Events Calendar REST API, a ticketing API, or, for sites with no feed, a `robots.txt`-respecting scraper). [docs/ingest-report.md](docs/ingest-report.md) shows every source, its state, and the last run's results.
-2. `ingestion/scripts/Invoke-Ingest.ps1` runs every adapter, normalizes events to a common schema, dedupes across sources, and writes `data/events.json` (upcoming only). Past events roll into `data/archive/YYYY-MM.json`.
-3. The workflow commits any changes to `data/`.
+## Identifying the bot
 
-## Repo layout
+Requests come with this User-Agent:
 
-```
-.github/workflows/    ingest.yml (nightly ingest) and test.yml (Pester)
-data/                 the contract between ingestion and the website
-  events.json         upcoming events
-  archive/            past events by month
-  schema/             lookup tables: categories, tags, sizes, venue aliases
-ingestion/
-  scripts/            Invoke-Ingest, Publish-Data, Test-Sources, Test-Schema
-    adapters/         one script per adapter type
-    lib/              shared library
-  tests/              Pester tests and fixtures
-  schema/             JSON Schemas for events and sources
-  sources.json        every source: running, waiting, ideas, ruled out
-  .env.example.ps1    template for local API keys
-website/              Hugo site (not built yet)
-docs/                 schema, source reference, reports
-```
+    tv-events/1.0 (+https://github.com/rhundhausen/tv-events)
 
-## Running locally
+## How it behaves
 
-Requires PowerShell 7.4 or later and Pester 6.0.0. Run everything from the repo root.
+- Runs once a day, overnight in Boise (10:00 UTC).
+- Reads only public sources: calendar feeds (ICS), WordPress event APIs, the City of Boise events API, official APIs such as Ticketmaster's, and a few public calendar pages.
+- Calendar pages are checked against robots.txt on every run, including Crawl-delay, and a disallowed page is never requested.
+- Feeds and APIs are checked against the site's robots.txt and terms when they are added as a source.
+- Waits at least 1 second between paged requests.
+- Never logs in, never bypasses paywalls or bot protection, and never disguises itself as a browser.
 
-```powershell
-. ./ingestion/.env.ps1                                       # load API keys, see below
-./ingestion/scripts/Test-Sources.ps1                         # validate sources.json
-./ingestion/scripts/Test-Schema.ps1                          # validate stored events
-./ingestion/scripts/Invoke-Ingest.ps1 -NoWrite               # fetch and report, don't touch data/
-./ingestion/scripts/Invoke-Ingest.ps1 -NoWrite -Source idaho-steelheads   # one source
-Invoke-Pester -Path ./ingestion/tests                        # run the tests
-```
+## What it keeps
 
-API keys are read from environment variables only. Copy `ingestion/.env.example.ps1` to `ingestion/.env.ps1` and fill in real values. `.env.ps1` and `.secrets.local.md` are gitignored; this repo is public, so never commit them. Sources whose key is missing fail with a warning and the rest still run. Raw per-source output and `run.json` go to `out/`, which is also gitignored.
+For each event: title, date and time, venue, city, category, and a link back to the original listing. Descriptions are trimmed to a short summary.
 
-## Nightly workflow
+It does not keep images, full descriptions, ticket prices, or personal information. Every listing links back to your page, so readers end up on your site.
 
-- `.github/workflows/ingest.yml` runs at 10:00 UTC on the default branch. Run it by hand from Actions > ingest > Run workflow, with an optional `source` input to fetch one source. It uploads `out/` as an artifact, then `Publish-Data.ps1` commits `data/` as "tv-events bot" with `[skip ci]` and pushes to the branch the run started on. Only one ingest runs at a time.
-- `.github/workflows/test.yml` runs the Pester tests on every push and pull request and uploads `testResults.xml`.
+## Opting out
 
-Create these repository secrets (Settings > Secrets and variables > Actions). Only `TICKETMASTER_KEY` is needed today; the others are for sources that are built but not running yet. An unset secret reaches the scripts as empty.
+The surest way is to **open an issue** in this repository naming the site you'd like removed. Your site will be taken off the source list and its events removed within a few days.
 
-| Secret | Used by |
-| --- | --- |
-| `TICKETMASTER_KEY` | Ticketmaster (running) |
-| `BANDSINTOWN_APP_ID` | Bandsintown (needs an approved app id) |
-| `EVENTBRITE_TOKEN` | Eventbrite (disabled) |
-| `SEATGEEK_CLIENT_ID` | SeatGeek (disabled) |
-| `SONGKICK_API_KEY` | Songkick (disabled) |
+You can also block the bot in robots.txt:
 
-First-time setup in the GitHub UI is in [docs/github-setup.md](docs/github-setup.md).
+    User-agent: tv-events
+    Disallow: /
 
-## Adding a source
+This stops page reading on the next run. If your site is read through a calendar feed or API, please open an issue as well, so that source is removed too.
 
-Add an entry to `ingestion/sources.json`. An idea needs only a `displayName`; a source ingest runs needs a `name`, its adapter's fields, and `status: running`. If an existing adapter fits (most WordPress event calendars and ICS feeds do), that's all. See [docs/sources.md](docs/sources.md) for each adapter's fields and how to find a feed. Otherwise add a script under `ingestion/scripts/adapters/` that emits events in the [common schema](docs/schema.md), plus a fixture under `ingestion/tests/fixtures/`.
+## Contact
 
-Prefer official APIs and published feeds over scraping. Adapters identify themselves in the User-Agent and keep request rates low.
+Questions, corrections, or concerns: open an issue in this repository.
 
-## Status
+## For developers
 
-Phase 1: ingestion and the nightly workflow. The website and notifications come later.
-
-## Built with
-
-Designed and built with [Claude Code](https://claude.com/claude-code) and [Claude](https://claude.ai). The source list, architecture, and adapters were developed collaboratively; mistakes are mine.
-
-## License
-
-[Unlicense](LICENSE). Event data belongs to the venues and organizers who publish it.
+How the project is built, tested, and run: [docs/development.md](docs/development.md).
