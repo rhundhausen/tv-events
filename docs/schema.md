@@ -1,0 +1,101 @@
+# Event schema
+
+`data/events.json` is an array of events, sorted by `start` then `id`. `data/archive/YYYY-MM.json` uses the same shape for past events, filed by the month of `start`. The JSON Schema is `ingestion/schema/event.schema.json`.
+
+| Field | Type | Required | Notes |
+| --- | --- | --- | --- |
+| `id` | string | yes | Stable hash, see below |
+| `title` | string | yes | Plain text |
+| `start` | string | yes | ISO 8601 with the Boise offset, or `YYYY-MM-DD` when `allDay` is true |
+| `end` | string | no | Same format as `start`. Omitted when unknown. An all-day `end` is the last day, inclusive |
+| `allDay` | boolean | no | Defaults to false |
+| `venue` | string | yes | Display name |
+| `venueKey` | string | yes | Lowercase slug, for example `extramile-arena` |
+| `city` | string | no | `Boise`, `Meridian`, `Nampa`, `Caldwell`, `Eagle`, `Garden City`, `Kuna`, `Star`, or `Other` |
+| `category` | string | yes | One id from `data/schema/categories.json` |
+| `tags` | array | no | Zero or more ids from `data/schema/tags.json` |
+| `size` | string | no | Estimated crowd: `S`, `M`, `L`, or `XL`. A guess, see below |
+| `url` | string | yes | Canonical event page, from the source with the best `priority` |
+| `description` | string | no | Plain text, at most 300 characters |
+| `sources` | array | no | One entry per source that reported the event |
+
+Each `sources` entry has:
+
+| Field | Type | Notes |
+| --- | --- | --- |
+| `name` | string | Source name from `sources.json` |
+| `url` | string | The event page that source reported |
+| `fetchedAt` | string | UTC time this source first reported the event. It doesn't change on later runs, which keeps nightly diffs small |
+
+Stored data stays minimal because event data belongs to the publishers: no images, no full descriptions, and no ticket prices. A sentence containing a dollar amount is removed from `description`.
+
+## Categories and tags
+
+Every event has one primary category and any number of tags. Tags cross categories: a free family Christmas concert is `holiday-seasonal`, tagged `concert`, `free-admission`, and `family-friendly`.
+
+`data/schema/categories.json` holds the 12 categories. Their ids are also enums in both schemas, and a test keeps all three in step.
+
+`data/schema/tags.json` holds the tags:
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| `id` | yes | Slug. Keep the file sorted by id |
+| `label` | yes | Display name |
+| `category` | no | The category this tag points to. Leave it out for tags that describe the audience or the price, like `kids` |
+| `keywords` | yes | Words to find in event text. Lowercase with no punctuation, because text is normalized before matching: `new years eve`, not `New Year's Eve` |
+| `sourceLabels` | no | Publisher labels that mean this tag, matched against the whole label |
+
+How matching works:
+
+- A tag with a `category` needs a match in the title or the publisher's labels, such as tribe categories or Ticketmaster genres. Descriptions mention too many unrelated things to trust.
+- A tag with no `category` can also match the description.
+- By default an event takes its source's `category`. With `inferCategory` on the source, it takes the category its tags point to, and the source's `category` is the fallback.
+- When tags point to several categories, a title match beats a label. After that, the order in `Get-TvClassification` decides: holiday first, because a Christmas concert is a holiday event.
+
+Matching is by keyword, so some events are misfiled. An event whose title is only an artist's name gets no tag unless the publisher labels it.
+
+## Venues
+
+Sources spell a venue in different ways: Ticketmaster has `Neurolux Lounge` and `Knitting Factory - Boise`, and aggregators have `Extra Mile Arena`. Those would count as separate venues and block merging, so `data/schema/venue-aliases.json` maps each spelling to one `venueKey` and name. It applies to every source, before the `id` is computed. To fix a split venue, add a line there. No code changes are needed.
+
+## Size
+
+`size` is a best guess at the crowd, not a count. No source reports attendance.
+
+| Size | Crowd |
+| --- | --- |
+| `S` | Under 100 |
+| `M` | 100 to 999 |
+| `L` | 1,000 to 4,999 |
+| `XL` | 5,000 or more |
+
+The first rule that applies wins, using `data/schema/sizes.json`:
+
+1. A small-format tag in `smallTags`, like `workshop`, gives `S`, even at a big venue.
+2. The venue's usual crowd in `venues`. These come from approximate capacities.
+3. The largest size among the event's tags in `tags`.
+4. The category's usual size in `categories`.
+
+The venue rule treats every event there alike, so a women's basketball game at ExtraMile Arena gets the same `XL` as a sold-out concert. To improve a guess, edit `sizes.json`. No code changes are needed.
+
+## id
+
+The first 12 hex characters of:
+
+```
+sha1(lowercase(normalizedTitle + "|" + startDate + "|" + venueKey))
+```
+
+`normalizedTitle` is lowercase, with diacritics and apostrophes removed and other punctuation reduced to single spaces. `startDate` is the `YYYY-MM-DD` part of `start`.
+
+The hash uses the date, not the time, so two showings of one title at one venue on the same day share an id and merge into one event.
+
+## Duplicates
+
+Two events are the same if their ids match, or if their normalized titles have Jaro-Winkler similarity above 0.9, they start within 30 minutes, and `venueKey` matches. When merging, the longest description is kept, the url comes from the source with the lowest `priority`, and `sources` is unioned.
+
+## Lifecycle
+
+An event moves to the archive once it has ended, or once it has started if it has no `end`. An all-day event stays upcoming through its last day. Events starting more than 180 days out are left out until they're inside that window.
+
+A source that refreshes successfully replaces its stored upcoming events, so an event the publisher removed disappears. A source that fails keeps its stored events until a later run refreshes them.

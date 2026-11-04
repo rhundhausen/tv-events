@@ -1,0 +1,293 @@
+#Requires -Version 7.4
+<#
+.SYNOPSIS
+  Reads events from a site's HTML, for sites with no API or feed.
+.DESCRIPTION
+  Every request is checked against the site's robots.txt, and a disallowed request is never
+  sent. A 403 or a challenge page fails the source: this adapter never works around bot
+  controls. Requests are at least 1 second apart, or the site's Crawl-delay if longer. A
+  Crawl-delay over 60 seconds fails the source, so one site can't stall the run.
+
+  With scrapeMode jsonld, events come from schema.org data on the page, or on each page
+  linked by eventLinkPattern. With scrapeMode cards, they come from HTML blocks matched by
+  itemPattern, read with datePattern, titlePattern, and timePattern. With scrapeMode
+  calendarapp, they come from the event JSON that City of Boise calendar pages embed in the
+  data-config attribute of #calendar-app. See docs/sources.md.
+.PARAMETER Source
+  One entry from sources.json.
+.PARAMETER FetchedAt
+  UTC timestamp recorded on each event.
+.PARAMETER Response
+  HTML to parse instead of fetching: the list page, then each linked page in order. Used by tests.
+#>
+[CmdletBinding()]
+param(
+  [Parameter(Mandatory)][pscustomobject]$Source,
+  [Parameter(Mandatory)][string]$FetchedAt,
+  [string[]]$Response
+)
+
+. "$PSScriptRoot/../lib/Schema.ps1"
+. "$PSScriptRoot/../lib/Http.ps1"
+. "$PSScriptRoot/../lib/Scrape.ps1"
+
+$listUri = [uri]$Source.url
+$today = (ConvertTo-BoiseTime $FetchedAt).Substring(0, 10)
+$script:robots = ''
+$script:delay = 1
+$script:requests = 0
+
+if (-not $Response) {
+  try {
+    $script:robots = Invoke-TvRequest "$($listUri.GetLeftPart('Authority'))/robots.txt" -Raw
+  } catch {
+    # No robots.txt means no restrictions. Any other failure means we can't tell, so stop.
+    if ("$_" -notmatch 'HTTP 404') { throw }
+  }
+  $script:delay = [Math]::Max(1, [int](Get-TvRobotsGroup $script:robots).Delay)
+  if ($script:delay -gt 60) {
+    # Waiting would stall the nightly run, and ignoring the delay isn't an option.
+    throw "$($Source.name): robots.txt asks for $($script:delay) seconds between requests"
+  }
+}
+
+function Get-ScrapePage {
+  param([uri]$Uri)
+
+  $requested = $Uri.PathAndQuery
+  if (-not (Test-TvRobotsAllowed $script:robots $requested)) {
+    throw "$($Source.name): robots.txt disallows $requested"
+  }
+  if ($script:requests -gt 0) { Start-Sleep -Seconds $script:delay }
+  $script:requests++
+  Invoke-TvRequest $Uri.AbsoluteUri -Raw
+}
+
+function ConvertFrom-ScrapeDate {
+  # Returns the value in event form, or $null if it can't be read.
+  param([string]$Value)
+
+  if (-not $Value) { return $null }
+  if ($Value -match '^\d{4}-\d{2}-\d{2}$') { return @{ Value = $Value; AllDay = $true } }
+
+  $parsed = [DateTimeOffset]::MinValue
+  if (-not [DateTimeOffset]::TryParse($Value, [Globalization.CultureInfo]::InvariantCulture, [Globalization.DateTimeStyles]::None, [ref]$parsed)) {
+    return $null
+  }
+
+  if ($Source.localTimeAsUtc) {
+    # Modern Events Calendar writes Boise wall-clock time as if it were UTC, then shifts it.
+    $wall = [DateTime]::SpecifyKind($parsed.UtcDateTime, [DateTimeKind]::Unspecified)
+    return @{ Value = ConvertTo-BoiseTime $wall; AllDay = $false }
+  }
+  @{ Value = ConvertTo-BoiseTime $parsed; AllDay = $false }
+}
+
+function New-ScrapeEvent {
+  param(
+    [string]$Title,
+    [string]$Start,
+    [string]$End,
+    [bool]$AllDay,
+    [string]$VenueName,
+    [string]$CityText,
+    [string]$Url,
+    [string]$Description
+  )
+
+  $name = if ($Source.fixedVenue) { '' } else { ConvertTo-PlainText $VenueName }
+  $city = $null
+  foreach ($part in ((ConvertTo-PlainText $CityText) -split ',')) {
+    $city = Resolve-TvCity ($part -replace '\s+ID(\s+\d{5})?$', '')
+    if ($city) { break }
+  }
+
+  New-TvEvent -Title $Title -Start $Start -End $End -AllDay:$AllDay `
+    -Venue ($name ? $name : $Source.venue) -VenueKey ($name ? (Get-VenueKey $name) : $Source.venueKey) `
+    -City ($city ? $city : $Source.city) -Category $Source.category -InferCategory:([bool]$Source.inferCategory) `
+    -Url $Url -Description $Description -Sources @(@{ name = $Source.name; url = $Url; fetchedAt = $FetchedAt })
+}
+
+function Read-JsonLdEvent {
+  param(
+    [object]$Node,
+    [string]$PageUrl
+  )
+
+  if ("$($Node.eventStatus)" -match 'Cancelled') { return }
+
+  $start = ConvertFrom-ScrapeDate $Node.startDate
+  if (-not $start) { throw "unreadable startDate '$($Node.startDate)'" }
+  $end = ConvertFrom-ScrapeDate $Node.endDate
+  $endValue = if ($end -and $end.AllDay -eq $start.AllDay -and $end.Value -gt $start.Value) { $end.Value }
+
+  # Page titles often end with the site name, such as "Brewfest - Indian Creek Plaza".
+  $separators = "$([char]0x2013)$([char]0x2014)-"
+  $title = (ConvertTo-PlainText $Node.name) -replace " [$separators] $([regex]::Escape($Source.displayName))$", ''
+  $offers = @($Node.offers) | Select-Object -First 1
+  $url = if ($PageUrl) { $PageUrl } elseif ($Node.url) { $Node.url } elseif ($offers.url) { $offers.url } else { $Source.url }
+
+  $location = @($Node.location) | Select-Object -First 1
+  $address = $location.address
+  $cityText = if ($address -is [pscustomobject]) { "$($address.addressLocality)" } else { "$address" }
+
+  New-ScrapeEvent -Title $title -Start $start.Value -End $endValue -AllDay $start.AllDay `
+    -VenueName $location.name -CityText $cityText -Url ([System.Net.WebUtility]::HtmlDecode($url)) -Description $Node.description
+}
+
+function Read-JsonLdSource {
+  $html = if ($Response) { $Response[0] } else { Get-ScrapePage $listUri }
+
+  if (-not $Source.eventLinkPattern) {
+    foreach ($node in (Get-TvJsonLdEvent $html)) {
+      try {
+        Read-JsonLdEvent $node ''
+      } catch {
+        Write-Warning "$($Source.name): skipping '$($node.name)': $_"
+      }
+    }
+    return
+  }
+
+  $links = @([regex]::Matches($html, $Source.eventLinkPattern) | ForEach-Object Value | Select-Object -Unique | ForEach-Object {
+      [uri]::new($listUri, [System.Net.WebUtility]::HtmlDecode($_)).AbsoluteUri
+    } | Select-Object -Unique)
+
+  # Skip dates already gone when the link shows them, so a long archive isn't re-read nightly.
+  $links = @($links | Where-Object {
+      $date = [regex]::Match($_, '/(\d{4})/(\d{1,2})/(\d{1,2})/')
+      -not $date.Success -or ('{0}-{1:00}-{2:00}' -f $date.Groups[1].Value, [int]$date.Groups[2].Value, [int]$date.Groups[3].Value) -ge $today
+    })
+
+  $limit = if ($Source.maxPages) { [int]$Source.maxPages } else { 40 }
+  if ($links.Count -gt $limit) {
+    Write-Warning "$($Source.name): $($links.Count) event pages, reading the first $limit"
+    $links = @($links | Select-Object -First $limit)
+  }
+
+  for ($i = 0; $i -lt $links.Count; $i++) {
+    try {
+      $page = if ($Response) { $Response[$i + 1] } else { Get-ScrapePage ([uri]$links[$i]) }
+      foreach ($node in @(Get-TvJsonLdEvent "$page" | Select-Object -First 1)) {
+        Read-JsonLdEvent $node $links[$i]
+      }
+    } catch {
+      # A disallowed page stops the run for this source. A single bad page does not.
+      if ("$_" -match 'robots.txt disallows') { throw }
+      Write-Warning "$($Source.name): skipping $($links[$i]): $_"
+    }
+  }
+}
+
+function ConvertFrom-ClockTime {
+  # Reads a time such as "3:00 pm", "3pm", or "10:30 a.m." as minutes after midnight, or $null.
+  param([string]$Value)
+
+  $m = [regex]::Match("$Value", '(?i)^\s*(\d{1,2})(?::(\d{2}))?\s*([ap])\.?\s*m\.?\s*$')
+  if (-not $m.Success) { return $null }
+  $hour = [int]$m.Groups[1].Value % 12
+  if ($m.Groups[3].Value -match '(?i)p') { $hour += 12 }
+  $minute = if ($m.Groups[2].Success) { [int]$m.Groups[2].Value } else { 0 }
+  $hour * 60 + $minute
+}
+
+function Read-CardsSource {
+  # A card holds one or more dates (month and day, no year), a title, and a link. The default
+  # patterns read Boise Centre's markup; datePattern, titlePattern, and timePattern override them.
+  $html = if ($Response) { $Response[0] } else { Get-ScrapePage $listUri }
+  $invariant = [Globalization.CultureInfo]::InvariantCulture
+  $now = [DateTime]::ParseExact($today, 'yyyy-MM-dd', $invariant)
+  $datePattern = if ($Source.datePattern) { $Source.datePattern } else { '(?is)class="month">\s*(?<month>\w+)\s*<.*?class="day">\s*(?<day>\d+)\s*<' }
+  $titlePattern = if ($Source.titlePattern) { $Source.titlePattern } else { '(?is)<h[1-6][^>]*>(?<title>.*?)</h[1-6]>' }
+
+  foreach ($card in [regex]::Matches($html, $Source.itemPattern)) {
+    try {
+      $text = $card.Value
+      $title = ConvertTo-PlainText ([regex]::Match($text, $titlePattern).Groups['title'].Value)
+      if (-not $title) { throw 'no title on the card' }
+      $url = [regex]::Match($text, 'href="([^"]+)"').Groups[1].Value
+
+      # Cards show no year: a date more than 2 months back is next year's.
+      $dates = @([regex]::Matches($text, $datePattern) | ForEach-Object {
+          $monthText = $_.Groups['month'].Value
+          $month = $monthText.Substring(0, [Math]::Min(3, $monthText.Length))
+          $date = [DateTime]::ParseExact("$($now.Year) $month $([int]$_.Groups['day'].Value)", 'yyyy MMM d', $invariant)
+          if ($date -lt $now.AddMonths(-2)) { $date = $date.AddYears(1) }
+          $date.ToString('yyyy-MM-dd', $invariant)
+        })
+      if ($dates.Count -eq 0) { throw 'no date on the card' }
+
+      $link = if ($url) { [uri]::new($listUri, [System.Net.WebUtility]::HtmlDecode($url)).AbsoluteUri } else { $Source.url }
+
+      $time = if ($Source.timePattern) { [regex]::Match($text, $Source.timePattern) }
+      $startMinutes = if ($time -and $time.Success) { ConvertFrom-ClockTime $time.Groups['start'].Value }
+      if ($null -ne $startMinutes) {
+        # A timed event: the first date at the start time, ending the same day if an end time is given.
+        $day = [DateTime]::ParseExact($dates[0], 'yyyy-MM-dd', $invariant)
+        $start = ConvertTo-BoiseTime $day.AddMinutes($startMinutes)
+        $endMinutes = ConvertFrom-ClockTime $time.Groups['end'].Value
+        $end = if ($null -ne $endMinutes -and $endMinutes -gt $startMinutes) { ConvertTo-BoiseTime $day.AddMinutes($endMinutes) }
+        New-ScrapeEvent -Title $title -Start $start -End $end -AllDay $false -Url $link
+        continue
+      }
+
+      $end = if ($dates.Count -gt 1 -and $dates[1] -gt $dates[0]) { $dates[1] }
+      New-ScrapeEvent -Title $title -Start $dates[0] -End $end -AllDay $true -Url $link
+    } catch {
+      Write-Warning "$($Source.name): skipping a card: $_"
+    }
+  }
+}
+
+function ConvertFrom-CalendarAppTime {
+  # The calendar app writes Boise wall-clock time as "yyyy-MM-dd HH:mm", or a bare date for all-day.
+  param([string]$Value)
+
+  if ($Value -match '^\d{4}-\d{2}-\d{2}$') { return @{ Value = $Value; AllDay = $true } }
+  $parsed = [DateTime]::MinValue
+  if (-not [DateTime]::TryParseExact($Value, 'yyyy-MM-dd HH:mm', [Globalization.CultureInfo]::InvariantCulture, [Globalization.DateTimeStyles]::None, [ref]$parsed)) {
+    return $null
+  }
+  @{ Value = ConvertTo-BoiseTime $parsed; AllDay = $false }
+}
+
+function Read-CalendarAppSource {
+  # City of Boise calendar pages (boiseartsandhistory.org) embed every event as JSON in one attribute.
+  # Use start and end, not startDate: startDate carries a Z on some events and not others.
+  $html = if ($Response) { $Response[0] } else { Get-ScrapePage $listUri }
+  $match = [regex]::Match($html, '(?s)id="calendar-app"[^>]*?data-config=''(?<json>\{.*?\})''')
+  if (-not $match.Success) { throw "$($Source.name): no #calendar-app data-config on the page" }
+  $config = ConvertFrom-TvJson ([System.Net.WebUtility]::HtmlDecode($match.Groups['json'].Value))
+
+  foreach ($property in @($config.contentItems.PSObject.Properties)) {
+    $item = $property.Value.cal
+    try {
+      $start = ConvertFrom-CalendarAppTime $item.start
+      if (-not $start) { throw "unreadable start '$($item.start)'" }
+      $end = ConvertFrom-CalendarAppTime $item.end
+      $endValue = if ($end -and -not $item.hideEndDate -and $end.AllDay -eq $start.AllDay -and $end.Value -gt $start.Value) { $end.Value }
+
+      # The page keeps a year of history. Past events aren't news, and reading them would backfill the archive.
+      $lastDay = if ($endValue) { $endValue.Substring(0, 10) } else { $start.Value.Substring(0, 10) }
+      if ($lastDay -lt $today) { continue }
+
+      # Locations read "Spaulding Ranch (3805 N Cole Road)": the venue, then its address.
+      $venueName = ("$($item.location)" -replace '\s*\(.*\)\s*$', '').Trim()
+      if ($venueName -eq 'None') { $venueName = '' }
+      $title = if ($item.title) { $item.title } else { $item.name }
+      $url = if ($item.eventUrl) { [uri]::new($listUri, [System.Net.WebUtility]::HtmlDecode($item.eventUrl)).AbsoluteUri } else { $Source.url }
+
+      New-ScrapeEvent -Title $title -Start $start.Value -End $endValue -AllDay $start.AllDay `
+        -VenueName $venueName -CityText '' -Url $url -Description $item.bodyText
+    } catch {
+      Write-Warning "$($Source.name): skipping '$($item.title)': $_"
+    }
+  }
+}
+
+switch ($Source.scrapeMode) {
+  'jsonld' { Read-JsonLdSource }
+  'cards' { Read-CardsSource }
+  'calendarapp' { Read-CalendarAppSource }
+  default { throw "$($Source.name): unknown scrapeMode '$($Source.scrapeMode)'" }
+}

@@ -1,0 +1,1025 @@
+{
+  "_comment": "Every source: running, configured but waiting, ideas, and sites ruled out. Ingest runs only status running. Only displayName is required; check here before probing a site. See docs/sources.md.",
+  "sources": [
+    {
+      "name": "ninth-st-parallel",
+      "displayName": "9th St. Parallel at Knitting Factory",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "music",
+      "city": "Boise",
+      "venue": "9th St. Parallel at Knitting Factory",
+      "venueKey": "9th-st-parallel-at-knitting-factory",
+      "venueId": "KovZ917AJBe",
+      "notes": "venueId KovZ917AJBe, 14 upcoming on 2026-11-02. Separate from knitting-factory-boise. Configured 2026-11-03 as its own Ticketmaster venue source; ticketmaster-metro skips this venue id. ticketmaster-metro still returns some of its shows under another venue id (10 on 2026-11-03); they merge with this source, so nothing is duplicated"
+    },
+    {
+      "displayName": "Ada Community Library",
+      "status": "investigating",
+      "adapter": "tribe",
+      "notes": "Checked 2026-10-30 with the project User-Agent. Tribe endpoint responds, but with zero upcoming events. Past events not checked. ICS not tried"
+    },
+    {
+      "displayName": "Air shows",
+      "category": "festivals",
+      "notes": "Gowen Thunder (Idaho Air National Guard, Boise, not every year) and Warhawk Air Museum events in Nampa"
+    },
+    {
+      "name": "albertsons-stadium",
+      "displayName": "Albertsons Stadium",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "sports",
+      "city": "Boise",
+      "venue": "Albertsons Stadium",
+      "venueKey": "albertsons-stadium",
+      "venueId": "KovZpZAEeAIA",
+      "excludeTitlePattern": "(?i)season ticket|waitlist|parking|deposit|^idaho steelheads vs|^boise state (football|men's basketball|women's basketball|broncos)",
+      "notes": "venueId KovZpZAEeAIA, 5 upcoming on 2026-11-02. Football games already come from boise-state-athletics; check for duplicates before adding. Configured 2026-11-03 as its own Ticketmaster venue source; ticketmaster-metro skips this venue id. Skips Boise State games, which boise-state-athletics covers"
+    },
+    {
+      "displayName": "AXS",
+      "status": "ruled-out",
+      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests"
+    },
+    {
+      "displayName": "Ballet Idaho",
+      "status": "investigating",
+      "notes": "Checked 2026-10-30 with the project User-Agent. No tribe route and no schema.org Event data. ICS not tried"
+    },
+    {
+      "displayName": "Bandsintown",
+      "status": "ready",
+      "adapter": "bandsintown",
+      "url": "https://rest.bandsintown.com",
+      "notes": "Adapter built, never run live. Needs an approved BANDSINTOWN_APP_ID; app_id=tv-events got HTTP 403. Keyed by artist, so it cannot list a venue's shows. Knitting Factory and Neurolux come through Ticketmaster instead"
+    },
+    {
+      "displayName": "Block 22 Hotels",
+      "status": "investigating",
+      "url": "https://block22llc.com/boise-events-calendar.html",
+      "robotsChecked": "2026-11-03",
+      "city": "Boise",
+      "notes": "Hotel group page titled Boise Events Calendar. Static Webflow page with no event listings in the HTML (checked 2026-11-03); events may load from js/block22-hotels.js, not checked"
+    },
+    {
+      "name": "bogus-basin",
+      "displayName": "Bogus Basin",
+      "status": "running",
+      "adapter": "tribe",
+      "url": "https://bogusbasin.org/wp-json/tribe/events/v1/events",
+      "category": "outdoors-recreation",
+      "city": "Boise",
+      "venue": "Bogus Basin",
+      "venueKey": "bogus-basin",
+      "priority": 20,
+      "notes": "Events usually have no venue object, so the fallback venue applies"
+    },
+    {
+      "displayName": "Boise Art Museum",
+      "status": "investigating",
+      "notes": "Checked 2026-10-30 with the project User-Agent. No tribe route and no schema.org Event data. ICS not tried"
+    },
+    {
+      "name": "boise-arts-history",
+      "displayName": "Boise Arts and History",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://www.boiseartsandhistory.org/calendar/",
+      "robotsChecked": "2026-11-03",
+      "category": "arts-culture",
+      "inferCategory": true,
+      "city": "Boise",
+      "venue": "Boise Arts and History",
+      "venueKey": "boise-arts-history",
+      "organizer": "City of Boise Department of Arts and History",
+      "priority": 20,
+      "scrapeMode": "calendarapp",
+      "notes": "The calendar page embeds every event as JSON in the data-config attribute of #calendar-app: 204 events on 2026-11-03, 19 upcoming, across the Boise Arts & History, James Castle House, and Erma Hayman House calendars. Fields include title, startDate, endDate, location, eventUrl, category, cost. startDate writes local time with a Z suffix, like localTimeAsUtc. scrape has no mode for embedded JSON yet. The page is 1.8 MB. Terms not read. Configured 2026-11-03 with scrapeMode calendarapp, which reads the start and end fields (Boise wall-clock time) and skips past events"
+    },
+    {
+      "displayName": "Boise Bucket List",
+      "url": "https://boise-bucket-list.ck.page/products/monthly-list-of-events",
+      "notes": "Paid monthly events list sold through ConvertKit. Probably not a feed; read terms"
+    },
+    {
+      "name": "boise-centre",
+      "displayName": "Boise Centre",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://www.boisecentre.com/attend/events/",
+      "category": "community-civic",
+      "inferCategory": true,
+      "city": "Boise",
+      "venue": "Boise Centre",
+      "venueKey": "boise-centre",
+      "priority": 20,
+      "fixedVenue": true,
+      "scrapeMode": "cards",
+      "itemPattern": "(?is)<article class=\"event-card public\">.*?</article>",
+      "notes": "Public events only. The page also lists conventions, meetings, and banquets, which are skipped"
+    },
+    {
+      "displayName": "Boise Contemporary Theater",
+      "status": "investigating",
+      "notes": "Checked 2026-10-30 with the project User-Agent. No tribe route and no schema.org Event data. ICS not tried"
+    },
+    {
+      "displayName": "Boise Depot",
+      "city": "Boise",
+      "venue": "Boise Depot",
+      "notes": "Dictated as 'the train depot'. City-owned; events may come through Boise Parks and Recreation"
+    },
+    {
+      "displayName": "Boise Event Center (boiseeventcenter.com)",
+      "url": "https://boiseeventcenter.com/blog/idaho-fall-2026-concerts-tickets-show-guide-ones-to-watch-boise",
+      "notes": "From a dictated link to a fall 2026 concert guide. Unknown site; read terms before probing"
+    },
+    {
+      "displayName": "Boise Hawks",
+      "status": "investigating",
+      "category": "sports",
+      "notes": "Checked 2026-10-30 with the project User-Agent. No tribe endpoint. ICS not tried"
+    },
+    {
+      "displayName": "Boise Little Theater",
+      "status": "investigating",
+      "category": "performing-arts",
+      "notes": "Checked 2026-10-30 with the project User-Agent. No tribe route and no schema.org Event data. Ticketmaster metro covers it"
+    },
+    {
+      "displayName": "Boise Metro Chamber",
+      "status": "investigating",
+      "url": "https://web.boisechamber.org/atlas/calendar",
+      "robotsChecked": "2026-11-03",
+      "category": "learning-business",
+      "city": "Boise",
+      "notes": "GrowthZone Atlas calendar, a JavaScript app; the HTML has no events (checked 2026-11-03). robots.txt allows it with a 10 second crawl delay. GrowthZone may offer an ICS or RSS export; none is linked from the page"
+    },
+    {
+      "name": "boise-mom",
+      "displayName": "Boise Mom",
+      "status": "running",
+      "adapter": "tribe",
+      "url": "https://boisemom.com/wp-json/tribe/events/v1/events",
+      "category": "community-civic",
+      "inferCategory": true,
+      "city": "Other",
+      "venue": "Various Treasure Valley locations",
+      "venueKey": "various-treasure-valley",
+      "priority": 80,
+      "notes": "Aggregator, about 1,250 upcoming events, 25 pages at 50 per page. Many events have no venue"
+    },
+    {
+      "displayName": "Boise Music Festival",
+      "status": "investigating",
+      "category": "music",
+      "notes": "Checked 2026-10-30 with the project User-Agent. /wp-json/ returns an HTML page, not JSON. ICS not tried"
+    },
+    {
+      "displayName": "Boise Parks and Recreation",
+      "category": "outdoors-recreation",
+      "city": "Boise",
+      "notes": "Dictated as 'Boise city park schedule' plus Ann Morrison Park, Julia Davis Park, and Camel's Back Park (dictated 'Camelback'). Parks don't publish their own calendars; events there come from the department or from organizers"
+    },
+    {
+      "displayName": "Boise Philharmonic",
+      "status": "ruled-out",
+      "reason": "HTTP 401 on 2026-10-30. The REST API requires login"
+    },
+    {
+      "name": "boise-public-library",
+      "displayName": "Boise Public Library",
+      "status": "running",
+      "adapter": "ics",
+      "url": "https://boisepubliclibrary.libcal.com/ical_subscribe.php?src=p&cid=12885",
+      "robotsChecked": "2026-11-03",
+      "category": "learning-business",
+      "inferCategory": true,
+      "city": "Boise",
+      "venue": "Boise Public Library",
+      "venueKey": "boise-public-library",
+      "priority": 30,
+      "fixedVenue": true,
+      "notes": "LibCal ICS feed, calendar id 12885 (found on boisepubliclibrary.org on 2026-11-03). It returned 500 events dated 2026-10-03 to 2026-11-28, so the feed seems capped at 500 and reaches about 8 weeks out. robots.txt allows it with a 10 second crawl delay. Mostly storytimes and recurring programs; consider a title filter. Terms not read. Configured 2026-11-03. fixedVenue, because the feed names rooms (Catalpa Room, Sycamore Room) rather than the branch"
+    },
+    {
+      "name": "boise-state-arts",
+      "displayName": "Boise State Arts and Entertainment",
+      "status": "running",
+      "adapter": "ics",
+      "url": "https://events.boisestate.edu/calendar.ics?event_types%5B%5D=47234878761814",
+      "category": "arts-culture",
+      "inferCategory": true,
+      "city": "Boise",
+      "venue": "Boise State University",
+      "venueKey": "boise-state-university",
+      "priority": 30,
+      "notes": "Campus Localist calendar limited to the Arts and Entertainment event type. Includes the Morrison Center"
+    },
+    {
+      "name": "boise-state-athletics",
+      "displayName": "Boise State Athletics",
+      "status": "running",
+      "adapter": "ics",
+      "url": "https://broncosports.com/calendar.ashx/calendar.ics",
+      "category": "sports",
+      "city": "Boise",
+      "venue": "Boise State University",
+      "venueKey": "boise-state-university",
+      "priority": 20,
+      "locationFilter": "Boise|Caldwell|Meridian|Nampa",
+      "notes": "All sports, per-event LOCATION. The filter removes away games. Includes dates years out"
+    },
+    {
+      "displayName": "Boise State Public Radio",
+      "status": "investigating",
+      "url": "https://www.boisestatepublicradio.org/community-calendar-search",
+      "robotsChecked": "2026-11-03",
+      "notes": "Community calendar is an evvnt widget; the HTML has no events (checked 2026-11-03). Same vendor as the Idaho Press calendar. evvnt has a publisher API that needs a key"
+    },
+    {
+      "displayName": "Boise Towne Square",
+      "category": "markets-shopping",
+      "city": "Boise",
+      "venue": "Boise Towne Square",
+      "notes": "Dictated as 'the town Square mall'"
+    },
+    {
+      "displayName": "Boise Weekly",
+      "status": "investigating",
+      "url": "https://www.idahopress.com/boiseweekly/local-events/",
+      "robotsChecked": "2026-11-03",
+      "organizer": "Idaho Press",
+      "notes": "The calendar now lives on idahopress.com (BLOX CMS). Events come from an evvnt widget (partner IDAHOPRESS) and are not in the HTML. The page links its own RSS (/search/?f=rss&t=article&c=boiseweekly/local-events), which robots.txt allows, but it returned HTTP 429 on 2026-11-03; retry once on another day. evvnt has a publisher API that needs a key"
+    },
+    {
+      "displayName": "Boise With Kids",
+      "status": "investigating",
+      "url": "https://boisewithkids.com/",
+      "robotsChecked": "2026-11-03",
+      "city": "Boise",
+      "notes": "WordPress with the Simple Calendar plugin, which renders a Google Calendar on the server. The Google calendar id is not in the page, so its public ICS cannot be found; ask the site owner. Homepage showed 4 events on 2026-11-03. Family events; Boise Mom covers similar ground"
+    },
+    {
+      "name": "boise-id-events",
+      "displayName": "boise-id.events",
+      "status": "ready",
+      "adapter": "scrape",
+      "url": "https://boise-id.events/calendar",
+      "robotsChecked": "2026-11-03",
+      "category": "music",
+      "inferCategory": true,
+      "city": "Boise",
+      "venue": "Various Treasure Valley locations",
+      "venueKey": "various-treasure-valley",
+      "priority": 90,
+      "scrapeMode": "jsonld",
+      "notes": "Calendar page carries schema.org JSON-LD (15 MusicEvent and SportsEvent items on 2026-11-03), so scrape jsonld mode could read it. An aggregator of unknown ownership; read /about/ and its terms first. Its events likely duplicate Ticketmaster and team feeds. Published by Live Entertainment Guide LLC (Live Entertainment Network), per /about/ on 2026-11-03: a network of ticket-listing sites with VIP ticket pages. Configured but left at ready, not running: its events repeat Ticketmaster and team feeds, and its links lead to ticket listings rather than the organizers. Run it by hand with -Source boise-id-events"
+    },
+    {
+      "displayName": "BoiseDev",
+      "status": "ruled-out",
+      "reason": "HTTP 403 with a Cloudflare challenge page on 2026-11-03, although robots.txt allows /calendar/",
+      "url": "https://boisedev.com/calendar/",
+      "robotsChecked": "2026-11-03"
+    },
+    {
+      "displayName": "Brown Paper Tickets",
+      "status": "ruled-out",
+      "reason": "HTTP 503 on 2026-10-30. Refuses automated requests"
+    },
+    {
+      "displayName": "Caldwell Night Rodeo",
+      "category": "sports",
+      "city": "Caldwell",
+      "notes": "Dictated as 'rodeos in the area'. August"
+    },
+    {
+      "displayName": "Chambers of commerce",
+      "category": "learning-business",
+      "notes": "Boise Metro Chamber has its own entry. Meridian Chamber, Nampa Chamber, and Caldwell Chamber each have their own site. Many chambers use GrowthZone (ChamberMaster)"
+    },
+    {
+      "name": "city-of-boise",
+      "displayName": "City of Boise",
+      "status": "running",
+      "adapter": "cityofboise",
+      "url": "https://www.cityofboise.org/umbraco/api/events/events",
+      "robotsChecked": "2026-11-03",
+      "category": "community-civic",
+      "inferCategory": true,
+      "city": "Boise",
+      "venue": "Boise City Hall",
+      "venueKey": "boise-city-hall",
+      "priority": 20,
+      "notes": "Site: https://www.cityofboise.org/events. robots.txt allows /events and /umbraco/api/events/events (checked 2026-11-03). The page is a Vue app (eventCollection.min.js) that pages through that JSON API, 10 events a page; the cityofboise adapter makes the same requests. 85 upcoming on 2026-11-03, including public meetings (City Council, commissions). Cancelled events are listed with a Canceled prefix and skipped. Terms not read. Earlier note: Checked 2026-11-03. robots.txt allows /events, but it is a Vue app (eventCollection.min.js) that loads event cards from an API; the HTML has none. Same platform as Boise Arts and History, which embeds its events as JSON. The script's API endpoint was not looked up"
+    },
+    {
+      "displayName": "City of Eagle",
+      "status": "ruled-out",
+      "reason": "robots.txt disallows /common/modules/icalendar/ and asks for a 10 second crawl delay",
+      "robotsChecked": "2026-10-30"
+    },
+    {
+      "displayName": "City of Meridian",
+      "status": "ruled-out",
+      "reason": "HTTP 403 with a Cloudflare challenge page on 2026-10-30"
+    },
+    {
+      "displayName": "City of Nampa",
+      "status": "ruled-out",
+      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests"
+    },
+    {
+      "name": "college-of-idaho-athletics",
+      "displayName": "College of Idaho Athletics",
+      "status": "running",
+      "adapter": "ics",
+      "url": "https://www.yoteathletics.com/calendar.ashx/calendar.ics",
+      "category": "sports",
+      "city": "Caldwell",
+      "venue": "College of Idaho",
+      "venueKey": "college-of-idaho",
+      "priority": 20,
+      "locationFilter": "Boise|Caldwell|Meridian|Nampa",
+      "notes": "All sports, per-event LOCATION. The filter removes away games"
+    },
+    {
+      "displayName": "Danielle Hahn Real Estate",
+      "notes": "Silvercreek Realty agent who posts a 'Treasure Valley this week + weekend' graphic (seen for Oct 8 to 10, 2026). An image, not a feed; useful as a cross-check"
+    },
+    {
+      "name": "danny-peterson-theatre",
+      "displayName": "Danny Peterson Theatre",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "performing-arts",
+      "city": "Boise",
+      "venue": "Danny Peterson Theatre",
+      "venueKey": "danny-peterson-theatre",
+      "venueId": "KovZpZAE7aFA",
+      "notes": "venueId KovZpZAE7aFA, 17 upcoming on 2026-11-02. Boise State campus; boise-state-arts may already cover these. Configured 2026-11-03 as its own Ticketmaster venue source; ticketmaster-metro skips this venue id"
+    },
+    {
+      "displayName": "Discovery Center of Idaho",
+      "status": "investigating",
+      "notes": "Checked 2026-10-30 with the project User-Agent. No schema.org Event data on event pages, so scrape cannot read them reliably. Boise Mom lists many of their events"
+    },
+    {
+      "displayName": "Downtown Boise Association",
+      "status": "investigating",
+      "url": "https://downtownboise.org/events",
+      "robotsChecked": "2026-11-03",
+      "notes": "Checked 2026-10-30 with the project User-Agent: no schema.org Event data on event pages. Rechecked /events/events-calendar on 2026-11-03: robots.txt allows it, but the calendar renders with JavaScript (ctycms platform) and the HTML has no events or feed links. Boise Mom lists many of their events"
+    },
+    {
+      "name": "egyptian-theatre",
+      "displayName": "Egyptian Theatre",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "performing-arts",
+      "city": "Boise",
+      "venue": "The Egyptian Theatre",
+      "venueKey": "the-egyptian-theatre",
+      "venueId": "KovZpZAEeAtA",
+      "notes": "venueId KovZpZAEeAtA, 9 upcoming on 2026-11-02. The venue site loads events with JavaScript, so scrape cannot read it. Ticketmaster metro covers it today. Configured 2026-11-03 as its own Ticketmaster venue source; ticketmaster-metro skips this venue id"
+    },
+    {
+      "displayName": "Etix",
+      "status": "ruled-out",
+      "reason": "HTTP 202 with an empty page on 2026-10-30, which looks like a bot queue"
+    },
+    {
+      "name": "eventbrite",
+      "displayName": "Eventbrite",
+      "status": "ready",
+      "adapter": "eventbrite",
+      "url": "https://www.eventbriteapi.com/v3",
+      "category": "community-civic",
+      "inferCategory": true,
+      "city": "Other",
+      "venue": "Various Treasure Valley locations",
+      "venueKey": "various-treasure-valley",
+      "priority": 70,
+      "organizationIds": [],
+      "venueIds": [],
+      "notes": "Adapter built, never run live. Needs EVENTBRITE_TOKEN and a hand-kept list of organization or venue ids, because location search was removed in 2019. Adapter built, never run live. Needs EVENTBRITE_TOKEN and a hand-kept list of organization or venue ids, because location search was removed on 2019-12-12. The website's Boise search pages (/d/id--boise/events/) are allowed by robots.txt (checked 2026-11-03) but were not fetched; the API is the route"
+    },
+    {
+      "name": "expo-idaho",
+      "displayName": "Expo Idaho",
+      "status": "running",
+      "adapter": "tribe",
+      "url": "https://www.expoidaho.com/wp-json/tribe/events/v1/events",
+      "category": "markets-shopping",
+      "inferCategory": true,
+      "city": "Garden City",
+      "venue": "Expo Idaho",
+      "venueKey": "expo-idaho",
+      "priority": 20,
+      "fixedVenue": true,
+      "notes": "Official calendar for the fairgrounds, mostly consumer shows and markets. Events list individual buildings as venues, so fixedVenue keeps them as Expo Idaho"
+    },
+    {
+      "name": "extramile-arena",
+      "displayName": "ExtraMile Arena",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "performing-arts",
+      "city": "Boise",
+      "venue": "ExtraMile Arena",
+      "venueKey": "extramile-arena",
+      "venueId": "KovZpZAEetIA",
+      "notes": "Category comes from the Ticketmaster segment, with performing-arts for ice shows and other unmapped segments. Boise State basketball also appears in boise-state-athletics"
+    },
+    {
+      "displayName": "Facebook pages",
+      "notes": "Facebook's Events API for pages was restricted in 2018, and the site requires login, so scraping it is out under the project rules. Needs a different route, like an organizer's own site. Suggested 2026-11-03: the This Is Boise page (facebook.com/ThisIsBoise), not probed; This Is Boise has its own entry"
+    },
+    {
+      "displayName": "Firebird Raceway",
+      "category": "sports",
+      "city": "Eagle",
+      "venue": "Firebird Raceway",
+      "notes": "Drag racing season schedule"
+    },
+    {
+      "name": "ford-idaho-center",
+      "displayName": "Ford Idaho Center",
+      "status": "running",
+      "adapter": "rss",
+      "url": "https://www.fordidahocenter.com/events/rss",
+      "category": "community-civic",
+      "inferCategory": true,
+      "city": "Nampa",
+      "venue": "Ford Idaho Center Arena",
+      "venueKey": "ford-idaho-center-arena",
+      "venuePrefix": "Ford Idaho Center",
+      "priority": 20,
+      "robotsChecked": "2026-11-03",
+      "notes": "The venue's own RSS feed (carbonhouse, RSS event module) at /events/rss: all 26 listed events with start and end times in UTC, the building (Arena, Amphitheater, Horse Park & Sports Center) and a type. Adds what Ticketmaster doesn't sell: trade shows, gun shows, horse shows, state tournaments, the Snake River Stampede. robots.txt allows everything. The event-listing page shows the same 26, 12 at a time via /events/events_ajax/{offset}. Ticketmaster's ford-idaho-center-arena and ford-idaho-center-amphitheater stay running and merge with it"
+    },
+    {
+      "name": "ford-idaho-center-amphitheater",
+      "displayName": "Ford Idaho Center Amphitheater",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "music",
+      "city": "Nampa",
+      "venue": "Ford Idaho Center Amphitheater",
+      "venueKey": "ford-idaho-center-amphitheater",
+      "venueId": "KovZpZAIJ6lA",
+      "notes": "venueId KovZpZAIJ6lA, 2 upcoming on 2026-11-02. Separate from ford-idaho-center-arena. Configured 2026-11-03 as its own Ticketmaster venue source; ticketmaster-metro skips this venue id"
+    },
+    {
+      "name": "ford-idaho-center-arena",
+      "displayName": "Ford Idaho Center Arena",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "performing-arts",
+      "city": "Nampa",
+      "venue": "Ford Idaho Center Arena",
+      "venueKey": "ford-idaho-center-arena",
+      "venueId": "KovZpZAIln7A",
+      "notes": "The amphitheater is a separate venue id, KovZpZAIJ6lA"
+    },
+    {
+      "displayName": "Front Street Fights",
+      "category": "sports",
+      "notes": "Boise MMA promotion. Also covers the 'boxing matches' and 'MMA' notes; other fight promoters unknown"
+    },
+    {
+      "displayName": "Gun shows",
+      "category": "markets-shopping",
+      "notes": "Shows at Expo Idaho already come from expo-idaho. Other promoters and venues unknown"
+    },
+    {
+      "displayName": "Hampton Inn and Suites Boise Downtown",
+      "city": "Boise",
+      "notes": "Public events at the hotel. Boise for now; exact location to confirm"
+    },
+    {
+      "displayName": "Hello Meridian",
+      "status": "investigating",
+      "url": "https://www.hellomeridian.com/calendar",
+      "robotsChecked": "2026-11-03",
+      "city": "Meridian",
+      "notes": "Squarespace community calendar that mixes many sources (Nampa library, Boise State football, local shops). robots.txt disallows the format=ical and format=json URLs. The list page has no schema.org data; event pages not checked. Mostly duplicates other sources, but useful for finding new ones"
+    },
+    {
+      "displayName": "Home2 Suites by Hilton",
+      "city": "Boise",
+      "notes": "Dictated as 'home to'. Public events at the hotel. Boise for now; exact location to confirm"
+    },
+    {
+      "displayName": "Hotel 43",
+      "city": "Boise",
+      "notes": "Public events at the hotel"
+    },
+    {
+      "displayName": "Hyde Park",
+      "city": "Boise",
+      "notes": "A North End neighborhood, not a venue. Hyde Park Street Fair is run by the North End Neighborhood Association"
+    },
+    {
+      "name": "idaho-botanical-garden",
+      "displayName": "Idaho Botanical Garden",
+      "status": "running",
+      "adapter": "tribe",
+      "url": "https://www.idahobotanicalgarden.org/wp-json/tribe/events/v1/events",
+      "category": "outdoors-recreation",
+      "inferCategory": true,
+      "city": "Boise",
+      "venue": "Idaho Botanical Garden",
+      "venueKey": "idaho-botanical-garden",
+      "priority": 20,
+      "notes": "Must use the www host. Seasonal: 19 events in 2026, none upcoming as of 2026-10-30"
+    },
+    {
+      "name": "idaho-central-arena",
+      "displayName": "Idaho Central Arena",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "sports",
+      "city": "Boise",
+      "venue": "Idaho Central Arena",
+      "venueKey": "idaho-central-arena",
+      "venueId": "KovZ917ACmV",
+      "excludeTitlePattern": "(?i)season ticket|waitlist|parking|deposit|^idaho steelheads vs|^boise state (football|men's basketball|women's basketball|broncos)",
+      "notes": "venueId KovZ917ACmV, 38 upcoming on 2026-11-02. Steelheads home games already come from idaho-steelheads; use excludeTitlePattern or expect duplicates. Configured 2026-11-03 as its own Ticketmaster venue source; ticketmaster-metro skips this venue id. Skips Steelheads home games, which idaho-steelheads covers"
+    },
+    {
+      "displayName": "Idaho Conservation League",
+      "status": "investigating",
+      "notes": "Checked 2026-10-30 with the project User-Agent. No tribe endpoint. ICS not tried"
+    },
+    {
+      "displayName": "Idaho Department of Fish and Game",
+      "category": "outdoors-recreation",
+      "notes": "Dictated as 'fishing game schedule'. Hunter education classes, clinics, and public meetings"
+    },
+    {
+      "displayName": "Idaho Humanities Council",
+      "status": "investigating",
+      "notes": "Checked 2026-10-30 with the project User-Agent. No tribe route and no schema.org Event data. ICS not tried"
+    },
+    {
+      "name": "idaho-shakespeare-festival",
+      "displayName": "Idaho Shakespeare Festival",
+      "status": "running",
+      "adapter": "tribe",
+      "url": "https://idahoshakespeare.org/wp-json/tribe/events/v1/events",
+      "category": "performing-arts",
+      "city": "Boise",
+      "venue": "Idaho Shakespeare Festival Amphitheater",
+      "venueKey": "idaho-shakespeare-festival-amphitheater",
+      "priority": 20,
+      "notes": "Seasonal: 96 events in 2026, none upcoming as of 2026-10-30"
+    },
+    {
+      "displayName": "Idaho State Capitol",
+      "category": "community-civic",
+      "city": "Boise",
+      "notes": "Dictated as 'protests at the capitol'. Public events on the Capitol grounds come from the state (permits) or from organizers, not from one calendar"
+    },
+    {
+      "name": "idaho-history",
+      "displayName": "Idaho State Historical Society",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://history.idaho.gov/events/",
+      "category": "arts-culture",
+      "inferCategory": true,
+      "city": "Boise",
+      "venue": "Idaho State Museum",
+      "venueKey": "idaho-state-museum",
+      "priority": 20,
+      "scrapeMode": "jsonld",
+      "localTimeAsUtc": true,
+      "notes": "Idaho State Museum and Old Idaho Penitentiary. Modern Events Calendar, so times need localTimeAsUtc"
+    },
+    {
+      "displayName": "Idaho Statesman",
+      "status": "ruled-out",
+      "reason": "robots.txt timed out twice on 2026-11-03 (30 seconds each). RFC 9309 says to treat an unreachable robots.txt as disallowing everything",
+      "url": "https://www.idahostatesman.com/events",
+      "notes": "Events calendar on idahostatesman.com. McClatchy; read terms before probing"
+    },
+    {
+      "name": "idaho-steelheads",
+      "displayName": "Idaho Steelheads",
+      "status": "running",
+      "adapter": "ics",
+      "url": "https://idahosteelheads.com/schedule-home.ics",
+      "category": "sports",
+      "city": "Boise",
+      "venue": "Idaho Central Arena",
+      "venueKey": "idaho-central-arena",
+      "priority": 20,
+      "notes": "Official home games feed, linked from idahosteelheads.com/en/schedule"
+    },
+    {
+      "name": "indian-creek-plaza",
+      "displayName": "Indian Creek Plaza",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://indiancreekplaza.com/calendar",
+      "category": "community-civic",
+      "inferCategory": true,
+      "city": "Caldwell",
+      "venue": "Indian Creek Plaza",
+      "venueKey": "indian-creek-plaza",
+      "priority": 20,
+      "fixedVenue": true,
+      "scrapeMode": "jsonld",
+      "eventLinkPattern": "/calendar/\\d{4}/\\d{1,2}/\\d{1,2}/[^\"#?]+",
+      "notes": "Squarespace. robots.txt disallows format=ical and format=json, so this reads each event page"
+    },
+    {
+      "name": "jump-boise",
+      "displayName": "JUMP Boise",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://jumpboise.org/event-listings",
+      "robotsChecked": "2026-11-03",
+      "category": "community-civic",
+      "inferCategory": true,
+      "city": "Boise",
+      "venue": "JUMP",
+      "venueKey": "jump",
+      "priority": 20,
+      "fixedVenue": true,
+      "scrapeMode": "cards",
+      "itemPattern": "(?s)class=\"event flex.*?View Details</a>",
+      "datePattern": "(?s)<p class=\"text-xs\">(?<month>[A-Za-z]+)</p>\\s*<p class=\"relative\">\\s*(?<day>\\d{1,2})\\s*</p>",
+      "titlePattern": "(?s)<p class=\"font-bold text-black\">(?<title>.*?)</p>",
+      "timePattern": "Time:\\s*(?<start>\\d{1,2}(?::\\d{2})?\\s*[ap]\\.?m\\.?)(?:\\s*-\\s*(?<end>\\d{1,2}(?::\\d{2})?\\s*[ap]\\.?m\\.?))?",
+      "notes": "Dictated as 'jump'. Jack's Urban Meeting Place, downtown Boise. /event-listings had 46 server-rendered event cards on 2026-11-03 (month, day, title, time, link to /events/<slug>), no year and no schema.org data, so it needs a cards itemPattern. Many are weekly open studios; consider filtering. Terms not read. Configured 2026-11-03 with cards mode and JUMP-specific date, title, and time patterns"
+    },
+    {
+      "name": "knitting-factory-boise",
+      "displayName": "Knitting Factory Boise",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "music",
+      "city": "Boise",
+      "venue": "Knitting Factory",
+      "venueKey": "knitting-factory",
+      "venueId": "KovZ917AJZU",
+      "notes": "Ticketmaster lists some shows twice under different names. The 9th St. Parallel room is a separate venue id, KovZ917AJBe"
+    },
+    {
+      "displayName": "KTVB",
+      "status": "ruled-out",
+      "reason": "Not an events calendar. /community/ lists news stories, with an RSS feed of articles (feeds/syndication/rss/news/community), checked 2026-11-03",
+      "url": "https://www.ktvb.com/community/",
+      "robotsChecked": "2026-11-03",
+      "notes": "Dictated as 'KTB'. Channel 7 community calendar"
+    },
+    {
+      "displayName": "Meetup.com",
+      "robotsChecked": "2026-11-03",
+      "category": "nightlife-social",
+      "notes": "Local in-person events only. robots.txt allows /find/us--id--boise/ (checked 2026-11-03); the page was not fetched. Meetup's API is restricted to paid tiers; read terms before anything else"
+    },
+    {
+      "displayName": "Meridian Speedway",
+      "category": "sports",
+      "city": "Meridian",
+      "venue": "Meridian Speedway",
+      "notes": "Oval track season schedule"
+    },
+    {
+      "name": "mike-brown-group",
+      "displayName": "Mike Brown Group",
+      "status": "running",
+      "adapter": "tribe",
+      "url": "https://www.mikebrowngroup.com/wp-json/tribe/events/v1/events",
+      "category": "community-civic",
+      "inferCategory": true,
+      "city": "Other",
+      "venue": "Various Treasure Valley locations",
+      "venueKey": "various-treasure-valley",
+      "priority": 80,
+      "notes": "Aggregator run by a real estate group. All-day events report timezone UTC+0, timed events don't"
+    },
+    {
+      "name": "morrison-center",
+      "displayName": "Morrison Center",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "performing-arts",
+      "city": "Boise",
+      "venue": "Morrison Center for the Performing Arts",
+      "venueKey": "morrison-center-for-the-performing-arts",
+      "priority": 25,
+      "venueId": "KovZpZAE7IFA",
+      "notes": "venueKey matches what the location parser derives from boise-state-arts"
+    },
+    {
+      "displayName": "Morton Theatre",
+      "status": "ruled-out",
+      "reason": "It is in Athens, Georgia, not Idaho"
+    },
+    {
+      "displayName": "Nampa Civic Center",
+      "category": "performing-arts",
+      "city": "Nampa",
+      "venue": "Nampa Civic Center",
+      "notes": "City of Nampa is ruled out (HTTP 403). Check whether the civic center site is a separate host before probing"
+    },
+    {
+      "name": "nampa-public-library",
+      "displayName": "Nampa Public Library",
+      "status": "running",
+      "adapter": "ics",
+      "url": "https://nampalibrary.libcal.com/ical_subscribe.php?src=p&cid=9239",
+      "robotsChecked": "2026-11-03",
+      "category": "learning-business",
+      "inferCategory": true,
+      "city": "Nampa",
+      "venue": "Nampa Public Library",
+      "venueKey": "nampa-public-library",
+      "priority": 30,
+      "fixedVenue": true,
+      "notes": "Found through Hello Meridian on 2026-11-03. LibCal on its own host, separate from the ruled-out City of Nampa site. robots.txt allows ICS with a 10 second crawl delay. Calendar id 9239 (the first of 15 ids on /calendar) returned 495 events; confirm it is the main public calendar before using it. Terms not read. Calendar 9239 confirmed 2026-11-03 as 'Library Event Calendar', the main public calendar. fixedVenue, because the feed names rooms (Children's Area, Multipurpose Room)"
+    },
+    {
+      "name": "neurolux",
+      "displayName": "Neurolux",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "music",
+      "city": "Boise",
+      "venue": "Neurolux",
+      "venueKey": "neurolux",
+      "venueId": "KovZ917ALxZ",
+      "notes": "Listed by Ticketmaster as Neurolux Lounge"
+    },
+    {
+      "name": "nnu-athletics",
+      "displayName": "Northwest Nazarene University Athletics",
+      "status": "running",
+      "adapter": "ics",
+      "url": "https://nnusports.com/calendar.ashx/calendar.ics",
+      "category": "sports",
+      "city": "Nampa",
+      "venue": "Northwest Nazarene University",
+      "venueKey": "northwest-nazarene-university",
+      "priority": 20,
+      "locationFilter": "Boise|Caldwell|Meridian|Nampa",
+      "notes": "All sports, per-event LOCATION. The filter removes away games"
+    },
+    {
+      "displayName": "Opera Idaho",
+      "status": "ruled-out",
+      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests"
+    },
+    {
+      "displayName": "Public libraries outside Boise",
+      "category": "learning-business",
+      "notes": "Meridian Library District, Caldwell Public Library, Eagle Public Library. Boise Public Library, Ada Community Library, and Nampa Public Library have their own entries. City of Nampa and City of Eagle are ruled out; check whether a library site is a separate host before probing. Many libraries use LibCal, which publishes ICS"
+    },
+    {
+      "displayName": "Radio station calendars",
+      "notes": "Boise State Public Radio has its own entry. Commercial stations list promoted shows"
+    },
+    {
+      "name": "revolution-concert-house",
+      "displayName": "Revolution Concert House",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "music",
+      "city": "Garden City",
+      "venue": "Revolution Concert House",
+      "venueKey": "revolution-concert-house",
+      "venueId": "KovZ917AJuV",
+      "notes": "venueId KovZ917AJuV, 5 upcoming on 2026-11-02. AXS shows are not on Ticketmaster, and AXS is ruled out. Configured 2026-11-03 as its own Ticketmaster venue source; ticketmaster-metro skips this venue id"
+    },
+    {
+      "displayName": "Rooted in Boise",
+      "url": "https://rootedinboise.com",
+      "notes": "Newsletter and blog with a monthly events post, also at https://rootedinboise.substack.com (for example /p/november-in-boise-2026). Read terms before probing"
+    },
+    {
+      "name": "seatgeek",
+      "displayName": "SeatGeek",
+      "status": "ready",
+      "adapter": "seatgeek",
+      "url": "https://api.seatgeek.com/2/events",
+      "category": "performing-arts",
+      "city": "Other",
+      "venue": "Various Treasure Valley locations",
+      "venueKey": "various-treasure-valley",
+      "priority": 90,
+      "latlong": "43.6150,-116.2023",
+      "radius": 40,
+      "notes": "Adapter built, never run live. Needs SEATGEEK_CLIENT_ID. Mostly resale, so primary sellers outrank it. Adapter built, never run live. Needs SEATGEEK_CLIENT_ID. Mostly resale, so primary sellers outrank it. seatgeek.com answered HTTP 403 for robots.txt on 2026-11-03, so the website (seatgeek.com/cities/boise) is out; only the API remains"
+    },
+    {
+      "displayName": "Showclix, TicketLeap, and Tix",
+      "status": "ruled-out",
+      "reason": "These sell tickets for individual organizers, so there is no local list to read without knowing each organizer. Add an organizer as its own idea instead"
+    },
+    {
+      "displayName": "Snake River Stampede",
+      "category": "sports",
+      "city": "Nampa",
+      "notes": "Dictated as 'rodeos in the area'. July, at the Ford Idaho Center, so ford-idaho-center-arena may already cover it. 2026-11-03: listed in the Ford Idaho Center RSS feed (ford-idaho-center source), June 15 to 19, 2027"
+    },
+    {
+      "name": "songkick",
+      "displayName": "Songkick",
+      "status": "ready",
+      "adapter": "songkick",
+      "url": "https://api.songkick.com/api/3.0",
+      "category": "music",
+      "city": "Other",
+      "venue": "Various Treasure Valley locations",
+      "venueKey": "various-treasure-valley",
+      "priority": 85,
+      "notes": "Adapter built, never run live. Needs SONGKICK_API_KEY and metroAreaId. Check the endpoint against a real response first, because its docs could not be confirmed. Adapter built, never run live. Needs SONGKICK_API_KEY and a metro area id. Access for a project like this is unconfirmed, and the endpoint could not be verified against the docs"
+    },
+    {
+      "displayName": "Stage Coach Theatre",
+      "status": "investigating",
+      "category": "performing-arts",
+      "notes": "Checked 2026-10-30 with the project User-Agent. No tribe route and no schema.org Event data. ICS not tried"
+    },
+    {
+      "displayName": "StubHub",
+      "status": "ruled-out",
+      "reason": "Partner API only, and resale duplicates primary listings"
+    },
+    {
+      "displayName": "The Linen Building",
+      "city": "Boise",
+      "venue": "The Linen Building",
+      "notes": "Downtown event venue on Grove St. Mostly private rentals; look for its public calendar"
+    },
+    {
+      "displayName": "The Olympic",
+      "status": "investigating",
+      "adapter": "tribe",
+      "robotsChecked": "2026-11-02",
+      "notes": "Tribe API works but reported zero events on 2026-11-02. robots.txt asks for 600 seconds between requests, so it needs a single request per run. Eventbrite may be its real calendar"
+    },
+    {
+      "displayName": "The Riverside Hotel",
+      "city": "Garden City",
+      "venue": "The Riverside Hotel",
+      "notes": "Public events, including live music on the Sandbar patio in summer"
+    },
+    {
+      "displayName": "The Scout Guide Boise",
+      "status": "ruled-out",
+      "reason": "HTTP 403 with a Cloudflare challenge page on 2026-11-03, although robots.txt allows /boise/events/",
+      "url": "https://thescoutguide.com/boise/events/",
+      "robotsChecked": "2026-11-03"
+    },
+    {
+      "displayName": "The Timbers at Harris Ranch",
+      "city": "Boise",
+      "notes": "Apartment community that posts a 'What's happening in Boise' weekend graphic (seen for Oct 16 to 18, 2026). An image, not a feed; useful as a cross-check"
+    },
+    {
+      "displayName": "The Village at Meridian",
+      "city": "Meridian",
+      "venue": "The Village at Meridian",
+      "notes": "Dictated as 'the village mall'. Concerts at the fountain, seasonal events"
+    },
+    {
+      "displayName": "This Is Boise",
+      "status": "investigating",
+      "url": "https://thisisboise.com/boise-and-treasure-valley-area-annual-event-calendar/",
+      "robotsChecked": "2026-11-03",
+      "city": "Boise",
+      "notes": "WordPress blog. The annual event calendar is an article (one post a year) linking to organizers' pages, not a feed (checked 2026-11-03). Useful as a list of ideas. Also has a Facebook page; see Facebook pages"
+    },
+    {
+      "name": "ticketmaster-metro",
+      "displayName": "Ticketmaster (metro-wide)",
+      "status": "running",
+      "adapter": "ticketmaster",
+      "url": "https://app.ticketmaster.com/discovery/v2/events.json",
+      "category": "performing-arts",
+      "city": "Other",
+      "venue": "Various Treasure Valley locations",
+      "venueKey": "various-treasure-valley",
+      "priority": 60,
+      "latlong": "43.6150,-116.2023",
+      "radius": 40,
+      "excludeVenueIds": [
+        "KovZpZAEetIA",
+        "KovZpZAIln7A",
+        "KovZ917AJZU",
+        "KovZpZAE7IFA",
+        "KovZ917AJBe",
+        "KovZpZAEeAIA",
+        "KovZpZAE7aFA",
+        "KovZpZAEeAtA",
+        "KovZpZAIJ6lA",
+        "KovZ917ACmV",
+        "KovZ917AJuV"
+      ],
+      "excludeTitlePattern": "(?i)season ticket|waitlist|parking|deposit|^idaho steelheads vs|^boise state (football|men's basketball|women's basketball|broncos)",
+      "notes": "All Ticketmaster venues within 40 miles of Boise. Skips the venues with their own source, games the team feeds cover, and listings that are not events. Discovery API, geo filter, 40 miles around Boise. Needs TICKETMASTER_KEY. Also runs per venue: extramile-arena, ford-idaho-center-arena, knitting-factory-boise, morrison-center, neurolux"
+    },
+    {
+      "displayName": "Totally Boise",
+      "status": "investigating",
+      "url": "https://totallyboise.com/events",
+      "robotsChecked": "2026-11-03",
+      "city": "Boise",
+      "notes": "DNN site. Events load through a tb-event-viewer script, so the HTML has none (checked 2026-11-03). An aggregator, so mostly duplicates of venue sources"
+    },
+    {
+      "displayName": "Trailhead Boise",
+      "status": "ruled-out",
+      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests"
+    },
+    {
+      "displayName": "Treefort Music Fest",
+      "status": "investigating",
+      "category": "music",
+      "notes": "Checked 2026-10-30 with the project User-Agent. No tribe route and no schema.org Event data. Ticketmaster metro covers Treefort Music Hall"
+    },
+    {
+      "name": "visit-boise",
+      "displayName": "Visit Boise",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://visitboise.com/events/",
+      "category": "community-civic",
+      "inferCategory": true,
+      "city": "Boise",
+      "venue": "Various Treasure Valley locations",
+      "venueKey": "various-treasure-valley",
+      "priority": 80,
+      "scrapeMode": "jsonld",
+      "localTimeAsUtc": true,
+      "notes": "Modern Events Calendar, so times need localTimeAsUtc. Only the first page has structured data, about 12 events"
+    },
+    {
+      "displayName": "Visit Idaho",
+      "status": "ruled-out",
+      "reason": "HTTP 403 with a Cloudflare challenge page on 2026-10-30"
+    },
+    {
+      "name": "visual-arts-collective",
+      "displayName": "Visual Arts Collective",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://visualartscollective.com/events/",
+      "category": "music",
+      "inferCategory": true,
+      "city": "Garden City",
+      "venue": "Visual Arts Collective",
+      "venueKey": "visual-arts-collective",
+      "priority": 20,
+      "fixedVenue": true,
+      "scrapeMode": "jsonld",
+      "eventLinkPattern": "https://visualartscollective\\.com/events/[a-z0-9-]+/",
+      "notes": "Reads each event page"
+    },
+    {
+      "name": "western-idaho-fair",
+      "displayName": "Western Idaho Fair",
+      "status": "running",
+      "adapter": "tribe",
+      "url": "https://www.idahofair.com/wp-json/tribe/events/v1/events",
+      "category": "festivals",
+      "city": "Garden City",
+      "venue": "Expo Idaho",
+      "venueKey": "expo-idaho",
+      "priority": 20,
+      "fixedVenue": true,
+      "notes": "Lists every judging and stage show, about 550 events each August. Nothing upcoming until the 2027 fair"
+    },
+    {
+      "displayName": "Yelp",
+      "status": "ruled-out",
+      "reason": "robots.txt disallows /search (checked 2026-11-03)",
+      "url": "https://www.yelp.com/search?find_desc=Things+To+Do+This+Weekend&find_loc=Boise%2C+ID",
+      "robotsChecked": "2026-11-03"
+    },
+    {
+      "displayName": "Zoo Boise",
+      "status": "ruled-out",
+      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests"
+    }
+  ]
+}

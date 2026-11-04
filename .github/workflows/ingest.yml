@@ -1,0 +1,66 @@
+# Nightly ingest. Fetches every running source, then commits data/ to the branch it ran on.
+# Runs at 10:00 UTC, or by hand with an optional source input.
+
+name: ingest
+
+on:
+  schedule:
+    - cron: '0 10 * * *'
+  workflow_dispatch:
+    inputs:
+      source:
+        description: Run only this source. Leave blank for all.
+        type: string
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Validate sources
+        run: ./ingestion/scripts/Test-Sources.ps1
+
+      # An unset repository secret expands to an empty string, so the adapters see it as unset.
+      # The source input goes through env, not inline, so its text is never parsed as script.
+      - name: Ingest
+        env:
+          TICKETMASTER_KEY: ${{ secrets.TICKETMASTER_KEY }}
+          BANDSINTOWN_APP_ID: ${{ secrets.BANDSINTOWN_APP_ID }}
+          EVENTBRITE_TOKEN: ${{ secrets.EVENTBRITE_TOKEN }}
+          SEATGEEK_CLIENT_ID: ${{ secrets.SEATGEEK_CLIENT_ID }}
+          SONGKICK_API_KEY: ${{ secrets.SONGKICK_API_KEY }}
+          SOURCE: ${{ inputs.source }}
+        run: |
+          $options = @{}
+          $source = "$env:SOURCE".Trim()
+          if ($source) { $options.Source = $source }
+          ./ingestion/scripts/Invoke-Ingest.ps1 @options
+
+      - name: Upload raw output
+        if: always()
+        uses: actions/upload-artifact@v5
+        with:
+          name: out
+          path: out
+          if-no-files-found: ignore
+
+      - name: Commit data
+        run: ./ingestion/scripts/Publish-Data.ps1

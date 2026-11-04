@@ -1,0 +1,7 @@
+out/
+testResults.xml
+website/public/
+website/resources/
+.hugo_build.lock
+.env.ps1
+.secrets.local.md

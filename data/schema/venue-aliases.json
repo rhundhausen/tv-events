@@ -1,0 +1,20 @@
+{
+  "_comment": "Maps other spellings of a venue to one venueKey and name, so sources merge. Keys are slugs from Get-VenueKey. See docs/schema.md.",
+  "aliases": {
+    "danny-peterson-theatre-at-the-morrison-center": { "key": "danny-peterson-theatre", "name": "Danny Peterson Theatre" },
+    "egyptian-theatre": { "key": "the-egyptian-theatre", "name": "The Egyptian Theatre" },
+    "egyptian-theatre-id": { "key": "the-egyptian-theatre", "name": "The Egyptian Theatre" },
+    "extra-mile-arena": { "key": "extramile-arena", "name": "ExtraMile Arena" },
+    "ford-idaho-center": { "key": "ford-idaho-center-arena", "name": "Ford Idaho Center Arena" },
+    "jack-s-urban-meeting-place": { "key": "jump", "name": "JUMP" },
+    "jump-boise": { "key": "jump", "name": "JUMP" },
+    "jump-in-the-5th-floor-move-studio": { "key": "jump", "name": "JUMP" },
+    "knitting-factory-boise": { "key": "knitting-factory", "name": "Knitting Factory" },
+    "knitting-factory-concert-house": { "key": "knitting-factory", "name": "Knitting Factory" },
+    "knitting-factory-concert-house-boise": { "key": "knitting-factory", "name": "Knitting Factory" },
+    "morrison-center": { "key": "morrison-center-for-the-performing-arts", "name": "Morrison Center for the Performing Arts" },
+    "neurolux-lounge": { "key": "neurolux", "name": "Neurolux" },
+    "revolution-concert-house-and-event-center": { "key": "revolution-concert-house", "name": "Revolution Concert House" },
+    "the-egyptian-theater": { "key": "the-egyptian-theatre", "name": "The Egyptian Theatre" }
+  }
+}

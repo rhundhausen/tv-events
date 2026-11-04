@@ -1,0 +1,469 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dev.azure.com/accentient/tv-events/_git/tv-events?path=/schema/sources.schema.json",
+  "title": "tv-events sources",
+  "description": "Every source: running, configured but waiting, ideas, and sites ruled out. Only displayName is required. An entry with a name is a configured source and needs its full adapter configuration. Ingest runs only status running. Per-adapter fields are documented in docs/sources.md.",
+  "type": "object",
+  "required": [
+    "sources"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "_comment": {
+      "type": "string"
+    }
+  },
+  "$defs": {
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "displayName"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Unique slug, set once an entry is configured. Also the name of the per-source output file.",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The place, organization, or site. The only required field. Unique, ignoring case."
+        },
+        "status": {
+          "type": "string",
+          "description": "Where the source stands. Missing means idea. Ingest runs only running.",
+          "enum": [
+            "idea",
+            "investigating",
+            "feed-found",
+            "ready",
+            "running",
+            "ruled-out"
+          ],
+          "default": "idea"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Why it was ruled out. Required when status is ruled-out.",
+          "minLength": 1
+        },
+        "adapter": {
+          "type": "string",
+          "enum": [
+            "bandsintown",
+            "cityofboise",
+            "eventbrite",
+            "ics",
+            "rss",
+            "scrape",
+            "seatgeek",
+            "songkick",
+            "ticketmaster",
+            "tribe",
+            "other"
+          ],
+          "description": "The adapter that reads it. other is for ideas that need a new adapter; a configured entry can't use it."
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https?://",
+          "description": "Site, feed, or API endpoint. Required from feed-found on."
+        },
+        "category": {
+          "type": "string",
+          "description": "Category for this source's events. With inferCategory, the fallback.",
+          "$comment": "Must match the ids in data/schema/categories.json.",
+          "enum": [
+            "arts-culture",
+            "community-civic",
+            "festivals",
+            "food-drink",
+            "holiday-seasonal",
+            "learning-business",
+            "markets-shopping",
+            "music",
+            "nightlife-social",
+            "outdoors-recreation",
+            "performing-arts",
+            "sports"
+          ]
+        },
+        "inferCategory": {
+          "type": "boolean",
+          "description": "Choose each event's category from its tags. For sources that mix many kinds of event.",
+          "default": false
+        },
+        "city": {
+          "type": "string",
+          "description": "Fallback for events that do not report a city.",
+          "enum": [
+            "Boise",
+            "Meridian",
+            "Nampa",
+            "Caldwell",
+            "Eagle",
+            "Garden City",
+            "Kuna",
+            "Star",
+            "Other"
+          ]
+        },
+        "venue": {
+          "type": "string",
+          "description": "Fallback for events that do not report a venue.",
+          "minLength": 1
+        },
+        "venueKey": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "robotsChecked": {
+          "$ref": "#/$defs/date",
+          "description": "Date robots.txt was read. The outcome goes in notes, or in reason if it ruled the site out."
+        },
+        "termsChecked": {
+          "$ref": "#/$defs/date",
+          "description": "Date the site's terms of use were read. The outcome goes in notes, or in reason if it ruled the site out."
+        },
+        "organizer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "priority": {
+          "type": "integer",
+          "description": "Whose url wins when sources report the same event. Lower is better.",
+          "default": 50
+        },
+        "fixedVenue": {
+          "type": "boolean",
+          "description": "tribe, scrape, ics, rss: use the entry's venue for every event, ignoring what the event reports.",
+          "default": false
+        },
+        "venuePrefix": {
+          "type": "string",
+          "description": "rss: put in front of each item's ev:location to make the venue name, so \"Arena\" becomes \"Ford Idaho Center Arena\".",
+          "minLength": 1
+        },
+        "scrapeMode": {
+          "type": "string",
+          "description": "scrape: jsonld reads schema.org data, cards reads HTML blocks, calendarapp reads the event JSON that City of Boise calendar pages embed in #calendar-app.",
+          "enum": [
+            "calendarapp",
+            "cards",
+            "jsonld"
+          ]
+        },
+        "eventLinkPattern": {
+          "type": "string",
+          "description": "scrape, jsonld: regex for event links on the list page. Each linked page is read. Without it, the list page itself is read.",
+          "minLength": 1
+        },
+        "itemPattern": {
+          "type": "string",
+          "description": "scrape, cards: regex matching one event's HTML block.",
+          "minLength": 1
+        },
+        "datePattern": {
+          "type": "string",
+          "description": "scrape, cards: regex with named groups month and day, matched inside a card. Defaults to Boise Centre markup (class=\"month\" and class=\"day\").",
+          "minLength": 1
+        },
+        "titlePattern": {
+          "type": "string",
+          "description": "scrape, cards: regex with a named group title, matched inside a card. Defaults to the first heading.",
+          "minLength": 1
+        },
+        "timePattern": {
+          "type": "string",
+          "description": "scrape, cards: regex with named groups start and optional end, such as 3:00 pm. Without it, or without a match, events are all-day.",
+          "minLength": 1
+        },
+        "maxPages": {
+          "type": "integer",
+          "description": "scrape: most event pages to read in one run. Defaults to 40.",
+          "minimum": 1
+        },
+        "localTimeAsUtc": {
+          "type": "boolean",
+          "description": "scrape: the site writes local time as UTC, as Modern Events Calendar does. Corrects it.",
+          "default": false
+        },
+        "locationFilter": {
+          "type": "string",
+          "description": "ics: regex. Only events whose LOCATION matches are kept.",
+          "minLength": 1
+        },
+        "venueId": {
+          "type": "string",
+          "description": "ticketmaster: Discovery API venue id.",
+          "minLength": 1
+        },
+        "latlong": {
+          "type": "string",
+          "description": "ticketmaster, seatgeek: center of an area search, as lat,lon.",
+          "pattern": "^-?\\d+(\\.\\d+)?,-?\\d+(\\.\\d+)?$"
+        },
+        "radius": {
+          "type": "integer",
+          "description": "ticketmaster, seatgeek: area search radius in miles.",
+          "minimum": 1
+        },
+        "excludeVenueIds": {
+          "type": "array",
+          "description": "ticketmaster: venues another source already covers.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excludeSegments": {
+          "type": "array",
+          "description": "ticketmaster: segments another source already covers.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "excludeTitlePattern": {
+          "type": "string",
+          "description": "ticketmaster, rss: regex. Matching titles are skipped.",
+          "minLength": 1
+        },
+        "organizationIds": {
+          "type": "array",
+          "description": "eventbrite: organizations to read.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "venueIds": {
+          "type": "array",
+          "description": "eventbrite: venues to read.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "metroAreaId": {
+          "type": "string",
+          "description": "songkick: metro area id.",
+          "minLength": 1
+        },
+        "artistOrVenue": {
+          "type": "string",
+          "description": "bandsintown: name to look up.",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "name"
+            ]
+          },
+          "then": {
+            "required": [
+              "displayName",
+              "adapter",
+              "url",
+              "category",
+              "city",
+              "venue",
+              "venueKey"
+            ],
+            "properties": {
+              "adapter": {
+                "not": {
+                  "const": "other"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "const": "running"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "name"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "const": "ruled-out"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reason"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "const": "feed-found"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "url"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "const": "ready"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "url",
+              "adapter"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "name",
+              "adapter"
+            ],
+            "properties": {
+              "adapter": {
+                "const": "ticketmaster"
+              }
+            }
+          },
+          "then": {
+            "anyOf": [
+              {
+                "required": [
+                  "venueId"
+                ]
+              },
+              {
+                "required": [
+                  "latlong",
+                  "radius"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "name",
+              "adapter"
+            ],
+            "properties": {
+              "adapter": {
+                "const": "seatgeek"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "latlong",
+              "radius"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "name",
+              "adapter"
+            ],
+            "properties": {
+              "adapter": {
+                "const": "bandsintown"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "artistOrVenue"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "name",
+              "adapter"
+            ],
+            "properties": {
+              "adapter": {
+                "const": "scrape"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "scrapeMode"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "name",
+              "scrapeMode"
+            ],
+            "properties": {
+              "scrapeMode": {
+                "const": "cards"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "itemPattern"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
