@@ -13,8 +13,9 @@ Requests come with this User-Agent:
 ## How it behaves
 
 - Runs once a day, overnight in Boise (10:00 UTC).
-- Reads only public pages and feeds: ICS calendars, WordPress event APIs, official APIs such as Ticketmaster's, and public calendar pages.
-- Checks robots.txt before every request and follows its rules for the `tv-events` user agent, including Crawl-delay.
+- Reads only public sources: calendar feeds (ICS), WordPress event APIs, the City of Boise events API, official APIs such as Ticketmaster's, and a few public calendar pages.
+- Calendar pages are checked against robots.txt on every run, including Crawl-delay, and a disallowed page is never requested.
+- Feeds and APIs are checked against the site's robots.txt and terms when they are added as a source.
 - Waits at least 1 second between paged requests.
 - Never logs in, never bypasses paywalls or bot protection, and never disguises itself as a browser.
 
@@ -26,14 +27,14 @@ It does not keep images, full descriptions, ticket prices, or personal informati
 
 ## Opting out
 
-Either of these works:
+The surest way is to **open an issue** in this repository naming the site you'd like removed. Your site will be taken off the source list and its events removed within a few days.
 
-1. **robots.txt.** Add the following to your site's robots.txt and the next run will skip your site:
+You can also block the bot in robots.txt:
 
-       User-agent: tv-events
-       Disallow: /
+    User-agent: tv-events
+    Disallow: /
 
-2. **Ask.** Open an issue in this repository saying which site you'd like removed. Your site will be taken off the source list and its events removed within a few days.
+This stops page reading on the next run. If your site is read through a calendar feed or API, please open an issue as well, so that source is removed too.
 
 ## Contact
 
