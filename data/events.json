@@ -94,28 +94,6 @@
     ]
   },
   {
-    "id": "e1c1ef620a05",
-    "title": "PAELLA ON THE PATIO",
-    "start": "2026-11-04T12:00:00-07:00",
-    "end": "2026-11-04T15:00:00-07:00",
-    "allDay": false,
-    "venue": "Various Treasure Valley locations",
-    "venueKey": "various-treasure-valley",
-    "city": "Other",
-    "category": "community-civic",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisemom.com/event/paella-on-the-patio/2026-11-04/",
-    "description": "Join us for paella on the patio at noon until sold out! https://www.thebasquemarket.com/calendar?category=PAELLA%20AVAILABLE ADDRESS On the Basque Block at 608 W Grove St, Boise, ID 83702 PARKING INFORMATION: Download our recommended parking guide here .",
-    "sources": [
-      {
-        "name": "boise-mom",
-        "url": "https://boisemom.com/event/paella-on-the-patio/2026-11-04/",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
     "id": "5153032755f3",
     "title": "Fiber Arts Society",
     "start": "2026-11-04T14:00:00-07:00",
@@ -2733,9 +2711,9 @@
     "id": "0e91eaddc76b",
     "title": "Holiday Makers Market",
     "start": "2026-11-06T17:00:00-07:00",
-    "end": "2026-11-07T16:00:00-07:00",
+    "end": "2026-11-06T21:00:00-07:00",
     "allDay": false,
-    "venue": "Nampa Civic Center",
+    "venue": "nampa civic center",
     "venueKey": "nampa-civic-center",
     "city": "Nampa",
     "category": "holiday-seasonal",
@@ -2747,7 +2725,8 @@
       "makers-market"
     ],
     "size": "M",
-    "url": "https://www.mikebrowngroup.com/event/holiday-makers-market/",
+    "url": "https://boisemom.com/event/holiday-makers-market/2026-11-06/",
+    "description": "Holiday Makers Market Holiday Makers Market Formerly Craft & Chocolate Affaire Nampa Civic Center November 6 | 5:00 PM – 9:00 PM November 7 | 9:00 AM – 4:00 PM Kick off the holiday season at one of Nampa’s most beloved events! Shop Local & Unique Get a head start on your holiday shopping and supp...",
     "sources": [
       {
         "name": "boise-mom",
@@ -2759,8 +2738,7 @@
         "url": "https://www.mikebrowngroup.com/event/holiday-makers-market/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ],
-    "description": "Holiday Makers Market Holiday Makers Market Formerly Craft & Chocolate Affaire Nampa Civic Center November 6 | 5:00 PM – 9:00 PM November 7 | 9:00 AM – 4:00 PM Kick off the holiday season at one of Nampa’s most beloved events! Shop Local & Unique Get a head start on your holiday shopping and supp..."
+    ]
   },
   {
     "id": "a6d90a4bd087",
@@ -14525,12 +14503,12 @@
       "library-program"
     ],
     "size": "S",
-    "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-3/2026-11-19/",
+    "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-11-19/",
     "description": "Join us every Thursday at 10:30 AM for this kindergarten readiness storytime and craft! This storytime is designed for children ages 3-5 and their caregiver.",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-3/2026-11-19/",
+        "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-11-19/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
@@ -18189,12 +18167,12 @@
       "holiday-event"
     ],
     "size": "L",
-    "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-8/",
+    "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-7/",
     "description": "“It is not what we say about our blessings, but how we use them – that is the true measure of Thanksgiving.” – W.T. Purkiser This is an opportunity for you to directly impact a family in need! Please consider helping us provide a Thanksgiving dinner for those who would otherwise be unable to affo...",
     "sources": [
       {
         "name": "expo-idaho",
-        "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-8/",
+        "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-7/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       },
       {
@@ -23061,7 +23039,7 @@
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/elf-in-concert-2/",
+        "url": "https://boisemom.com/event/elf-in-concert/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       },
       {
@@ -25209,12 +25187,12 @@
       "library-program"
     ],
     "size": "S",
-    "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-12-03/",
+    "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-3/2026-12-03/",
     "description": "Join us every Thursday at 10:30 AM for this kindergarten readiness storytime and craft! This storytime is designed for children ages 3-5 and their caregiver.",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-12-03/",
+        "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-3/2026-12-03/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
@@ -25497,12 +25475,12 @@
       "library-program"
     ],
     "size": "S",
-    "url": "https://boisemom.com/event/teen-club-video-games-cole-ustick-library-4/",
+    "url": "https://boisemom.com/event/teen-club-video-games-cole-ustick-library-5/",
     "description": "Join us after school for a variety of video games! Ages 12-17.",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/teen-club-video-games-cole-ustick-library-4/",
+        "url": "https://boisemom.com/event/teen-club-video-games-cole-ustick-library-5/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
@@ -30293,12 +30271,12 @@
       "library-program"
     ],
     "size": "S",
-    "url": "https://boisemom.com/event/teens-cozy-gnomes/",
+    "url": "https://boisemom.com/event/teens-cozy-gnomes-2/",
     "description": "Gnome-y it’s cold outside! Location: Library Corner",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/teens-cozy-gnomes/",
+        "url": "https://boisemom.com/event/teens-cozy-gnomes-2/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
@@ -31419,12 +31397,12 @@
     "category": "markets-shopping",
     "tags": [],
     "size": "L",
-    "url": "https://expoidaho.com/event/teddy-bear-classic-6/",
+    "url": "https://expoidaho.com/event/teddy-bear-classic-5/",
     "description": "See website for more information.",
     "sources": [
       {
         "name": "expo-idaho",
-        "url": "https://expoidaho.com/event/teddy-bear-classic-6/",
+        "url": "https://expoidaho.com/event/teddy-bear-classic-5/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       }
     ]
@@ -35396,12 +35374,12 @@
       "library-program"
     ],
     "size": "S",
-    "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-3/2026-12-17/",
+    "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-12-17/",
     "description": "Join us every Thursday at 10:30 AM for this kindergarten readiness storytime and craft! This storytime is designed for children ages 3-5 and their caregiver.",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-3/2026-12-17/",
+        "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-12-17/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
@@ -40086,12 +40064,12 @@
       "holiday-event"
     ],
     "size": "M",
-    "url": "https://boisemom.com/event/winter-garden-aglow-opening-2/2026-12-26/",
+    "url": "https://boisemom.com/event/winter-garden-aglow-4/2026-12-26/",
     "description": "Come Together.Glow Together. Bundle up and wander a Garden glowing with 900,000 holiday lights, from lit-up trees and pathways to the all-new Lake of Lights on Outlaw Field. The lights are just the beginning Not a drive-through. You walk it, together: lights wrap the trees, follow winding paths a...",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/winter-garden-aglow-opening-2/2026-12-26/",
+        "url": "https://boisemom.com/event/winter-garden-aglow-4/2026-12-26/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       }
     ]
@@ -43457,14 +43435,15 @@
     "venue": "JUMP",
     "venueKey": "jump",
     "city": "Boise",
-    "category": "community-civic",
+    "category": "arts-culture",
     "tags": [
       "family-friendly",
       "free-admission",
       "kids"
     ],
     "size": "M",
-    "url": "https://www.cityofboise.org/events/arts-and-history/2027/january/open-arms-dance-project-family-boogie/",
+    "url": "https://www.boiseartsandhistory.org/calendar/event?key=open-arms-dance-project-family-boogie_20270107",
+    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot...",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -43481,8 +43460,7 @@
         "url": "https://www.cityofboise.org/events/arts-and-history/2027/january/open-arms-dance-project-family-boogie/",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
-    ],
-    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot..."
+    ]
   },
   {
     "id": "d0610afccdf1",
@@ -48649,6 +48627,34 @@
     ]
   },
   {
+    "id": "5db7de3270ac",
+    "title": "Aaron Golay & The Original Sin",
+    "start": "2027-01-28T20:00:00-07:00",
+    "allDay": false,
+    "venue": "9th St. Parallel at Knitting Factory",
+    "venueKey": "9th-st-parallel-at-knitting-factory",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "M",
+    "url": "https://www.ticketweb.com/event/aaron-golay-the-original-9th-st-parallel-at-knitting-tickets/14405504",
+    "description": "DELAYED DELIVERY: There is a ticket delivery delay in place for this event. Tickets will be emailed 48 hours prior to the event.",
+    "sources": [
+      {
+        "name": "ninth-st-parallel",
+        "url": "https://www.ticketweb.com/event/aaron-golay-the-original-9th-st-parallel-at-knitting-tickets/14405504",
+        "fetchedAt": "2026-11-04T22:21:20Z"
+      },
+      {
+        "name": "ticketmaster-metro",
+        "url": "https://www.ticketweb.com/event/aaron-golay-the-original-9th-st-parallel-at-knitting-tickets/14405504",
+        "fetchedAt": "2026-11-04T22:21:20Z"
+      }
+    ]
+  },
+  {
     "id": "efd431706348",
     "title": "Public Skate at Idaho IceWorld",
     "start": "2027-01-29T09:00:00-07:00",
@@ -49845,14 +49851,15 @@
     "venue": "JUMP",
     "venueKey": "jump",
     "city": "Boise",
-    "category": "community-civic",
+    "category": "arts-culture",
     "tags": [
       "family-friendly",
       "free-admission",
       "kids"
     ],
     "size": "M",
-    "url": "https://www.cityofboise.org/events/arts-and-history/2027/february/open-arms-dance-project-family-boogie/",
+    "url": "https://www.boiseartsandhistory.org/calendar/event?key=open-arms-dance-project-family-boogie_20270204",
+    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot...",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -49869,8 +49876,7 @@
         "url": "https://www.cityofboise.org/events/arts-and-history/2027/february/open-arms-dance-project-family-boogie/",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
-    ],
-    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot..."
+    ]
   },
   {
     "id": "c713c180e587",
@@ -50000,6 +50006,7 @@
     "id": "67937d149fb7",
     "title": "Wassmuth Center for Human Rights: Art of Belonging Writing Workshop with CMarie Fuhrman",
     "start": "2027-02-04T18:30:00-07:00",
+    "end": "2027-02-04T20:00:00-07:00",
     "allDay": false,
     "venue": "Wassmuth Center for Human Rights",
     "venueKey": "wassmuth-center-for-human-rights",
@@ -50010,8 +50017,7 @@
       "workshop"
     ],
     "size": "S",
-    "url": "https://www.boiseartsandhistory.org/calendar/event?key=wassmuth-center-for-human-rights-art-of-belonging-writing-workshop-with-cmarie-fuhrman_20270204",
-    "description": "Every sentence makes a small world. Through poetry, conversation, and generative writing, you’re invited to explore how even the smallest choices in language shape belonging. A simple and can make room for another person, another truth, or even a contradiction. And sometimes what we leave unsaid...",
+    "url": "https://www.cityofboise.org/events/arts-and-history/2027/february/wassmuth-center-for-human-rights-art-of-belonging-writing-workshop-with-cmarie-fuhrman/",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -50024,7 +50030,7 @@
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ],
-    "end": "2027-02-04T20:00:00-07:00"
+    "description": "Every sentence makes a small world. Through poetry, conversation, and generative writing, you’re invited to explore how even the smallest choices in language shape belonging. A simple and can make room for another person, another truth, or even a contradiction. And sometimes what we leave unsaid..."
   },
   {
     "id": "0ef208f728d8",

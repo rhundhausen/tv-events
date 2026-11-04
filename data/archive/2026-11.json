@@ -1739,5 +1739,27 @@
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
+  },
+  {
+    "id": "e1c1ef620a05",
+    "title": "PAELLA ON THE PATIO",
+    "start": "2026-11-04T12:00:00-07:00",
+    "end": "2026-11-04T15:00:00-07:00",
+    "allDay": false,
+    "venue": "Various Treasure Valley locations",
+    "venueKey": "various-treasure-valley",
+    "city": "Other",
+    "category": "community-civic",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisemom.com/event/paella-on-the-patio/2026-11-04/",
+    "description": "Join us for paella on the patio at noon until sold out! https://www.thebasquemarket.com/calendar?category=PAELLA%20AVAILABLE ADDRESS On the Basque Block at 608 W Grove St, Boise, ID 83702 PARKING INFORMATION: Download our recommended parking guide here .",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/paella-on-the-patio/2026-11-04/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
   }
 ]
