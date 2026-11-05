@@ -1654,15 +1654,15 @@
       "library-program"
     ],
     "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/16458689",
+    "url": "https://boisepubliclibrary.libcal.com/event/17238098",
+    "description": "Put on your jammies, grab your stuffie, and head to the third floor of the Downtown Library for Pajama Storytime! We'll read books, dance, and have loads of fun! This program is designed for families and children ages 0-6.",
     "sources": [
       {
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16458689",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
-    ],
-    "description": "Put on your jammies, grab your stuffie, and head to the third floor of the Downtown Library for Pajama Storytime! We'll read books, dance, and have loads of fun! This program is designed for families and children ages 0-6."
+    ]
   },
   {
     "id": "e1a6a866f139",
@@ -2931,6 +2931,7 @@
     "tags": [
       "college-sports"
     ],
+    "size": "M",
     "url": "https://www.yoteathletics.com/calendar.aspx?game_id=8338&sport_id=19",
     "description": "W 3-0 Streaming Video: https://www.cascadesportsnetwork.com/collegeofidaho",
     "sources": [
@@ -3025,6 +3026,7 @@
     "tags": [
       "college-sports"
     ],
+    "size": "M",
     "url": "https://admin.broncosports.com/calendar.aspx?game_id=23054&sport_id=15",
     "description": "L 0-1 TV: Pac-12 YouTube Streaming Video: https://www.youtube.com/@pac12 Tickets: https://am.ticketmaster.com/boisestateathl/soccer",
     "sources": [
@@ -4698,6 +4700,7 @@
     "city": "Boise",
     "category": "arts-culture",
     "tags": [],
+    "size": "L",
     "url": "https://events.boisestate.edu/event/blueys-big-play-3878",
     "description": "This is Bluey’s Big Play, For Real Life. When Dad feels like a little bit of a time out, Bluey and Bingo have other plans! Join them as they pull out all of the games and cleverness at their disposal to get Dad off that bean bag. Bluey’s Big Play is a theatrical adaptation of the Emmy® award-winn...",
     "sources": [

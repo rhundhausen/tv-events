@@ -1458,6 +1458,29 @@
     ]
   },
   {
+    "id": "07be70c57d29",
+    "title": "Boise State University Esports Minnesota",
+    "start": "2026-11-04",
+    "allDay": true,
+    "venue": "Boise State Esports Arena",
+    "venueKey": "boise-state-esports-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "esports"
+    ],
+    "size": "S",
+    "url": "https://admin.broncosports.com/calendar.aspx?game_id=23205&sport_id=35",
+    "description": "TV: Boise State Twitch - Valorant Streaming Video: https://twitch.tv/boisestate",
+    "sources": [
+      {
+        "name": "boise-state-athletics",
+        "url": "https://admin.broncosports.com/calendar.aspx?game_id=23205&sport_id=35",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
     "id": "00369af05ee9",
     "title": "Community Resource Porch Pop-Up",
     "start": "2026-11-04T09:00:00-07:00",
@@ -1673,6 +1696,30 @@
     ]
   },
   {
+    "id": "eb2f31b8ceb1",
+    "title": "Distillery Tour",
+    "start": "2026-11-04T11:00:00-07:00",
+    "end": "2026-11-04T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Bardenay Distilling Co.",
+    "venueKey": "bardenay-distilling-co",
+    "city": "Boise",
+    "category": "food-drink",
+    "tags": [
+      "brewery"
+    ],
+    "size": "S",
+    "url": "https://www.bardenaydistilling.com/",
+    "description": "Bardenay Distilling Co. — Idaho’s Original Craft Spirit Experience Established in Boise as the nation’s first restaurant-distillery post-Prohibition, Bardenay has been an Idaho icon for decades. Now, Bardenay Distilling Co. carries that pioneering spirit forward, offering complimentary tours that...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://www.bardenaydistilling.com/",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      }
+    ]
+  },
+  {
     "id": "a2578718cdcf",
     "title": "Baby Storytime",
     "start": "2026-11-04T11:15:00-07:00",
@@ -1759,6 +1806,907 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/paella-on-the-patio/2026-11-04/",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "5153032755f3",
+    "title": "Fiber Arts Society",
+    "start": "2026-11-04T14:00:00-07:00",
+    "end": "2026-11-04T15:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/16489754",
+    "description": "Bring your fiber arts projects to the Library! at Cole and Ustick. Crafters of all skill levels are welcome. We also have an ongoing community service project aimed to give back to those in need. Anyone can participate, but it's not mandatory. What we are looking for is any handmade cold weather...",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/16489754",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "cca4f5765c69",
+    "title": "Open Studios: MAKE Studio",
+    "start": "2026-11-04T15:00:00-07:00",
+    "end": "2026-11-04T18:00:00-07:00",
+    "allDay": false,
+    "venue": "JUMP",
+    "venueKey": "jump",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://jumpboise.org/events/open-studios-make-studio",
+    "sources": [
+      {
+        "name": "jump-boise",
+        "url": "https://jumpboise.org/events/open-studios-make-studio",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "08a64811a7cc",
+    "title": "Seeing Things - Photography for Teens",
+    "start": "2026-11-04T16:00:00-07:00",
+    "end": "2026-11-04T17:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/16524520",
+    "description": "Come and join in our new photography program offering young creatives a fun, hands-on way to explore cameras, composition, and visual storytelling. Through guided lessons, outdoor shoots, and collaborative projects, you'll learn how to capture meaningful images while developing your visual voice....",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/16524520",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "8046226b99fa",
+    "title": "Victory Street Eats",
+    "start": "2026-11-04T16:00:00-07:00",
+    "end": "2026-11-04T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Victory Gardens Nursery",
+    "venueKey": "victory-gardens-nursery",
+    "city": "Meridian",
+    "category": "festivals",
+    "tags": [
+      "family-friendly",
+      "festival"
+    ],
+    "size": "S",
+    "url": "https://boisemom.com/event/victory-street-eats/2026-11-04/",
+    "description": "Victory Street Eats ✨🌮Food Truck Mini Market🌮✨ is coming to Victory Gardens starting May 13th! Every Wednesday, come and enjoy delicious food & drinks, garden",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/victory-street-eats/2026-11-04/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "e73530eab34a",
+    "title": "School Age Fun: Stick Shelter Engineering",
+    "start": "2026-11-04T16:00:00-07:00",
+    "end": "2026-11-04T17:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/15302140",
+    "description": "Join the Library! at Collister for School Age Fun, for kids ages 6-11! Kids experience fun, hands-on activities in this program. Topics rotate each session. Upcoming Events: 11/4: Stick shelter engineering 11/11: Library closed for Veterans Day 11/18: Cardboard trains 11/25: Lego stop motion and...",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/15302140",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "eed4674d3412",
+    "title": "Open Space and Clean Water Advisory Committee",
+    "start": "2026-11-04T16:00:00-07:00",
+    "end": "2026-11-04T17:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Depot",
+    "venueKey": "boise-depot",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "S",
+    "url": "https://www.cityofboise.org/events/parks/2026/november/open-space-and-clean-water-committee/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/november/open-space-and-clean-water-committee/",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "f60d08df5559",
+    "title": "Public Works Commission",
+    "start": "2026-11-04T16:00:00-07:00",
+    "end": "2026-11-04T17:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise City Hall",
+    "venueKey": "boise-city-hall",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/public-works/2026/november/public-works-commission/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/public-works/2026/november/public-works-commission/",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "82581f033f7a",
+    "title": "TTRPG, But You're a Cow: Escape into the City!",
+    "start": "2026-11-04T16:15:00-07:00",
+    "end": "2026-11-04T17:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/17745582",
+    "description": "The premise of this game is simple: Be a cow. Do cow-like things. Have some bovine adventures. Don't worry about creating your cow ahead of time--we'll go through character creation at the beginning of the game. Just bring yourself, enjoy some snacks, and get ready to moo-ve around the big city!...",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/17745582",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "fce04014f392",
+    "title": "After School Art – Ages 10-12 -Wed 4:30p",
+    "start": "2026-11-04T16:30:00-07:00",
+    "end": "2026-11-04T18:00:00-07:00",
+    "allDay": false,
+    "venue": "Catalyst Arts Collaborative",
+    "venueKey": "catalyst-arts-collaborative",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "workshop"
+    ],
+    "size": "S",
+    "url": "https://boisemom.com/event/after-school-art-ages-10-12-wed-430p/2026-11-04/",
+    "description": "Ongoing, Wednesdays, 4:30pm – 6:00pm Ages 10-12 Register for a single class or save with a multi-class multipass! See “Memberships and Passes” for more info. Around age 10 or so, kids reach the stage in their creative development when realism is the gold standard, and even kids with the strongest...",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/after-school-art-ages-10-12-wed-430p/2026-11-04/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "a81b96049f14",
+    "title": "No Pressure Book Club & Trivia",
+    "start": "2026-11-04T17:00:00-07:00",
+    "end": "2026-11-04T18:30:00-07:00",
+    "allDay": false,
+    "venue": "Nampa Public Library",
+    "venueKey": "nampa-public-library",
+    "city": "Nampa",
+    "category": "food-drink",
+    "tags": [
+      "trivia"
+    ],
+    "size": "S",
+    "url": "https://nampalibrary.libcal.com/event/16316600",
+    "description": "Join us at Nampa Public Library for No Pressure Book Club and Trivia! Participate in discussions for our subject of the month, enjoy themed trivia, and have fun in a relaxed atmosphere. Open to ages 18 This month’s theme: Extraterrestrial Life",
+    "sources": [
+      {
+        "name": "nampa-public-library",
+        "url": "https://nampalibrary.libcal.com/event/16316600",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "14cd8acb7d5e",
+    "title": "Weekly Language Exchange",
+    "start": "2026-11-04T18:00:00-07:00",
+    "end": "2026-11-04T20:00:00-07:00",
+    "allDay": false,
+    "venue": "JUMP",
+    "venueKey": "jump",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://jumpboise.org/events/weekly-language-exchange",
+    "sources": [
+      {
+        "name": "jump-boise",
+        "url": "https://jumpboise.org/events/weekly-language-exchange",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "2c2acbd2a2a8",
+    "title": "Queer Book Club",
+    "start": "2026-11-04T18:00:00-07:00",
+    "end": "2026-11-04T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/15126159",
+    "description": "Join us for Hillcrest’s Queer Book Club! We meet at the Hillcrest Library on the 1st Wednesday of every month from 6:00 to 7:00 PM. Come ready to chat about what you’re reading and get recommendations from your peers! Additionally, if you're looking for personalized book suggestions we are happy...",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/15126159",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "2c66304cf85b",
+    "title": "Creative Writing Group",
+    "start": "2026-11-04T18:00:00-07:00",
+    "end": "2026-11-04T19:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/16502243",
+    "description": "Do you want to connect with a creative writing community? Join us monthly where writers help writers. Each month we focus on an element of the writing process with coaching, writing prompts for growth, peer support for works in progress, share a variety of writing tools, and engage with guest pre...",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/16502243",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "3c55330dbb69",
+    "title": "Boise Public Library Pokémon League",
+    "start": "2026-11-04T18:00:00-07:00",
+    "end": "2026-11-04T19:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/15302325",
+    "description": "Come and play the Pokémon Trading Card Game with other Pokémon enthusiasts! A Pokémon League provides a nearby place for you to get together with other fans of the Pokémon Trading Card Game, and have some fun. Using your own cards (we will have some decks to borrow), you can play, trade, and even...",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/15302325",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "3ce05fa30712",
+    "title": "The Good Death",
+    "start": "2026-11-04T18:00:00-07:00",
+    "end": "2026-11-04T19:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/17086114",
+    "description": "Victoria Craig, therapist and life coach, will explore the topic of aging, caregiving, and end-of-life issues. Victoria recently completed her Doulagivers certification and the topics rotate monthly.",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/17086114",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "82f34e34fa65",
+    "title": "Pokémon League | Collister Library!",
+    "start": "2026-11-04T18:00:00-07:00",
+    "end": "2026-11-04T19:30:00-07:00",
+    "allDay": false,
+    "venue": "Library! at Collister",
+    "venueKey": "library-at-collister",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "free-admission",
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisemom.com/event/pokemon-league-collister-library/2026-11-04/",
+    "description": "Come and play the Pokémon Trading Card Game with other Pokémon enthusiasts! A Pokémon League provides a nearby place for you to get together with other fans of the Pokémon Trading Card Game, and have some fun. Using your own cards (we will have some decks to borrow), you can play, trade, and even...",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/pokemon-league-collister-library/2026-11-04/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "831546890749",
+    "title": "Guitar for Beginners with Mike",
+    "start": "2026-11-04T18:00:00-07:00",
+    "end": "2026-11-04T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Nampa Public Library",
+    "venueKey": "nampa-public-library",
+    "city": "Nampa",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://nampalibrary.libcal.com/event/15725346",
+    "description": "Interested in learning to play the guitar? Join volunteer Mike every Wednesday evening from 6-7pm. The weekly class is designed for ages 13 and older. You'll learn basic chords, how to prepare yourself, strumming patterns, and more. Bring your own guitar and lets have fun!",
+    "sources": [
+      {
+        "name": "nampa-public-library",
+        "url": "https://nampalibrary.libcal.com/event/15725346",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "8c309a9d3d50",
+    "title": "Game Night Live Trivia at Barbarian",
+    "start": "2026-11-04T18:00:00-07:00",
+    "end": "2026-11-04T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Barbarian Brewery Taproom",
+    "venueKey": "barbarian-brewery-taproom",
+    "city": "Boise",
+    "category": "food-drink",
+    "tags": [
+      "board-games",
+      "brewery",
+      "trivia"
+    ],
+    "size": "S",
+    "url": "https://www.facebook.com/events/1505711250867938/1505711257534604?acontext=event_action_historyextra_datamechanismleft_railsurfacebookmarkextra_datamechanismsurfacesurfacecreate_dialogref_notif_typenull&onload_action=open_invite_flow&show_created_event_toast=true",
+    "description": "Join us every Wednesday night for Trivia at our Garden City Taproom! Game Night Live trivia is free to play for paying customers and are for everyone who likes to play games and win prizes! All ages. Each night we play 2 games consisting of 3 rounds each. Each round is based off of a popular game...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://www.facebook.com/events/1505711250867938/1505711257534604?acontext=event_action_historyextra_datamechanismleft_railsurfacebookmarkextra_datamechanismsurfacesurfacecreate_dialogref_notif_typenull&onload_action=open_invite_flow&show_created_event_toast=true",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      }
+    ]
+  },
+  {
+    "id": "9fc04bc8f585",
+    "title": "THE FOXHOLE SESSIONS: A Veterans Open Mic",
+    "start": "2026-11-04T18:00:00-07:00",
+    "end": "2026-11-04T20:00:00-07:00",
+    "allDay": false,
+    "venue": "JUMP",
+    "venueKey": "jump",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "open-mic"
+    ],
+    "size": "M",
+    "url": "https://jumpboise.org/events/the-foxhole-sessions-a-veterans-open-mic",
+    "sources": [
+      {
+        "name": "jump-boise",
+        "url": "https://jumpboise.org/events/the-foxhole-sessions-a-veterans-open-mic",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "aa6f3554beff",
+    "title": "Boise State University Women's Volleyball vs Oregon State - Military Appreciation",
+    "start": "2026-11-04T18:00:00-07:00",
+    "end": "2026-11-04T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Bronco Gym",
+    "venueKey": "bronco-gym",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "college-sports"
+    ],
+    "size": "M",
+    "url": "https://admin.broncosports.com/calendar.aspx?game_id=23071&sport_id=19",
+    "sources": [
+      {
+        "name": "boise-state-athletics",
+        "url": "https://admin.broncosports.com/calendar.aspx?game_id=23071&sport_id=19",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ],
+    "description": "L 0-3 Streaming Video: https://www.youtube.com/pac12 Tickets: https://am.ticketmaster.com/boisestateathl/buy?id=MTQ0MQ=="
+  },
+  {
+    "id": "0013ff013c6a",
+    "title": "Pajama Storytime | Downtown Library!",
+    "start": "2026-11-04T18:30:00-07:00",
+    "end": "2026-11-04T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Main Library",
+    "venueKey": "boise-public-main-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "free-admission",
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisemom.com/event/pajama-storytime-downtown-library-2/2026-11-04/",
+    "description": "Put on your jammies, grab your stuffie, and head to the third floor of the Downtown Library for Pajama Storytime! We’ll read books, dance, and have loads of fun! This program is designed for families and children ages 0-6.",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/pajama-storytime-downtown-library-2/2026-11-04/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "0408003f1c00",
+    "title": "Pajama Storytime",
+    "start": "2026-11-04T18:30:00-07:00",
+    "end": "2026-11-04T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/16458690",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/17238102",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "description": "Put on your jammies, grab your stuffie, and head to the third floor of the Downtown Library for Pajama Storytime! We'll read books, dance, and have loads of fun! This program is designed for families and children ages 0-6."
+  },
+  {
+    "id": "995801b9eefa",
+    "title": "Pajama Storytime",
+    "start": "2026-11-04T18:30:00-07:00",
+    "end": "2026-11-04T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Main Library",
+    "venueKey": "boise-public-main-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "free-admission",
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisemom.com/event/pajama-storytime-3/2026-11-04/",
+    "description": "Put on your jammies, grab your stuffie, and head to the third floor of the Downtown Library for Pajama Storytime! We’ll read books, dance, and have loads of fun! This program is designed for families and children ages 0-6.",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/pajama-storytime-3/2026-11-04/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "d97cbf42e8f3",
+    "title": "Dreamweaver Film Labs: Art Department",
+    "start": "2026-11-04T18:30:00-07:00",
+    "end": "2026-11-04T20:30:00-07:00",
+    "allDay": false,
+    "venue": "JUMP",
+    "venueKey": "jump",
+    "city": "Boise",
+    "category": "arts-culture",
+    "tags": [
+      "film"
+    ],
+    "size": "M",
+    "url": "https://jumpboise.org/events/art-department-production-lab",
+    "sources": [
+      {
+        "name": "jump-boise",
+        "url": "https://jumpboise.org/events/art-department-production-lab",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "0316ea4f4d8a",
+    "title": "Boise State Men’s Basketball Game",
+    "start": "2026-11-04T19:00:00-07:00",
+    "end": "2026-11-04T21:00:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "city": "Other",
+    "category": "sports",
+    "tags": [
+      "college-sports"
+    ],
+    "size": "XL",
+    "url": "https://boisemom.com/event/boise-state-mens-basketball-game/2026-11-04/",
+    "description": "Home game schedule here: https://gotickets.com/boise-state-broncos-mens-basketball-tickets?utm_medium=cpc&utm_source=google&tid=kwd-300993523873&agid=202260866140&cid=24399799847&int=&pres=9191083&network=g&gad_source=1&gad_campaignid=24399799847&gbraid=0AAAAAqsaoUSrjJzlELmGYiaACBV4jFcBi&gclid=Cj...",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/boise-state-mens-basketball-game/2026-11-04/",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "https://broncosports.com/sports/mens-basketball",
+        "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
+    "id": "892fe6ffe8e9",
+    "title": "Slothrust",
+    "start": "2026-11-04T19:00:00-07:00",
+    "end": "2026-11-04T22:00:00-07:00",
+    "allDay": false,
+    "venue": "The Shredder",
+    "venueKey": "the-shredder",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.ticketsmarter.com/e/slothrust-tickets-boise-11-4-2026-the-shredder/3477624?utm_source=dmo&utm_medium=visitboise&utm_campaign=slothrust-3477624",
+    "description": "Slothrust brings its guitar-driven rock to The Shredder, with singer, guitarist and songwriter Leah Wellbaum at the center. The band’s sound blends indie and alternative rock with grunge textures, pop hooks and jazz-influenced chord voicings. Visitors can expect a live club performance built arou...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://www.ticketsmarter.com/e/slothrust-tickets-boise-11-4-2026-the-shredder/3477624?utm_source=dmo&utm_medium=visitboise&utm_campaign=slothrust-3477624",
+        "fetchedAt": "2026-11-03T23:26:24Z"
+      }
+    ]
+  },
+  {
+    "id": "997780e27c94",
+    "title": "Jake Xerxes Fussell",
+    "start": "2026-11-04T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Shrine Social Club",
+    "venueKey": "shrine-social-club",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "M",
+    "url": "https://www.mikebrowngroup.com/event/jake-xerxes-fussell/",
+    "description": "Jake Xerxes Fussell plays Shrine Social Club’s Ballroom on Wednesday, November 4, with Dougie Poole. Doors at 7 PM.",
+    "sources": [
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/jake-xerxes-fussell/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "de919eb8846f",
+    "title": "Boise State University Men's Basketball vs West Coast Baptist",
+    "start": "2026-11-04T19:00:00-07:00",
+    "end": "2026-11-04T21:00:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "college-sports"
+    ],
+    "size": "XL",
+    "url": "https://admin.broncosports.com/calendar.aspx?game_id=23267&sport_id=4",
+    "description": "W 132-53 TV: Pac-12 YouTube Radio: KBOI 670 AM Streaming Audio: https://thevarsitynetwork.com/audioapplink/source/oas-1455/content/boisest:allaccess-Live-868 Tickets: https://am.ticketmaster.com/boisestateathl/buy/ism/MjZNQjExMDQ=",
+    "sources": [
+      {
+        "name": "boise-state-athletics",
+        "url": "https://admin.broncosports.com/calendar.aspx?game_id=23267&sport_id=4",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "extramile-arena",
+        "url": "https://www.ticketmaster.com/boise-state-broncos-mens-basketball-vs-boise-idaho-11-04-2026/event/1E006557EC2EA4E8",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "fe9226ad939c",
+    "title": "Trivia with Geeks Who Drink",
+    "start": "2026-11-04T19:00:00-07:00",
+    "end": "2026-11-04T21:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Brewing",
+    "venueKey": "boise-brewing",
+    "city": "Boise",
+    "category": "food-drink",
+    "tags": [
+      "trivia"
+    ],
+    "size": "S",
+    "url": "http://boisebrewing.com",
+    "description": "Join us every Wednesday in the Boise Brewing taproom for trivia with Geeks Who Drink, hosted by Professor Truman. Stretch those brain muscles and test your knowledge of random trivia facts, including music and film clip rounds! Plus, you have a chance to win beer in every round! Top 3 finishing t...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "http://boisebrewing.com",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      }
+    ]
+  },
+  {
+    "id": "65eb08c1dacf",
+    "title": "Idaho Steelheads Home Game",
+    "start": "2026-11-04T19:10:00-07:00",
+    "end": "2026-11-04T21:00:00-07:00",
+    "allDay": false,
+    "venue": "Idaho Central Arena",
+    "venueKey": "idaho-central-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "hockey"
+    ],
+    "size": "L",
+    "url": "https://boisemom.com/event/idaho-steelheads-home-game-2/2026-11-04/",
+    "description": "Full breakdown of opponents this season: 12x – New Mexico Goatheads (6 home, 6 away) 11x – Rapid City Rush (6 home, 5 away) 11x – Tulsa Oilers (5 home, 6 away) 9x – Allen Americans (4 home, 5 away) 9x – Tahoe Knight Monsters (3 home, 6 away) 8x – Kansas City Mavericks (3 home, 5 away) 6x – Wichit...",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/idaho-steelheads-home-game-2/2026-11-04/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "https://www.ticketsmarter.com/p/idaho-steelheads-tickets?utm_source=dmo&utm_medium=visitboise&utm_campaign=idaho-steelheads_recurring_20261104_20270410",
+        "fetchedAt": "2026-11-03T23:26:24Z"
+      }
+    ]
+  },
+  {
+    "id": "c79fa97cc2c4",
+    "title": "Idaho Steelheads vs. Rapid City Rush",
+    "start": "2026-11-04T19:10:00-07:00",
+    "allDay": false,
+    "venue": "Idaho Central Arena",
+    "venueKey": "idaho-central-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "hockey"
+    ],
+    "size": "L",
+    "url": "https://www.mikebrowngroup.com/event/idaho-steelheads-vs-rapid-city-rush/",
+    "description": "The Idaho Steelheads host the Rapid City Rush at Idaho Central Arena on Wednesday, November 4. Doors at 6:15 PM, puck drop at 7:10 PM.",
+    "sources": [
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/idaho-steelheads-vs-rapid-city-rush/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "ecb235a9f8a7",
+    "title": "Rapid City Rush @ Idaho Steelheads",
+    "start": "2026-11-04T19:10:00-07:00",
+    "end": "2026-11-04T22:10:00-07:00",
+    "allDay": false,
+    "venue": "Idaho Central Arena",
+    "venueKey": "idaho-central-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "hockey"
+    ],
+    "size": "L",
+    "url": "https://idahosteelheads.com/games/2026/11/04/rapid-city-rush",
+    "description": "Rapid City Rush at Idaho Steelheads",
+    "sources": [
+      {
+        "name": "idaho-steelheads",
+        "url": "https://idahosteelheads.com/games/2026/11/04/rapid-city-rush",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "665e6cfe43d2",
+    "title": "Katie Pruitt - Fools for the Fleeting Tour",
+    "start": "2026-11-04T20:00:00-07:00",
+    "allDay": false,
+    "venue": "9th St. Parallel at Knitting Factory",
+    "venueKey": "9th-st-parallel-at-knitting-factory",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "M",
+    "url": "https://www.ticketweb.com/event/katie-pruitt-fools-9th-st-parallel-at-knitting-tickets/14988593",
+    "description": "DELAYED DELIVERY: There is a ticket delivery delay in place for this event. Tickets will be emailed 48 hours prior to the event.",
+    "sources": [
+      {
+        "name": "ninth-st-parallel",
+        "url": "https://www.ticketweb.com/event/katie-pruitt-fools-9th-st-parallel-at-knitting-tickets/14988593",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      },
+      {
+        "name": "ticketmaster-metro",
+        "url": "https://www.ticketweb.com/event/katie-pruitt-fools-9th-st-parallel-at-knitting-tickets/14988593",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      }
+    ]
+  },
+  {
+    "id": "8019956bc7bf",
+    "title": "Katie Pruitt – Fools for the Fleeting Tour",
+    "start": "2026-11-04T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Knitting Factory",
+    "venueKey": "knitting-factory",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "L",
+    "url": "https://www.mikebrowngroup.com/event/katie-pruitt-fools-for-the-fleeting-tour/",
+    "description": "Katie Pruitt brings the Fools for the Fleeting Tour to Knitting Factory (9th St. Parallel room) on Wednesday, November 4, with Fancy Hagood. Doors at 7 PM, show at 8 PM. All ages.",
+    "sources": [
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/katie-pruitt-fools-for-the-fleeting-tour/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "882eae0d68be",
+    "title": "The Tallest Man on Earth",
+    "start": "2026-11-04T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Treefort Music Hall",
+    "venueKey": "treefort-music-hall",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "M",
+    "url": "https://www.ticketmaster.com/event/Z7r9jZ1A70z_d",
+    "sources": [
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/the-tallest-man-on-earth-w-andrea-von-kampen/",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      },
+      {
+        "name": "ticketmaster-metro",
+        "url": "https://www.ticketmaster.com/event/Z7r9jZ1A70z_d",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "https://www.ticketsmarter.com/e/the-tallest-man-on-earth-tickets-boise-11-4-2026-treefort-music-hall/3392653?utm_source=dmo&utm_medium=visitboise&utm_campaign=thetallestmanonearth-3392653",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      }
+    ],
+    "description": "Swedish singer-songwriter Kristian Matsson performs as The Tallest Man on Earth, known for intimate indie-folk songs led by expressive vocals and acoustic guitar. At Treefort Music Hall, visitors can expect a live set centered on his solo songwriting and folk sound. The evening also features sing...",
+    "end": "2026-11-04T22:00:00-07:00"
+  },
+  {
+    "id": "c8eb735d4a90",
+    "title": "PLAYDEAD, Carrion Kids (Mexico City), Steve Turner (DJ Set, Mudhoney)",
+    "start": "2026-11-04T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Neurolux",
+    "venueKey": "neurolux",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert",
+      "dj-night",
+      "kids"
+    ],
+    "size": "M",
+    "url": "https://www.ticketweb.com/event/playdead-carrion-kids-mexico-city-neurolux-lounge-tickets/14406794",
+    "sources": [
+      {
+        "name": "neurolux",
+        "url": "https://www.ticketweb.com/event/playdead-carrion-kids-mexico-city-neurolux-lounge-tickets/14406794",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "ticketmaster-metro",
+        "url": "https://www.ticketweb.com/event/playdead-carrion-kids-mexico-city-neurolux-lounge-tickets/14406794",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      }
+    ]
+  },
+  {
+    "id": "1ae80adea75b",
+    "title": "Late Nite Karaoke at Shrine Social Club",
+    "start": "2026-11-04T22:00:00-07:00",
+    "end": "2026-11-05T02:00:00-07:00",
+    "allDay": false,
+    "venue": "Shrine Social Club",
+    "venueKey": "shrine-social-club",
+    "city": "Boise",
+    "category": "food-drink",
+    "tags": [
+      "free-admission",
+      "karaoke"
+    ],
+    "size": "M",
+    "url": "https://findkaraoke.net/boise/venues/shrine-social-club-2",
+    "description": "Late Nite Karaoke every Wednesday, 10 PM to 2 AM in the Basement at Shrine Social Club on W Idaho Street in downtown Boise. 21+, no cover. Downtown Boise's after-hours karaoke home base. Head into the Basement, put in a song, and take the mic. \"Liquid Courage\" drink specials (shot and can combo)...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://findkaraoke.net/boise/venues/shrine-social-club-2",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   }
