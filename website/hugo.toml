@@ -1,0 +1,22 @@
+baseURL = '/'
+locale = 'en-us'
+title = 'Treasure Valley Events'
+disableKinds = ['taxonomy', 'term', 'rss', 'sitemap']
+
+# Events come from the repo-level data/ folder, so ingestion never writes into this tree.
+[module]
+  [[module.mounts]]
+    source = 'content'
+    target = 'content'
+  [[module.mounts]]
+    source = 'layouts'
+    target = 'layouts'
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    source = 'data'
+    target = 'data'
+  [[module.mounts]]
+    source = '../data'
+    target = 'data'

@@ -1,0 +1,115 @@
+{{ define "main" }}
+{{- $cats := dict }}
+{{- range hugo.Data.schema.categories }}{{ $cats = merge $cats (dict .id .label) }}{{ end }}
+{{- $sizes := dict }}
+{{- $sizeOrder := slice }}
+{{- range hugo.Data.schema.sizes.levels }}
+  {{- $sizes = merge $sizes (dict .id (printf "%s: %s" .label .description)) }}
+  {{- $sizeOrder = $sizeOrder | append .id }}
+{{- end }}
+{{- $lastIngest := "" }}
+{{- with hugo.Data.meta }}{{ $lastIngest = .lastIngest }}{{ end }}
+
+{{- /* A slimmer copy of events.json for the browser: short keys, only the fields the page uses. */}}
+{{- $list := slice }}
+{{- range hugo.Data.events }}
+  {{- $list = $list | append (dict
+    "t" .title
+    "s" .start
+    "e" (.end | default "")
+    "a" (.allDay | default false)
+    "v" (.venue | default "")
+    "c" (.city | default "")
+    "k" (.category | default "")
+    "g" (.tags | default slice)
+    "z" (.size | default "")
+    "u" (.url | default "")
+    "d" (.description | default "")
+  ) }}
+{{- end }}
+{{- $data := resources.FromString "data/events.json" ($list | jsonify) | fingerprint }}
+{{- $cfg := dict "events" $data.RelPermalink "categories" $cats "sizes" $sizes "sizeOrder" $sizeOrder "lastIngest" $lastIngest }}
+
+<header class="top">
+  <div class="wrap">
+    <h1>Treasure Valley Events</h1>
+    <p class="sub">
+      {{- len hugo.Data.events | lang.FormatNumber 0 }} upcoming events in Boise, Meridian, Nampa, Eagle, Caldwell, and nearby
+      {{- with $lastIngest }}, as of <time id="as-of" datetime="{{ . }}">{{ (time.AsTime .).Format "Jan 2, 3:04 PM UTC" }}</time>{{ end }}.
+    </p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="controls" aria-label="Filters">
+    <div class="row">
+      <label class="field search">
+        <span class="label">Search</span>
+        <input id="q" type="search" placeholder="Events, venues, tags" autocomplete="off" spellcheck="false">
+      </label>
+      <label class="field">
+        <span class="label">When</span>
+        <select id="when">
+          <option value="">Any date</option>
+          <option value="today">Today</option>
+          <option value="tomorrow">Tomorrow</option>
+          <option value="weekend">This weekend</option>
+          <option value="week">Next 7 days</option>
+          <option value="month">Next 30 days</option>
+          <option value="custom">Custom dates</option>
+        </select>
+      </label>
+      <label class="field date">
+        <span class="label">From</span>
+        <input id="from" type="date">
+      </label>
+      <label class="field date">
+        <span class="label">To</span>
+        <input id="to" type="date">
+      </label>
+      <label class="field">
+        <span class="label">City</span>
+        <select id="city"><option value="">All cities</option></select>
+      </label>
+      <label class="field">
+        <span class="label">Size</span>
+        <select id="size"><option value="">Any size</option></select>
+      </label>
+      <button id="reset" class="btn" type="button">Reset</button>
+    </div>
+    <div class="chips" id="cats" role="group" aria-label="Categories"></div>
+  </section>
+
+  <div class="status">
+    <p id="count" aria-live="polite">Loading events</p>
+    <nav class="pager" id="pager-top" aria-label="Pages"></nav>
+  </div>
+
+  <div class="table-wrap">
+    <table class="grid">
+      <thead>
+        <tr>
+          <th scope="col" data-sort="date" aria-sort="ascending"><button type="button">Date</button></th>
+          <th scope="col">Time</th>
+          <th scope="col" data-sort="title"><button type="button">Event</button></th>
+          <th scope="col" data-sort="venue"><button type="button">Venue</button></th>
+          <th scope="col" data-sort="city"><button type="button">City</button></th>
+          <th scope="col">Category</th>
+          <th scope="col" title="Estimated crowd size">Size</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <nav class="pager bottom" id="pager-bottom" aria-label="Pages"></nav>
+</main>
+
+<footer class="wrap foot">
+  <p>Every listing links to the organizer's own page. Collected nightly from public calendars and APIs by <a href="https://github.com/rhundhausen/tv-events">tv-events</a>.</p>
+</footer>
+
+<script type="application/json" id="tv-config">{{ $cfg | jsonify | safeJS }}</script>
+{{ $js := resources.Get "js/app.js" | js.Build (dict "minify" true "target" "es2020") | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

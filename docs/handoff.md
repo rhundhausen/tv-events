@@ -14,6 +14,10 @@ Layout:
 
 Secrets: `.env.ps1` and `.secrets.local.md` are gitignored and were not copied from the Azure DevOps repo. The repo is public; never commit them.
 
+Reminders:
+
+- **Visual Arts Collective.** Paused (`investigating`) on 2026-11-05 because its newest event pages time out from GitHub Actions runners but load from a home connection. Once a basic website is up, email booking@visualartscollective.com with the plan and ask them to allow the bot from GitHub's servers. Details are in the source's `notes` in `ingestion/sources.json`.
+
 State of the project on 2026-11-03, written when it moved from GitHub to a private Azure DevOps repo. Read this first in a new session. [schema.md](schema.md), [sources.md](sources.md), and [source-status.md](source-status.md) cover the details.
 
 ## Where things stand

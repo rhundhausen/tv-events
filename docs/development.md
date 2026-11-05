@@ -40,8 +40,12 @@ Requires PowerShell 7.4 or later and Pester 6.0.0. Run everything from the repo 
 ./ingestion/scripts/Test-Schema.ps1                          # validate stored events
 ./ingestion/scripts/Invoke-Ingest.ps1 -NoWrite               # fetch and report, don't touch data/
 ./ingestion/scripts/Invoke-Ingest.ps1 -NoWrite -Source idaho-steelheads   # one source
+./ingestion/scripts/Invoke-Ingest.ps1 -CleanupOnly           # re-run dedupe and cleanup on stored data, no fetching
 Invoke-Pester -Path ./ingestion/tests                        # run the tests
+hugo server -s website                                       # the site, at http://localhost:1313
 ```
+
+Every run drops events any source titles as canceled, and dedupes across sources (see `Merge-TvEvents` in `ingestion/scripts/lib/Dedupe.ps1`). `-CleanupOnly` applies a change to those rules to `data/events.json` and every archive month without a network request; add `-NoWrite` to see the counts first. A run that fetched also writes `data/meta.json` with the time of the last ingest, which the site shows.
 
 API keys are read from environment variables only. Copy `ingestion/.env.example.ps1` to `ingestion/.env.ps1` and fill in real values. `.env.ps1` and `.secrets.local.md` are gitignored; this repo is public, so never commit them. Sources whose key is missing fail with a warning and the rest still run. Raw per-source output and `run.json` go to `out/`, which is also gitignored.
 

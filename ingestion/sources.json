@@ -57,6 +57,13 @@
       "notes": "Adapter built, never run live. Needs an approved BANDSINTOWN_APP_ID; app_id=tv-events got HTTP 403. Keyed by artist, so it cannot list a venue's shows. Knitting Factory and Neurolux come through Ticketmaster instead"
     },
     {
+      "displayName": "Barnes & Noble Boise",
+      "url": "https://stores.barnesandnoble.com/store/2740?view=calendar",
+      "category": "learning-business",
+      "city": "Boise",
+      "notes": "Store 2740 events calendar, added 2026-11-05. Not probed; check robots.txt and terms first"
+    },
+    {
       "displayName": "Block 22 Hotels",
       "status": "investigating",
       "url": "https://block22llc.com/boise-events-calendar.html",
@@ -98,6 +105,13 @@
       "priority": 20,
       "scrapeMode": "calendarapp",
       "notes": "The calendar page embeds every event as JSON in the data-config attribute of #calendar-app: 204 events on 2026-11-03, 19 upcoming, across the Boise Arts & History, James Castle House, and Erma Hayman House calendars. Fields include title, startDate, endDate, location, eventUrl, category, cost. startDate writes local time with a Z suffix, like localTimeAsUtc. scrape has no mode for embedded JSON yet. The page is 1.8 MB. Terms not read. Configured 2026-11-03 with scrapeMode calendarapp, which reads the start and end fields (Boise wall-clock time) and skips past events"
+    },
+    {
+      "displayName": "Boise Books on the Vine",
+      "url": "https://www.boisebooksonthevine.com/events",
+      "category": "learning-business",
+      "city": "Boise",
+      "notes": "Bookstore events page, added 2026-11-05. Not probed; check robots.txt first"
     },
     {
       "displayName": "Boise Bucket List",
@@ -182,7 +196,7 @@
       "displayName": "Boise Parks and Recreation",
       "category": "outdoors-recreation",
       "city": "Boise",
-      "notes": "Dictated as 'Boise city park schedule' plus Ann Morrison Park, Julia Davis Park, and Camel's Back Park (dictated 'Camelback'). Parks don't publish their own calendars; events there come from the department or from organizers"
+      "notes": "Dictated as 'Boise city park schedule' plus Ann Morrison Park, Julia Davis Park, and Camel's Back Park (dictated 'Camelback'). Parks don't publish their own calendars; events there come from the department or from organizers. Added 2026-11-05, not probed: the department's league calendar on TeamSideline (https://teamsideline.com/sites/boiseparks/calendar), probably rec league games rather than public events, and the Fort Boise drop-in activities schedule (https://www.cityofboise.org/departments/parks-and-recreation/facilities/fort-boise/drop-in-activities-schedule/), probably recurring classes. city-of-boise already reads the city's events API; check for overlap"
     },
     {
       "displayName": "Boise Philharmonic",
@@ -346,6 +360,12 @@
       "priority": 20,
       "locationFilter": "Boise|Caldwell|Meridian|Nampa",
       "notes": "All sports, per-event LOCATION. The filter removes away games"
+    },
+    {
+      "displayName": "Curbside Books",
+      "url": "https://www.curbsidebooks.com/pages/events",
+      "category": "learning-business",
+      "notes": "Bookstore events page (Shopify), added 2026-11-05. Not probed; check robots.txt first. City to confirm"
     },
     {
       "displayName": "Danielle Hahn Real Estate",
@@ -515,6 +535,12 @@
       "notes": "Squarespace community calendar that mixes many sources (Nampa library, Boise State football, local shops). robots.txt disallows the format=ical and format=json URLs. The list page has no schema.org data; event pages not checked. Mostly duplicates other sources, but useful for finding new ones"
     },
     {
+      "displayName": "hofbooks.com",
+      "url": "https://www.hofbooks.com/pages/events",
+      "category": "learning-business",
+      "notes": "Bookstore events page (Shopify), added 2026-11-05. Store name and city to confirm. Not probed; check robots.txt first"
+    },
+    {
       "displayName": "Home2 Suites by Hilton",
       "city": "Boise",
       "notes": "Dictated as 'home to'. Public events at the hotel. Boise for now; exact location to confirm"
@@ -583,7 +609,7 @@
       "venue": "Idaho Shakespeare Festival Amphitheater",
       "venueKey": "idaho-shakespeare-festival-amphitheater",
       "priority": 20,
-      "notes": "Seasonal: 96 events in 2026, none upcoming as of 2026-10-30"
+      "notes": "Seasonal: 96 events in 2026, none upcoming as of 2026-10-30. On 2026-11-05 the 2027 season (95 shows, May 21 to Sep 26, 2027) was published and fetched; it is kept from about 2026-11-22, when the first show enters the 180-day window"
     },
     {
       "displayName": "Idaho State Capitol",
@@ -797,6 +823,13 @@
       "notes": "Boise State Public Radio has its own entry. Commercial stations list promoted shows"
     },
     {
+      "displayName": "Rediscovered Books",
+      "url": "https://rdbooks.org/events",
+      "category": "learning-business",
+      "city": "Boise",
+      "notes": "Bookstore events page, added 2026-11-05. Not probed; check robots.txt first"
+    },
+    {
       "name": "revolution-concert-house",
       "displayName": "Revolution Concert House",
       "status": "running",
@@ -863,6 +896,13 @@
       "displayName": "StubHub",
       "status": "ruled-out",
       "reason": "Partner API only, and resale duplicates primary listings"
+    },
+    {
+      "displayName": "The Cabin",
+      "url": "https://www.thecabinidaho.org/all-events",
+      "category": "learning-business",
+      "city": "Boise",
+      "notes": "Literary center events page, added 2026-11-05. Not probed; check robots.txt first"
     },
     {
       "displayName": "The Linen Building",
@@ -981,7 +1021,7 @@
     {
       "name": "visual-arts-collective",
       "displayName": "Visual Arts Collective",
-      "status": "running",
+      "status": "investigating",
       "adapter": "scrape",
       "url": "https://visualartscollective.com/events/",
       "category": "music",
@@ -993,7 +1033,7 @@
       "fixedVenue": true,
       "scrapeMode": "jsonld",
       "eventLinkPattern": "https://visualartscollective\\.com/events/[a-z0-9-]+/",
-      "notes": "Reads each event page"
+      "notes": "Reads each event page. Paused 2026-11-05: from GitHub Actions runners the 3 newest event pages time out at 30s on every run (listing and older pages load), so no upcoming events came through; from a home connection with the same User-Agent all 6 load in 14s. robots.txt allows /events/, llms.txt points to it, no terms of use. Reminder: once a basic website is up, email booking@visualartscollective.com with the plan and ask them to allow the bot from GitHub's servers; set back to running if they agree, ruled-out if they decline"
     },
     {
       "name": "western-idaho-fair",

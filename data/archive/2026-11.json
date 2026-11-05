@@ -69,28 +69,6 @@
     ]
   },
   {
-    "id": "c434e8a503d5",
-    "title": "CANCELED - Tales and Trails - Hyatt Hidden Lakes Reserve",
-    "start": "2026-11-02T09:00:00-07:00",
-    "end": "2026-11-02T10:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17053641",
-    "description": "Each week, library staff will share a story and lead participants on a short walk through nature. This walk is stroller friendly. Please bring the following with you, as needed: weather appropriate clothing, good footwear, water, sunscreen and hat. Hyatt Hidden Lakes Reserve - 5301 N. Maple Grove...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17053641",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "8aaf4eff8496",
     "title": "Preschool Storytime",
     "start": "2026-11-02T10:15:00-07:00",
@@ -416,28 +394,6 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/nintendo-club-bown-library/2026-11-02/",
         "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
-    "id": "ad95e70e8fc5",
-    "title": "CANCELLED Nintendo Club",
-    "start": "2026-11-02T16:00:00-07:00",
-    "end": "2026-11-02T17:30:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17214206",
-    "description": "Join us Mondays at 4 p.m. as we play a variety of multiplayer games on the Nintendo Switch. We have a selection of games that we rotate through, so there's bound to be something fun for every gamer! Participants are welcome to bring their own Nintendo Switch controllers/consoles, but it is not ne...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17214206",
-        "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
   },
@@ -843,28 +799,6 @@
         "name": "visit-boise",
         "url": "https://www.bardenaydistilling.com/",
         "fetchedAt": "2026-11-03T17:00:01Z"
-      }
-    ]
-  },
-  {
-    "id": "a1374c2b0151",
-    "title": "CANCELED - Fit and Fall Proof",
-    "start": "2026-11-03T12:00:00-07:00",
-    "end": "2026-11-03T13:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15445638",
-    "description": "Fit and Fall Proof™ is designed to help senior citizens prevent injuries and the subsequent loss of independence. Class participants learn simple exercises to increase strength, balance and endurance, which can help prevent the accidental falls and tripping sometimes associated with age. Registra...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15445638",
-        "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
   },
@@ -1281,28 +1215,6 @@
         "name": "boise-mom",
         "url": "https://boisemom.com/event/survivors-of-suicide-boise-hive/2026-11-03/",
         "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
-    "id": "0c79e4046779",
-    "title": "CANCELED - Speak German to Me",
-    "start": "2026-11-03T18:30:00-07:00",
-    "end": "2026-11-03T19:30:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/16237014",
-    "description": "Interested in German and want people to talk to? Used to know German and want to get back into it? Speak fluently and want to show us a thing or two? Join us as we explore the German language.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/16237014",
-        "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
   },
@@ -2369,35 +2281,6 @@
     ]
   },
   {
-    "id": "0316ea4f4d8a",
-    "title": "Boise State Men’s Basketball Game",
-    "start": "2026-11-04T19:00:00-07:00",
-    "end": "2026-11-04T21:00:00-07:00",
-    "allDay": false,
-    "venue": "ExtraMile Arena",
-    "venueKey": "extramile-arena",
-    "city": "Other",
-    "category": "sports",
-    "tags": [
-      "college-sports"
-    ],
-    "size": "XL",
-    "url": "https://boisemom.com/event/boise-state-mens-basketball-game/2026-11-04/",
-    "description": "Home game schedule here: https://gotickets.com/boise-state-broncos-mens-basketball-tickets?utm_medium=cpc&utm_source=google&tid=kwd-300993523873&agid=202260866140&cid=24399799847&int=&pres=9191083&network=g&gad_source=1&gad_campaignid=24399799847&gbraid=0AAAAAqsaoUSrjJzlELmGYiaACBV4jFcBi&gclid=Cj...",
-    "sources": [
-      {
-        "name": "boise-mom",
-        "url": "https://boisemom.com/event/boise-state-mens-basketball-game/2026-11-04/",
-        "fetchedAt": "2026-11-03T17:00:01Z"
-      },
-      {
-        "name": "visit-boise",
-        "url": "https://broncosports.com/sports/mens-basketball",
-        "fetchedAt": "2026-11-04T21:43:45Z"
-      }
-    ]
-  },
-  {
     "id": "892fe6ffe8e9",
     "title": "Slothrust",
     "start": "2026-11-04T19:00:00-07:00",
@@ -2457,8 +2340,12 @@
     ],
     "size": "XL",
     "url": "https://admin.broncosports.com/calendar.aspx?game_id=23267&sport_id=4",
-    "description": "W 132-53 TV: Pac-12 YouTube Radio: KBOI 670 AM Streaming Audio: https://thevarsitynetwork.com/audioapplink/source/oas-1455/content/boisest:allaccess-Live-868 Tickets: https://am.ticketmaster.com/boisestateathl/buy/ism/MjZNQjExMDQ=",
     "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/boise-state-mens-basketball-game/2026-11-04/",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      },
       {
         "name": "boise-state-athletics",
         "url": "https://admin.broncosports.com/calendar.aspx?game_id=23267&sport_id=4",
@@ -2468,8 +2355,14 @@
         "name": "extramile-arena",
         "url": "https://www.ticketmaster.com/boise-state-broncos-mens-basketball-vs-boise-idaho-11-04-2026/event/1E006557EC2EA4E8",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "https://broncosports.com/sports/mens-basketball",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
-    ]
+    ],
+    "description": "Home game schedule here: https://gotickets.com/boise-state-broncos-mens-basketball-tickets?utm_medium=cpc&utm_source=google&tid=kwd-300993523873&agid=202260866140&cid=24399799847&int=&pres=9191083&network=g&gad_source=1&gad_campaignid=24399799847&gbraid=0AAAAAqsaoUSrjJzlELmGYiaACBV4jFcBi&gclid=Cj..."
   },
   {
     "id": "fe9226ad939c",
@@ -2496,58 +2389,6 @@
     ]
   },
   {
-    "id": "65eb08c1dacf",
-    "title": "Idaho Steelheads Home Game",
-    "start": "2026-11-04T19:10:00-07:00",
-    "end": "2026-11-04T21:00:00-07:00",
-    "allDay": false,
-    "venue": "Idaho Central Arena",
-    "venueKey": "idaho-central-arena",
-    "city": "Boise",
-    "category": "sports",
-    "tags": [
-      "hockey"
-    ],
-    "size": "L",
-    "url": "https://boisemom.com/event/idaho-steelheads-home-game-2/2026-11-04/",
-    "description": "Full breakdown of opponents this season: 12x – New Mexico Goatheads (6 home, 6 away) 11x – Rapid City Rush (6 home, 5 away) 11x – Tulsa Oilers (5 home, 6 away) 9x – Allen Americans (4 home, 5 away) 9x – Tahoe Knight Monsters (3 home, 6 away) 8x – Kansas City Mavericks (3 home, 5 away) 6x – Wichit...",
-    "sources": [
-      {
-        "name": "boise-mom",
-        "url": "https://boisemom.com/event/idaho-steelheads-home-game-2/2026-11-04/",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      },
-      {
-        "name": "visit-boise",
-        "url": "https://www.ticketsmarter.com/p/idaho-steelheads-tickets?utm_source=dmo&utm_medium=visitboise&utm_campaign=idaho-steelheads_recurring_20261104_20270410",
-        "fetchedAt": "2026-11-03T23:26:24Z"
-      }
-    ]
-  },
-  {
-    "id": "c79fa97cc2c4",
-    "title": "Idaho Steelheads vs. Rapid City Rush",
-    "start": "2026-11-04T19:10:00-07:00",
-    "allDay": false,
-    "venue": "Idaho Central Arena",
-    "venueKey": "idaho-central-arena",
-    "city": "Boise",
-    "category": "sports",
-    "tags": [
-      "hockey"
-    ],
-    "size": "L",
-    "url": "https://www.mikebrowngroup.com/event/idaho-steelheads-vs-rapid-city-rush/",
-    "description": "The Idaho Steelheads host the Rapid City Rush at Idaho Central Arena on Wednesday, November 4. Doors at 6:15 PM, puck drop at 7:10 PM.",
-    "sources": [
-      {
-        "name": "mike-brown-group",
-        "url": "https://www.mikebrowngroup.com/event/idaho-steelheads-vs-rapid-city-rush/",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
     "id": "ecb235a9f8a7",
     "title": "Rapid City Rush @ Idaho Steelheads",
     "start": "2026-11-04T19:10:00-07:00",
@@ -2562,14 +2403,29 @@
     ],
     "size": "L",
     "url": "https://idahosteelheads.com/games/2026/11/04/rapid-city-rush",
-    "description": "Rapid City Rush at Idaho Steelheads",
     "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/idaho-steelheads-home-game-2/2026-11-04/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
       {
         "name": "idaho-steelheads",
         "url": "https://idahosteelheads.com/games/2026/11/04/rapid-city-rush",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/idaho-steelheads-vs-rapid-city-rush/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "https://www.ticketsmarter.com/p/idaho-steelheads-tickets?utm_source=dmo&utm_medium=visitboise&utm_campaign=idaho-steelheads_recurring_20261104_20270410",
+        "fetchedAt": "2026-11-03T23:26:24Z"
       }
-    ]
+    ],
+    "description": "Full breakdown of opponents this season: 12x – New Mexico Goatheads (6 home, 6 away) 11x – Rapid City Rush (6 home, 5 away) 11x – Tulsa Oilers (5 home, 6 away) 9x – Allen Americans (4 home, 5 away) 9x – Tahoe Knight Monsters (3 home, 6 away) 8x – Kansas City Mavericks (3 home, 5 away) 6x – Wichit..."
   },
   {
     "id": "665e6cfe43d2",
@@ -2707,6 +2563,251 @@
         "name": "visit-boise",
         "url": "https://findkaraoke.net/boise/venues/shrine-social-club-2",
         "fetchedAt": "2026-11-04T21:43:45Z"
+      }
+    ]
+  },
+  {
+    "id": "854f7e42bef4",
+    "title": "Fit and Fall Proof",
+    "start": "2026-11-05T09:15:00-07:00",
+    "end": "2026-11-05T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/15302053",
+    "description": "Fit and Fall Proof™ is designed to help senior citizens prevent injuries and the subsequent loss of independence. Class participants learn simple exercises to increase strength, balance and endurance, which can help prevent the accidental falls and tripping sometimes associated with age. Registra...",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/15302053",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "edac6cb1e1b8",
+    "title": "Tunes & Tales | Garden City Public Library",
+    "start": "2026-11-05T10:00:00-07:00",
+    "end": "2026-11-05T11:00:00-07:00",
+    "allDay": false,
+    "venue": "Garden City Public Library",
+    "venueKey": "garden-city-public-library",
+    "city": "Garden City",
+    "category": "learning-business",
+    "tags": [
+      "free-admission",
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisemom.com/event/tunes-tales-garden-city-public-library/2026-11-05/",
+    "description": "Gear up for a whirlwind of fun with this energetic storytime! It’s a perfect blend of captivating stories, toe-tapping tunes, groovy moves, and loads of learning! After storytime we will dive into 30 minutes of open play",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/tunes-tales-garden-city-public-library/2026-11-05/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "02353aab4908",
+    "title": "Fit and Fall Proof",
+    "start": "2026-11-05T10:15:00-07:00",
+    "end": "2026-11-05T11:00:00-07:00",
+    "allDay": false,
+    "venue": "Nampa Public Library",
+    "venueKey": "nampa-public-library",
+    "city": "Nampa",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://nampalibrary.libcal.com/event/13558534",
+    "description": "™ is designed to help senior citizens prevent injuries and the subsequent loss of independence. Class participants learn simple exercises to increase strength, balance, and endurance, which can help prevent the accidental falls and tripping sometimes associated with age.",
+    "sources": [
+      {
+        "name": "nampa-public-library",
+        "url": "https://nampalibrary.libcal.com/event/13558534",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "223591e68fec",
+    "title": "Family Storytime | Collister Library!",
+    "start": "2026-11-05T10:30:00-07:00",
+    "end": "2026-11-05T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Library! at Collister",
+    "venueKey": "library-at-collister",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "free-admission",
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisemom.com/event/family-storytime-collister-library/2026-11-05/",
+    "description": "Join us in the Sycamore Room at the Library! at Collister for Family Storytime every Thursday at 10:30am! These storytimes will include stories and songs and are designed for children ages 0-5 and their caregivers. A 30-minute storytime will be followed by 30 minutes of open play time.",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/family-storytime-collister-library/2026-11-05/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "2d287625b3fb",
+    "title": "Babies Stories & Play | Bown Library!",
+    "start": "2026-11-05T10:30:00-07:00",
+    "end": "2026-11-05T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Library! at Bown Crossing",
+    "venueKey": "library-at-bown-crossing",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "free-admission",
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisemom.com/event/babies-stories-play-bown-library/2026-11-05/",
+    "description": "Explore early literacy concepts through rhymes, songs, board books, and movement. After storytime is an open play session with chances to meet new friends. This program is designed for babies (0-24 months) and their caregivers.",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/babies-stories-play-bown-library/2026-11-05/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "83b88f9f1d53",
+    "title": "Family Storytime",
+    "start": "2026-11-05T10:30:00-07:00",
+    "end": "2026-11-05T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/15301892",
+    "description": "Join us in the Sycamore Room at the Library! at Collister for Family Storytime every Thursday at 10:30am! These storytimes will include stories and songs and are designed for children ages 0-5 and their caregivers. A 30-minute storytime will be followed by 30 minutes of open play time.",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/15301892",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "8fc97cffd9dd",
+    "title": "Preschool Storytime | Cole & Ustick Library!",
+    "start": "2026-11-05T10:30:00-07:00",
+    "end": "2026-11-05T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Library! at Cole & Ustick",
+    "venueKey": "library-at-cole-and-ustick",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "free-admission",
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-11-05/",
+    "description": "Join us every Thursday at 10:30 AM for this kindergarten readiness storytime and craft! This storytime is designed for children ages 3-5 and their caregiver.",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-11-05/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "b478929bb910",
+    "title": "Preschool Storytime",
+    "start": "2026-11-05T10:30:00-07:00",
+    "end": "2026-11-05T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/15637580",
+    "description": "Join us every Thursday at 10:30 AM for this kindergarten readiness storytime and craft! This storytime is designed for children ages 3-5 and their caregiver.",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/15637580",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "c20301a7ee8a",
+    "title": "Baby Stories and Play",
+    "start": "2026-11-05T10:30:00-07:00",
+    "end": "2026-11-05T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/15662954",
+    "description": "Explore early literacy concepts through rhymes, songs, board books, and movement. After storytime is an open play session with chances to meet new friends. This program is designed for babies (0-24 months) and their caregivers.",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/15662954",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "db42838910e5",
+    "title": "Toddler Storytime",
+    "start": "2026-11-05T10:30:00-07:00",
+    "end": "2026-11-05T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/16624514",
+    "description": "Join us for a fun-filled hour with songs, books, and playtime activities designed to help develop your child’s early literacy and social skills. This program is intended for toddlers ages 2 - 3 years and their caregivers.",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/16624514",
+        "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
   }

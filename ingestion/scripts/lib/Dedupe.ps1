@@ -52,6 +52,76 @@ function Get-JaroWinkler {
   [double]($jaro + $prefix * 0.1 * (1 - $jaro))
 }
 
+$script:CanceledPattern = '(?i)\b(cancell?ed)\b'
+
+# Words that say nothing about which event it is, and short forms that sources spell both ways.
+$script:TitleStopWords = [Collections.Generic.HashSet[string]]::new([string[]]@(
+    'a', 'an', 'and', 'at', 'by', 'event', 'feat', 'featuring', 'for', 'ft', 'game', 'in', 'live', 'night', 'of',
+    'on', 'presents', 'show', 'the', 'to', 'tour', 'v', 'vs', 'w', 'with'
+  ))
+$script:TitleExpansions = @{
+  bsu = 'boise state university'
+  nnu = 'northwest nazarene university'
+}
+
+function Test-TvCanceledTitle {
+  # True for titles like "CANCELED - Play and Learn" or "CANCELLED Ping-Pong Club".
+  [CmdletBinding()]
+  [OutputType([bool])]
+  param([Parameter(Mandatory, Position = 0)][AllowEmptyString()][string]$Title)
+
+  $Title -match $script:CanceledPattern
+}
+
+function Get-TvMatchTitle {
+  # The normalized title with any "canceled" marker removed, so a cancellation still matches its listing.
+  [CmdletBinding()]
+  [OutputType([string])]
+  param([Parameter(Mandatory, Position = 0)][AllowEmptyString()][string]$Title)
+
+  ((Get-NormalizedTitle $Title) -replace '\bcancell?ed\b', ' ' -replace '\s+', ' ').Trim()
+}
+
+function Get-TvTitleWords {
+  # The distinct words that identify an event, from a title already passed through Get-TvMatchTitle.
+  [CmdletBinding()]
+  param([Parameter(Mandatory, Position = 0)][AllowEmptyString()][string]$MatchTitle)
+
+  $words = [Collections.Generic.HashSet[string]]::new()
+  foreach ($word in ($MatchTitle -split ' ')) {
+    if (-not $word) { continue }
+    $parts = if ($script:TitleExpansions.ContainsKey($word)) { $script:TitleExpansions[$word] -split ' ' } else { @($word) }
+    foreach ($part in $parts) {
+      if (-not $script:TitleStopWords.Contains($part)) { $null = $words.Add($part) }
+    }
+  }
+  , $words
+}
+
+function Test-TvSameTitleWords {
+  <#
+  .SYNOPSIS
+    True when two titles name the same event in different words.
+  .DESCRIPTION
+    Either the shorter title's words all appear in the longer one, or they share at least two words
+    and those cover at least 60% of the shorter title. "Jo Koy" matches "Jo Koy (12 and Over)";
+    "Family Storytime" does not match "Toddler Storytime".
+  #>
+  [CmdletBinding()]
+  [OutputType([bool])]
+  param(
+    [Parameter(Mandatory, Position = 0)][AllowEmptyCollection()][Collections.Generic.HashSet[string]]$First,
+    [Parameter(Mandatory, Position = 1)][AllowEmptyCollection()][Collections.Generic.HashSet[string]]$Second
+  )
+
+  $shorter = [Math]::Min($First.Count, $Second.Count)
+  if ($shorter -eq 0) { return $false }
+  $shared = 0
+  foreach ($word in $First) { if ($Second.Contains($word)) { $shared++ } }
+  if ($shared -eq $shorter) { return $true }
+  ($shared -ge 2) -and ($shared / $shorter -ge 0.6)
+}
+
 function Get-TvEventRank {
   # The best (lowest) priority among the sources that reported the event.
   param(
@@ -71,14 +141,22 @@ function Merge-TvEvents {
   .SYNOPSIS
     Collapses events that describe the same thing.
   .DESCRIPTION
-    Two events are the same if their ids match, or if their normalized titles have Jaro-Winkler
-    similarity above 0.9, they start within 30 minutes, and venueKey matches.
+    Two events at the same venueKey are the same if:
+    - their ids match, or
+    - their normalized titles have Jaro-Winkler similarity above 0.9 and they start within 30 minutes, or
+    - they start at the same minute, no source reported both, and their titles share their
+      identifying words (Test-TvSameTitleWords). This catches "Jo Koy" against
+      "Jo Koy - Koy Meets World Tour", and "BSU Women's Basketball Game" against
+      "Boise State University Women's Basketball vs Portland State".
+    A "canceled" marker in a title is ignored for matching, so a cancellation finds its listing.
 
     The event from the best-priority source supplies the url and other fields, the longest
     description wins, tags are unioned, and sources are unioned by name. When two reports from one source
     disagree on fetchedAt, the earliest is kept so a re-run doesn't change stored data.
   .PARAMETER Priorities
     Source name to priority. Lower is better, and sources not listed count as 50.
+  .PARAMETER DropCanceled
+    Leave out every merged event that any source reported as canceled.
   #>
   [CmdletBinding()]
   param(
@@ -86,7 +164,9 @@ function Merge-TvEvents {
     [AllowEmptyCollection()]
     [object[]]$Events,
 
-    [hashtable]$Priorities = @{}
+    [hashtable]$Priorities = @{},
+
+    [switch]$DropCanceled
   )
 
   $ordered = $Events |
@@ -100,12 +180,16 @@ function Merge-TvEvents {
 
   foreach ($entry in $ordered) {
     $event = $entry.Event
-    $title = Get-NormalizedTitle $event.title
+    $title = Get-TvMatchTitle $event.title
+    $words = Get-TvTitleWords $title
+    $canceled = Test-TvCanceledTitle $event.title
+    $sourceNames = @($event.sources | ForEach-Object name)
     $slot = [Math]::Floor($entry.Instant.UtcTicks / $slotTicks)
 
     $match = $byId[$event.id]
     if (-not $match) {
       # Anything within 30 minutes lands in this slot or a neighbor, so a busy venue stays cheap.
+      $sameMinute = $null
       :search foreach ($neighbor in ($slot - 1), $slot, ($slot + 1)) {
         foreach ($candidate in @($bySlot["$($event.venueKey)|$neighbor"])) {
           if (-not $candidate) { continue }
@@ -114,11 +198,20 @@ function Merge-TvEvents {
             $match = $candidate
             break search
           }
+          # One source listing two things at the same minute means two things, so only cross-source.
+          if (-not $sameMinute -and $gap -lt 1 -and
+            -not @($candidate.Event.sources | Where-Object { $_.name -in $sourceNames }) -and
+            @($candidate.WordSets | Where-Object { Test-TvSameTitleWords $words $_ })) {
+            $sameMinute = $candidate
+          }
         }
       }
+      if (-not $match) { $match = $sameMinute }
     }
 
     if ($match) {
+      if ($canceled) { $match.Canceled = $true }
+      $match.WordSets.Add($words)
       $target = $match.Event
       if ("$($event.description)".Length -gt "$($target.description)".Length) {
         $target | Add-Member -NotePropertyName description -NotePropertyValue $event.description -Force
@@ -146,7 +239,7 @@ function Merge-TvEvents {
 
     $copy = $event | Select-Object *
     $copy.sources = @($event.sources)
-    $record = [pscustomobject]@{ Event = $copy; Title = $title; Instant = $entry.Instant }
+    $record = [pscustomobject]@{ Event = $copy; Title = $title; WordSets = [Collections.Generic.List[object]]::new(@(, $words)); Instant = $entry.Instant; Canceled = $canceled }
     $kept.Add($record)
     $byId[$event.id] = $record
     $slotKey = "$($event.venueKey)|$slot"
@@ -156,5 +249,5 @@ function Merge-TvEvents {
     $bySlot[$slotKey].Add($record)
   }
 
-  $kept | ForEach-Object { $_.Event }
+  $kept | Where-Object { -not ($DropCanceled -and $_.Canceled) } | ForEach-Object { $_.Event }
 }

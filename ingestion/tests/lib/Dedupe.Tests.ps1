@@ -161,3 +161,93 @@ Describe 'Merge-TvEvents' {
     @(Merge-TvEvents @()).Count | Should -Be 0
   }
 }
+
+Describe 'Test-TvSameTitleWords' {
+  It '<first> and <second> match: <want>' -ForEach @(
+    @{ first = 'Jo Koy'; second = 'Jo Koy (12 and Over)'; want = $true }
+    @{ first = 'Jo Koy'; second = 'Jo Koy - Koy Meets World Tour'; want = $true }
+    @{ first = "BSU Women's Basketball Game"; second = "Boise State University Women's Basketball vs Portland State - Trivia Friday"; want = $true }
+    @{ first = 'JSTJR'; second = 'JSTJR, EZA, Elijah Andres'; want = $true }
+    @{ first = 'Family Storytime'; second = 'Toddler Storytime'; want = $false }
+    @{ first = 'Senior Recital: Natalie Li, saxophone'; second = 'Senior Recital: Eddie Rudser, clarinet'; want = $false }
+    @{ first = 'The Show'; second = 'Live Tour'; want = $false }
+  ) {
+    $a = Get-TvTitleWords (Get-TvMatchTitle $first)
+    $b = Get-TvTitleWords (Get-TvMatchTitle $second)
+    Test-TvSameTitleWords $a $b | Should -Be $want
+  }
+}
+
+Describe 'Merge-TvEvents same-minute rule' {
+  It 'merges different titles for one show from different sources' {
+    $merged = @(Merge-TvEvents @(
+        (New-TestEvent -Title 'Jo Koy' -Venue 'Ford Idaho Center Arena' -Start '2026-11-07T20:00:00-07:00' -Source a)
+        (New-TestEvent -Title 'Jo Koy (12 and Over)' -Venue 'Ford Idaho Center Arena' -Start '2026-11-07T20:00:00-07:00' -Source b)
+        (New-TestEvent -Title 'Jo Koy - Koy Meets World Tour' -Venue 'Ford Idaho Center Arena' -Start '2026-11-07T20:00:00-07:00' -Source c)
+      ) -Priorities @{ b = 10 })
+    $merged.Count | Should -Be 1
+    $merged[0].title | Should -Be 'Jo Koy (12 and Over)'
+    $merged[0].sources.name | Should -Be @('a', 'b', 'c')
+  }
+
+  It 'merges a short-form title with the full one' {
+    $merged = @(Merge-TvEvents @(
+        (New-TestEvent -Title "Boise State University Women's Basketball vs Portland State - Trivia Friday" -Venue 'ExtraMile Arena' -Start '2026-11-06T18:30:00-07:00' -Source athletics)
+        (New-TestEvent -Title "BSU Women's Basketball Game" -Venue 'ExtraMile Arena' -Start '2026-11-06T18:30:00-07:00' -Source mom)
+      ) -Priorities @{ athletics = 10; mom = 40 })
+    $merged.Count | Should -Be 1
+    $merged[0].title | Should -BeLike 'Boise State University*'
+  }
+
+  It 'keeps them apart when the start differs by a minute or more' {
+    $merged = @(Merge-TvEvents @(
+        (New-TestEvent -Title 'Jo Koy' -Venue 'Ford Idaho Center Arena' -Start '2026-11-07T20:00:00-07:00' -Source a)
+        (New-TestEvent -Title 'Jo Koy Late Show Extra' -Venue 'Ford Idaho Center Arena' -Start '2026-11-07T20:15:00-07:00' -Source b)
+      ))
+    $merged.Count | Should -Be 2
+  }
+
+  It 'keeps two listings from the same source' {
+    $merged = @(Merge-TvEvents @(
+        (New-TestEvent -Title 'Storytime' -Venue 'Boise Public Library' -Start '2026-11-05T10:30:00-07:00' -Source library -Url 'https://library.test/1')
+        (New-TestEvent -Title 'Toddler Storytime' -Venue 'Boise Public Library' -Start '2026-11-05T10:30:00-07:00' -Source library -Url 'https://library.test/2')
+      ))
+    $merged.Count | Should -Be 2
+  }
+
+  It 'keeps different titles at different venues' {
+    $merged = @(Merge-TvEvents @(
+        (New-TestEvent -Title 'Jo Koy' -Venue 'Ford Idaho Center Arena' -Start '2026-11-07T20:00:00-07:00' -Source a)
+        (New-TestEvent -Title 'Jo Koy (12 and Over)' -Venue 'ExtraMile Arena' -Start '2026-11-07T20:00:00-07:00' -Source b)
+      ))
+    $merged.Count | Should -Be 2
+  }
+}
+
+Describe 'Merge-TvEvents canceled events' {
+  It 'recognizes <title>: <want>' -ForEach @(
+    @{ title = 'CANCELED - Play and Learn'; want = $true }
+    @{ title = 'CANCELLED Ping-Pong Club'; want = $true }
+    @{ title = 'CANCELED-Toddler Storytime'; want = $true }
+    @{ title = 'Canceled LEGO Club'; want = $true }
+    @{ title = 'Cancel Culture Comedy Hour'; want = $false }
+  ) {
+    Test-TvCanceledTitle $title | Should -Be $want
+  }
+
+  It 'drops a canceled event only with -DropCanceled' {
+    $events = @((New-TestEvent -Title 'CANCELED - Play and Learn' -Source a), (New-TestEvent -Title 'Toddler Time' -Start '2026-11-15T10:00:00-07:00' -Source a))
+    @(Merge-TvEvents $events).Count | Should -Be 2
+    $kept = @(Merge-TvEvents $events -DropCanceled)
+    $kept.Count | Should -Be 1
+    $kept[0].title | Should -Be 'Toddler Time'
+  }
+
+  It 'drops the listing a cancellation from another source matches' {
+    $merged = @(Merge-TvEvents @(
+        (New-TestEvent -Title 'Play and Learn' -Source mom -Url 'https://mom.test/1')
+        (New-TestEvent -Title 'CANCELED - Play and Learn' -Source library -Url 'https://library.test/1')
+      ) -Priorities @{ mom = 10; library = 20 } -DropCanceled)
+    $merged.Count | Should -Be 0
+  }
+}

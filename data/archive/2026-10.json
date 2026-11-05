@@ -762,30 +762,6 @@
     ]
   },
   {
-    "id": "63d80bbcc051",
-    "title": "CANCELLED TRIO Educational Opportunity Center - at the Library",
-    "start": "2026-10-06T10:00:00-06:00",
-    "end": "2026-10-06T16:00:00-06:00",
-    "allDay": false,
-    "venue": "Nampa Public Library",
-    "venueKey": "nampa-public-library",
-    "city": "Nampa",
-    "category": "learning-business",
-    "tags": [
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://nampalibrary.libcal.com/event/17690825",
-    "description": "Thinking about college or career training? Meet with an Educational Advisor from the TRIO Education Opportunity Center! The Educational Opportunity Center (EOC) assists eligible adults who want to pursue education, certification, and career training opportunities. Our Education Advisors can help...",
-    "sources": [
-      {
-        "name": "nampa-public-library",
-        "url": "https://nampalibrary.libcal.com/event/17690825",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "ea9a88c8ca5b",
     "title": "Language of the Hand",
     "start": "2026-10-06T10:00:00-06:00",
@@ -872,28 +848,6 @@
       {
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/13201026",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "50c893e2ed89",
-    "title": "CANCELED - Hays House Outreach",
-    "start": "2026-10-06T15:00:00-06:00",
-    "end": "2026-10-06T16:00:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17000089",
-    "description": "The Hays House outreach team will be available at Library! at Cole & Ustick every 1st and 3rd Tuesday of the month. Snacks will be provided for teens.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17000089",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
@@ -1293,31 +1247,6 @@
     ]
   },
   {
-    "id": "6ff648c5bb25",
-    "title": "CANCELED - Toddler Storytime",
-    "start": "2026-10-07T10:30:00-06:00",
-    "end": "2026-10-07T11:00:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15072615",
-    "description": "Join the Library! at Bown Crossing staff for Toddler Storytime every Wednesday at 10:30am in the Martie Brennan Room. This program is designed for children ages 2-3 and their caregivers. Come enjoy songs, stories, and learning together!",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15072615",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "8fe8ddfde080",
     "title": "Fit and Fall Proof",
     "start": "2026-10-07T10:30:00-06:00",
@@ -1520,30 +1449,6 @@
       {
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/15725342",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "2f4bfbabd33f",
-    "title": "CANCELED - Boise Public Library Pokémon League",
-    "start": "2026-10-07T18:00:00-06:00",
-    "end": "2026-10-07T19:30:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15302320",
-    "description": "Come and play the Pokémon Trading Card Game with other Pokémon enthusiasts! A Pokémon League provides a nearby place for you to get together with other fans of the Pokémon Trading Card Game, and have some fun. Using your own cards (we will have some decks to borrow), you can play, trade, and even...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15302320",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
@@ -2037,28 +1942,6 @@
     ]
   },
   {
-    "id": "4b3f28d500a7",
-    "title": "CANCELED Painting Pokemon Cards: Spooky Edition!",
-    "start": "2026-10-08T18:00:00-06:00",
-    "end": "2026-10-08T19:30:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/16934806",
-    "description": "This event has been Rescheduled for December 11th Have a bunch of Pokemon cards, and don't know what to do with them? Let's paint on them! This session, you'll learn how to paint on bulk cards with acrylic paint, pens, and other supplies. The theme this round is \"Keeping it spooky!\" This program...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/16934806",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "e4af545b94ea",
     "title": "Hillcrest Writing Ring",
     "start": "2026-10-08T18:00:00-06:00",
@@ -2098,30 +1981,6 @@
       {
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16962689",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "e1b0a240dfdb",
-    "title": "CANCELED--Wordsmith Workshop",
-    "start": "2026-10-08T18:30:00-06:00",
-    "end": "2026-10-08T19:30:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "workshop"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/16499708",
-    "description": "Teens and adults of any experience level and genre (poetry, fiction, memoir, etc.) are welcome to join this biweekly generative creative writing workshop. Each session will feature a piece of writing or art for discussion, an accompanying prompt, time to write, and the opportunity to share (only...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/16499708",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
@@ -3378,30 +3237,6 @@
     ]
   },
   {
-    "id": "06e3c267d7ab",
-    "title": "CANCELLED TRIO Educational Opportunity Center - at the Library",
-    "start": "2026-10-13T10:00:00-06:00",
-    "end": "2026-10-13T16:00:00-06:00",
-    "allDay": false,
-    "venue": "Nampa Public Library",
-    "venueKey": "nampa-public-library",
-    "city": "Nampa",
-    "category": "learning-business",
-    "tags": [
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://nampalibrary.libcal.com/event/17690826",
-    "description": "Thinking about college or career training? Meet with an Educational Advisor from the TRIO Education Opportunity Center! The Educational Opportunity Center (EOC) assists eligible adults who want to pursue education, certification, and career training opportunities. Our Education Advisors can help...",
-    "sources": [
-      {
-        "name": "nampa-public-library",
-        "url": "https://nampalibrary.libcal.com/event/17690826",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "117168f86153",
     "title": "Language of the Hand",
     "start": "2026-10-13T10:00:00-06:00",
@@ -4045,28 +3880,6 @@
     ]
   },
   {
-    "id": "a196b06385e2",
-    "title": "CANCELED - Creative Corner",
-    "start": "2026-10-14T12:00:00-06:00",
-    "end": "2026-10-14T14:00:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17122427",
-    "description": "Bring a creative project that you want to work on or try something new using our project starter supplies.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17122427",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "afb3176e0f29",
     "title": "Women's and Children's Alliance",
     "start": "2026-10-14T13:00:00-06:00",
@@ -4316,28 +4129,6 @@
       {
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/17517538",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "f8733478258d",
-    "title": "CANCELED - Tales and Trails - Barber Park",
-    "start": "2026-10-15T09:00:00-06:00",
-    "end": "2026-10-15T10:00:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/16802598",
-    "description": "This program has been canceled. This week we will be at Barber Park! We will meet in the parking lot near the Event Center. Come share stories on some of Boise's beautiful paths and trails! Each week, library staff will share a story and lead participants on a short walk through nature. NOTE: Thi...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/16802598",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
@@ -4874,28 +4665,6 @@
     ]
   },
   {
-    "id": "6aaca9f6f3df",
-    "title": "CANCELED - Community STEAM Day with Onramp",
-    "start": "2026-10-16T10:00:00-06:00",
-    "end": "2026-10-16T14:00:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17114534",
-    "description": "A Day Without School?... No Problem! Join Us For STEAM Day! Brought to you by the Onramp Program and Boise State University College of Innovation and Design, STEAM Day will provide hands-on learning experiences. Activities will highlight STEAM (science, technology, engineering, art, and math) and...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17114534",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "c79511418d2f",
     "title": "Language of the Hand",
     "start": "2026-10-16T10:00:00-06:00",
@@ -5009,28 +4778,6 @@
       {
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16984721",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "54073d504133",
-    "title": "CANCELED-Spice Club for Adults!",
-    "start": "2026-10-16T10:30:00-06:00",
-    "end": "2026-10-16T11:30:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15607287",
-    "description": "Join us in the David Eberle room every 3rd Friday of the month for Spice of the Month Club! The Spice of the Month Club is a great way to try out new spices and share recipes and ideas with other home cooks! Participants will learn a little of the history of the spice of the month and take home a...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15607287",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
@@ -5745,30 +5492,6 @@
       {
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15106464",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "229c5d406557",
-    "title": "CANCELED-Baby Stories and Play",
-    "start": "2026-10-19T10:30:00-06:00",
-    "end": "2026-10-19T11:30:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "kids"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/16237062",
-    "description": "Join us for a weekly story time for children ages 0-24 months and their caregivers. Library staff will help you nurture your child’s love of reading through rhymes, stories, and play.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/16237062",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
@@ -6552,28 +6275,6 @@
       {
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/16156519",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "f03a8cf24588",
-    "title": "CANCELED - Creative Corner",
-    "start": "2026-10-21T12:00:00-06:00",
-    "end": "2026-10-21T14:00:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17122428",
-    "description": "Bring a creative project that you want to work on or try something new using our project starter supplies.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17122428",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
@@ -7614,31 +7315,6 @@
     ]
   },
   {
-    "id": "478156b19179",
-    "title": "CANCELED- Storytime in the Grass",
-    "start": "2026-10-23T10:30:00-06:00",
-    "end": "2026-10-23T11:00:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/16984722",
-    "description": "Come join us in the grass between the Library! at Bown Crossing and Riverside Elementary School for an outside storytime! We will read stories, sing songs, and play games to help practice early literacy skills. Don't forget to bring a blanket to sit on! This storytime is appropriate for children...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/16984722",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "6e67918cf90d",
     "title": "Baby Stories and Play",
     "start": "2026-10-23T10:30:00-06:00",
@@ -7656,28 +7332,6 @@
       {
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15118766",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "a79525b9f09e",
-    "title": "CANCELED - Music and Movement in the Park",
-    "start": "2026-10-23T10:30:00-06:00",
-    "end": "2026-10-23T11:00:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17542321",
-    "description": "Due to inclement weather, Music & Movement is canceled for Friday, October 23. Shake, shimmy, and dance! This program is primarily music based, and is designed for ages 0-6 and their caregivers. We will meet near the Old Timer's Shelter (1130 W. Royal Blvd.) in Ann Morrison Park. Just look for th...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17542321",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
@@ -8885,28 +8539,6 @@
     ]
   },
   {
-    "id": "5cd5a6de411c",
-    "title": "CANCELED: Fit and Fall Proof",
-    "start": "2026-10-28T10:30:00-06:00",
-    "end": "2026-10-28T11:30:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15106467",
-    "description": "CANCELED - See you again Monday, November 2nd. Fit and Fall Proof™ is designed to help senior citizens prevent injuries and the subsequent loss of independence. Class participants learn simple exercises to increase strength, balance and endurance, which can help prevent the accidental falls and t...",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15106467",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
     "id": "701db2656654",
     "title": "Toddler Storytime",
     "start": "2026-10-28T10:30:00-06:00",
@@ -9867,28 +9499,6 @@
         "name": "college-of-idaho-athletics",
         "url": "https://www.yoteathletics.com/calendar.aspx?game_id=8511&sport_id=11",
         "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
-    "id": "3726652e081a",
-    "title": "CANCELLED LEGO CLUB",
-    "start": "2026-10-30T16:00:00-06:00",
-    "end": "2026-10-30T17:00:00-06:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/16458728",
-    "description": "Come hang out and build with LEGO bricks! We will get creative and use our imaginations, with new themes every week!",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/16458728",
-        "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
   },
