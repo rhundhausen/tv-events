@@ -14,7 +14,7 @@ An idea needs only `displayName`. An entry with a `name` is a configured source 
 | `status` | no | `idea` (the default when missing), `investigating`, `feed-found`, `ready`, `running`, or `ruled-out`. Ingest runs only `running` |
 | `reason` | `ruled-out` | Why it was ruled out |
 | `name` | `running` | Unique slug, also the per-source output file name. Setting it makes the entry a configured source |
-| `adapter` | configured, `ready` | `cityofboise`, `ics`, `rss`, `tribe`, `ticketmaster`, `eventbrite`, `seatgeek`, `songkick`, `bandsintown`, or `scrape`. `other` is allowed on ideas that need a new adapter, never on a configured entry |
+| `adapter` | configured, `ready` | `cityofboise`, `ics`, `rss`, `tribe`, `ticketmaster`, `eventbrite`, `eventbrite-search`, `seatgeek`, `songkick`, `bandsintown`, or `scrape`. `other` is allowed on ideas that need a new adapter, never on a configured entry |
 | `url` | configured, `feed-found`, `ready` | Feed or API endpoint, or the site for an idea |
 | `category` | configured | An id from `data/schema/categories.json`, used for this source's events. With `inferCategory`, it's the fallback |
 | `inferCategory` | no | `true` chooses each event's category from its tags. Use it for sources that mix many kinds of event. See [schema.md](schema.md#categories-and-tags) |
@@ -68,6 +68,10 @@ Unknown fields fail validation, so a typo can't silently turn a setting off. A n
 | `venueIds` | one of these | Venues to read |
 
 `url` is `https://www.eventbriteapi.com/v3`. Requires the `EVENTBRITE_TOKEN` environment variable. Online and cancelled events are skipped. Disabled: built from the documented response and never run live.
+
+### eventbrite-search
+
+`url` is an Eventbrite browse page, such as `https://www.eventbrite.com/d/id--emmett/events/`. No key is needed. Events come from the page's `window.__SERVER_DATA__` JSON (`buckets[].events[]`), with start and end in the event's own zone. Online events, cancelled events, and events with no address or an address outside Idaho are skipped. A "near Emmett" page covers the wider valley, so venue and city come from each event. The listing has no prices, so each kept event's page is read once a run for its schema.org offers, which set the cost tier; a lowest price of 0 there means free. Requests follow robots.txt and are at least 1 second apart. To add another town, add an entry with that town's browse page.
 
 ### seatgeek
 

@@ -612,6 +612,21 @@
       "reason": "HTTP 202 with an empty page on 2026-10-30, which looks like a bot queue"
     },
     {
+      "name": "eventbrite-emmett",
+      "displayName": "Eventbrite (Emmett area)",
+      "status": "running",
+      "adapter": "eventbrite-search",
+      "url": "https://www.eventbrite.com/d/id--emmett/events/",
+      "robotsChecked": "2026-11-05",
+      "category": "community-civic",
+      "inferCategory": true,
+      "city": "Other",
+      "venue": "Various Treasure Valley locations",
+      "venueKey": "various-treasure-valley",
+      "priority": 70,
+      "notes": "Eventbrite's browse page for Emmett. robots.txt does not disallow /d/ or /e/ pages (checked 2026-11-05). The page's window.__SERVER_DATA__ has buckets[].events[] with start and end in America/Boise, and each event's own page has schema.org offers with the price. On 2026-11-05 it listed 16 events: 8 online with no address, and 8 around the valley (Meridian, Garden City, Caldwell, Eagle, Nampa, Boise), none in Emmett itself. No second page. Each kept event's page is read once a run for its price. Configured 2026-11-05. Terms not read"
+    },
+    {
       "name": "eventbrite",
       "displayName": "Eventbrite",
       "status": "ready",
