@@ -43,7 +43,7 @@
     <p class="sub">
       {{- len hugo.Data.events | lang.FormatNumber 0 }} upcoming events
       <span class="sep" aria-hidden="true">|</span> <a href="{{ relURL "sources/" }}">{{ len $running }} sources</a>
-      {{- with $lastIngest }} <span class="sep" aria-hidden="true">|</span> <time id="as-of" datetime="{{ . }}">{{ (time.AsTime .).Format "Mon, Jan 2, 3:04 PM UTC" }}</time>{{ end }}
+      {{- with $lastIngest }} <span class="sep" aria-hidden="true">|</span> <time id="as-of" datetime="{{ . }}">{{ (time.AsTime .).Format "Jan 2, 3:04 PM UTC" }}</time>{{ end }}
     </p>
   </div>
 </header>

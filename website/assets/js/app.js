@@ -464,7 +464,7 @@ if (asOf && cfg.lastIngest) {
   const when = new Date(cfg.lastIngest);
   if (!Number.isNaN(when.getTime())) {
     asOf.textContent = new Intl.DateTimeFormat('en-US', {
-      timeZone: TZ, weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', timeZoneName: 'short',
+      timeZone: TZ, month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit',
     }).format(when);
   }
 }
