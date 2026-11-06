@@ -13,7 +13,9 @@
   itemPattern, read with datePattern, titlePattern, and timePattern. With scrapeMode
   calendarapp, they come from the event JSON that City of Boise calendar pages embed in the
   data-config attribute of #calendar-app. With scrapeMode civicplus, they come from a CivicPlus
-  city calendar (Calendar.aspx), one month per page. See docs/sources.md.
+  city calendar (Calendar.aspx), one month per page. With scrapeMode chambermaster, they come from
+  a ChamberMaster or GrowthZone chamber calendar: the month pages list the events, and each
+  event's iCal file gives its details. See docs/sources.md.
 .PARAMETER Source
   One entry from sources.json.
 .PARAMETER FetchedAt
@@ -31,6 +33,7 @@ param(
 . "$PSScriptRoot/../lib/Schema.ps1"
 . "$PSScriptRoot/../lib/Http.ps1"
 . "$PSScriptRoot/../lib/Scrape.ps1"
+. "$PSScriptRoot/../lib/Ics.ps1"
 
 $listUri = [uri]$Source.url
 $today = (ConvertTo-BoiseTime $FetchedAt).Substring(0, 10)
@@ -374,10 +377,90 @@ function Read-CivicPlusSource {
   }
 }
 
+function ConvertFrom-ChamberMasterLocation {
+  # Locations read "Emmett Public Library 275 S Hayes Ave Emmett, ID 83617": the name, then the
+  # street address, then the city. The name ends where the house number starts.
+  param([string]$Location)
+
+  # A location that starts with the house number has no name, so the source venue is used.
+  $text = ($Location -replace '\s+', ' ').Trim()
+  $match = [regex]::Match($text, '^(?:(?<name>.*?)\s+)?\d+\s+(?<street>.*?)(?:,\s*(?:ID|Idaho)\b.*)?$')
+  $name = if ($match.Success) { $match.Groups['name'].Value } else { ($text -split ',')[0] }
+  $street = if ($match.Success) { $match.Groups['street'].Value } else { $text }
+
+  # The city is the last one or two words of the address part.
+  $words = @($street -split ' ' | Where-Object { $_ })
+  $city = $null
+  foreach ($count in 2, 1) {
+    if ($words.Count -ge $count) {
+      $city = Resolve-TvCity (($words | Select-Object -Last $count) -join ' ')
+      if ($city) { break }
+    }
+  }
+  @{ Venue = $name.Trim(' ', ','); City = $city }
+}
+
+function Read-ChamberMasterSource {
+  # The month page (/events/calendar/YYYY-MM-01) lists each day's events as links to
+  # /events/details/<slug>-<id>, and a multi-day event is listed on every day. Titles are filtered
+  # and past events skipped (by their last listed day) before any iCal file is fetched. Each event's
+  # details come from its iCal file at /events/ical/<slug>-<id>.ics. With -Response: the month
+  # page, then each event's iCal text in list order.
+  $months = if ($Source.maxPages) { [int]$Source.maxPages } else { 3 }
+  $invariant = [Globalization.CultureInfo]::InvariantCulture
+  $first = [DateTime]::ParseExact($today.Substring(0, 7) + '-01', 'yyyy-MM-dd', $invariant)
+  $lastDay = [ordered]@{}
+  $titles = @{}
+
+  for ($i = 0; $i -lt $months; $i++) {
+    $html = if ($Response) { if ($i -eq 0) { $Response[0] } } else {
+      $path = if ($i -eq 0) { $listUri.AbsolutePath } else { '/events/calendar/' + $first.AddMonths($i).ToString('yyyy-MM-dd', $invariant) }
+      Get-ScrapePage ([uri]::new($listUri, $path))
+    }
+    if (-not $html) { break }
+
+    $day = ''
+    $pattern = '/events/index/(?<day>\d{4}-\d{2}-\d{2})"|<a href="[^"]*/events/details/(?<id>[a-z0-9-]+-\d+)(?:\?[^"]*)?"[^>]*>(?<title>[^<]*)</a>'
+    foreach ($m in [regex]::Matches($html, $pattern)) {
+      if ($m.Groups['day'].Success) { $day = $m.Groups['day'].Value; continue }
+      $title = ConvertTo-PlainText $m.Groups['title'].Value
+      if ($Source.excludeTitlePattern -and $title -match $Source.excludeTitlePattern) { continue }
+      $id = $m.Groups['id'].Value
+      if (-not $lastDay.Contains($id) -or $day -gt $lastDay[$id]) { $lastDay[$id] = $day }
+      $titles[$id] = $title
+    }
+  }
+
+  $ids = @($lastDay.Keys | Where-Object { $lastDay[$_] -ge $today })
+  $limit = 150
+  if ($ids.Count -gt $limit) {
+    Write-Warning "$($Source.name): $($ids.Count) events, reading the first $limit"
+    $ids = @($ids | Select-Object -First $limit)
+  }
+
+  for ($n = 0; $n -lt $ids.Count; $n++) {
+    $id = $ids[$n]
+    try {
+      $text = if ($Response) { $Response[$n + 1] } else { Get-ScrapePage ([uri]::new($listUri, "/events/ical/$id.ics")) }
+      $item = @(ConvertFrom-Ics "$text") | Select-Object -First 1
+      if (-not $item) { throw 'no event in the iCal file' }
+      if ($item.Status -eq 'CANCELLED') { continue }
+      $place = ConvertFrom-ChamberMasterLocation $item.Location
+      $url = if ($item.Url) { $item.Url } else { [uri]::new($listUri, "/events/details/$id").AbsoluteUri }
+      New-ScrapeEvent -Title $item.Summary -Start $item.Start -End $item.End -AllDay $item.AllDay `
+        -VenueName $place.Venue -CityText "$($place.City)" -Url $url -Description $item.Description
+    } catch {
+      if ("$_" -match 'robots.txt disallows') { throw }
+      Write-Warning "$($Source.name): skipping '$($titles[$id])': $_"
+    }
+  }
+}
+
 switch ($Source.scrapeMode) {
   'jsonld' { Read-JsonLdSource }
   'cards' { Read-CardsSource }
   'calendarapp' { Read-CalendarAppSource }
   'civicplus' { Read-CivicPlusSource }
+  'chambermaster' { Read-ChamberMasterSource }
   default { throw "$($Source.name): unknown scrapeMode '$($Source.scrapeMode)'" }
 }

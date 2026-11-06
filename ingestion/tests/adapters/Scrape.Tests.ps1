@@ -314,6 +314,63 @@ Describe 'scrape adapter, civicplus' {
   }
 }
 
+Describe 'scrape adapter, chambermaster' {
+  BeforeAll {
+    $source = (Get-TestSource 'gem-county-chamber') | Select-Object *
+    $source.maxPages = 1
+    $ics = 'cupcake-wars-emmett-public-library-17178', 'line-dancing-11-02-2026-16727', 'shotokan-karate-11-02-2026-16539', 'digital-boot-camp-17177' |
+      ForEach-Object { Get-Fixture "chambermaster-$_.ics" }
+    $responses = @(Get-Fixture 'chambermaster-calendar.html') + $ics
+    $events = @(& $adapter -Source $source -FetchedAt '2026-11-02T18:00:00Z' -Response $responses)
+  }
+
+  It 'reads each event once, from its iCal file, and skips excluded titles' {
+    $events.Count | Should -Be 4
+    $events.title | Should -Not -Contain 'Worship Service'
+    $events.title | Should -Not -Contain 'Midweek Bible Study'
+    $events.title | Should -Not -Contain 'General Election'
+  }
+
+  It 'reads a multi-day event' {
+    $event = $events | Where-Object title -eq 'Cupcake Wars @ Emmett Public Library'
+    $event.allDay | Should -BeTrue
+    $event.start | Should -Be '2026-11-02'
+    $event.end | Should -Be '2026-11-14'
+  }
+
+  It 'reads a timed event in Boise time' {
+    $event = $events | Where-Object title -eq 'Line Dancing'
+    $event.start | Should -Be '2026-11-02T12:30:00-07:00'
+    $event.end | Should -Be '2026-11-02T14:00:00-07:00'
+  }
+
+  It 'splits the venue from its street address and finds the city' {
+    $event = $events | Where-Object title -eq 'Line Dancing'
+    $event.venue | Should -Be 'Gem County Recreation District'
+    $event.city | Should -Be 'Emmett'
+    ($events | Where-Object title -eq 'Digital Boot Camp').city | Should -Be 'Meridian'
+    ($events | Where-Object title -eq 'Digital Boot Camp').venue | Should -Be 'Galaxy Center Meridian'
+  }
+
+  It 'links the event page and records the source' {
+    $event = $events | Where-Object title -eq 'Shotokan Karate'
+    $event.url | Should -Be 'https://business.emmettidaho.com/events/details/shotokan-karate-11-02-2026-16539'
+    $event.sources[0].name | Should -Be 'gem-county-chamber'
+  }
+
+  It 'uses the source venue when the location is only a street address' {
+    $ics = (Get-Fixture 'chambermaster-line-dancing-11-02-2026-16727.ics') -replace 'LOCATION:.*', 'LOCATION:212 E 3rd Street Emmett\, ID'
+    $one = @(& $adapter -Source $source -FetchedAt '2026-11-02T18:00:00Z' -Response @((Get-Fixture 'chambermaster-calendar.html'), $ics, $ics, $ics, $ics))
+    $one[0].venue | Should -Be 'Gem County Chamber of Commerce'
+    $one[0].city | Should -Be 'Emmett'
+  }
+
+  It 'skips events whose last listed day has passed' {
+    $later = @(& $adapter -Source $source -FetchedAt '2026-11-04T18:00:00Z' -Response @(Get-Fixture 'chambermaster-calendar.html'))
+    $later.Count | Should -Be 0
+  }
+}
+
 Describe 'ics adapter, excludeTitlePattern' {
   It 'skips matching titles' {
     $source = Get-TestSource 'mountain-home-library'

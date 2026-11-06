@@ -101,16 +101,16 @@ The last resort, for sites with no API or feed. Check for a feed first: a workin
 
 | Field | Required | Notes |
 | --- | --- | --- |
-| `scrapeMode` | yes | `jsonld`, `cards`, `calendarapp`, or `civicplus`, see below |
+| `scrapeMode` | yes | `jsonld`, `cards`, `calendarapp`, `civicplus`, or `chambermaster`, see below |
 | `eventLinkPattern` | no | `jsonld`: regex for event links on the list page. Each linked page is read. Without it, the list page itself is read |
-| `maxPages` | no | `jsonld`: most event pages to read in one run. Defaults to 40. `civicplus`: months to read, starting with this one. Defaults to 3 |
+| `maxPages` | no | `jsonld`: most event pages to read in one run. Defaults to 40. `civicplus` and `chambermaster`: months to read, starting with this one. Defaults to 3 |
 | `itemPattern` | `cards` | Regex matching one event's HTML block |
 | `datePattern` | no | `cards`: regex with named groups `month` and `day`, matched inside a card. Defaults to `month` and `day` spans |
 | `titlePattern` | no | `cards`: regex with a named group `title`. Defaults to the first heading |
 | `timePattern` | no | `cards`: regex with named groups `start` and optional `end`, such as `3:00 pm`. Without a match, the event is all-day |
 | `localTimeAsUtc` | no | `true` corrects sites that write local time as UTC |
 | `fixedVenue` | no | `true` uses the entry's venue for every event |
-| `excludeTitlePattern` | no | `civicplus`: regex. Matching titles are skipped, such as meetings and closures |
+| `excludeTitlePattern` | no | `civicplus` and `chambermaster`: regex. Matching titles are skipped, such as meetings and closures |
 
 `url` is the list page.
 
@@ -118,6 +118,7 @@ The last resort, for sites with no API or feed. Check for a feed first: a workin
 - **`cards`** reads HTML blocks: dates with no year, a title, a link, and optionally a time. It breaks when the site's markup changes, so use it only when `jsonld` isn't possible. `jump-boise` shows the pattern fields.
 - **`calendarapp`** reads the event JSON that City of Boise calendar pages (boiseartsandhistory.org) embed in the `data-config` attribute of `#calendar-app`. It reads the `start` and `end` fields, which are Boise wall-clock time, and skips past events.
 - **`civicplus`** reads a CivicPlus city calendar (`Calendar.aspx`, as on staridaho.org and kunacity.id.gov). `url` is the `Calendar.aspx` page. Each month is its own page (`?month=12&year=2026&day=1`), so one run makes `maxPages` requests at the site's crawl delay. It reads each event's title and date line ("November 10, 2026, 6:30 PM - 8:00 PM", "All Day", or a range of dates), and the hidden schema.org microdata for the place, city, and description when it's there. The placeholder place "Event Location" falls back to the entry's venue. CivicPlus sites disallow their iCalendar export and RSS.aspx in robots.txt, which is why this reads the HTML. City calendars are mostly meetings and closures, so set `excludeTitlePattern`.
+- **`chambermaster`** reads a ChamberMaster or GrowthZone chamber calendar (as on business.emmettidaho.com). `url` is the `/events/calendar/` page. Later months are `/events/calendar/YYYY-MM-01`. Each month page lists every day's events as links to `/events/details/<slug>-<id>`, and a multi-day event is listed on every day. Titles are filtered with `excludeTitlePattern` and past events are skipped on the list, before anything else is fetched. Each remaining event is read from its iCal file at `/events/ical/<slug>-<id>.ics`, at most 150 a run. The location reads "Name 123 Street City, ID": the name ends at the house number, and a location with no name falls back to the entry's venue. Chamber calendars carry many weekly church services and classes, so set `excludeTitlePattern`.
 
 ### cityofboise
 

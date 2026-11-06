@@ -109,7 +109,25 @@
       "city": "Emmett",
       "status": "investigating",
       "robotsChecked": "2026-11-05",
-      "notes": "Emmett community or visitor site, added 2026-11-05. WordPress (Beaver Builder). /events/ redirects to an article page, and no calendar plugin, ICS, or event feed was found (checked 2026-11-05); robots.txt blocks old All-in-One Event Calendar views that are no longer there. Owner to confirm"
+      "notes": "Emmett community or visitor site, added 2026-11-05. WordPress (Beaver Builder). /events/ redirects to an article page, and no calendar plugin, ICS, or event feed was found (checked 2026-11-05); robots.txt blocks old All-in-One Event Calendar views that are no longer there. This is the Gem County Chamber of Commerce site; its calendar is the ChamberMaster one at business.emmettidaho.com, read by gem-county-chamber"
+    },
+    {
+      "name": "gem-county-chamber",
+      "displayName": "Gem County Chamber of Commerce",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://business.emmettidaho.com/events/calendar/",
+      "robotsChecked": "2026-11-05",
+      "category": "community-civic",
+      "inferCategory": true,
+      "city": "Emmett",
+      "venue": "Gem County Chamber of Commerce",
+      "venueKey": "gem-county-chamber",
+      "priority": 20,
+      "scrapeMode": "chambermaster",
+      "maxPages": 3,
+      "excludeTitlePattern": "(?i)\\bworship\\b|\\bbible\\b|\\bsabbath\\b|\\bhealing service\\b|\\bmeeting\\b|\\bclosed\\b|\\bdeadline\\b|\\belection\\b",
+      "notes": "ChamberMaster (GrowthZone) calendar for the Gem County Chamber (emmettidaho.com). robots.txt allows /events/calendar/, /events/details/ and /events/ical/ and disallows ?rendermode=, /events/search and /events/searchscroll, with no crawl delay (checked 2026-11-05). The month page /events/calendar/YYYY-MM-01 links each event to /events/details/<slug>-<id>; each event's iCal file is /events/ical/<slug>-<id>.ics. November 2026 had 58 events, many of them weekly church services and recurring classes. Church services, meetings, closures, deadlines and the election are skipped by title. Caldwell, Meridian and Nampa chambers run the same platform. Configured 2026-11-05. Terms not read"
     },
     {
       "displayName": "Garden City Public Library",
