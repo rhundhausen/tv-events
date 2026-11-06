@@ -1,0 +1,1835 @@
+{
+  "links": {
+    "https://admin.broncosports.com/calendar.aspx?game_id=23207&sport_id=35": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://admin.broncosports.com/calendar.aspx?game_id=23209&sport_id=35": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://admin.broncosports.com/calendar.aspx?game_id=23210&sport_id=35": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://admin.broncosports.com/calendar.aspx?game_id=23211&sport_id=35": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://admin.broncosports.com/calendar.aspx?game_id=23268&sport_id=4": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://admin.broncosports.com/calendar.aspx?game_id=23269&sport_id=4": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://admin.broncosports.com/calendar.aspx?game_id=23283&sport_id=10": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://admin.broncosports.com/calendar.aspx?game_id=23284&sport_id=10": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://bogusbasin.org/event/pray-for-snow-festival/": {
+      "verdict": "transient",
+      "status": 0,
+      "error": "timeout",
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://boisemom.com/event/3-admission-day-at-zoo-boise/2026-11-12/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/after-school-art-ages-10-12-wed-430p/2026-11-11/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/after-school-art-ages-5-9-mon-430p/2026-11-09/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/babies-stories-play-bown-library/2026-11-12/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/baby-stories-and-play-library-cole-ustick/2026-11-09/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/baby-story-play-hillcrest-library/2026-11-06/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/baby-story-play-hillcrest-library/2026-11-13/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/boise-high-history-museum-public-tours/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/compassion-crew-3/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/crafternoons-for-kids-collister-library-2/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/dungeons-and-dragons/2026-11-09/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/eagle-holiday-bazaar/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/eagle-holiday-bazaar/2026-11-08/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/family-storytime-collister-library/2026-11-12/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/flower-bundle-friday-2/2026-11-06/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/free-4x6-santa-photo-cabelas-boise/2026-11-08/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/free-4x6-santa-photo-cabelas-boise/2026-11-09/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/free-4x6-santa-photo-cabelas-boise/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/free-4x6-santa-photo-cabelas-boise/2026-11-11/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/free-4x6-santa-photo-cabelas-boise/2026-11-12/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/free-4x6-santa-photo-cabelas-boise/2026-11-13/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/free-flow-arts-spin-jam/2026-11-12/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/free-national-parks-admission-day-4/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/girls-day-out-expo-3/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/guided-walk-in-capitol-tours/2026-11-06/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/guided-walk-in-capitol-tours/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/guided-walk-in-capitol-tours/2026-11-13/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/hawaiian-bingo-caldwell-ymca/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/history-harvest-to-document-idahos-environmental-history-and-andrus-legacy/2026-11-06/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/history-harvest-to-document-idahos-environmental-history-and-andrus-legacy/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/holiday-makers-market/2026-11-06/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/holiday-makers-market/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/holiday-wreath-workshop-2/2026-11-07/1/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/holiday-wreath-workshop-2/2026-11-08/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/home-depot-kids-workshop-9-8/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/homeschool-kids-winter-adaptations/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/idaho-humane-society-dog-santa-photo-sessions/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/imagination-builders-mosaic-masterpiece/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/kids-class-harvest-door-hanger-2/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/kids-fix-it-night-at-boise-bicycle-project/2026-11-12/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/lsms-holiday-bazaar/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/lsms-holiday-bazaar/2026-11-08/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/mixed-greens-holiday-open-house/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/music-and-movement-in-the-park-ivywild-park-w-bown-library/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/music-movement-cole-ustick-library/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/music-movement-collister-library-2/2026-11-09/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/music-movement-garden-city-public-library/2026-11-09/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/nature-journaling-2/2026-11-06/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/nintendo-club-bown-library/2026-11-09/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/old-boise-model-railroad-2/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/old-boise-model-railroad/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/paella-on-the-patio/2026-11-06/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/paella-on-the-patio/2026-11-11/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/play-and-learn-cole-ustick-library/2026-11-06/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/play-and-learn-cole-ustick-library/2026-11-13/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/pokemon-league-bown-library/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/pray-for-snow-festival/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/preschool-steam-storytime-garden-city-public-library/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/preschool-storytime-cole-ustick-library-3/2026-11-12/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/public-skate-at-idaho-iceworld-2/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/public-skate-at-idaho-iceworld-2/2026-11-12/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/read-to-a-therapy-dog-bown-library/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/read-to-a-therapy-dog-collister-library/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/santa-christmas-tales-cabelas/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/santas-magical-arrival-cabelas/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/saturday-stories-and-play-cole-ustick-library-2/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/scentsy-christmas-lights-ceremony-2/2026-11-13/1/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/school-age-fun-hillcrest-library-2/2026-11-12/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/sewing-club-for-kids-6/2026-11-06/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/steam-class-talking-turkeys-turkey-races/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/story-time-dinosaurs/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/storytime-at-barnes-noble-boise/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/storytime-with-stuffies-eagle-public-library/2026-11-12/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/tasty-tales-4/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/teen-club-dungeons-and-dragons-cole-ustick-library-5/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/teen-hangout-cole-ustick-library-2/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/teen-hangout-downtown-library-2/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/the-capital-city-public-market/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/the-secret-life-of-basalt-a-special-presentation-exhibit/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/tiny-turkeys/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/tunes-tales-garden-city-public-library/2026-11-12/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/veterans-breakfast-warhawk-air-museum/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/veterans-day-salute-nampa-farmers-market/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/winter-market/2026-11-07/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisemom.com/event/youth-chess/2026-11-10/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/13201032": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/13546759": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15106471": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15110563": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15118769": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15118771": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15142393": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15301894": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15301980": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15302054": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15302246": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15302392": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15302450": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15302451": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15302528": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15302550": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15637581": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15662955": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15667801": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15700761": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15775779": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/15844069": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16154971": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16172847": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16237015": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16237065": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16237124": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16259125": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16415139": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16415175": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16513644": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16615989": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16918292": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/16962690": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17000137": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17006285": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17008217": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17014964": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17035603": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17044495": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17053642": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17096998": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17112241": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17115980": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17214207": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17222457": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17238103": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17300639": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17361326": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17580075": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17705528": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://boisepubliclibrary.libcal.com/event/17838762": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://business.emmettidaho.com/events/details/alzheimer-s-dementia-support-group-meadow-view-senior-living-14960": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://business.emmettidaho.com/events/details/christmas-open-house-hen-house-the-barn-door-17174": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://business.emmettidaho.com/events/details/cupcake-wars-emmett-public-library-17178": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://business.emmettidaho.com/events/details/gcrd-crafting-connections-11-10-2026-16601": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://business.emmettidaho.com/events/details/holiday-maker-s-market-17324": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://business.emmettidaho.com/events/details/line-dancing-11-09-2026-16729": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://business.emmettidaho.com/events/details/line-dancing-11-11-2026-16730": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://business.emmettidaho.com/events/details/shotokan-karate-11-09-2026-16541": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://business.emmettidaho.com/events/details/shotokan-karate-11-12-2026-16542": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://business.emmettidaho.com/events/details/small-town-swing-11-12-2026-16507": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/a-little-afternoon-music-Horzowski-Trio-Fall-2026": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/boise-chamber-music-society-the-horszowski-trio": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/boise-international-short-film-festival": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/bronco-percussion-group-fall-recital-2026": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/dr-del-parkinson-piano-studio-recital-fall-2026": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/from-big-burn-to-good-fire": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/mitch-wieland-book-launch": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/reception-from-big-burn-to-good-fire": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/senior-recital-daniel-winnett-violin": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/senior-recital-eddie-rudser-clarinet": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/senior-recital-levi-mccoy-trumpet": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/senior-recital-natalie-li-saxophone": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/taryn-smith-christine-turpin": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/the-planets": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/the-planets-35": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/visiting-artist-and-scholar-tatiana-mesa-pajan": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://events.boisestate.edu/event/visiting-artists-and-scholar-workshop-tatiana-mesa-pajan": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://expoidaho.com/event/idaho-dream-wedding-expo-18/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://expoidaho.com/event/idaho-dream-wedding-expo-19/2026-11-08/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://expoidaho.com/event/jurassic-quest-5/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://expoidaho.com/event/the-girls-day-out-expo-8/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://expoidaho.com/event/treasure-valley-flea-market-44/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://expoidaho.com/event/treasure-valley-flea-market-45/2026-11-08/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://history.idaho.gov/event/homeschool-day-make-your-mark-with-aly-mcknight/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://idahosteelheads.com/games/2026/11/06/rapid-city-rush": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://idahosteelheads.com/games/2026/11/07/rapid-city-rush": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/acting-101-fall-session-2": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/art-department-production-lab": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/cooperative-development-incubator": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/open-studios-make-studio": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/open-studios-move-studio": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/open-studios-play-studio": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/open-studios-share-studio": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/production-lab": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/screenwriters-meetup": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/spin-jams-fridays": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/storycorps-remembrance-stories": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/the-foxhole-sessions-a-veterans-open-mic": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/the-making-of-place-perception": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/weekly-language-exchange": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://jumpboise.org/events/writers-detention-workshops": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/16734979": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/16787283": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17194479": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17206975": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17209634": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17253230": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17253231": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17280006": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17280776": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17346742": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17346792": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17346839": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17358767": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17358813": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17358834": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17358861": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17358886": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17358905": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17360019": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17360048": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17360083": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17360123": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17360163": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://kunalibrary.libcal.com/event/17692617": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/15876733": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/15876928": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/16295011": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17187478": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17221035": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17221057": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17221179": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17221180": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17221224": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17221343": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17436384": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17775814": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17831046": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17857922": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://mhlibrary.libcal.com/event/17876728": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/13558535": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/13558536": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/14641250": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/15417571": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/15695090": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/15695127": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/16156367": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/16156588": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/16156589": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/16798980": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/17179165": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/17742599": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/17912430": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nampalibrary.libcal.com/event/9978875": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nnusports.com/calendar.aspx?game_id=9478&sport_id=11": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nnusports.com/calendar.aspx?game_id=9479&sport_id=11": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nnusports.com/calendar.aspx?game_id=9537&sport_id=13": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nnusports.com/calendar.aspx?game_id=9627&sport_id=2": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://nnusports.com/calendar.aspx?game_id=9628&sport_id=2": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.boiseartsandhistory.org/calendar/event?key=project-flux-perspectives_20261108": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.boiseartsandhistory.org/calendar/event?key=the-making-of-place-perception-a-curators-talk-with-jeffrey-mansfield_20261110": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.cityofboise.org/events/city-council/2026/november/city-council-meeting/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.cityofboise.org/events/city-council/2026/november/city-council-work-session/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.cityofboise.org/events/pds/2026/november/planning-and-zoning-commission-work-session-2/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.cityofboise.org/events/police/2026/november/neighborhood-shelter-home-community-meeting/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.fordidahocenter.com/events/detail/ircha2022-19": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.fordidahocenter.com/events/detail/koy": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/blues-dynasty-fall-into-the-blues/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/cardinal-bloom/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/harvest-hustle-2/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/houndmouth-w-dogpark/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/joanne-shaw-taylor-2/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/l7-the-last-hurrah-tour-2026-w-nobro/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/louie-thesinger/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/love-in-the-club-2000s-rb-hip-hop-dance-party/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/margaret-glaspy/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/maris/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/modele-pre-goth-night-party/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/oso-oso/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/railroad-earth-w-jeremy-garrett-of-the-infamous-stringdusters/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/river-shook/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/silverada-2/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/spoonful-night-a-benefit-concert-for-radio-boise-w-jontavious-willis-eilen-jewell-the-country-club-tater-patch/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/taryn-smith-christine-turpin/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/the-black-angels/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/the-caped-downtown-boise-ymca-grand-opening-walk/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/token-clark-d/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/veterans-breakfast-3/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.mikebrowngroup.com/event/veterans-day-potato-feed-4/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.splitrailwines.com/": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.staridaho.org/Calendar.aspx?EID=539": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.ticketsmarter.com/p/idaho-steelheads-tickets?utm_source=dmo&utm_medium=visitboise&utm_campaign=idaho-steelheads_recurring_20261104_20270410": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.ticketweb.com/event/chipped-nail-polish-mckenna-neurolux-lounge-tickets/14375754": {
+      "verdict": "transient",
+      "status": 530,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://www.ticketweb.com/event/daily-bread-vanishing-knitting-factory-boise-tickets/14240384": {
+      "verdict": "transient",
+      "status": 530,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://www.ticketweb.com/event/gully-boys-pollyanna-neurolux-lounge-tickets/15040923": {
+      "verdict": "transient",
+      "status": 530,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://www.ticketweb.com/event/improvement-movement-adron-neurolux-lounge-tickets/14268864": {
+      "verdict": "transient",
+      "status": 530,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://www.ticketweb.com/event/jstjr-eza-elijah-andres-knitting-factory-boise-tickets/14297494": {
+      "verdict": "transient",
+      "status": 530,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://www.ticketweb.com/event/love-in-the-club-9th-st-parallel-at-knitting-tickets/14320584": {
+      "verdict": "transient",
+      "status": 530,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://www.ticketweb.com/event/lucy-cooper-b-handy-blanket-neurolux-lounge-tickets/14288814": {
+      "verdict": "transient",
+      "status": 530,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://www.ticketweb.com/event/metal-church-and-armored-saint-neurolux-lounge-tickets/14212904": {
+      "verdict": "transient",
+      "status": 530,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://www.ticketweb.com/event/sparta-public-opinion-mylo-bybee-neurolux-lounge-tickets/14288784": {
+      "verdict": "transient",
+      "status": 530,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://www.ticketweb.com/event/squirrel-flower-sour-widows-neurolux-lounge-tickets/14935283": {
+      "verdict": "transient",
+      "status": 530,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://www.ticketweb.com/event/token-clark-d-9th-st-parallel-at-knitting-tickets/14251754": {
+      "verdict": "transient",
+      "status": 530,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 1
+    },
+    "https://www.yoteathletics.com/calendar.aspx?game_id=8305&sport_id=22": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.yoteathletics.com/calendar.aspx?game_id=8475&sport_id=3": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.yoteathletics.com/calendar.aspx?game_id=8479&sport_id=3": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.yoteathletics.com/calendar.aspx?game_id=8480&sport_id=3": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.yoteathletics.com/calendar.aspx?game_id=8481&sport_id=3": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    },
+    "https://www.yoteathletics.com/calendar.aspx?game_id=8484&sport_id=3": {
+      "verdict": "ok",
+      "status": 200,
+      "checkedAt": "2026-11-06T07:04:43Z",
+      "failures": 0
+    }
+  }
+}

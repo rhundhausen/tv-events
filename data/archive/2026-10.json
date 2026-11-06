@@ -790,6 +790,79 @@
     "costGuess": "free"
   },
   {
+    "id": "0777d87311e8",
+    "title": "Music and Movement",
+    "start": "2026-10-06T09:30:00-06:00",
+    "end": "2026-10-06T10:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358881",
+    "description": "Thirty minutes of singing, dancing, and fun, that’s our Music and Movement class! The class instructor uses songs that encourage both fine and gross motor skills. Children must attend with an adult caregiver, and caregivers are encouraged and expected to participate with the child. NO REGISTRATIO...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358881",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "49bed41274bf",
+    "title": "Idaho Department of Labor",
+    "start": "2026-10-06T09:30:00-06:00",
+    "end": "2026-10-06T12:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/16734974",
+    "description": "Tuesdays from 9:30 am – 12:30 pm, a representative from the Idaho Department of Labor is available at Kuna Library to assist job seekers. No appointment is required. If you’re looking for assistance with services other than Job Seeking, please schedule an appointment by calling (208) 364-7781, ex...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/16734974",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "7a9a7998c097",
+    "title": "Storytime",
+    "start": "2026-10-06T10:00:00-06:00",
+    "end": "2026-10-06T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358808",
+    "description": "Open to all ages Join us for a story and an activity during our Storytime program! Storytime is offered on the following days and times: Monday, 11:00 Tuesday 10:00 Wednesday 10:15 Location: children's room",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358808",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "ea9a88c8ca5b",
     "title": "Language of the Hand",
     "start": "2026-10-06T10:00:00-06:00",
@@ -830,6 +903,32 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/13558524",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "3d3d41c3d1a7",
+    "title": "Bilingual Storytime",
+    "start": "2026-10-06T10:30:00-06:00",
+    "end": "2026-10-06T11:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221030",
+    "description": "Join us every Tuesday at 10:30 am for Bilingual Storytime in the youth services area of the library! Come and enjoy stories, rhymes, and songs in English and Spanish. This program is designed for toddlers and preschool children accompanied by a parent/caregiver.",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221030",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -879,6 +978,82 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/13201026",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "2f6c9d2872eb",
+    "title": "Learn with Me!",
+    "start": "2026-10-06T10:45:00-06:00",
+    "end": "2026-10-06T11:45:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17206970",
+    "description": "Learn with me! is a free class offered for 3-year-olds, with their parent/adult caregiver, to develop skills in areas of social and emotional growth, language and literacy, math and reasoning, and fine and gross motor skills. It is not a preschool but a collaborative program of how to work togeth...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17206970",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "04220859fcdf",
+    "title": "Storytime Club",
+    "start": "2026-10-06T11:00:00-06:00",
+    "end": "2026-10-06T12:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221052",
+    "description": "Join us every Tuesday at 11:00 am for Storytime Club in the youth services area of the library! Storytime Club is great stories, fun activities, and an added STEAM component that will explore, science, technology, engineering, art, and math concepts. This program is designed for toddlers and pres...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221052",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "aea97a8eb24c",
+    "title": "STEAM Tuesday",
+    "start": "2026-10-06T15:30:00-06:00",
+    "end": "2026-10-06T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360043",
+    "description": "School-age kids are invited to join us for creativity time while listening to an audiobook.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360043",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -1027,6 +1202,29 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/17786502",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "05564f2df700",
+    "title": "Teen After Hours - Ghostly Fairy Lanterns",
+    "start": "2026-10-06T18:00:00-06:00",
+    "end": "2026-10-06T20:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17709808",
+    "description": "Once a month, the library hosts a Teen After Hours event. These FREE events are for Teens (ages 12-18). This month, we are upcycling bell shaped light covers from old fans and turning them into ghostly fairy lanterns. All supplies provided including a snack and beverage. Space is limited. Please...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17709808",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -1197,6 +1395,31 @@
     "costGuess": "free"
   },
   {
+    "id": "b1d1714b48a9",
+    "title": "Play With Me!",
+    "start": "2026-10-07T09:30:00-06:00",
+    "end": "2026-10-07T10:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17280771",
+    "description": "A program for children of all ages and their adult caregiver. This is an opportunity for parents/caregivers and their children to enjoy playtime together with various activities., including building with blocks, yoga storytime, toddler STEM, and much more! No registration is required.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17280771",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "a136ab8f1eb8",
     "title": "Language of the Hand",
     "start": "2026-10-07T10:00:00-06:00",
@@ -1217,6 +1440,31 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "060579301df2",
+    "title": "Storytime",
+    "start": "2026-10-07T10:15:00-06:00",
+    "end": "2026-10-07T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358829",
+    "description": "Open to all ages Join us for a story and an activity during our Storytime program! Storytime is offered on the following days and times: Monday, 11:00 Tuesday 10:00 Wednesday 10:15 Location: children's room",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358829",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "9f47d2dbe096",
@@ -1317,6 +1565,31 @@
     "costGuess": "free"
   },
   {
+    "id": "4f51414c7c95",
+    "title": "Music and Movement",
+    "start": "2026-10-07T10:45:00-06:00",
+    "end": "2026-10-07T11:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358900",
+    "description": "Thirty minutes of singing, dancing, and fun, that’s our Music and Movement class! The class instructor uses songs that encourage both fine and gross motor skills. Children must attend with an adult caregiver, and caregivers are encouraged and expected to participate with the child. NO REGISTRATIO...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358900",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "8feba6fbaf03",
     "title": "Baby Storytime",
     "start": "2026-10-07T11:15:00-06:00",
@@ -1338,6 +1611,52 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/16156517",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "114509c9672e",
+    "title": "Fit and Fall Proof",
+    "start": "2026-10-07T11:30:00-06:00",
+    "end": "2026-10-07T12:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17346737",
+    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17346737",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "b1b0e3fd6692",
+    "title": "Adult Education - GED Program through College of Western Idaho",
+    "start": "2026-10-07T12:00:00-06:00",
+    "end": "2026-10-07T16:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17616107",
+    "description": "Seeking assistance with: - Improving your Reading skills - Studying for the GED - Preparing for the Armed Services Vocational Aptitude Battery (ASVAB) - Practicing your computer skills CWI can help you meet your goals! STEP 1: Begin by taking reading and math placement tests and filling out regis...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17616107",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -1391,6 +1710,31 @@
     "costGuess": "free"
   },
   {
+    "id": "7e9d7632938d",
+    "title": "Family Fun Zone",
+    "start": "2026-10-07T14:00:00-06:00",
+    "end": "2026-10-07T16:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "family-friendly"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360078",
+    "description": "Time for families to enjoy learning and playing together at the library.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360078",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "7fe66b7f3a38",
     "title": "Fiber Arts Society",
     "start": "2026-10-07T14:00:00-06:00",
@@ -1409,6 +1753,31 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16489749",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "a807a4ab1c05",
+    "title": "STEAM Tykes",
+    "start": "2026-10-07T15:15:00-06:00",
+    "end": "2026-10-07T16:15:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17436299",
+    "description": "Every Wednesday at 3:15 pm, join Bianca in Youth Services to explore and learn about science, technology, engineering, art, and math concepts. This program is designed for school aged children (ages 6 and up).",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17436299",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -1457,6 +1826,29 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15302136",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "b2f1ab13c82f",
+    "title": "Mountain Home Family History Group",
+    "start": "2026-10-07T16:30:00-06:00",
+    "end": "2026-10-07T18:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/15876793",
+    "description": "For October, we are looking at the Genealogical Proof Standard (GPS). We will talk about what is the Genealogical Proof Standard, the Genealogical Standards Main Sections, and the elements of the GPS which include Reasonably Exhaustive Research, Complete and Accurate Source Citations, Analysis an...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/15876793",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -1619,8 +2011,7 @@
       "library-program"
     ],
     "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17238098",
-    "description": "Put on your jammies, grab your stuffie, and head to the third floor of the Downtown Library for Pajama Storytime! We'll read books, dance, and have loads of fun! This program is designed for families and children ages 0-6.",
+    "url": "https://boisepubliclibrary.libcal.com/event/16458689",
     "sources": [
       {
         "name": "boise-public-library",
@@ -1628,6 +2019,7 @@
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ],
+    "description": "Put on your jammies, grab your stuffie, and head to the third floor of the Downtown Library for Pajama Storytime! We'll read books, dance, and have loads of fun! This program is designed for families and children ages 0-6.",
     "costGuess": "free"
   },
   {
@@ -1642,6 +2034,7 @@
     "tags": [
       "esports"
     ],
+    "size": "S",
     "url": "https://admin.broncosports.com/calendar.aspx?game_id=23191&sport_id=35",
     "description": "TV: Boise State Twitch - Super Smash Bros. Ultimate Streaming Video: https://twitch.tv/boisestate",
     "sources": [
@@ -1695,6 +2088,56 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15302048",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "886b159e403a",
+    "title": "Kinder-Set-Go!",
+    "start": "2026-10-08T09:30:00-06:00",
+    "end": "2026-10-08T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17209629",
+    "description": "Kinder-Set Go! is a kindergarten readiness program designed for preschoolers who will attend school in the fall of 2027. The class is for kids and their adult (parent or caregiver) held in one-hour sessions. It is designed to build skills to help a child prepare for school through interactive pla...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17209629",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "3b1d6b27a292",
+    "title": "Active Tots",
+    "start": "2026-10-08T10:00:00-06:00",
+    "end": "2026-10-08T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221338",
+    "description": "meets every Thursday morning, 10:00-10:45 am. This is a physical literacy program for ages 1-5. Children participate in a 45 minute physical activity session. All activities are non-competitive and focus on simple, fun games that develop fine motor and gross motor skills. Please be advised that t...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221338",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -1942,6 +2385,56 @@
     "costGuess": "free"
   },
   {
+    "id": "9900ec5a8229",
+    "title": "Crafternoon",
+    "start": "2026-10-08T15:15:00-06:00",
+    "end": "2026-10-08T16:15:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17436379",
+    "description": "Come get creative with us every Thursday after school at 3:15 pm. We will have a fun make & take craft available in Youth Services. All supplies will be provided. This program is for school-age children (ages 6 and up).",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17436379",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "bc308ac24fff",
+    "title": "LEGO Challenge",
+    "start": "2026-10-08T15:30:00-06:00",
+    "end": "2026-10-08T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360118",
+    "description": "LEGO building at its best! Weekly building themes, with the option for kids to build individually or in a group. Our weekly building themes are: 9/3 Sea Creatures 9/10 Tree Forts 9/17 Dinosaurs 9/24 Bridges 10/1 Birds 10/8 Bats 10/15 Spiders 10/22 Pumpkins and Jack-o'-lanterns 10/29 Haunted Houses",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360118",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "074db1f844b5",
     "title": "Northwest Nazarene University Women's Soccer vs Western Washington",
     "start": "2026-10-08T16:00:00-06:00",
@@ -2041,6 +2534,29 @@
     "costGuess": "free"
   },
   {
+    "id": "017c700bf0f5",
+    "title": "Mayor's Book Club Disucssion Night",
+    "start": "2026-10-08T18:30:00-06:00",
+    "end": "2026-10-08T20:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17194478",
+    "description": "Tonight from 6:30 - 8:00 members of our Mayor's Book Club group will meet with Mayor Stear in the Kuna Library Owl Programs room for a group discussion of this month's book, The Lost Library, then do a book-related activity and have a book-related snack! Registration for the next session of Mayor...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17194478",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "dec7b584b407",
     "title": "Adult Social - Shrinky Dinks!",
     "start": "2026-10-08T18:30:00-06:00",
@@ -2102,6 +2618,7 @@
       "free-admission"
     ],
     "size": "S",
+    "cost": "free",
     "url": "https://events.boisestate.edu/event/hemingway-center-reading-series-presents-ariel-delgado-dixon-and-mary-pauline-lowry",
     "description": "The Hemingway Center Reading Series and Creative Writing MFA Program present authors Ariel Delgado Dixon and Mary Pauline Lowry. Dixon and Lowry, both graduates of the Boise State Creative Writing MFA Program, will give a reading of their work on Thursday, October 8, 2026 at 7 PM. This event is f...",
     "sources": [
@@ -2111,6 +2628,57 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "3afae6afb478",
+    "title": "Homeschoolers @ the Library",
+    "start": "2026-10-09T09:30:00-06:00",
+    "end": "2026-10-09T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17253226",
+    "description": "This week at Homeschoolers, we have a special guest from the Idaho Watercolor Society. We will have the opportunity to: Observe professional watercolor artistry Step-by-step painting guided by a local artist All art supplies included Create and take home your very own masterpiece Wear your painti...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17253226",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "d7a8150e6c8a",
+    "title": "Registration for Mayor's Book Club Opens",
+    "start": "2026-10-09T09:30:00-06:00",
+    "end": "2026-10-09T20:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17692460",
+    "description": "Registration for session 2 of our Mayor's Book Club opens today and continues until November 5, 2026, or until we run out of books. This month we are reading Jeremy Thatcher, Dragon Hatcher All kids in grades 4-6 are invited to join. How Mayor's Book Club works: 1. Stop by the library circulation...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17692460",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "08a66e26f446",
@@ -2204,6 +2772,31 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/16156583",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "78f38aac7d49",
+    "title": "Music & Movement",
+    "start": "2026-10-09T10:15:00-06:00",
+    "end": "2026-10-09T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221175",
+    "description": "Join us ever Friday at 10:15 am and 11:15 am for Music & Movement in the conference room at the library! Get ready to sing, dance, and play musical instruments. This program is designed for children with an adult companion. Please be advised that this specific program has been limited to 30 peopl...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221175",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -2354,6 +2947,52 @@
     "costGuess": "free"
   },
   {
+    "id": "1ff81e0bf3ae",
+    "title": "Fit and Fall Proof",
+    "start": "2026-10-09T11:30:00-06:00",
+    "end": "2026-10-09T12:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17346788",
+    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17346788",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "35fdd0b0a0d9",
+    "title": "Chatty Crafters",
+    "start": "2026-10-09T12:00:00-06:00",
+    "end": "2026-10-09T14:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/15876924",
+    "description": "Every Friday at noon the Chatty Crafters meet in the commons area at the Mountain Home Public Library to knit, crochet, sew, bead, etc. while socializing with other crafty community members. All levels of experience are welcome to join. Please bring your own materials or check out a craft kit fro...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/15876924",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "8bf11358390a",
     "title": "Fit and Fall Proof",
     "start": "2026-10-09T13:00:00-06:00",
@@ -2397,6 +3036,29 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "0b693babeecf",
+    "title": "Game Day",
+    "start": "2026-10-09T15:30:00-06:00",
+    "end": "2026-10-09T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360159",
+    "description": "We are breaking out all the fun games on Fridays! During September, our weekly game themes are: 9/4 Cooperative Games 9/11 Dice Games 9/18 Fun Pieces Games 9/25 Number Games",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360159",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "c20912270632",
@@ -2688,6 +3350,31 @@
     "costGuess": "free"
   },
   {
+    "id": "b017d01dec79",
+    "title": "The Library Book Club",
+    "start": "2026-10-10T09:30:00-06:00",
+    "end": "2026-10-10T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/16035987",
+    "description": "meets every 2nd Saturday at 9:30 am in the commons area of the Mountain Home Public Library. New members are always welcome. Beverages are provided. This month's book choice is The Frozen River by Ariel Lawhon. The Frozen River by Ariel Lawhon is about 18th-century midwife Martha Ballard, who mus...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/16035987",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "8fdf341057b4",
     "title": "Halloween Costume Swap",
     "start": "2026-10-10T10:00:00-06:00",
@@ -2835,6 +3522,52 @@
     "costGuess": "$"
   },
   {
+    "id": "4f61abc3da0d",
+    "title": "Chess Club",
+    "start": "2026-10-10T13:00:00-06:00",
+    "end": "2026-10-10T15:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/15876729",
+    "description": "Meet, play, improve, and have fun with other Mountain Home chess players. Meetings are held every Saturday at 1:00 pm. The club is open to all ages and skill levels. You can bring your own chess board and timer or use one of ours. See Mark at the coffee bar to become a member. You do not need to...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/15876729",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "8fc1f67f38b3",
+    "title": "Extreme Book Nerd Book Swap & Social",
+    "start": "2026-10-10T13:00:00-06:00",
+    "end": "2026-10-10T14:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17709762",
+    "description": "Join us Saturday, October 10th at 1:00 pm for Mountain Home Public Library's 1st Extreme Book Nerd Book Swap & Social. This is an opportunity to meet other books nerds, get book recommendations, and talk up some of your favorite reads so far this year. Bring a used book that you've already read t...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17709762",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "032651865319",
     "title": "Senior Recital: Minnie Aagard, saxophone",
     "start": "2026-10-10T13:30:00-06:00",
@@ -2907,6 +3640,29 @@
       }
     ],
     "costGuess": "$"
+  },
+  {
+    "id": "4ba439429b4e",
+    "title": "MHAC Fall Coffee House & The Whistle Pig Vol. 18 Release Party",
+    "start": "2026-10-10T16:30:00-06:00",
+    "end": "2026-10-10T19:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "cost": "$",
+    "url": "https://mhlibrary.libcal.com/event/17587783",
+    "description": "The Mountain Home Arts Council will debut the eighteenth volume of Idaho’s literary journal The Whistle Pig on Saturday, Oct. 10th, during the Fall Coffee House at the Mountain Home Public Library. This year’s volume features writing and visual art on the theme of Liberty. The program will be hig...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17587783",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ]
   },
   {
     "id": "f1e273ed7a72",
@@ -3052,7 +3808,8 @@
         "url": "https://events.boisestate.edu/event/boise-state-choirs-fall-choral-collage-concert",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "cost": "free"
   },
   {
     "id": "116e3da7282d",
@@ -3087,6 +3844,7 @@
     "tags": [
       "esports"
     ],
+    "size": "S",
     "url": "https://admin.broncosports.com/calendar.aspx?game_id=23192&sport_id=35",
     "description": "TV: Boise State Twitch - Rocket League Streaming Video: https://twitch.tv/boisestate",
     "sources": [
@@ -3097,6 +3855,30 @@
       }
     ],
     "costGuess": "$"
+  },
+  {
+    "id": "b7c9aedb97ba",
+    "title": "Library Closed",
+    "start": "2026-10-12",
+    "allDay": true,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17736938",
+    "description": "The library is closed today for Columbus Day. Regular hours resume on Tuesday, October 13, 2026. Library hours Monday and Friday, 9:30 am - 6:00 pm Tuesday, Wednesday and Thursday, 9:30 am - 8:00 pm Saturday, 10:30 am - 3:00 pm Sunday, Closed",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17736938",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "aa3ad6e81b0c",
@@ -3360,6 +4142,54 @@
     "costGuess": "free"
   },
   {
+    "id": "06f6cd2c591e",
+    "title": "Music and Movement",
+    "start": "2026-10-13T09:30:00-06:00",
+    "end": "2026-10-13T10:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358882",
+    "description": "Thirty minutes of singing, dancing, and fun, that’s our Music and Movement class! The class instructor uses songs that encourage both fine and gross motor skills. Children must attend with an adult caregiver, and caregivers are encouraged and expected to participate with the child. NO REGISTRATIO...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358882",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "ca84f1d31326",
+    "title": "Idaho Department of Labor",
+    "start": "2026-10-13T09:30:00-06:00",
+    "end": "2026-10-13T12:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/16734975",
+    "description": "Tuesdays from 9:30 am – 12:30 pm, a representative from the Idaho Department of Labor is available at Kuna Library to assist job seekers. No appointment is required. If you’re looking for assistance with services other than Job Seeking, please schedule an appointment by calling (208) 364-7781, ex...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/16734975",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "117168f86153",
     "title": "Language of the Hand",
     "start": "2026-10-13T10:00:00-06:00",
@@ -3382,6 +4212,31 @@
     ]
   },
   {
+    "id": "a89af7411bf0",
+    "title": "Storytime",
+    "start": "2026-10-13T10:00:00-06:00",
+    "end": "2026-10-13T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358809",
+    "description": "Open to all ages Join us for a story and an activity during our Storytime program! Storytime is offered on the following days and times: Monday, 11:00 Tuesday 10:00 Wednesday 10:15 Location: children's room",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358809",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "01b2cabed386",
     "title": "Fit and Fall Proof",
     "start": "2026-10-13T10:15:00-06:00",
@@ -3400,6 +4255,32 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/13558526",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "0892223ed9b0",
+    "title": "Bilingual Storytime",
+    "start": "2026-10-13T10:30:00-06:00",
+    "end": "2026-10-13T11:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221031",
+    "description": "Join us every Tuesday at 10:30 am for Bilingual Storytime in the youth services area of the library! Come and enjoy stories, rhymes, and songs in English and Spanish. This program is designed for toddlers and preschool children accompanied by a parent/caregiver.",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221031",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -3472,6 +4353,57 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15775775",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "96f2066b03a5",
+    "title": "Learn with Me!",
+    "start": "2026-10-13T10:45:00-06:00",
+    "end": "2026-10-13T11:45:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17206971",
+    "description": "Learn with me! is a free class offered for 3-year-olds, with their parent/adult caregiver, to develop skills in areas of social and emotional growth, language and literacy, math and reasoning, and fine and gross motor skills. It is not a preschool but a collaborative program of how to work togeth...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17206971",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "bb0c5ffcb2ed",
+    "title": "Storytime Club",
+    "start": "2026-10-13T11:00:00-06:00",
+    "end": "2026-10-13T12:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221053",
+    "description": "Join us every Tuesday at 11:00 am for Storytime Club in the youth services area of the library! Storytime Club is great stories, fun activities, and an added STEAM component that will explore, science, technology, engineering, art, and math concepts. This program is designed for toddlers and pres...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221053",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -3617,6 +4549,31 @@
     "costGuess": "free"
   },
   {
+    "id": "3a1813028ebd",
+    "title": "STEAM Tuesday",
+    "start": "2026-10-13T15:30:00-06:00",
+    "end": "2026-10-13T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360044",
+    "description": "School-age kids are invited to join us for creativity time while listening to an audiobook.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360044",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "2ce14fc5944e",
     "title": "Read to a Therapy Dog!",
     "start": "2026-10-13T16:00:00-06:00",
@@ -3692,6 +4649,31 @@
     "costGuess": "free"
   },
   {
+    "id": "d23ce07961e7",
+    "title": "Crystal Bowl Sound Healing",
+    "start": "2026-10-13T17:00:00-06:00",
+    "end": "2026-10-13T18:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17709814",
+    "description": "The Mountain Home Public Library is excited to partner with April, a local student sound healer to offer group sound healing sessions at the Library. Patrons are inviting to bring a yoga mat or blanket to sit or lay in the Library's meeting room while April plays tone that target your chakras. So...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17709814",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "5fbb61ac4940",
     "title": "Open Sewing Evening Edition",
     "start": "2026-10-13T18:00:00-06:00",
@@ -3758,6 +4740,29 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15439429",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "f02186710e0f",
+    "title": "Adult Craft Night",
+    "start": "2026-10-13T18:00:00-06:00",
+    "end": "2026-10-13T19:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/16295010",
+    "description": "Join us one night a month as we create something special. All supplies are provided unless otherwise noted, so grab a friend and come hang out with us. This month's craft is a yarn witch. *Teens (ages 12-17) are welcome to join. Please register so that we are sure to have enough supplies. If you...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/16295010",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -3857,6 +4862,31 @@
     "costGuess": "free"
   },
   {
+    "id": "367cc1b1b10b",
+    "title": "Play With Me!",
+    "start": "2026-10-14T09:30:00-06:00",
+    "end": "2026-10-14T10:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17280772",
+    "description": "A program for children of all ages and their adult caregiver. This is an opportunity for parents/caregivers and their children to enjoy playtime together with various activities., including building with blocks, yoga storytime, toddler STEM, and much more! No registration is required.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17280772",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "c92f72a676b6",
     "title": "Language of the Hand",
     "start": "2026-10-14T10:00:00-06:00",
@@ -3900,6 +4930,31 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/16156441",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "71c7a4486760",
+    "title": "Storytime",
+    "start": "2026-10-14T10:15:00-06:00",
+    "end": "2026-10-14T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358830",
+    "description": "Open to all ages Join us for a story and an activity during our Storytime program! Storytime is offered on the following days and times: Monday, 11:00 Tuesday 10:00 Wednesday 10:15 Location: children's room",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358830",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -4003,6 +5058,31 @@
     "costGuess": "free"
   },
   {
+    "id": "0e5a653c4ca5",
+    "title": "Music and Movement",
+    "start": "2026-10-14T10:45:00-06:00",
+    "end": "2026-10-14T11:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358901",
+    "description": "Thirty minutes of singing, dancing, and fun, that’s our Music and Movement class! The class instructor uses songs that encourage both fine and gross motor skills. Children must attend with an adult caregiver, and caregivers are encouraged and expected to participate with the child. NO REGISTRATIO...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358901",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "69b458267022",
     "title": "Baby Storytime",
     "start": "2026-10-14T11:15:00-06:00",
@@ -4024,6 +5104,75 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/16156518",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "5b65cbc39f10",
+    "title": "Fit and Fall Proof",
+    "start": "2026-10-14T11:30:00-06:00",
+    "end": "2026-10-14T12:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17346738",
+    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17346738",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "cfb53b5019eb",
+    "title": "Adult Education - GED Program through College of Western Idaho",
+    "start": "2026-10-14T12:00:00-06:00",
+    "end": "2026-10-14T16:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17616108",
+    "description": "Seeking assistance with: - Improving your Reading skills - Studying for the GED - Preparing for the Armed Services Vocational Aptitude Battery (ASVAB) - Practicing your computer skills CWI can help you meet your goals! STEP 1: Begin by taking reading and math placement tests and filling out regis...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17616108",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "8b501bec8989",
+    "title": "Memory Cafe",
+    "start": "2026-10-14T13:00:00-06:00",
+    "end": "2026-10-14T14:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/16787282",
+    "description": "The Memory Cafe is a place where family caregivers and their loved ones with memory loss can get together in a safe, supportive, and engaging environment. The Memory Café Encourages Friendship and Acceptance, a time to enjoy activities with your loved one with memory loss and break from the norma...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/16787282",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -4054,6 +5203,31 @@
     "costGuess": "free"
   },
   {
+    "id": "5ca8755c8b91",
+    "title": "Family Fun Zone",
+    "start": "2026-10-14T14:00:00-06:00",
+    "end": "2026-10-14T16:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "family-friendly"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360079",
+    "description": "Time for families to enjoy learning and playing together at the library.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360079",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "67314a97cb26",
     "title": "Fiber Arts Society",
     "start": "2026-10-14T14:00:00-06:00",
@@ -4072,6 +5246,31 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16489750",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "593bf0f6a1c2",
+    "title": "STEAM Tykes",
+    "start": "2026-10-14T15:15:00-06:00",
+    "end": "2026-10-14T16:15:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17436300",
+    "description": "Every Wednesday at 3:15 pm, join Bianca in Youth Services to explore and learn about science, technology, engineering, art, and math concepts. This program is designed for school aged children (ages 6 and up).",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17436300",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -4316,6 +5515,31 @@
     "costGuess": "free"
   },
   {
+    "id": "05c079a8e404",
+    "title": "Kinder-Set-Go!",
+    "start": "2026-10-15T09:30:00-06:00",
+    "end": "2026-10-15T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17209630",
+    "description": "Kinder-Set Go! is a kindergarten readiness program designed for preschoolers who will attend school in the fall of 2027. The class is for kids and their adult (parent or caregiver) held in one-hour sessions. It is designed to build skills to help a child prepare for school through interactive pla...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17209630",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "992dbb9f15a5",
     "title": "Language of the Hand",
     "start": "2026-10-15T10:00:00-06:00",
@@ -4336,6 +5560,31 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "fb052e093554",
+    "title": "Active Tots",
+    "start": "2026-10-15T10:00:00-06:00",
+    "end": "2026-10-15T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221339",
+    "description": "meets every Thursday morning, 10:00-10:45 am. This is a physical literacy program for ages 1-5. Children participate in a 45 minute physical activity session. All activities are non-competitive and focus on simple, fun games that develop fine motor and gross motor skills. Please be advised that t...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221339",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "8d3c749e4812",
@@ -4382,6 +5631,31 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16624504",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "6c755a8b49df",
+    "title": "Friends of the Library Meeting",
+    "start": "2026-10-15T10:30:00-06:00",
+    "end": "2026-10-15T11:30:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/16035692",
+    "description": "The Friends of the Mountain Home Public Library is a non-profit volunteer organization that promotes the library to the community. They organizehold multiple book sales each year, maintain an ongoing book sale in the library, and fund special projects for the library that are not covered by the l...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/16035692",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -4510,6 +5784,56 @@
     "costGuess": "free"
   },
   {
+    "id": "dedfce37b52b",
+    "title": "Crafternoon",
+    "start": "2026-10-15T15:15:00-06:00",
+    "end": "2026-10-15T16:15:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17436380",
+    "description": "Come get creative with us every Thursday after school at 3:15 pm. We will have a fun make & take craft available in Youth Services. All supplies will be provided. This program is for school-age children (ages 6 and up).",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17436380",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "55079fed64b4",
+    "title": "LEGO Challenge",
+    "start": "2026-10-15T15:30:00-06:00",
+    "end": "2026-10-15T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360119",
+    "description": "LEGO building at its best! Weekly building themes, with the option for kids to build individually or in a group. Our weekly building themes are: 9/3 Sea Creatures 9/10 Tree Forts 9/17 Dinosaurs 9/24 Bridges 10/1 Birds 10/8 Bats 10/15 Spiders 10/22 Pumpkins and Jack-o'-lanterns 10/29 Haunted Houses",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360119",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "2fe00c80111e",
     "title": "Northwest Nazarene University Women's Soccer vs Montana State University Billings",
     "start": "2026-10-15T16:00:00-06:00",
@@ -4604,7 +5928,8 @@
         "url": "https://events.boisestate.edu/event/visiting-artist-and-scholar-diana-al-hadid",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "cost": "free"
   },
   {
     "id": "907326a1a623",
@@ -4783,6 +6108,7 @@
     "tags": [
       "college-sports"
     ],
+    "size": "S",
     "url": "https://nnusports.com/calendar.aspx?game_id=9460&sport_id=14",
     "description": "L 0-1 Streaming Video: https://www.gnacnetwork.com/nnunighthawks/",
     "sources": [
@@ -4814,6 +6140,32 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/17517539",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "5ae32c2f73e0",
+    "title": "Homeschoolers @ the Library",
+    "start": "2026-10-16T09:30:00-06:00",
+    "end": "2026-10-16T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17253227",
+    "description": "A weekly program for home-school kids, and their adult, to participate in activities including STEM , Legos, arts, crafts, presentations by special guests, and the opportunity to share a talent or project with the group. Open to all school-age kids and their adult.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17253227",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -4864,6 +6216,31 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "266ec5ab0f72",
+    "title": "Music & Movement",
+    "start": "2026-10-16T10:15:00-06:00",
+    "end": "2026-10-16T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221176",
+    "description": "Join us ever Friday at 10:15 am and 11:15 am for Music & Movement in the conference room at the library! Get ready to sing, dance, and play musical instruments. This program is designed for children with an adult companion. Please be advised that this specific program has been limited to 30 peopl...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221176",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "2ed72cfedfec",
@@ -4989,6 +6366,52 @@
     "costGuess": "free"
   },
   {
+    "id": "fa779da50d4f",
+    "title": "Fit and Fall Proof",
+    "start": "2026-10-16T11:30:00-06:00",
+    "end": "2026-10-16T12:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17346789",
+    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17346789",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "c33bd903a041",
+    "title": "Chatty Crafters",
+    "start": "2026-10-16T12:00:00-06:00",
+    "end": "2026-10-16T14:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/15876925",
+    "description": "Every Friday at noon the Chatty Crafters meet in the commons area at the Mountain Home Public Library to knit, crochet, sew, bead, etc. while socializing with other crafty community members. All levels of experience are welcome to join. Please bring your own materials or check out a craft kit fro...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/15876925",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "12a62f0eb0ad",
     "title": "Senior Social",
     "start": "2026-10-16T12:30:00-06:00",
@@ -5053,6 +6476,52 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/14361412",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "a5d5ff443e62",
+    "title": "Game Day",
+    "start": "2026-10-16T15:30:00-06:00",
+    "end": "2026-10-16T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360160",
+    "description": "We are breaking out all the fun games on Fridays! During September, our weekly game themes are: 9/4 Cooperative Games 9/11 Dice Games 9/18 Fun Pieces Games 9/25 Number Games",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360160",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "b14b6a35f492",
+    "title": "Mountain Home City Youth Council",
+    "start": "2026-10-16T15:30:00-06:00",
+    "end": "2026-10-16T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17187481",
+    "description": "The Mountain Home City Youth Council or MHCYC is a group of teens (ages 12-18). The purpose of the MHCYC is to provide the City Council with a youth perspective on issues that affect the City of Mountain Home and to provide youth with an active role in making a difference in their community. Teen...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17187481",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -5131,6 +6600,32 @@
     "costGuess": "free"
   },
   {
+    "id": "c4165ae2fc53",
+    "title": "Open Mic Night",
+    "start": "2026-10-16T18:00:00-06:00",
+    "end": "2026-10-16T20:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "music",
+    "tags": [
+      "family-friendly",
+      "open-mic"
+    ],
+    "size": "M",
+    "url": "https://mhlibrary.libcal.com/event/16056365",
+    "description": "The Mountain Home Public Library and the Literary Committee of the Mountain Home Arts Council have teamed up to bring you free Open Mic Nights at the library hosted by local singer/songwriter, Billy Splash! Writers, poets, singer/songwriters, comedians, and other performing artists are invited to...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/16056365",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "f1e70d1d8db8",
     "title": "College of Idaho Women's Volleyball vs Bushnell University",
     "start": "2026-10-16T18:00:00-06:00",
@@ -5177,7 +6672,8 @@
         "url": "https://events.boisestate.edu/event/faculty-recital-del-parkinson-nov-16-2026",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "cost": "$"
   },
   {
     "id": "1f29a51087cd",
@@ -5220,6 +6716,29 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16975059",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "ada771a2800d",
+    "title": "Writing Group",
+    "start": "2026-10-17T10:00:00-06:00",
+    "end": "2026-10-17T11:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/15875718",
+    "description": "The Mountain Home Arts Council has partnered with the Mountain Home Public Library to host a monthly writing group at the library every 3rd Saturday of the month. This writing group is a chance for local writers to share their writings and resources, work on their craft, and explore topics such i...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/15875718",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -5348,6 +6867,29 @@
     "costGuess": "free"
   },
   {
+    "id": "a87afa603359",
+    "title": "Chess Club",
+    "start": "2026-10-17T13:00:00-06:00",
+    "end": "2026-10-17T15:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/15876730",
+    "description": "Meet, play, improve, and have fun with other Mountain Home chess players. Meetings are held every Saturday at 1:00 pm. The club is open to all ages and skill levels. You can bring your own chess board and timer or use one of ours. See Mark at the coffee bar to become a member. You do not need to...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/15876730",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "0ca2d80e02ca",
     "title": "Dungeons & Dragons",
     "start": "2026-10-17T14:00:00-06:00",
@@ -5357,7 +6899,9 @@
     "venueKey": "nampa-public-library",
     "city": "Nampa",
     "category": "learning-business",
-    "tags": [],
+    "tags": [
+      "board-games"
+    ],
     "size": "S",
     "url": "https://nampalibrary.libcal.com/event/17286180",
     "description": "Join us at the Nampa Public Library for an adventurous afternoon of Dungeons & Dragons as we find monsters, mystery, and magic! Come choose from a selection of pre-made characters, learn how to play the game in a relaxed and fun environment, and make new friends! Players of every experience level...",
@@ -5366,6 +6910,31 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/17286180",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "99b7b53fe25f",
+    "title": "Let's Connect – AAC & Digital Learning Together",
+    "start": "2026-10-17T14:00:00-06:00",
+    "end": "2026-10-17T15:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17739924",
+    "description": "Join us Saturday, October 17th from 2:00 pm to 3:00 pm in the Conference Room at Mountain Home Public Library for Let’s Connect! This social group is designed for children ages 3–6 years old who use AAC, along with their parent or adult companion. Come meet other families, practice communication,...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17739924",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -5529,15 +7098,15 @@
     "category": "arts-culture",
     "tags": [],
     "size": "M",
-    "url": "https://events.boisestate.edu/event/the-good-john-proctor-8229",
+    "url": "https://events.boisestate.edu/event/the-good-john-proctor-4730",
+    "description": "Reserve your free tickets here! THE GOOD JOHN PROCTOR Written by Talene Monahon Directed by Jessica Ires Morris Featuring Theatre Arts majors from Boise State University Sunday, October 18, 2026 at 4 PM -- Boise Contemporary Theater Sun Valley Playwright’s Residency, in collaboration with Boise S...",
     "sources": [
       {
         "name": "boise-state-arts",
         "url": "https://events.boisestate.edu/event/the-good-john-proctor-8229",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ],
-    "description": "Reserve your free tickets here! THE GOOD JOHN PROCTOR Written by Talene Monahon Directed by Jessica Ires Morris Featuring Theatre Arts majors from Boise State University Sunday, October 18, 2026 at 4 PM -- Boise Contemporary Theater Sun Valley Playwright’s Residency, in collaboration with Boise S..."
+    ]
   },
   {
     "id": "d4361bf6b806",
@@ -5561,7 +7130,8 @@
         "url": "https://events.boisestate.edu/event/faculty-recital-del-parkinson-nov-18-2026",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "cost": "$"
   },
   {
     "id": "aec7a01b23bd",
@@ -5629,6 +7199,54 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15793230",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "63ffb8bc7c2b",
+    "title": "Toddle Time",
+    "start": "2026-10-19T09:30:00-06:00",
+    "end": "2026-10-19T10:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17280003",
+    "description": "Storytime, Music and Movement, and playtime all in one! Toddle time lasts approximately 45 minutes and is ideal for little ones ages 0-3 and their adult caregivers.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17280003",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "f2c3359e82be",
+    "title": "Play Pals",
+    "start": "2026-10-19T10:00:00-06:00",
+    "end": "2026-10-19T11:15:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221221",
+    "description": "Children and their parent/caregiver are welcome to drop in anytime during this hour and 15 minute long playdate every Monday, 10:00-11:15 am in the conference room. Parents/caregivers are invited to chat while the children play with board books and educational toys. This specific program has been...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221221",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -5706,6 +7324,31 @@
     "costGuess": "free"
   },
   {
+    "id": "cfaa57582896",
+    "title": "Music and Movement",
+    "start": "2026-10-19T10:30:00-06:00",
+    "end": "2026-10-19T11:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358858",
+    "description": "Thirty minutes of singing, dancing, and fun, that’s our Music and Movement class! The class instructor uses songs that encourage both fine and gross motor skills. Children must attend with an adult caregiver, and caregivers are encouraged and expected to participate with the child. NO REGISTRATIO...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358858",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "ff6c73a1d4f1",
     "title": "Music and Movement",
     "start": "2026-10-19T10:30:00-06:00",
@@ -5726,6 +7369,54 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16513640",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "f99eb53b5a97",
+    "title": "Storytime",
+    "start": "2026-10-19T11:00:00-06:00",
+    "end": "2026-10-19T11:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358764",
+    "description": "Open to all ages Join us for a story and an activity during our Storytime program! Storytime is offered on the following days and times: Monday, 11:00 Tuesday 10:00 Wednesday 10:15 Location: children's room",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358764",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "bec083863fb4",
+    "title": "Fit and Fall Proof",
+    "start": "2026-10-19T11:30:00-06:00",
+    "end": "2026-10-19T12:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17346836",
+    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17346836",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -5772,6 +7463,31 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/15971413",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "73152b011374",
+    "title": "Maker Monday",
+    "start": "2026-10-19T15:30:00-06:00",
+    "end": "2026-10-19T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360016",
+    "description": "Join us after school for a fun, hands-on crafting project, giving kids the chance to explore new materials, learn fun techniques, and make something unique to take home. All supplies are provided, just bring your imagination. All skill levels welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360016",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -5872,6 +7588,79 @@
     "costGuess": "free"
   },
   {
+    "id": "3419a43fa587",
+    "title": "Music and Movement",
+    "start": "2026-10-20T09:30:00-06:00",
+    "end": "2026-10-20T10:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358883",
+    "description": "Thirty minutes of singing, dancing, and fun, that’s our Music and Movement class! The class instructor uses songs that encourage both fine and gross motor skills. Children must attend with an adult caregiver, and caregivers are encouraged and expected to participate with the child. NO REGISTRATIO...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358883",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "dbb6c4339ffa",
+    "title": "Idaho Department of Labor",
+    "start": "2026-10-20T09:30:00-06:00",
+    "end": "2026-10-20T12:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/16734976",
+    "description": "Tuesdays from 9:30 am – 12:30 pm, a representative from the Idaho Department of Labor is available at Kuna Library to assist job seekers. No appointment is required. If you’re looking for assistance with services other than Job Seeking, please schedule an appointment by calling (208) 364-7781, ex...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/16734976",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "2f47c091329c",
+    "title": "Storytime",
+    "start": "2026-10-20T10:00:00-06:00",
+    "end": "2026-10-20T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358810",
+    "description": "Open to all ages Join us for a story and an activity during our Storytime program! Storytime is offered on the following days and times: Monday, 11:00 Tuesday 10:00 Wednesday 10:15 Location: children's room",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358810",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "cde7bc922b76",
     "title": "Language of the Hand",
     "start": "2026-10-20T10:00:00-06:00",
@@ -5966,6 +7755,32 @@
     "costGuess": "free"
   },
   {
+    "id": "330d74a2c9c4",
+    "title": "Bilingual Storytime",
+    "start": "2026-10-20T10:30:00-06:00",
+    "end": "2026-10-20T11:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221032",
+    "description": "Join us every Tuesday at 10:30 am for Bilingual Storytime in the youth services area of the library! Come and enjoy stories, rhymes, and songs in English and Spanish. This program is designed for toddlers and preschool children accompanied by a parent/caregiver.",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221032",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "5ba1f0476300",
     "title": "Music and Movement",
     "start": "2026-10-20T10:30:00-06:00",
@@ -5984,6 +7799,57 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16259120",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "2c9530f73bc8",
+    "title": "Learn with Me!",
+    "start": "2026-10-20T10:45:00-06:00",
+    "end": "2026-10-20T11:45:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17206972",
+    "description": "Learn with me! is a free class offered for 3-year-olds, with their parent/adult caregiver, to develop skills in areas of social and emotional growth, language and literacy, math and reasoning, and fine and gross motor skills. It is not a preschool but a collaborative program of how to work togeth...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17206972",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "e6473f994dc1",
+    "title": "Storytime Club",
+    "start": "2026-10-20T11:00:00-06:00",
+    "end": "2026-10-20T12:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221054",
+    "description": "Join us every Tuesday at 11:00 am for Storytime Club in the youth services area of the library! Storytime Club is great stories, fun activities, and an added STEAM component that will explore, science, technology, engineering, art, and math concepts. This program is designed for toddlers and pres...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221054",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -6053,6 +7919,31 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/17000115",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "69ae866d369e",
+    "title": "STEAM Tuesday",
+    "start": "2026-10-20T15:30:00-06:00",
+    "end": "2026-10-20T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360045",
+    "description": "School-age kids are invited to join us for creativity time while listening to an audiobook.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360045",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -6128,6 +8019,31 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15302242",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "19c091edf8fd",
+    "title": "Crystal Bowl Sound Healing",
+    "start": "2026-10-20T17:00:00-06:00",
+    "end": "2026-10-20T18:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17709815",
+    "description": "The Mountain Home Public Library is excited to partner with April, a local student sound healer to offer group sound healing sessions at the Library. Patrons are inviting to bring a yoga mat or blanket to sit or lay in the Library's meeting room while April plays tone that target your chakras. So...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17709815",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -6256,6 +8172,31 @@
     "costGuess": "free"
   },
   {
+    "id": "b8fddd73abe4",
+    "title": "Interactive Movie - Ghostbuster II",
+    "start": "2026-10-20T18:00:00-06:00",
+    "end": "2026-10-20T19:30:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "arts-culture",
+    "tags": [
+      "film"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17732046",
+    "description": "Watch the Movie. Follow the Script. The First 30 participants will receive a goody bag packed with props and cues to interact with the movie while it plays. The movie will be shown in the commons area of the Library. This month, we'll be showing Ghostbuster II. (rated PG). Please note – This movi...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17732046",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "3ce882cc6208",
     "title": "Speak German to Me",
     "start": "2026-10-20T18:30:00-06:00",
@@ -6325,6 +8266,31 @@
     "costGuess": "$"
   },
   {
+    "id": "c31e38fa9602",
+    "title": "Play With Me!",
+    "start": "2026-10-21T09:30:00-06:00",
+    "end": "2026-10-21T10:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17280773",
+    "description": "A program for children of all ages and their adult caregiver. This is an opportunity for parents/caregivers and their children to enjoy playtime together with various activities., including building with blocks, yoga storytime, toddler STEM, and much more! No registration is required.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17280773",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "29bc786d3f6d",
     "title": "Language of the Hand",
     "start": "2026-10-21T10:00:00-06:00",
@@ -6391,6 +8357,31 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/16156442",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "f4921bed000e",
+    "title": "Storytime",
+    "start": "2026-10-21T10:15:00-06:00",
+    "end": "2026-10-21T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358831",
+    "description": "Open to all ages Join us for a story and an activity during our Storytime program! Storytime is offered on the following days and times: Monday, 11:00 Tuesday 10:00 Wednesday 10:15 Location: children's room",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358831",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -6494,6 +8485,31 @@
     "costGuess": "free"
   },
   {
+    "id": "3b8378d76b9b",
+    "title": "Music and Movement",
+    "start": "2026-10-21T10:45:00-06:00",
+    "end": "2026-10-21T11:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358902",
+    "description": "Thirty minutes of singing, dancing, and fun, that’s our Music and Movement class! The class instructor uses songs that encourage both fine and gross motor skills. Children must attend with an adult caregiver, and caregivers are encouraged and expected to participate with the child. NO REGISTRATIO...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358902",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "ea0eda5708ab",
     "title": "Baby Storytime",
     "start": "2026-10-21T11:15:00-06:00",
@@ -6515,6 +8531,52 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/16156519",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "605a2532227c",
+    "title": "Fit and Fall Proof",
+    "start": "2026-10-21T11:30:00-06:00",
+    "end": "2026-10-21T12:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17346739",
+    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17346739",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "880a60511517",
+    "title": "Adult Education - GED Program through College of Western Idaho",
+    "start": "2026-10-21T12:00:00-06:00",
+    "end": "2026-10-21T16:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17616109",
+    "description": "Seeking assistance with: - Improving your Reading skills - Studying for the GED - Preparing for the Armed Services Vocational Aptitude Battery (ASVAB) - Practicing your computer skills CWI can help you meet your goals! STEP 1: Begin by taking reading and math placement tests and filling out regis...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17616109",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -6589,6 +8651,31 @@
     "costGuess": "free"
   },
   {
+    "id": "b12f4f9a0c70",
+    "title": "Family Fun Zone",
+    "start": "2026-10-21T14:00:00-06:00",
+    "end": "2026-10-21T16:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "family-friendly"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360080",
+    "description": "Time for families to enjoy learning and playing together at the library.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360080",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "a97042cd118b",
     "title": "Crafternoons",
     "start": "2026-10-21T15:00:00-06:00",
@@ -6607,6 +8694,31 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15112038",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "42b7488a6c56",
+    "title": "STEAM Tykes",
+    "start": "2026-10-21T15:15:00-06:00",
+    "end": "2026-10-21T16:15:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17436301",
+    "description": "Every Wednesday at 3:15 pm, join Bianca in Youth Services to explore and learn about science, technology, engineering, art, and math concepts. This program is designed for school aged children (ages 6 and up).",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17436301",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -6705,7 +8817,8 @@
         "url": "https://events.boisestate.edu/event/shaka-king-the-evolution-of-a-filmmaker",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "cost": "free"
   },
   {
     "id": "145d26869bf8",
@@ -6898,6 +9011,31 @@
     ]
   },
   {
+    "id": "8e666083f49c",
+    "title": "Friends Only Fall Book Sale",
+    "start": "2026-10-22",
+    "allDay": true,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "markets-shopping",
+    "tags": [
+      "kids",
+      "plant-sale"
+    ],
+    "size": "M",
+    "cost": "$",
+    "url": "https://kunalibrary.libcal.com/event/17490355",
+    "description": "Join us for our annual Friends of Kuna Library Fall Book Sale in the Kuna Library Eagle Meeting Rooms. Hours Thursday, October 22, 5:00 pm – 8:00 pm Friends Only Sale Friday, October 23, 9:30 am – 6 pm Saturday, October 24, 10:30 am – 3:00 pm Half Price Day!50¢ *Vintage and rare books are priced...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17490355",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ]
+  },
+  {
     "id": "ccf107c84acb",
     "title": "Boise State University Esports Nebraska",
     "start": "2026-10-22",
@@ -6968,6 +9106,31 @@
     "costGuess": "free"
   },
   {
+    "id": "8be8e1944879",
+    "title": "Kinder-Set-Go!",
+    "start": "2026-10-22T09:30:00-06:00",
+    "end": "2026-10-22T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17209631",
+    "description": "Kinder-Set Go! is a kindergarten readiness program designed for preschoolers who will attend school in the fall of 2027. The class is for kids and their adult (parent or caregiver) held in one-hour sessions. It is designed to build skills to help a child prepare for school through interactive pla...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17209631",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "25db0b7d39fd",
     "title": "Language of the Hand",
     "start": "2026-10-22T10:00:00-06:00",
@@ -7008,6 +9171,31 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15669307",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "5a6bf913ccf9",
+    "title": "Active Tots",
+    "start": "2026-10-22T10:00:00-06:00",
+    "end": "2026-10-22T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221340",
+    "description": "meets every Thursday morning, 10:00-10:45 am. This is a physical literacy program for ages 1-5. Children participate in a 45 minute physical activity session. All activities are non-competitive and focus on simple, fun games that develop fine motor and gross motor skills. Please be advised that t...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221340",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -7205,6 +9393,56 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/17000153",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "ab1fce3db5de",
+    "title": "Crafternoon",
+    "start": "2026-10-22T15:15:00-06:00",
+    "end": "2026-10-22T16:15:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17436381",
+    "description": "Come get creative with us every Thursday after school at 3:15 pm. We will have a fun make & take craft available in Youth Services. All supplies will be provided. This program is for school-age children (ages 6 and up).",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17436381",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "ccc4b581ff22",
+    "title": "LEGO Challenge",
+    "start": "2026-10-22T15:30:00-06:00",
+    "end": "2026-10-22T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360120",
+    "description": "LEGO building at its best! Weekly building themes, with the option for kids to build individually or in a group. Our weekly building themes are: 9/3 Sea Creatures 9/10 Tree Forts 9/17 Dinosaurs 9/24 Bridges 10/1 Birds 10/8 Bats 10/15 Spiders 10/22 Pumpkins and Jack-o'-lanterns 10/29 Haunted Houses",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360120",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -7462,6 +9700,7 @@
     "tags": [
       "college-sports"
     ],
+    "size": "M",
     "url": "https://nnusports.com/calendar.aspx?game_id=9474&sport_id=11",
     "description": "W 3-1 Streaming Video: https://www.gnacnetwork.com/nnunighthawks/ Tickets: https://northwest-nazarene-university-ogbx.vivenushop.com/event/volleyball-nnu-vs-wou-caagzo",
     "sources": [
@@ -7472,6 +9711,57 @@
       }
     ],
     "costGuess": "$"
+  },
+  {
+    "id": "276f14065bd4",
+    "title": "Friends Fall Book Sale",
+    "start": "2026-10-23",
+    "allDay": true,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "markets-shopping",
+    "tags": [
+      "kids",
+      "plant-sale"
+    ],
+    "size": "M",
+    "cost": "$",
+    "url": "https://kunalibrary.libcal.com/event/17490361",
+    "description": "Join us for our annual Friends of Kuna Library Fall Book Sale in the Kuna Library Eagle Meeting Rooms. Hours Thursday, October 22, 5:00 pm – 8:00 pm Friends Only Sale Friday, October 23, 9:30 am – 6 pm Saturday, October 24, 10:30 am – 3:00 pm Half Price Day!50¢ *Vintage and rare books are priced...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17490361",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ]
+  },
+  {
+    "id": "02312c0e73df",
+    "title": "Homeschoolers @ the Library",
+    "start": "2026-10-23T09:30:00-06:00",
+    "end": "2026-10-23T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17253228",
+    "description": "A weekly program for home-school kids, and their adult, to participate in activities including STEM , Legos, arts, crafts, presentations by special guests, and the opportunity to share a talent or project with the group. Open to all school-age kids and their adult.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17253228",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "14905cf3bdf6",
@@ -7486,6 +9776,7 @@
     "tags": [
       "college-sports"
     ],
+    "size": "M",
     "url": "https://www.yoteathletics.com/calendar.aspx?game_id=8503&sport_id=16",
     "sources": [
       {
@@ -7567,6 +9858,31 @@
     ]
   },
   {
+    "id": "8cc976addaf2",
+    "title": "Music & Movement",
+    "start": "2026-10-23T10:15:00-06:00",
+    "end": "2026-10-23T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221177",
+    "description": "Join us ever Friday at 10:15 am and 11:15 am for Music & Movement in the conference room at the library! Get ready to sing, dance, and play musical instruments. This program is designed for children with an adult companion. Please be advised that this specific program has been limited to 30 peopl...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221177",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "cc3d089862fb",
     "title": "Preschool Storytime",
     "start": "2026-10-23T10:15:00-06:00",
@@ -7641,6 +9957,52 @@
     "costGuess": "free"
   },
   {
+    "id": "4d6d724a95f2",
+    "title": "Fit and Fall Proof",
+    "start": "2026-10-23T11:30:00-06:00",
+    "end": "2026-10-23T12:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17346790",
+    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17346790",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "876d25db358d",
+    "title": "Chatty Crafters",
+    "start": "2026-10-23T12:00:00-06:00",
+    "end": "2026-10-23T14:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/15876926",
+    "description": "Every Friday at noon the Chatty Crafters meet in the commons area at the Mountain Home Public Library to knit, crochet, sew, bead, etc. while socializing with other crafty community members. All levels of experience are welcome to join. Please bring your own materials or check out a craft kit fro...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/15876926",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "243c56a233b2",
     "title": "Fit and Fall Proof",
     "start": "2026-10-23T13:00:00-06:00",
@@ -7684,6 +10046,29 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/17178927",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "89b70d1f0a96",
+    "title": "Game Day",
+    "start": "2026-10-23T15:30:00-06:00",
+    "end": "2026-10-23T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360161",
+    "description": "We are breaking out all the fun games on Fridays! During September, our weekly game themes are: 9/4 Cooperative Games 9/11 Dice Games 9/18 Fun Pieces Games 9/25 Number Games",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360161",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -7820,6 +10205,7 @@
     "category": "arts-culture",
     "tags": [],
     "size": "L",
+    "cost": "$",
     "url": "https://events.boisestate.edu/event/musical-company-by-stephen-sondheim-fall-2026",
     "description": "Dates: Friday, October 23 and Sunday, October 25 Time: 7 PM Join Boise State University's Department of Music Opera & Musical Theatre Class for Company, Stephen Sondheim's brilliantly witty and thought-provoking musical about love, marriage, friendship, and the challenges of modern relationships....",
     "sources": [
@@ -7866,6 +10252,7 @@
       "free-admission"
     ],
     "size": "S",
+    "cost": "free",
     "url": "https://events.boisestate.edu/event/hemingway-center-reading-series-presents-oli-hazzard",
     "description": "The Hemingway Center Reading Series and Creative Writing MFA Program present poet Oli Hazzard. Hazzard, whose work John Ashbery called “exciting, necessary, and new,\" will give a reading of his work on Friday, October 23, 2026 at 7:30 PM. This event is free and open to the public. Event Details 7...",
     "sources": [
@@ -7899,6 +10286,54 @@
       }
     ],
     "costGuess": "$"
+  },
+  {
+    "id": "a77d35953016",
+    "title": "Friends Fall Book Sale",
+    "start": "2026-10-24",
+    "allDay": true,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "markets-shopping",
+    "tags": [
+      "kids",
+      "plant-sale"
+    ],
+    "size": "M",
+    "cost": "$",
+    "url": "https://kunalibrary.libcal.com/event/17490362",
+    "description": "Join us for our annual Friends of Kuna Library Fall Book Sale in the Kuna Library Eagle Meeting Rooms. Hours Thursday, October 22, 5:00 pm – 8:00 pm Friends Only Sale Friday, October 23, 9:30 am – 6 pm Saturday, October 24, 10:30 am – 3:00 pm Half Price Day!50¢ *Vintage and rare books are priced...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17490362",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ]
+  },
+  {
+    "id": "10751f7f0166",
+    "title": "Idahoans in the Great War Presentation",
+    "start": "2026-10-24T10:00:00-06:00",
+    "end": "2026-10-24T12:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17731829",
+    "description": "Join Frank & Kasi Krone for an educational presentation about different Idaho residents that served our country during WWI.",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17731829",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "249f56ba9207",
@@ -8001,6 +10436,29 @@
     "costGuess": "free"
   },
   {
+    "id": "1585064a4d77",
+    "title": "Chess Club",
+    "start": "2026-10-24T13:00:00-06:00",
+    "end": "2026-10-24T15:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/15876731",
+    "description": "Meet, play, improve, and have fun with other Mountain Home chess players. Meetings are held every Saturday at 1:00 pm. The club is open to all ages and skill levels. You can bring your own chess board and timer or use one of ours. See Mark at the coffee bar to become a member. You do not need to...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/15876731",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "b0e6df2b098c",
     "title": "& Juliet",
     "start": "2026-10-24T13:00:00-06:00",
@@ -8046,6 +10504,29 @@
       }
     ],
     "costGuess": "$"
+  },
+  {
+    "id": "d67d4eb10caf",
+    "title": "Digital Training For Seniors - Digital Basics",
+    "start": "2026-10-24T14:00:00-06:00",
+    "end": "2026-10-24T15:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17740003",
+    "description": "Getting Comfortable With Your Device Join us Saturday, October 24th from 2:00 pm to 3:00 pm for Digital Training For Seniors – Digital Basics at the Conference Room at Mountain Home Public Library! This beginner-friendly class is designed to help seniors feel more comfortable and confident using...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17740003",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "eacbd5503ff9",
@@ -8112,7 +10593,33 @@
         "url": "https://events.boisestate.edu/event/musical-company-by-stephen-sondheim-fall-2026",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "cost": "$"
+  },
+  {
+    "id": "f2b01afa2673",
+    "title": "Trick-or-Treat at the Library",
+    "start": "2026-10-26",
+    "allDay": true,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "holiday-seasonal",
+    "tags": [
+      "halloween",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17842543",
+    "description": "Wear your Halloween costume to the library this week, or if you're out trick-or-treating, be sure to stop by the library!",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17842543",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "d1023efe3b5b",
@@ -8133,6 +10640,54 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/17053640",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "ae2daad08c63",
+    "title": "Toddle Time",
+    "start": "2026-10-26T09:30:00-06:00",
+    "end": "2026-10-26T10:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17280004",
+    "description": "Storytime, Music and Movement, and playtime all in one! Toddle time lasts approximately 45 minutes and is ideal for little ones ages 0-3 and their adult caregivers.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17280004",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "3f5a2002b1a4",
+    "title": "Play Pals",
+    "start": "2026-10-26T10:00:00-06:00",
+    "end": "2026-10-26T11:15:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221222",
+    "description": "Children and their parent/caregiver are welcome to drop in anytime during this hour and 15 minute long playdate every Monday, 10:00-11:15 am in the conference room. Parents/caregivers are invited to chat while the children play with board books and educational toys. This specific program has been...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221222",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -8160,6 +10715,31 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/16156365",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "0c94408ae8db",
+    "title": "Music and Movement",
+    "start": "2026-10-26T10:30:00-06:00",
+    "end": "2026-10-26T11:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358859",
+    "description": "Thirty minutes of singing, dancing, and fun, that’s our Music and Movement class! The class instructor uses songs that encourage both fine and gross motor skills. Children must attend with an adult caregiver, and caregivers are encouraged and expected to participate with the child. NO REGISTRATIO...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358859",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -8233,6 +10813,54 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16513641",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "a228c8833118",
+    "title": "Storytime",
+    "start": "2026-10-26T11:00:00-06:00",
+    "end": "2026-10-26T11:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358765",
+    "description": "Open to all ages Join us for a story and an activity during our Storytime program! Storytime is offered on the following days and times: Monday, 11:00 Tuesday 10:00 Wednesday 10:15 Location: children's room",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358765",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "2a2ced62ba26",
+    "title": "Fit and Fall Proof",
+    "start": "2026-10-26T11:30:00-06:00",
+    "end": "2026-10-26T12:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17346837",
+    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17346837",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -8327,6 +10955,31 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15142391",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "d371dc31677d",
+    "title": "Maker Monday",
+    "start": "2026-10-26T15:30:00-06:00",
+    "end": "2026-10-26T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360017",
+    "description": "Join us after school for a fun, hands-on crafting project, giving kids the chance to explore new materials, learn fun techniques, and make something unique to take home. All supplies are provided, just bring your imagination. All skill levels welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360017",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -8429,6 +11082,31 @@
     "costGuess": "$"
   },
   {
+    "id": "bb1e0a4562bd",
+    "title": "Trick-or-Treat at the Library",
+    "start": "2026-10-27",
+    "allDay": true,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "holiday-seasonal",
+    "tags": [
+      "halloween",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17842544",
+    "description": "Wear your Halloween costume to the library this week, or if you're out trick-or-treating, be sure to stop by the library!",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17842544",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "dc2187c0c156",
     "title": "Fit and Fall Proof",
     "start": "2026-10-27T09:15:00-06:00",
@@ -8452,6 +11130,79 @@
     "costGuess": "free"
   },
   {
+    "id": "aa21bf631468",
+    "title": "Music and Movement",
+    "start": "2026-10-27T09:30:00-06:00",
+    "end": "2026-10-27T10:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358884",
+    "description": "Thirty minutes of singing, dancing, and fun, that’s our Music and Movement class! The class instructor uses songs that encourage both fine and gross motor skills. Children must attend with an adult caregiver, and caregivers are encouraged and expected to participate with the child. NO REGISTRATIO...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358884",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "b9e7309b8942",
+    "title": "Idaho Department of Labor",
+    "start": "2026-10-27T09:30:00-06:00",
+    "end": "2026-10-27T12:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/16734977",
+    "description": "Tuesdays from 9:30 am – 12:30 pm, a representative from the Idaho Department of Labor is available at Kuna Library to assist job seekers. No appointment is required. If you’re looking for assistance with services other than Job Seeking, please schedule an appointment by calling (208) 364-7781, ex...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/16734977",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "51355e5df8ad",
+    "title": "Storytime",
+    "start": "2026-10-27T10:00:00-06:00",
+    "end": "2026-10-27T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358811",
+    "description": "Open to all ages Join us for a story and an activity during our Storytime program! Storytime is offered on the following days and times: Monday, 11:00 Tuesday 10:00 Wednesday 10:15 Location: children's room",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358811",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "f734b81c2457",
     "title": "Language of the Hand",
     "start": "2026-10-27T10:00:00-06:00",
@@ -8462,6 +11213,7 @@
     "city": "Boise",
     "category": "arts-culture",
     "tags": [],
+    "size": "S",
     "url": "https://events.boisestate.edu/event/language-of-the-hand",
     "description": "With co-curation from the DRAW Project's Brian Novatny, The Blue Galleries presents Language of the Hand, an exhibition of individual and collaborative drawings by 70+ artists from New York City, Boise and points in between. The exhibit will run from Aug. 28 - Oct. 28, 2026. The Blue Galleries ar...",
     "sources": [
@@ -8574,6 +11326,58 @@
     "costGuess": "free"
   },
   {
+    "id": "d8f3f6fc5111",
+    "title": "Learn with Me!",
+    "start": "2026-10-27T10:45:00-06:00",
+    "end": "2026-10-27T11:45:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17206973",
+    "description": "Learn with me! is a free class offered for 3-year-olds, with their parent/adult caregiver, to develop skills in areas of social and emotional growth, language and literacy, math and reasoning, and fine and gross motor skills. It is not a preschool but a collaborative program of how to work togeth...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17206973",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "5b9c9fcec404",
+    "title": "Spooky Storytime & Costume Parade",
+    "start": "2026-10-27T11:00:00-06:00",
+    "end": "2026-10-27T12:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "community-civic",
+    "tags": [
+      "kids",
+      "library-program",
+      "parade"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17702162",
+    "description": "Join Ms. Bianca on the carpet in Youth Services on Tuesday, October 27th at 11:00 am for a spooky story and a creepy craft followed by a parade to show off everyone’s adorable costumes. We can’t have a parade without candy so be sure to bring your treat bags. This program is designed for toddlers...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17702162",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "b30a7502a3a8",
     "title": "Crochet & Knit with Us!",
     "start": "2026-10-27T13:00:00-06:00",
@@ -8592,6 +11396,54 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/16175783",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "cef4ab51aee5",
+    "title": "Memory Cafe",
+    "start": "2026-10-27T13:00:00-06:00",
+    "end": "2026-10-27T14:30:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/15877905",
+    "description": "Have You Heard About Memory Café? A place where family caregivers and their loved one with memory loss can get together in a safe, supportive, and engaging environment. OFFERED AT NO COST! The Memory Café Encourages Friendship and Acceptance! The Memory Café is a time to enjoy activities with you...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/15877905",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "06f7968975f2",
+    "title": "STEAM Tuesday",
+    "start": "2026-10-27T15:30:00-06:00",
+    "end": "2026-10-27T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360046",
+    "description": "School-age kids are invited to join us for creativity time while listening to an audiobook.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360046",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -8718,6 +11570,31 @@
     "costGuess": "free"
   },
   {
+    "id": "df1a3a70e8ed",
+    "title": "Crystal Bowl Sound Healing",
+    "start": "2026-10-27T17:00:00-06:00",
+    "end": "2026-10-27T18:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17709816",
+    "description": "The Mountain Home Public Library is excited to partner with April, a local student sound healer to offer group sound healing sessions at the Library. Patrons are inviting to bring a yoga mat or blanket to sit or lay in the Library's meeting room while April plays tone that target your chakras. So...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17709816",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "0e65bc3229a3",
     "title": "Boise Public Library Pokémon League",
     "start": "2026-10-27T18:00:00-06:00",
@@ -8738,6 +11615,31 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/13546757",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "45d500f17963",
+    "title": "Harry Potter Trivia Night",
+    "start": "2026-10-27T18:00:00-06:00",
+    "end": "2026-10-27T19:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "food-drink",
+    "tags": [
+      "trivia"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17797525",
+    "description": "Do you have Hermione level smarts? Put them to the test at our Harry Potter Trivia Night! Come as a team or as an individual. Registration requested, walk-ins welcome. REGISTER HERE",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17797525",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -8789,6 +11691,31 @@
     "costGuess": "free"
   },
   {
+    "id": "4e56b72732a9",
+    "title": "Trick-or-Treat at the Library",
+    "start": "2026-10-28",
+    "allDay": true,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "holiday-seasonal",
+    "tags": [
+      "halloween",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17842545",
+    "description": "Wear your Halloween costume to the library this week, or if you're out trick-or-treating, be sure to stop by the library!",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17842545",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "74e32758cbb7",
     "title": "Boise State University Esports Syracuse",
     "start": "2026-10-28",
@@ -8813,6 +11740,31 @@
     "costGuess": "$"
   },
   {
+    "id": "5f368d7c7de5",
+    "title": "Play With Me!",
+    "start": "2026-10-28T09:30:00-06:00",
+    "end": "2026-10-28T10:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17280774",
+    "description": "A program for children of all ages and their adult caregiver. This is an opportunity for parents/caregivers and their children to enjoy playtime together with various activities., including building with blocks, yoga storytime, toddler STEM, and much more! No registration is required.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17280774",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "d766c1273caf",
     "title": "Language of the Hand",
     "start": "2026-10-28T10:00:00-06:00",
@@ -8833,6 +11785,31 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "1d7eb59d8773",
+    "title": "Storytime",
+    "start": "2026-10-28T10:15:00-06:00",
+    "end": "2026-10-28T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358832",
+    "description": "Open to all ages Join us for a story and an activity during our Storytime program! Storytime is offered on the following days and times: Monday, 11:00 Tuesday 10:00 Wednesday 10:15 Location: children's room",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358832",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "d4954dced87f",
@@ -8936,6 +11913,31 @@
     "costGuess": "free"
   },
   {
+    "id": "a6afb8cb901c",
+    "title": "Music and Movement",
+    "start": "2026-10-28T10:45:00-06:00",
+    "end": "2026-10-28T11:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17358903",
+    "description": "Thirty minutes of singing, dancing, and fun, that’s our Music and Movement class! The class instructor uses songs that encourage both fine and gross motor skills. Children must attend with an adult caregiver, and caregivers are encouraged and expected to participate with the child. NO REGISTRATIO...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17358903",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "57fb0ec6bea7",
     "title": "Baby Storytime",
     "start": "2026-10-28T11:15:00-06:00",
@@ -8957,6 +11959,52 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/16156520",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "bb10e89422d4",
+    "title": "Fit and Fall Proof",
+    "start": "2026-10-28T11:30:00-06:00",
+    "end": "2026-10-28T12:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17346740",
+    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17346740",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "0ea2860b005f",
+    "title": "Adult Education - GED Program through College of Western Idaho",
+    "start": "2026-10-28T12:00:00-06:00",
+    "end": "2026-10-28T16:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17616110",
+    "description": "Seeking assistance with: - Improving your Reading skills - Studying for the GED - Preparing for the Armed Services Vocational Aptitude Battery (ASVAB) - Practicing your computer skills CWI can help you meet your goals! STEP 1: Begin by taking reading and math placement tests and filling out regis...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17616110",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -9053,6 +12101,56 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16489753",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "c20db0c64069",
+    "title": "Family Fun Zone",
+    "start": "2026-10-28T14:00:00-06:00",
+    "end": "2026-10-28T16:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "family-friendly"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360081",
+    "description": "Time for families to enjoy learning and playing together at the library.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360081",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "f24f2a0b8f81",
+    "title": "STEAM Tykes",
+    "start": "2026-10-28T15:15:00-06:00",
+    "end": "2026-10-28T16:15:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17436302",
+    "description": "Every Wednesday at 3:15 pm, join Bianca in Youth Services to explore and learn about science, technology, engineering, art, and math concepts. This program is designed for school aged children (ages 6 and up).",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17436302",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -9241,6 +12339,7 @@
       "concert"
     ],
     "size": "L",
+    "cost": "$",
     "url": "https://events.boisestate.edu/event/boise-state-spook-tacular-concert",
     "description": "Costumes, drama, and a little musical mischief return to the Morrison Center as the Boise State University Symphony Orchestra presents its annual Hallowen Spook-tacular! This year's Of Stage and Screen brings together music from the opera house and the silver screen, from Offenbach’s spirited Orp...",
     "sources": [
@@ -9250,6 +12349,31 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "238578eb21ba",
+    "title": "Trick-or-Treat at the Library",
+    "start": "2026-10-29",
+    "allDay": true,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "holiday-seasonal",
+    "tags": [
+      "halloween",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17842546",
+    "description": "Wear your Halloween costume to the library this week, or if you're out trick-or-treating, be sure to stop by the library!",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17842546",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "f28195ad2870",
@@ -9317,6 +12441,56 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/15302052",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "668a074e3a2d",
+    "title": "Kinder-Set-Go!",
+    "start": "2026-10-29T09:30:00-06:00",
+    "end": "2026-10-29T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17209632",
+    "description": "Kinder-Set Go! is a kindergarten readiness program designed for preschoolers who will attend school in the fall of 2027. The class is for kids and their adult (parent or caregiver) held in one-hour sessions. It is designed to build skills to help a child prepare for school through interactive pla...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17209632",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "547455c56ef6",
+    "title": "Active Tots",
+    "start": "2026-10-29T10:00:00-06:00",
+    "end": "2026-10-29T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221341",
+    "description": "meets every Thursday morning, 10:00-10:45 am. This is a physical literacy program for ages 1-5. Children participate in a 45 minute physical activity session. All activities are non-competitive and focus on simple, fun games that develop fine motor and gross motor skills. Please be advised that t...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221341",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -9466,6 +12640,56 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/15417569",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "4fc6909c46b8",
+    "title": "Crafternoon",
+    "start": "2026-10-29T15:15:00-06:00",
+    "end": "2026-10-29T16:15:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17436382",
+    "description": "Come get creative with us every Thursday after school at 3:15 pm. We will have a fun make & take craft available in Youth Services. All supplies will be provided. This program is for school-age children (ages 6 and up).",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17436382",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "12e8c3280401",
+    "title": "LEGO Challenge",
+    "start": "2026-10-29T15:30:00-06:00",
+    "end": "2026-10-29T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360121",
+    "description": "LEGO building at its best! Weekly building themes, with the option for kids to build individually or in a group. Our weekly building themes are: 9/3 Sea Creatures 9/10 Tree Forts 9/17 Dinosaurs 9/24 Bridges 10/1 Birds 10/8 Bats 10/15 Spiders 10/22 Pumpkins and Jack-o'-lanterns 10/29 Haunted Houses",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360121",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -9642,6 +12866,57 @@
     "costGuess": "$"
   },
   {
+    "id": "b2ad2361544b",
+    "title": "Trick-or-Treat at the Library",
+    "start": "2026-10-30",
+    "allDay": true,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "holiday-seasonal",
+    "tags": [
+      "halloween",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17842547",
+    "description": "Wear your Halloween costume to the library this week, or if you're out trick-or-treating, be sure to stop by the library!",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17842547",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "b11de23f2559",
+    "title": "Homeschoolers @ the Library",
+    "start": "2026-10-30T09:30:00-06:00",
+    "end": "2026-10-30T10:30:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17253229",
+    "description": "A weekly program for home-school kids, and their adult, to participate in activities including STEM , Legos, arts, crafts, presentations by special guests, and the opportunity to share a talent or project with the group. Open to all school-age kids and their adult.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17253229",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "5e8756a0b832",
     "title": "English Practice Meet-Up",
     "start": "2026-10-30T10:00:00-06:00",
@@ -9688,6 +12963,31 @@
         "name": "nampa-public-library",
         "url": "https://nampalibrary.libcal.com/event/16156587",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "768b9ee3d8c1",
+    "title": "Music & Movement",
+    "start": "2026-10-30T10:15:00-06:00",
+    "end": "2026-10-30T10:45:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221178",
+    "description": "Join us ever Friday at 10:15 am and 11:15 am for Music & Movement in the conference room at the library! Get ready to sing, dance, and play musical instruments. This program is designed for children with an adult companion. Please be advised that this specific program has been limited to 30 peopl...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221178",
+        "fetchedAt": "2026-11-06T07:04:43Z"
       }
     ],
     "costGuess": "free"
@@ -9792,6 +13092,52 @@
     "costGuess": "free"
   },
   {
+    "id": "228fad988eed",
+    "title": "Fit and Fall Proof",
+    "start": "2026-10-30T11:30:00-06:00",
+    "end": "2026-10-30T12:15:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17346791",
+    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17346791",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "8ec6f3dd54c1",
+    "title": "Chatty Crafters",
+    "start": "2026-10-30T12:00:00-06:00",
+    "end": "2026-10-30T14:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/15876927",
+    "description": "Every Friday at noon the Chatty Crafters meet in the commons area at the Mountain Home Public Library to knit, crochet, sew, bead, etc. while socializing with other crafty community members. All levels of experience are welcome to join. Please bring your own materials or check out a craft kit fro...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/15876927",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "ecfd906aedfe",
     "title": "College of Idaho Women's Basketball vs Eastern Oregon University vs Montana Tech",
     "start": "2026-10-30T12:00:00-06:00",
@@ -9863,6 +13209,29 @@
       }
     ],
     "costGuess": "$"
+  },
+  {
+    "id": "c340f0d46638",
+    "title": "Game Day",
+    "start": "2026-10-30T15:30:00-06:00",
+    "end": "2026-10-30T17:00:00-06:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17360162",
+    "description": "We are breaking out all the fun games on Fridays! During September, our weekly game themes are: 9/4 Cooperative Games 9/11 Dice Games 9/18 Fun Pieces Games 9/25 Number Games",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17360162",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "5d080d7d8cdf",
@@ -10028,6 +13397,7 @@
       "symphony"
     ],
     "size": "L",
+    "cost": "$",
     "url": "https://events.boisestate.edu/event/guest-artist-recital-the-american-piano-duo-fall-2026",
     "description": "Date: Friday, October 30, 2026 Time: 7:30 PM Vive la France! Step into the colorful and imaginative world of French music with the American Piano Duo—Jeffrey Shumway and Del Parkinson—in a program showcasing some of France’s most captivating works for two pianos. The program journeys from the gho...",
     "sources": [
@@ -10037,6 +13407,31 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "048326642002",
+    "title": "Trick-or-Treat at the Library",
+    "start": "2026-10-31",
+    "allDay": true,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "holiday-seasonal",
+    "tags": [
+      "halloween",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17842548",
+    "description": "Wear your Halloween costume to the library this week, or if you're out trick-or-treating, be sure to stop by the library!",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17842548",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "f5c046ae0fc6",
@@ -10114,6 +13509,29 @@
     "costGuess": "$"
   },
   {
+    "id": "d386f209d280",
+    "title": "Chess Club",
+    "start": "2026-10-31T13:00:00-06:00",
+    "end": "2026-10-31T15:00:00-06:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/15876732",
+    "description": "Meet, play, improve, and have fun with other Mountain Home chess players. Meetings are held every Saturday at 1:00 pm. The club is open to all ages and skill levels. You can bring your own chess board and timer or use one of ours. See Mark at the coffee bar to become a member. You do not need to...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/15876732",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "1c17bb9e050e",
     "title": "College of Idaho Women's Basketball vs Eastern Oregon University vs Montana Western",
     "start": "2026-10-31T14:00:00-06:00",
@@ -10176,6 +13594,7 @@
     "tags": [
       "college-sports"
     ],
+    "size": "M",
     "url": "https://www.yoteathletics.com/calendar.aspx?game_id=8361&sport_id=15",
     "description": "W 5-1 Streaming Video: https://www.cascadesportsnetwork.com/collegeofidaho/",
     "sources": [
