@@ -38,7 +38,8 @@ Requires PowerShell 7.4 or later and Pester 6.0.0. Run everything from the repo 
 . ./ingestion/.env.ps1                                       # load API keys, see below
 ./ingestion/scripts/Test-Sources.ps1                         # validate sources.json
 ./ingestion/scripts/Test-Schema.ps1                          # validate stored events
-./ingestion/scripts/Invoke-Ingest.ps1 -NoWrite               # fetch and report, don't touch data/
+./ingestion/scripts/Invoke-Ingest.ps1 -NoWrite               # fetch and report, don't touch data/ (no link requests)
+./ingestion/scripts/Invoke-Ingest.ps1 -NoLinkCheck           # a normal run without the link check
 ./ingestion/scripts/Invoke-Ingest.ps1 -NoWrite -Source idaho-steelheads   # one source
 ./ingestion/scripts/Invoke-Ingest.ps1 -CleanupOnly           # re-run dedupe and cleanup on stored data, no fetching
 Invoke-Pester -Path ./ingestion/tests                        # run the tests
@@ -46,6 +47,17 @@ hugo server -s website                                       # the site, at http
 ```
 
 Every run drops events any source titles as canceled, and dedupes across sources (see `Merge-TvEvents` in `ingestion/scripts/lib/Dedupe.ps1`). `-CleanupOnly` applies a change to those rules to `data/events.json` and every archive month without a network request; add `-NoWrite` to see the counts first. A run that fetched also writes `data/meta.json` with the time of the last ingest, which the site shows.
+
+### Link check
+
+After the merge, every run checks the event links that are due (`ingestion/scripts/lib/Links.ps1`), so nobody clicks through to a page that's gone.
+
+- **What breaks a link:** 404 and 410 break it the first night. Timeouts, 5xx, a host that doesn't resolve, and refused connections break it only on 2 nights in a row. 401, 403 and 429 never do, because they're a site turning away scripts (Ticketmaster answers 401), not a missing page.
+- **When links are checked:** a link is checked the first night it appears, again 7 days after it last worked, and every night while it's failing, so a page that comes back gets its link back. Soonest events go first, within `-LinkBudgetSeconds` (default 900). Links left over count as working until a later night reaches them.
+- **Politeness:** requests use the project User-Agent and follow each host's robots.txt; a disallowed path is never requested. Requests to one host are at least 1 second apart, or the host's Crawl-delay.
+- **What a visitor sees:** an event whose link is broken first tries its other sources' links that are known to work. If none does, it gets `linkBroken: true`, and the site shows the title as plain text with the hover text "Information not available".
+- **Where to look:** each run lists every link it checked in `out/links.json` and adds counts to `out/run.json`. The GitHub Actions run summary has a "Broken links" section grouped by source, new breaks first. The state is `data/links.json`, committed with the rest of `data/`.
+- **Limits:** `-NoWrite` and `-NoLinkCheck` make no link requests but still apply what `data/links.json` already knows. With `-Source`, only that source's links are checked.
 
 API keys are read from environment variables only. Copy `ingestion/.env.example.ps1` to `ingestion/.env.ps1` and fill in real values. `.env.ps1` and `.secrets.local.md` are gitignored; this repo is public, so never commit them. Sources whose key is missing fail with a warning and the rest still run. Raw per-source output and `run.json` go to `out/`, which is also gitignored.
 

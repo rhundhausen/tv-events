@@ -10,6 +10,11 @@
   price. Events any source reports as canceled are dropped, and events stored as
   city Other get a city when their own text says where they are (Resolve-TvOtherCity). A run that fetched
   writes data/meta.json with the time of the last ingest.
+
+  After the merge, the link check (lib/Links.ps1) requests the event links that are due, within
+  LinkBudgetSeconds, and marks events whose link is gone with linkBroken. Its state is
+  data/links.json, its results go to out/links.json, and broken links are listed in the GitHub
+  Actions run summary when GITHUB_STEP_SUMMARY is set.
 .PARAMETER Source
   Run only this source, by name. Any configured entry can be run this way, whatever its status.
   Other sources' stored events are left in place.
@@ -27,6 +32,10 @@
   The UTC time to record as the last ingest in data/meta.json, as yyyy-MM-ddTHH:mm:ssZ. The nightly
   workflow passes the scheduled midnight, because GitHub often starts scheduled runs late. Defaults
   to the time the run started. Event fetchedAt times always use the real time.
+.PARAMETER NoLinkCheck
+  Make no link requests. Known link results from data/links.json still apply. -NoWrite implies it.
+.PARAMETER LinkBudgetSeconds
+  How long the link check may spend making requests. Links left over wait for a later run.
 #>
 [CmdletBinding()]
 param(
@@ -35,7 +44,9 @@ param(
   [switch]$NoWrite,
   [int]$Days = 180,
   [switch]$CleanupOnly,
-  [ValidatePattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$')][string]$AsOf
+  [ValidatePattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$')][string]$AsOf,
+  [switch]$NoLinkCheck,
+  [int]$LinkBudgetSeconds = 900
 )
 
 $ErrorActionPreference = 'Stop'
@@ -44,10 +55,12 @@ $root = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $repoRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..' '..'))
 . (Join-Path $PSScriptRoot 'lib' 'Store.ps1')
 . (Join-Path $PSScriptRoot 'lib' 'Cities.ps1')
+. (Join-Path $PSScriptRoot 'lib' 'Links.ps1')
 
 $sourcesPath = Join-Path $root 'sources.json'
 $dataPath = Join-Path $repoRoot 'data' 'events.json'
 $metaPath = Join-Path $repoRoot 'data' 'meta.json'
+$linksPath = Join-Path $repoRoot 'data' 'links.json'
 $archiveDir = Join-Path $repoRoot 'data' 'archive'
 $outPath = [IO.Path]::GetFullPath($OutDir, $PWD.Path)
 
@@ -148,7 +161,7 @@ foreach ($entry in $selected) {
 }
 
 function Write-RunLog {
-  param([object[]]$Upcoming = @(), [int]$Past = 0)
+  param([object[]]$Upcoming = @(), [int]$Past = 0, [object]$Links)
   $countBy = {
     param([string]$Property)
     $counts = [ordered]@{}
@@ -162,6 +175,13 @@ function Write-RunLog {
     past       = $Past
     categories = & $countBy 'category'
     sizes      = & $countBy 'size'
+    links      = if ($Links) {
+      [ordered]@{
+        checked   = @($Links.Checked).Count
+        broken    = @($Links.Broken).Count
+        newBroken = @($Links.Broken | Where-Object new).Count
+      }
+    }
     sources    = @($results | ForEach-Object {
         [ordered]@{
           name     = $_.Source
@@ -210,15 +230,26 @@ foreach ($result in $results) {
   $result.Deduped = @($upcoming | Where-Object { $result.Source -in @($_.sources.name) }).Count
 }
 
+# Check the links that are due, then mark every upcoming event from what is known.
+$linkState = Read-TvLinkState $linksPath
+$linkBudget = if ($NoLinkCheck -or $NoWrite) { 0 } else { $LinkBudgetSeconds }
+$links = Invoke-TvLinkCheck $upcoming -State $linkState -Now $now -BudgetSeconds $linkBudget -OnlySource $Source
+$null = New-Item -ItemType Directory -Force -Path $outPath
+[IO.File]::WriteAllText((Join-Path $outPath 'links.json'), (([ordered]@{ checked = @($links.Checked); broken = @($links.Broken) } | ConvertTo-Json -Depth 4) -replace "`r`n", "`n") + "`n")
+if ($env:GITHUB_STEP_SUMMARY) {
+  Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY -Value (ConvertTo-TvLinkSummary $links.Broken -Checked $links.Checked.Count)
+}
+
 if (-not $NoWrite) {
   Add-TvArchive $archiveDir $past -Priorities $priorities
   Write-TvEventFile $dataPath $upcoming
+  Write-TvLinkState $linksPath $links.State
   # Read by the website for its "as of" time. Only the time is kept, so it changes once per run.
   [IO.File]::WriteAllText($metaPath, (([ordered]@{ lastIngest = ($AsOf ? $AsOf : $fetchedAt) } | ConvertTo-Json) -replace "`r`n", "`n") + "`n", [Text.UTF8Encoding]::new($false))
 }
 
-Write-RunLog -Upcoming $upcoming -Past $past.Count
+Write-RunLog -Upcoming $upcoming -Past $past.Count -Links $links
 $results | Format-Table $display | Out-String | Write-Host
 $failed = @($results | Where-Object Status -ne 'ok').Count
-Write-Host "$($results.Count - $failed) of $($results.Count) sources succeeded, $($upcoming.Count) upcoming, $($past.Count) past, $cityFixes cities filled in$($NoWrite ? ' (not written)' : '')"
+Write-Host "$($results.Count - $failed) of $($results.Count) sources succeeded, $($upcoming.Count) upcoming, $($past.Count) past, $cityFixes cities filled in, $($links.Checked.Count) links checked, $($links.Broken.Count) broken ($(@($links.Broken | Where-Object new).Count) new)$($NoWrite ? ' (not written)' : '')"
 exit 0

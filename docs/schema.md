@@ -15,8 +15,11 @@
 | `category` | string | yes | One id from `data/schema/categories.json` |
 | `tags` | array | no | Zero or more ids from `data/schema/tags.json` |
 | `size` | string | no | Estimated crowd: `S`, `M`, `L`, or `XL`. A guess, see below |
+| `cost` | string | no | Rough cost tier from the source's own price data or the event text: `free`, `$`, `$$`, or `$$$`. See below |
+| `costGuess` | string | no | Rough cost tier from the rules in `data/schema/costs.json`, only when `cost` is unknown. Recomputed every run |
 | `url` | string | yes | Canonical event page, from the source with the best `priority` |
 | `description` | string | no | Plain text, at most 300 characters |
+| `linkBroken` | boolean | no | Set by the nightly link check when `url` is gone and no other source's link works. See below |
 | `sources` | array | no | One entry per source that reported the event |
 
 Each `sources` entry has:
@@ -27,7 +30,23 @@ Each `sources` entry has:
 | `url` | string | The event page that source reported |
 | `fetchedAt` | string | UTC time this source first reported the event. It doesn't change on later runs, which keeps nightly diffs small |
 
-Stored data stays minimal because event data belongs to the publishers: no images, no full descriptions, and no ticket prices. A sentence containing a dollar amount is removed from `description`.
+Stored data stays minimal because event data belongs to the publishers: no images, no full descriptions, and no ticket prices. A sentence containing a dollar amount is removed from `description`. A rough cost tier is stored instead of the price.
+
+## Cost tiers
+
+Free is $0, `$` is under $25, `$$` is $25 to $99, and `$$$` is $100 or more. When a source gives a range, the lowest price decides. The site shows `$`, `$$` and `$$$`; free and unknown both show nothing, and its "Free or unknown" filter covers both.
+
+`cost` comes from, in order:
+
+1. The source's price data: Ticketmaster `priceRanges`, the tribe and calendarapp `cost` text, schema.org `offers` (a price of 0 is ignored there, since sites use it as a placeholder), SeatGeek `lowest_price`, and the Eventbrite event page.
+2. The `free-admission` tag, which means free.
+3. The lowest dollar amount in the description, read before it is removed.
+
+When duplicates merge, the best source keeps its own `cost`, and a duplicate's `cost` fills in when the best source has none. `costGuess` is set after the merge from `data/schema/costs.json`: by source, then by venue (optionally only for some categories), then by tag, then by category. It never overrides `cost`, so a guess can't beat real price data. `-CleanupOnly` recomputes it over stored events.
+
+## Link check
+
+`data/links.json` holds the state of the nightly link check: one entry per link with `verdict` (`ok`, `broken`, `blocked`, `transient`, or `skipped`), the last HTTP `status`, an `error` kind (`dns`, `refused`, `timeout`, `error`), `checkedAt`, `brokenSince`, and `failures` (transient failures in a row). See `docs/development.md`.
 
 ## Categories and tags
 

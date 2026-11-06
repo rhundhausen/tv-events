@@ -82,6 +82,10 @@
       "type": "string",
       "maxLength": 300
     },
+    "linkBroken": {
+      "type": "boolean",
+      "description": "Set by the nightly link check when url returns 404 or 410, or fails 2 nights in a row, and no other source's link works. The site shows the title without a link."
+    },
     "sources": {
       "type": "array",
       "description": "One entry per source that reported this event.",
