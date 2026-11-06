@@ -1,0 +1,13 @@
+{
+  "_comment": "Display-only shortening for the event grid, so rows fit on one line. Stored data keeps the full names, and search matches both. Each pair is [long, short], matched as whole words ignoring case, applied in order to titles and venues.",
+  "phrases": [
+    ["The College of Idaho", "COI"],
+    ["College of Idaho", "COI"],
+    ["Northwest Nazarene University", "NNU"],
+    ["Boise State University", "BSU"],
+    ["Morrison Center for the Performing Arts", "Morrison Center"],
+    ["Ford Idaho Center Horse Park & Sports Center", "Ford Idaho Center Horse Park"],
+    ["Broadway In Boise Presents", "Broadway in Boise:"],
+    ["Various Treasure Valley locations", "Various locations"]
+  ]
+}

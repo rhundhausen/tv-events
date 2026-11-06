@@ -6,7 +6,8 @@
   Runs the entries in sources.json whose status is running. One broken source logs a warning and
   is skipped. Its stored events are kept until a later run refreshes them. The run exits non-zero
   only if zero sources succeed. Each run writes run.json to OutDir: per source, the count, status,
-  error, and warnings. Events any source reports as canceled are dropped. A run that fetched
+  error, and warnings. Events any source reports as canceled are dropped, and events stored as
+  city Other get a city when their own text says where they are (Resolve-TvOtherCity). A run that fetched
   writes data/meta.json with the time of the last ingest.
 .PARAMETER Source
   Run only this source, by name. Any configured entry can be run this way, whatever its status.
@@ -21,6 +22,10 @@
   Don't fetch anything. Re-run dedupe and cleanup over the stored events.json and every archive
   month, so a change to the merge rules applies without a network request. Events from sources
   that are no longer running are dropped, as on a normal run. data/meta.json is left alone.
+.PARAMETER AsOf
+  The UTC time to record as the last ingest in data/meta.json, as yyyy-MM-ddTHH:mm:ssZ. The nightly
+  workflow passes the scheduled midnight, because GitHub often starts scheduled runs late. Defaults
+  to the time the run started. Event fetchedAt times always use the real time.
 #>
 [CmdletBinding()]
 param(
@@ -28,7 +33,8 @@ param(
   [string]$OutDir = './out',
   [switch]$NoWrite,
   [int]$Days = 180,
-  [switch]$CleanupOnly
+  [switch]$CleanupOnly,
+  [ValidatePattern('^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$')][string]$AsOf
 )
 
 $ErrorActionPreference = 'Stop'
@@ -36,6 +42,7 @@ $ErrorActionPreference = 'Stop'
 $root = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
 $repoRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..' '..'))
 . (Join-Path $PSScriptRoot 'lib' 'Store.ps1')
+. (Join-Path $PSScriptRoot 'lib' 'Cities.ps1')
 
 $sourcesPath = Join-Path $root 'sources.json'
 $dataPath = Join-Path $repoRoot 'data' 'events.json'
@@ -61,6 +68,8 @@ if ($CleanupOnly) {
   # Nothing was refreshed, so every stored event of a running source is carried as it is.
   $carried = @(Get-CarriedTvEvents $existing -Refreshed @() -Enabled @($running | ForEach-Object name) -Now $now)
   $merged = @(Merge-TvEvents $carried -Priorities $priorities -DropCanceled)
+  $archived = @(if (Test-Path -LiteralPath $archiveDir) { Get-ChildItem -LiteralPath $archiveDir -Filter '*.json' | ForEach-Object { Read-TvEventFile $_.FullName } })
+  $cityFixes = Resolve-TvOtherCity $merged -Known $archived
   $horizon = $now.AddDays($Days)
   $past = @($merged | Where-Object { Test-TvEventPast $_ $now })
   $upcoming = @(Sort-TvEvents @($merged | Where-Object { -not (Test-TvEventPast $_ $now) -and (Get-TvEventInstant $_.start) -le $horizon }))
@@ -71,9 +80,11 @@ if ($CleanupOnly) {
   foreach ($file in $months) {
     $stored = @(Read-TvEventFile $file.FullName)
     $cleaned = @(Merge-TvEvents $stored -Priorities $priorities -DropCanceled)
+    $monthFixes = Resolve-TvOtherCity $cleaned -Known $archived
+    $cityFixes += $monthFixes
     $archiveBefore += $stored.Count
     $archiveAfter += $cleaned.Count
-    if (-not $NoWrite -and $cleaned.Count -ne $stored.Count) {
+    if (-not $NoWrite -and ($cleaned.Count -ne $stored.Count -or $monthFixes -gt 0)) {
       Restore-TvFetchedAt $cleaned $stored
       Write-TvEventFile $file.FullName @(Sort-TvEvents $cleaned)
     }
@@ -83,7 +94,7 @@ if ($CleanupOnly) {
     Write-TvEventFile $dataPath $upcoming
   }
 
-  Write-Host "Cleanup: events.json $($existing.Count) -> $($upcoming.Count) upcoming ($($past.Count) moved to the archive), archive $archiveBefore -> $archiveAfter$($NoWrite ? ' (not written)' : '')"
+  Write-Host "Cleanup: events.json $($existing.Count) -> $($upcoming.Count) upcoming ($($past.Count) moved to the archive), archive $archiveBefore -> $archiveAfter, $cityFixes cities filled in$($NoWrite ? ' (not written)' : '')"
   exit 0
 }
 
@@ -176,6 +187,7 @@ $existing = @(Read-TvEventFile $dataPath)
 $carried = @(Get-CarriedTvEvents $existing -Refreshed $refreshed -Enabled @($running | ForEach-Object name) -Now $now)
 $merged = @(Merge-TvEvents (@($fetched) + $carried) -Priorities $priorities -DropCanceled)
 Restore-TvFetchedAt $merged $existing
+$cityFixes = Resolve-TvOtherCity $merged
 
 # Each event was valid when built, so a failure here is a merge bug. Never store one.
 $merged = @($merged | Where-Object {
@@ -196,12 +208,12 @@ foreach ($result in $results) {
 if (-not $NoWrite) {
   Add-TvArchive $archiveDir $past -Priorities $priorities
   Write-TvEventFile $dataPath $upcoming
-  # Read by the website for its "as of" line. Only the time is kept, so it changes once per run.
-  [IO.File]::WriteAllText($metaPath, (([ordered]@{ lastIngest = $fetchedAt } | ConvertTo-Json) -replace "`r`n", "`n") + "`n", [Text.UTF8Encoding]::new($false))
+  # Read by the website for its "as of" time. Only the time is kept, so it changes once per run.
+  [IO.File]::WriteAllText($metaPath, (([ordered]@{ lastIngest = ($AsOf ? $AsOf : $fetchedAt) } | ConvertTo-Json) -replace "`r`n", "`n") + "`n", [Text.UTF8Encoding]::new($false))
 }
 
 Write-RunLog -Upcoming $upcoming -Past $past.Count
 $results | Format-Table $display | Out-String | Write-Host
 $failed = @($results | Where-Object Status -ne 'ok').Count
-Write-Host "$($results.Count - $failed) of $($results.Count) sources succeeded, $($upcoming.Count) upcoming, $($past.Count) past$($NoWrite ? ' (not written)' : '')"
+Write-Host "$($results.Count - $failed) of $($results.Count) sources succeeded, $($upcoming.Count) upcoming, $($past.Count) past, $cityFixes cities filled in$($NoWrite ? ' (not written)' : '')"
 exit 0

@@ -1,0 +1,75 @@
+{{ define "main" }}
+{{- /* Upcoming events per source name. An event merged from several sources counts for each. */}}
+{{- $counts := dict }}
+{{- range hugo.Data.events }}
+  {{- range .sources }}
+    {{- $counts = merge $counts (dict .name (add (index $counts .name | default 0) 1)) }}
+  {{- end }}
+{{- end }}
+{{- $types := dict
+  "cityofboise" "City of Boise events API"
+  "eventbrite" "Eventbrite API"
+  "ics" "Calendar feed (ICS)"
+  "rss" "RSS feed"
+  "scrape" "Event web pages"
+  "seatgeek" "SeatGeek API"
+  "songkick" "Songkick API"
+  "ticketmaster" "Ticketmaster API"
+  "tribe" "WordPress events API"
+  "bandsintown" "Bandsintown API"
+}}
+{{- $running := sort (where hugo.Data.sources.sources "status" "running") "displayName" }}
+
+<header class="top">
+  <div class="wrap">
+    <p class="crumb"><a href="{{ relURL "/" }}">Treasure Valley Events</a></p>
+    <h1>Sources</h1>
+    <p class="sub">{{ len $running }} public calendars, feeds, and APIs, read every night at midnight Boise time. Every listing links back to its source.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="table-wrap sources-table">
+    <table class="grid list">
+      <thead>
+        <tr>
+          <th scope="col">Source</th>
+          <th scope="col">City</th>
+          <th scope="col">How it's read</th>
+          <th scope="col" class="num">Upcoming events</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{- range $running }}
+        {{- $n := index $counts .name | default 0 }}
+        <tr>
+          <td class="s-name">
+            {{- if eq .adapter "ticketmaster" }}
+              {{- .displayName }} <span class="via">via Ticketmaster</span>
+            {{- else }}
+              {{- $u := urls.Parse .url }}
+              <a href="{{ printf "%s://%s/" $u.Scheme $u.Host }}" rel="noopener" target="_blank">{{ .displayName }}</a>
+              <span class="via">{{ strings.TrimPrefix "www." $u.Host }}</span>
+            {{- end }}
+          </td>
+          <td class="s-city">{{ .city }}</td>
+          <td class="s-type">{{ index $types .adapter | default .adapter }}</td>
+          <td class="num s-count">
+            {{- if $n }}<a href="{{ relURL "/" }}?source={{ .name }}">{{ $n | lang.FormatNumber 0 }}</a>{{ else }}<span class="none">0</span>{{ end -}}
+          </td>
+        </tr>
+        {{- end }}
+      </tbody>
+    </table>
+  </div>
+  <p class="note">A source with 0 upcoming events is still read every night; it has nothing listed in the next 180 days, often because it is out of season.</p>
+</main>
+
+<footer class="wrap foot">
+  {{- /* New-issue links with the title and prompts filled in. Opening one needs a GitHub account. */}}
+  {{- $newIssue := "https://github.com/rhundhausen/tv-events/issues/new?" }}
+  {{- $listMe := querify "title" "Add a source: " "body" "Venue or organization:\n\nLink to your public events page:\n\nCity:\n" }}
+  {{- $leaveOut := querify "title" "Remove a source: " "body" "Site to remove:\n\nAnything else we should know:\n" }}
+  <p>Don't see your venue or calendar? <a href="{{ print $newIssue $listMe }}" rel="noopener" target="_blank">Create an issue</a> to get listed. Run one of these sites and want it left out? <a href="{{ print $newIssue $leaveOut }}" rel="noopener" target="_blank">Create an issue</a> to opt out.</p>
+</footer>
+{{ end }}

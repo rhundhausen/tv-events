@@ -37,7 +37,7 @@ A secret you don't create reaches the scripts as empty, and that source fails wi
 
 ## 5. Prove the data commit with one source
 
-Before the 10:00 UTC schedule runs on its own:
+Before the midnight (Boise time) schedule runs on its own:
 
 1. Actions > ingest > Run workflow, branch `main`, source `idaho-steelheads` (or any one running source).
 2. When it finishes, check:

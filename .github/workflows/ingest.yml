@@ -1,11 +1,14 @@
 # Nightly ingest. Fetches every running source, then commits data/ to the branch it ran on.
-# Runs at 10:00 UTC, or by hand with an optional source input.
+# Runs at midnight Boise time, or by hand with an optional source input.
 
 name: ingest
 
 on:
+  # Cron is UTC and Boise is UTC-6 in summer and UTC-7 in winter, so both hours are scheduled
+  # and the when job skips the one that isn't midnight in Boise.
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '0 6 * * *'
+    - cron: '0 7 * * *'
   workflow_dispatch:
     inputs:
       source:
@@ -26,7 +29,37 @@ defaults:
     shell: pwsh
 
 jobs:
+  when:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+      at: ${{ steps.check.outputs.at }}
+    steps:
+      # A manual run always goes ahead. A scheduled run goes ahead only for the cron line that is
+      # midnight in Boise. Scheduled runs can start late, so it checks the scheduled hour, not the clock,
+      # and passes the scheduled time on so the site reads 12:00 AM however late the run started.
+      - name: Check Boise time
+        id: check
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          $run = 'true'
+          if ($env:EVENT -eq 'schedule') {
+            $utcHour = [int]($env:SCHEDULE -split ' ')[1]
+            $today = [DateTime]::UtcNow.Date
+            $scheduled = [DateTime]::SpecifyKind($today.AddHours($utcHour), 'Utc')
+            $boise = [TimeZoneInfo]::ConvertTimeBySystemTimeZoneId($scheduled, 'America/Boise')
+            $run = ($boise.Hour -eq 0) ? 'true' : 'false'
+            Write-Host "Scheduled $($env:SCHEDULE) is $($boise.ToString('HH:mm')) in Boise; run: $run"
+            "at=$($scheduled.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'"))" >> $env:GITHUB_OUTPUT
+          }
+          "run=$run" >> $env:GITHUB_OUTPUT
+
   ingest:
+    needs: when
+    if: needs.when.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -48,10 +81,12 @@ jobs:
           SEATGEEK_CLIENT_ID: ${{ secrets.SEATGEEK_CLIENT_ID }}
           SONGKICK_API_KEY: ${{ secrets.SONGKICK_API_KEY }}
           SOURCE: ${{ inputs.source }}
+          SCHEDULED_AT: ${{ needs.when.outputs.at }}
         run: |
           $options = @{}
           $source = "$env:SOURCE".Trim()
           if ($source) { $options.Source = $source }
+          if ($env:SCHEDULED_AT) { $options.AsOf = $env:SCHEDULED_AT }
           ./ingestion/scripts/Invoke-Ingest.ps1 @options
 
       - name: Upload raw output

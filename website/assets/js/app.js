@@ -2,7 +2,8 @@
 // All event text comes from outside sources, so it is only ever set with textContent.
 
 const cfg = JSON.parse(document.getElementById('tv-config').textContent);
-const PAGE_SIZE = 25;
+const PAGE_SIZES = [25, 50, 100, 250, 500];
+const DEFAULT_PER = PAGE_SIZES[0];
 const TZ = 'America/Boise';
 
 const ymdFmt = new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' });
@@ -14,8 +15,8 @@ const numFmt = new Intl.NumberFormat('en-US');
 const $ = (id) => document.getElementById(id);
 const el = {
   q: $('q'), when: $('when'), from: $('from'), to: $('to'), city: $('city'), size: $('size'),
-  reset: $('reset'), cats: $('cats'), count: $('count'), rows: $('rows'),
-  pagerTop: $('pager-top'), pagerBottom: $('pager-bottom'),
+  reset: $('reset'), cats: $('cats'), count: $('count'), rows: $('rows'), sourceNote: $('source-note'),
+  pagerTop: $('pager-top'), pagerBottom: $('pager-bottom'), per: $('per'),
 };
 
 // Dates are handled as YYYY-MM-DD strings in Boise time; noon UTC keeps day math clear of DST edges.
@@ -29,7 +30,14 @@ const ALIASES = { bsu: ['boise state'], nnu: ['northwest nazarene'], cofi: ['col
 const searchTerms = (q) => fold(q).split(/\s+/).filter(Boolean).map((w) => [w, ...(ALIASES[w] || [])]);
 const today = () => boiseDay(new Date());
 
-const state = { q: '', cats: new Set(), city: '', size: '', when: '', from: '', to: '', sort: 'date', dir: 1, page: 1 };
+// Display-only shortening from website/data/display.json, so grid rows fit on one line.
+const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const PHRASES = (cfg.phrases || []).map(([long, short]) => [new RegExp(`\\b${escapeRe(long)}(?=\\W|$)`, 'gi'), short]);
+const shorten = (s) => PHRASES.reduce((text, [re, short]) => text.replace(re, short), s || '');
+// "Wassmuth Center for Human Rights, 777 South 8th Street, Boise, ID 83702" keeps only the name.
+const dropAddress = (v) => (/^\D[^,]*,.*(\b\d{5}\b|,\s*(ID|Idaho)\b)/.test(v) ? v.split(',')[0] : v);
+
+const state = { q: '', cats: new Set(), city: '', size: '', source: '', when: '', from: '', to: '', sort: 'date', dir: 1, page: 1, per: DEFAULT_PER };
 let events = [];
 
 function prepare(e) {
@@ -39,12 +47,12 @@ function prepare(e) {
   if (ed < sd) ed = sd;
   const catLabel = cfg.categories[e.k] || e.k;
   return {
-    title: e.t, venue: e.v, city: e.c, cat: e.k, catLabel, tags: e.g || [], size: e.z, url: e.u, desc: e.d,
+    title: e.t, venue: e.v, shortTitle: shorten(e.t), shortVenue: shorten(dropAddress(e.v || '')), city: e.c, cat: e.k, catLabel, tags: e.g || [], size: e.z, url: e.u, desc: e.d, src: e.r || [],
     sd, ed, allDay,
     instant: allDay ? 0 : Date.parse(e.s),
     dateText: sd === ed ? dayFmt.format(asDate(sd)) : `${dayFmt.format(asDate(sd))} to ${shortFmt.format(asDate(ed))}`,
     timeText: allDay ? 'All day' : timeFmt.format(new Date(e.s)),
-    hay: fold([e.t, e.v, e.c, catLabel, (e.g || []).join(' '), e.d].join(' ')),
+    hay: fold([e.t, shorten(e.t), e.v, e.c, catLabel, (e.g || []).join(' '), e.d].join(' ')),
   };
 }
 
@@ -72,6 +80,7 @@ function matches(e, words, from, to, skipCats) {
   if (to && e.sd > to) return false;
   if (state.city && e.city !== state.city) return false;
   if (state.size && e.size !== state.size) return false;
+  if (state.source && !e.src.includes(state.source)) return false;
   if (!skipCats && state.cats.size && !state.cats.has(e.cat)) return false;
   for (const forms of words) if (!forms.some((f) => e.hay.includes(f))) return false;
   return true;
@@ -100,12 +109,13 @@ function render() {
   const sorter = sorters[state.sort] || sorters.date;
   shown.sort((a, b) => sorter(a, b) * state.dir);
 
-  const pages = Math.max(1, Math.ceil(shown.length / PAGE_SIZE));
+  const pages = Math.max(1, Math.ceil(shown.length / state.per));
   state.page = Math.min(Math.max(1, state.page), pages);
-  const start = (state.page - 1) * PAGE_SIZE;
-  const slice = shown.slice(start, start + PAGE_SIZE);
+  const start = (state.page - 1) * state.per;
+  const slice = shown.slice(start, start + state.per);
 
   renderChips(counts);
+  renderSourceNote();
   renderRows(slice);
   el.count.textContent = shown.length
     ? `Showing ${numFmt.format(start + 1)} to ${numFmt.format(start + slice.length)} of ${numFmt.format(shown.length)} events`
@@ -122,7 +132,7 @@ function renderChips(counts) {
   for (const id of ids) {
     const b = document.createElement('button');
     b.type = 'button';
-    b.className = 'chip';
+    b.className = `chip cat-${id}`;
     b.dataset.cat = id;
     b.setAttribute('aria-pressed', state.cats.has(id) ? 'true' : 'false');
     const n = counts[id] || 0;
@@ -135,6 +145,21 @@ function renderChips(counts) {
     b.append(label, count);
     el.cats.append(b);
   }
+}
+
+// Set when the page was opened from the sources page for one source.
+function renderSourceNote() {
+  el.sourceNote.replaceChildren();
+  el.sourceNote.hidden = !state.source;
+  if (!state.source) return;
+  const label = document.createElement('span');
+  label.textContent = `Only events from ${cfg.sources[state.source] || state.source}. `;
+  const clear = document.createElement('button');
+  clear.type = 'button';
+  clear.className = 'link';
+  clear.textContent = 'Show every source';
+  clear.addEventListener('click', () => { state.source = ''; state.page = 1; render(); });
+  el.sourceNote.append(label, clear);
 }
 
 function cell(text, className) {
@@ -160,14 +185,16 @@ function renderRows(list) {
       a.href = e.url;
       a.target = '_blank';
       a.rel = 'noopener';
-      a.textContent = e.title;
+      a.textContent = e.shortTitle;
       title.append(a);
     } else {
-      title.textContent = e.title;
+      title.textContent = e.shortTitle;
     }
-    if (e.desc) title.title = e.desc;
+    // Hover shows the full title, then the description.
+    title.title = e.desc ? `\n\n` : e.title;
 
-    const venue = cell(e.venue, 'c-venue');
+    const venue = cell(e.shortVenue, 'c-venue');
+    if (e.venue) venue.title = e.venue;
     venue.dataset.label = 'Venue';
     const city = cell(e.city, 'c-city');
     city.dataset.label = 'City';
@@ -243,10 +270,16 @@ function renderSortHeaders() {
   }
 }
 
+// Always listed, even with no events yet. Any other city in the data, such as Other, follows them.
+const CITIES = ['Boise', 'Caldwell', 'Eagle', 'Emmett', 'Garden City', 'Kuna', 'Marsing', 'Meridian', 'Middleton',
+  'Mountain Home', 'Nampa', 'Payette', 'Star', 'Weiser'];
+
 function fillSelects() {
-  const byCity = {};
+  const byCity = Object.fromEntries(CITIES.map((c) => [c, 0]));
   for (const e of events) if (e.city) byCity[e.city] = (byCity[e.city] || 0) + 1;
-  for (const [name, n] of Object.entries(byCity).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))) {
+  const extra = Object.keys(byCity).filter((c) => !CITIES.includes(c)).sort((a, b) => a.localeCompare(b));
+  for (const name of [...CITIES, ...extra]) {
+    const n = byCity[name];
     const o = document.createElement('option');
     o.value = name;
     o.textContent = `${name} (${numFmt.format(n)})`;
@@ -266,6 +299,7 @@ function syncControls() {
   el.when.value = state.when;
   el.city.value = state.city;
   el.size.value = state.size;
+  el.per.value = String(state.per);
   const [f, t] = presetRange(state.when);
   el.from.value = f;
   el.to.value = t;
@@ -277,6 +311,7 @@ function readUrl() {
   state.cats = new Set((p.get('cat') || '').split(',').filter((c) => c in cfg.categories));
   state.city = p.get('city') || '';
   state.size = p.get('size') || '';
+  state.source = p.get('source') || '';
   state.when = p.get('when') || '';
   state.from = p.get('from') || '';
   state.to = p.get('to') || '';
@@ -285,6 +320,8 @@ function readUrl() {
   state.sort = sort in sorters ? sort : 'date';
   state.dir = dir === 'desc' ? -1 : 1;
   state.page = Number.parseInt(p.get('page') || '1', 10) || 1;
+  const per = Number.parseInt(p.get('per') || '', 10);
+  state.per = PAGE_SIZES.includes(per) ? per : DEFAULT_PER;
 }
 
 function writeUrl() {
@@ -293,6 +330,7 @@ function writeUrl() {
   if (state.cats.size) p.set('cat', [...state.cats].join(','));
   if (state.city) p.set('city', state.city);
   if (state.size) p.set('size', state.size);
+  if (state.source) p.set('source', state.source);
   if (state.when === 'custom') {
     if (state.from) p.set('from', state.from);
     if (state.to) p.set('to', state.to);
@@ -300,13 +338,14 @@ function writeUrl() {
     p.set('when', state.when);
   }
   if (state.sort !== 'date' || state.dir !== 1) p.set('sort', `${state.sort}${state.dir === -1 ? ':desc' : ''}`);
+  if (state.per !== DEFAULT_PER) p.set('per', String(state.per));
   if (state.page > 1) p.set('page', String(state.page));
   const qs = p.toString();
   history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
 }
 
 function resetAll() {
-  Object.assign(state, { q: '', cats: new Set(), city: '', size: '', when: '', from: '', to: '', sort: 'date', dir: 1, page: 1 });
+  Object.assign(state, { q: '', cats: new Set(), city: '', size: '', source: '', when: '', from: '', to: '', sort: 'date', dir: 1, page: 1 });
   syncControls();
   render();
 }
@@ -338,6 +377,20 @@ for (const input of [el.from, el.to]) {
 el.city.addEventListener('change', onFilter(() => { state.city = el.city.value; }));
 el.size.addEventListener('change', onFilter(() => { state.size = el.size.value; }));
 el.reset.addEventListener('click', resetAll);
+for (const n of PAGE_SIZES) {
+  const o = document.createElement('option');
+  o.value = String(n);
+  o.textContent = String(n);
+  el.per.append(o);
+}
+el.per.value = String(state.per);
+// Keep the first event on screen in view when the page size changes.
+el.per.addEventListener('change', () => {
+  const first = (state.page - 1) * state.per;
+  state.per = Number(el.per.value);
+  state.page = Math.floor(first / state.per) + 1;
+  render();
+});
 el.cats.addEventListener('click', onFilter((ev) => {
   const chip = ev.target.closest('.chip');
   if (!chip) return;

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site.Title }}</title>
-  <meta name="description" content="Upcoming events in Boise, Meridian, Nampa, and the rest of the Treasure Valley.">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ .Description | default "Upcoming events in Boise, Meridian, Nampa, and the rest of the Treasure Valley." }}">
   <meta name="color-scheme" content="light dark">
   {{ $css := resources.Get "css/site.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

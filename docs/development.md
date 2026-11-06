@@ -51,7 +51,7 @@ API keys are read from environment variables only. Copy `ingestion/.env.example.
 
 ## Nightly workflow
 
-- `.github/workflows/ingest.yml` runs at 10:00 UTC on the default branch. Run it by hand from Actions > ingest > Run workflow, with an optional `source` input to fetch one source. It uploads `out/` as an artifact, then `Publish-Data.ps1` commits `data/` as "tv-events bot" with `[skip ci]` and pushes to the branch the run started on. Only one ingest runs at a time.
+- `.github/workflows/ingest.yml` runs at midnight Boise time on the default branch. Cron is UTC, so it is scheduled at both 06:00 and 07:00 UTC, and a first job skips whichever one isn't midnight in Boise that day (daylight saving moves it). GitHub often starts scheduled runs late, so a scheduled run passes `-AsOf` with the scheduled midnight and the site's header reads 12:00 AM; a manual run records the time it ran. Run it by hand from Actions > ingest > Run workflow, with an optional `source` input to fetch one source. It uploads `out/` as an artifact, then `Publish-Data.ps1` commits `data/` as "tv-events bot" with `[skip ci]` and pushes to the branch the run started on. Only one ingest runs at a time.
 - `.github/workflows/test.yml` runs the Pester tests on every push and pull request and uploads `testResults.xml`.
 
 Create these repository secrets (Settings > Secrets and variables > Actions). Only `TICKETMASTER_KEY` is needed today; the others are for sources that are built but not running yet. An unset secret reaches the scripts as empty.

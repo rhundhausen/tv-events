@@ -2,6 +2,126 @@
   "_comment": "Every source: running, configured but waiting, ideas, and sites ruled out. Ingest runs only status running. Only displayName is required; check here before probing a site. See docs/sources.md.",
   "sources": [
     {
+      "displayName": "Caldwell Chamber of Commerce",
+      "url": "https://business.caldwellchamber.org/events",
+      "category": "learning-business",
+      "city": "Caldwell",
+      "notes": "Chamber events, added 2026-11-05. The business. subdomain suggests GrowthZone (ChamberMaster), like Boise Metro Chamber. Not probed"
+    },
+    {
+      "displayName": "City of Caldwell",
+      "url": "https://www.cityofcaldwell.org/Visitors/City-Events",
+      "category": "community-civic",
+      "city": "Caldwell",
+      "notes": "City events page, added 2026-11-05. Not probed; check robots.txt first"
+    },
+    {
+      "displayName": "City of Emmett",
+      "url": "https://www.cityofemmett.org",
+      "category": "community-civic",
+      "city": "Emmett",
+      "notes": "City site, added 2026-11-05. No calendar page found yet. Not probed"
+    },
+    {
+      "displayName": "City of Garden City",
+      "url": "https://gardencityidaho.org",
+      "category": "community-civic",
+      "city": "Garden City",
+      "notes": "City site, added 2026-11-05. Calendar path not confirmed. Not probed"
+    },
+    {
+      "displayName": "City of Kuna",
+      "url": "https://www.kunacity.id.gov/calendar.aspx",
+      "category": "community-civic",
+      "city": "Kuna",
+      "notes": "CivicPlus calendar, added 2026-11-05; path not confirmed. Kuna Days page: https://www.kunacity.id.gov/569/Kuna-Days, and a news item https://www.kunacity.id.gov/CivicAlerts.asp?AID=527. CivicPlus calendars offer iCalendar export, but City of Eagle's robots.txt blocks that module on the same platform, so check Kuna's. Not probed"
+    },
+    {
+      "displayName": "City of Star",
+      "url": "https://www.staridaho.org/calendar",
+      "category": "community-civic",
+      "city": "Star",
+      "notes": "City calendar, added 2026-11-05. Not probed"
+    },
+    {
+      "displayName": "City of Weiser",
+      "url": "https://www.cityofweiser.net/events-attractions",
+      "category": "community-civic",
+      "city": "Weiser",
+      "notes": "City events and attractions page, added 2026-11-05. Not probed"
+    },
+    {
+      "displayName": "Destination Caldwell",
+      "url": "https://www.destinationcaldwell.com/",
+      "category": "community-civic",
+      "city": "Caldwell",
+      "notes": "Downtown Caldwell organization, added 2026-11-05. Its calendar is a Squarespace page at https://destination-caldwell.squarespace.com/calendar; Squarespace calendars can export ICS (format=ical), but Hello Meridian's robots.txt disallowed that, so check this site's. Not probed"
+    },
+    {
+      "displayName": "Downtown Nampa",
+      "url": "https://www.downtownnampa.com/events/",
+      "category": "community-civic",
+      "city": "Nampa",
+      "notes": "Downtown association events, added 2026-11-05. Also a member calendar at https://members.downtownnampa.com/calendar. Separate hosts from cityofnampa.us, which is ruled out. Not probed"
+    },
+    {
+      "displayName": "Eagle Chamber of Commerce",
+      "url": "https://www.eaglechamber.com/events",
+      "category": "learning-business",
+      "city": "Eagle",
+      "notes": "Chamber events, added 2026-11-05. Path not confirmed. Not probed"
+    },
+    {
+      "displayName": "Emmett Cherry Festival",
+      "url": "https://www.emmettcherryfestival.com",
+      "category": "festivals",
+      "city": "Emmett",
+      "notes": "Annual festival in June, added 2026-11-05. Probably a single multi-day event, so it may be easier to add by hand each year. Not probed"
+    },
+    {
+      "displayName": "emmettidaho.com",
+      "url": "https://www.emmettidaho.com",
+      "category": "community-civic",
+      "city": "Emmett",
+      "notes": "Emmett community or visitor site, added 2026-11-05. Owner and calendar to confirm. Not probed"
+    },
+    {
+      "displayName": "Garden City Public Library",
+      "url": "https://gardencitylibrary.org",
+      "category": "learning-business",
+      "city": "Garden City",
+      "venue": "Garden City Public Library",
+      "notes": "Added 2026-11-05. 53 of its events already come through boise-mom; a direct feed (many libraries use LibCal, which publishes ICS) would be the primary source. Not probed"
+    },
+    {
+      "displayName": "Meridian Chamber of Commerce",
+      "url": "https://business.meridianchamber.org/events",
+      "category": "learning-business",
+      "city": "Meridian",
+      "notes": "Chamber events, added 2026-11-05. Path not confirmed; the business. subdomain suggests GrowthZone. Not probed"
+    },
+    {
+      "displayName": "Middleton Chamber of Commerce",
+      "url": "https://www.middletonchamber.org",
+      "category": "learning-business",
+      "city": "Middleton",
+      "notes": "Chamber site, added 2026-11-05. No city calendar was found for Middleton. Not probed"
+    },
+    {
+      "displayName": "Mountain Home News",
+      "url": "https://mountainhomenews.com/calendar",
+      "category": "community-civic",
+      "city": "Mountain Home",
+      "notes": "Newspaper community calendar, added 2026-11-05. Path not confirmed. No city calendar was found for Mountain Home, Idaho; enjoymountainhome.com is Mountain Home, Arkansas. Not probed"
+    },
+    {
+      "displayName": "Nampa Chamber of Commerce",
+      "url": "https://nampachamber.growthzoneapp.com/eventcalendar",
+      "category": "learning-business",
+      "city": "Nampa",
+      "notes": "GrowthZone event calendar, added 2026-11-05. GrowthZone may offer an ICS export. Not probed"
+    },
+    {
       "name": "ninth-st-parallel",
       "displayName": "9th St. Parallel at Knitting Factory",
       "status": "running",
@@ -42,7 +162,8 @@
     {
       "displayName": "AXS",
       "status": "ruled-out",
-      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests"
+      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests",
+      "notes": "Suggested again 2026-11-05: https://www.cityofnampa.us/Calendar.aspx and https://www.cityofnampa.us/1049/Events. Same host, so still out. Downtown Nampa, Nampa Chamber, Visit Nampa, and Nampa Civic Center have their own entries on other hosts"
     },
     {
       "displayName": "Ballet Idaho",
@@ -314,7 +435,7 @@
     {
       "displayName": "Chambers of commerce",
       "category": "learning-business",
-      "notes": "Boise Metro Chamber has its own entry. Meridian Chamber, Nampa Chamber, and Caldwell Chamber each have their own site. Many chambers use GrowthZone (ChamberMaster)"
+      "notes": "Boise Metro Chamber has its own entry. Since 2026-11-05 so do the Caldwell, Eagle, Meridian, Middleton, Nampa, Payette, and Star chambers. Many chambers use GrowthZone (ChamberMaster)"
     },
     {
       "name": "city-of-boise",
@@ -335,17 +456,20 @@
       "displayName": "City of Eagle",
       "status": "ruled-out",
       "reason": "robots.txt disallows /common/modules/icalendar/ and asks for a 10 second crawl delay",
+      "notes": "Suggested again 2026-11-05: https://www.cityofeagle.org/calendar.aspx (path not confirmed), Eagle Saturday Market https://www.cityofeagle.org/170/Eagle-Saturday-Market, and Eagle Fun Days https://www.cityofeagle.org/498/Eagle-Fun-Days. Only the iCalendar export is disallowed; the calendar page itself may be readable with the 10 second delay, but it would need a new scrape mode. Recheck robots.txt first",
       "robotsChecked": "2026-10-30"
     },
     {
       "displayName": "City of Meridian",
       "status": "ruled-out",
-      "reason": "HTTP 403 with a Cloudflare challenge page on 2026-10-30"
+      "reason": "HTTP 403 with a Cloudflare challenge page on 2026-10-30",
+      "notes": "Suggested again 2026-11-05: https://meridiancity.org/events and https://meridiancity.org/community-calendar (path not confirmed). Same host, so the Cloudflare block applies; not retried"
     },
     {
       "displayName": "City of Nampa",
       "status": "ruled-out",
-      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests"
+      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests",
+      "notes": "Suggested again 2026-11-05: https://www.cityofnampa.us/Calendar.aspx and https://www.cityofnampa.us/1049/Events. Same host, so still out. Downtown Nampa, Nampa Chamber, Visit Nampa, and Nampa Civic Center have their own entries on other hosts"
     },
     {
       "name": "college-of-idaho-athletics",
@@ -763,7 +887,8 @@
       "category": "performing-arts",
       "city": "Nampa",
       "venue": "Nampa Civic Center",
-      "notes": "City of Nampa is ruled out (HTTP 403). Check whether the civic center site is a separate host before probing"
+      "url": "https://nampaciviccenter.com/events/",
+      "notes": "City of Nampa is ruled out (HTTP 403). nampaciviccenter.com is a separate host from cityofnampa.us (suggested 2026-11-05). Not probed"
     },
     {
       "name": "nampa-public-library",
@@ -811,7 +936,21 @@
     {
       "displayName": "Opera Idaho",
       "status": "ruled-out",
-      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests"
+      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests",
+      "notes": "Suggested again 2026-11-05: https://www.cityofnampa.us/Calendar.aspx and https://www.cityofnampa.us/1049/Events. Same host, so still out. Downtown Nampa, Nampa Chamber, Visit Nampa, and Nampa Civic Center have their own entries on other hosts"
+    },
+    {
+      "displayName": "Patch city calendars",
+      "url": "https://patch.com/idaho/caldwell-id/calendar",
+      "category": "community-civic",
+      "notes": "Patch community calendars, one per city, added 2026-11-05. Patch is a commercial local-news network; read its terms and robots.txt once for all of them before probing any. Calendars: https://patch.com/idaho/caldwell-id/calendar, https://patch.com/idaho/eagle-id/calendar, https://patch.com/idaho/emmett-id/calendar, https://patch.com/idaho/garden-city-id/calendar, https://patch.com/idaho/kuna-id/calendar, https://patch.com/idaho/marsing-id/calendar, https://patch.com/idaho/meridian-id/calendar, https://patch.com/idaho/middleton-id/calendar, https://patch.com/idaho/mountain-home-id/calendar, https://patch.com/idaho/nampa-id/calendar, https://patch.com/idaho/payette-id/calendar, https://patch.com/idaho/star-id/calendar, https://patch.com/idaho/weiser-id/calendar"
+    },
+    {
+      "displayName": "Payette Chamber of Commerce",
+      "url": "https://payettechamberofcommerce.wildapricot.org",
+      "category": "learning-business",
+      "city": "Payette",
+      "notes": "Wild Apricot site, added 2026-11-05. Wild Apricot event lists can export iCalendar. No city calendar was found for Payette. Not probed"
     },
     {
       "displayName": "Public libraries outside Boise",
@@ -868,6 +1007,13 @@
       "reason": "These sell tickets for individual organizers, so there is no local list to read without knowing each organizer. Add an organizer as its own idea instead"
     },
     {
+      "displayName": "Signal American",
+      "url": "https://signalamerican.com",
+      "category": "community-civic",
+      "city": "Weiser",
+      "notes": "Weiser newspaper, added 2026-11-05. Calendar not confirmed. Not probed"
+    },
+    {
       "displayName": "Snake River Stampede",
       "category": "sports",
       "city": "Nampa",
@@ -891,6 +1037,20 @@
       "status": "investigating",
       "category": "performing-arts",
       "notes": "Checked 2026-10-30 with the project User-Agent. No tribe route and no schema.org Event data. ICS not tried"
+    },
+    {
+      "displayName": "Star Chamber of Commerce",
+      "url": "https://staridahochamber.com/events",
+      "category": "learning-business",
+      "city": "Star",
+      "notes": "Chamber events, added 2026-11-05. Also https://business.staridahochamber.com/events, which suggests GrowthZone. Not probed"
+    },
+    {
+      "displayName": "Ste. Chapelle Winery",
+      "url": "https://www.stechapelle.com/upcomingevents",
+      "category": "food-drink",
+      "city": "Caldwell",
+      "notes": "Winery events page, added 2026-11-05. In the Sunny Slope area near Caldwell; confirm the city. Not probed; check robots.txt first"
     },
     {
       "displayName": "StubHub",
@@ -989,13 +1149,20 @@
     {
       "displayName": "Trailhead Boise",
       "status": "ruled-out",
-      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests"
+      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests",
+      "notes": "Suggested again 2026-11-05: https://www.cityofnampa.us/Calendar.aspx and https://www.cityofnampa.us/1049/Events. Same host, so still out. Downtown Nampa, Nampa Chamber, Visit Nampa, and Nampa Civic Center have their own entries on other hosts"
     },
     {
       "displayName": "Treefort Music Fest",
       "status": "investigating",
       "category": "music",
       "notes": "Checked 2026-10-30 with the project User-Agent. No tribe route and no schema.org Event data. Ticketmaster metro covers Treefort Music Hall"
+    },
+    {
+      "displayName": "University of Idaho Extension county calendars",
+      "url": "https://www.uidaho.edu/extension/county/gem/4-h/calendar",
+      "category": "learning-business",
+      "notes": "County extension and 4-H calendars, added 2026-11-05. Gem (Emmett): https://www.uidaho.edu/extension/county/gem/4-h/calendar. Owyhee (Marsing): https://www.uidaho.edu/extension/county/owyhee/4-h/calendar. Elmore (Mountain Home): https://www.uidaho.edu/extension/county/elmore/calendar. Payette: https://www.uidaho.edu/extension/county/payette/4-h/calendar. One host, so one robots.txt check covers all four. Not probed"
     },
     {
       "name": "visit-boise",
@@ -1016,7 +1183,15 @@
     {
       "displayName": "Visit Idaho",
       "status": "ruled-out",
-      "reason": "HTTP 403 with a Cloudflare challenge page on 2026-10-30"
+      "reason": "HTTP 403 with a Cloudflare challenge page on 2026-10-30",
+      "notes": "Suggested again 2026-11-05: https://meridiancity.org/events and https://meridiancity.org/community-calendar (path not confirmed). Same host, so the Cloudflare block applies; not retried"
+    },
+    {
+      "displayName": "Visit Nampa",
+      "url": "https://www.visitnampa.org/events",
+      "category": "community-civic",
+      "city": "Nampa",
+      "notes": "Visitor bureau events, added 2026-11-05. Likely overlaps Ford Idaho Center and Nampa Civic Center. Not probed"
     },
     {
       "name": "visual-arts-collective",
@@ -1059,7 +1234,8 @@
     {
       "displayName": "Zoo Boise",
       "status": "ruled-out",
-      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests"
+      "reason": "HTTP 403 on 2026-10-30. Refuses automated requests",
+      "notes": "Suggested again 2026-11-05: https://www.cityofnampa.us/Calendar.aspx and https://www.cityofnampa.us/1049/Events. Same host, so still out. Downtown Nampa, Nampa Chamber, Visit Nampa, and Nampa Civic Center have their own entries on other hosts"
     }
   ]
 }

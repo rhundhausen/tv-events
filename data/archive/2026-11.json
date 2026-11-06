@@ -1010,7 +1010,6 @@
     "allDay": false,
     "venue": "Various Treasure Valley locations",
     "venueKey": "various-treasure-valley",
-    "city": "Other",
     "category": "community-civic",
     "tags": [
       "family-friendly",
@@ -1025,7 +1024,8 @@
         "url": "https://boisemom.com/event/old-boise-model-railroad/2026-11-03/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "city": "Boise"
   },
   {
     "id": "addcd860b115",
@@ -1204,7 +1204,6 @@
     "allDay": false,
     "venue": "Various Treasure Valley locations",
     "venueKey": "various-treasure-valley",
-    "city": "Other",
     "category": "community-civic",
     "tags": [],
     "size": "S",
@@ -1216,7 +1215,8 @@
         "url": "https://boisemom.com/event/survivors-of-suicide-boise-hive/2026-11-03/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "city": "Boise"
   },
   {
     "id": "0c0d2c0386ac",
@@ -1707,7 +1707,6 @@
     "allDay": false,
     "venue": "Various Treasure Valley locations",
     "venueKey": "various-treasure-valley",
-    "city": "Other",
     "category": "community-civic",
     "tags": [],
     "size": "S",
@@ -1719,7 +1718,8 @@
         "url": "https://boisemom.com/event/paella-on-the-patio/2026-11-04/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "city": "Boise"
   },
   {
     "id": "5153032755f3",
@@ -2808,6 +2808,78 @@
         "name": "boise-public-library",
         "url": "https://boisepubliclibrary.libcal.com/event/16624514",
         "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "4db27ee57cfa",
+    "title": "Liberty Park Groundbreaking Ceremony",
+    "start": "2026-11-05T11:30:00-07:00",
+    "end": "2026-11-05T12:00:00-07:00",
+    "allDay": false,
+    "venue": "Liberty Park",
+    "venueKey": "liberty-park",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "S",
+    "url": "https://www.cityofboise.org/events/parks/2026/november/liberty-park-groundbreaking-ceremony/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/november/liberty-park-groundbreaking-ceremony/",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "aaedf3a3fdd9",
+    "title": "Liberty Park Groundbreaking Ceremony",
+    "start": "2026-11-05T11:30:00-07:00",
+    "end": "2026-11-05T12:00:00-07:00",
+    "allDay": false,
+    "venue": "Various Treasure Valley locations",
+    "venueKey": "various-treasure-valley",
+    "category": "community-civic",
+    "tags": [
+      "family-friendly"
+    ],
+    "size": "S",
+    "url": "https://boisemom.com/event/liberty-park-groundbreaking-ceremony/",
+    "description": "Join City of Boise leaders and neighborhood partners as we host a ceremonial “golden shovel” ceremony to highlight construction at Liberty Park! Investments include a new, more accessible playground, a permanent restroom and pathway connections. Project webpage: https://www.cityofboise.org/depart...",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/liberty-park-groundbreaking-ceremony/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ],
+    "city": "Boise"
+  },
+  {
+    "id": "889d8bb79fbc",
+    "title": "Midday Musings with Aly McKnight",
+    "start": "2026-11-05T12:00:00-07:00",
+    "end": "2026-11-05T13:00:00-07:00",
+    "allDay": false,
+    "venue": "Idaho State Museum",
+    "venueKey": "idaho-state-museum",
+    "city": "Boise",
+    "category": "arts-culture",
+    "tags": [],
+    "size": "S",
+    "url": "https://history.idaho.gov/event/midday-musings-with-aly-mcknight/",
+    "description": "Introducing Midday Musings, a new midday learning series hosted in the Idaho State Museum’s Classroom! Each program features local experts who offer deeper insight into a specific topic related to Idaho’s history, heritage, and culture. Attendees are welcome to bring their own lunch and enjoy a l...",
+    "sources": [
+      {
+        "name": "idaho-history",
+        "url": "https://history.idaho.gov/event/midday-musings-with-aly-mcknight/",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "http://history.idaho.gov/events",
+        "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
   }

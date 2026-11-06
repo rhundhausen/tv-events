@@ -119,7 +119,7 @@ function Resolve-TvCity {
     [string]$Name
   )
 
-  foreach ($city in 'Boise', 'Meridian', 'Nampa', 'Caldwell', 'Eagle', 'Garden City', 'Kuna', 'Star') {
+  foreach ($city in 'Boise', 'Meridian', 'Nampa', 'Caldwell', 'Eagle', 'Garden City', 'Kuna', 'Star', 'Emmett', 'Marsing', 'Middleton', 'Mountain Home', 'Payette', 'Weiser') {
     if ($Name.Trim() -ieq $city) { return $city }
   }
   $null
@@ -178,6 +178,7 @@ function Get-TvTagRules {
         Category = $_.category
         Regex    = [regex]::new($pattern, [Text.RegularExpressions.RegexOptions]::Compiled)
         Labels   = @($_.sourceLabels)
+        Fallback = [bool]$_.fallback
       }
     })
   $script:TvTagRules
@@ -194,7 +195,9 @@ function Get-TvClassification {
     kids, can also match the description.
 
     A category from a title match beats one from a label. Within those, the list below
-    decides, because a Christmas concert is a holiday event first.
+    decides, because a Christmas concert is a holiday event first. A tag marked fallback in
+    tags.json, like library-program, sets the category only when no other tag did at the same
+    level: in "Teen Club: Dungeons and Dragons | Cole & Ustick Library!" the library is the venue.
   .PARAMETER Labels
     The publisher's own categories or genres, such as "Arts & Music". Each is tested against
     the keywords and against sourceLabels in tags.json.
@@ -222,23 +225,26 @@ function Get-TvClassification {
   $tags = [System.Collections.Generic.List[string]]::new()
   $titleCategories = [System.Collections.Generic.HashSet[string]]::new()
   $labelCategories = [System.Collections.Generic.HashSet[string]]::new()
+  $titleFallbacks = [System.Collections.Generic.HashSet[string]]::new()
+  $labelFallbacks = [System.Collections.Generic.HashSet[string]]::new()
 
   foreach ($rule in (Get-TvTagRules)) {
     $inTitle = $rule.Regex.IsMatch($titleText)
     $inLabels = @($labelTexts | Where-Object { $rule.Regex.IsMatch($_) -or $rule.Labels -contains $_ }).Count -gt 0
 
     if ($rule.Category) {
-      if ($inTitle) { $null = $titleCategories.Add($rule.Category) }
-      if ($inLabels) { $null = $labelCategories.Add($rule.Category) }
+      if ($inTitle) { $null = ($rule.Fallback ? $titleFallbacks : $titleCategories).Add($rule.Category) }
+      if ($inLabels) { $null = ($rule.Fallback ? $labelFallbacks : $labelCategories).Add($rule.Category) }
       if ($inTitle -or $inLabels) { $tags.Add($rule.Id) }
     } elseif ($inTitle -or $inLabels -or $rule.Regex.IsMatch($bodyText)) {
       $tags.Add($rule.Id)
     }
   }
 
-  $category = $order | Where-Object { $titleCategories.Contains($_) } | Select-Object -First 1
-  if (-not $category) {
-    $category = $order | Where-Object { $labelCategories.Contains($_) } | Select-Object -First 1
+  $category = $null
+  foreach ($set in $titleCategories, $titleFallbacks, $labelCategories, $labelFallbacks) {
+    $category = $order | Where-Object { $set.Contains($_) } | Select-Object -First 1
+    if ($category) { break }
   }
   [pscustomobject]@{ Category = $category; Tags = @($tags) }
 }

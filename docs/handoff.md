@@ -6,7 +6,7 @@ The project returned to one public GitHub repo (rhundhausen/tv-events) on 2026-1
 
 Layout:
 
-- `.github/workflows/` replaces `pipelines/`. `ingest.yml` runs nightly at 10:00 UTC or by hand with a `source` input; `test.yml` runs Pester on push and PR. Secrets are repository secrets with the same names as before.
+- `.github/workflows/` replaces `pipelines/`. `ingest.yml` runs nightly at midnight Boise time (changed from 10:00 UTC on 2026-11-05) or by hand with a `source` input; `test.yml` runs Pester on push and PR. Secrets are repository secrets with the same names as before.
 - `data/` is the contract between ingestion and the website: `events.json`, `archive/YYYY-MM.json` (was top-level `archive/`), and the `schema/` lookup tables (categories, tags, sizes, venue aliases).
 - `ingestion/` holds `scripts/`, `tests/`, `schema/` (the JSON Schemas), `sources.json`, and `.env.example.ps1`. Scripts resolve `data/` one level above the ingestion root. Run from the repo root: `./ingestion/scripts/Invoke-Ingest.ps1 -NoWrite`, `Invoke-Pester -Path ./ingestion/tests`.
 - `website/` is the Hugo site (not built yet). It mounts `../data` rather than having ingestion write into it.

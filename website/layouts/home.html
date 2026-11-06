@@ -25,17 +25,23 @@
     "z" (.size | default "")
     "u" (.url | default "")
     "d" (.description | default "")
+    "r" (apply (.sources | default slice) "index" "." "name")
   ) }}
 {{- end }}
 {{- $data := resources.FromString "data/events.json" ($list | jsonify) | fingerprint }}
-{{- $cfg := dict "events" $data.RelPermalink "categories" $cats "sizes" $sizes "sizeOrder" $sizeOrder "lastIngest" $lastIngest }}
+{{- $sourceNames := dict }}
+{{- range hugo.Data.sources.sources }}{{ if .name }}{{ $sourceNames = merge $sourceNames (dict .name .displayName) }}{{ end }}{{ end }}
+{{- $cfg := dict "events" $data.RelPermalink "categories" $cats "sizes" $sizes "sizeOrder" $sizeOrder "lastIngest" $lastIngest "sources" $sourceNames "phrases" (hugo.Data.display.phrases | default slice) }}
 
 <header class="top">
   <div class="wrap">
     <h1>Treasure Valley Events</h1>
+    {{- /* Every running source, whether or not it has upcoming events. */}}
+    {{- $running := where hugo.Data.sources.sources "status" "running" }}
     <p class="sub">
-      {{- len hugo.Data.events | lang.FormatNumber 0 }} upcoming events in Boise, Meridian, Nampa, Eagle, Caldwell, and nearby
-      {{- with $lastIngest }}, as of <time id="as-of" datetime="{{ . }}">{{ (time.AsTime .).Format "Jan 2, 3:04 PM UTC" }}</time>{{ end }}.
+      {{- len hugo.Data.events | lang.FormatNumber 0 }} upcoming events
+      <span class="sep" aria-hidden="true">|</span> <a href="{{ relURL "sources/" }}">{{ len $running }} sources</a>
+      {{- with $lastIngest }} <span class="sep" aria-hidden="true">|</span> <time id="as-of" datetime="{{ . }}">{{ (time.AsTime .).Format "Mon, Jan 2, 3:04 PM UTC" }}</time>{{ end }}
     </p>
   </div>
 </header>
@@ -72,21 +78,28 @@
         <select id="city"><option value="">All cities</option></select>
       </label>
       <label class="field">
-        <span class="label">Size</span>
+        <span class="label">Venue Size</span>
         <select id="size"><option value="">Any size</option></select>
       </label>
       <button id="reset" class="btn" type="button">Reset</button>
     </div>
     <div class="chips" id="cats" role="group" aria-label="Categories"></div>
+    <p class="source-note" id="source-note" hidden></p>
   </section>
 
   <div class="status">
     <p id="count" aria-live="polite">Loading events</p>
-    <nav class="pager" id="pager-top" aria-label="Pages"></nav>
+    <div class="paging">
+      <label class="per">Show <select id="per" aria-label="Events per page"></select> per page</label>
+      <nav class="pager" id="pager-top" aria-label="Pages"></nav>
+    </div>
   </div>
 
   <div class="table-wrap">
-    <table class="grid">
+    <table class="grid events">
+      <colgroup>
+        <col class="w-date"><col class="w-time"><col class="w-title"><col class="w-venue"><col class="w-city"><col class="w-cat"><col class="w-size">
+      </colgroup>
       <thead>
         <tr>
           <th scope="col" data-sort="date" aria-sort="ascending"><button type="button">Date</button></th>

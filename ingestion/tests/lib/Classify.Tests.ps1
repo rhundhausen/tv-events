@@ -290,3 +290,21 @@ Describe 'New-TvEvent classification' {
       Should -Throw '*schema*'
   }
 }
+
+Describe 'Get-TvClassification fallback tags' {
+  It 'puts "<title>" in <want>' -ForEach @(
+    @{ title = 'Dungeons and Dragons'; labels = @('library'); want = 'nightlife-social' }
+    @{ title = 'Dungeons & Dragons'; labels = @('library'); want = 'nightlife-social' }
+    @{ title = 'Teen Club: Dungeons and Dragons | Cole & Ustick Library!'; labels = @(); want = 'nightlife-social' }
+    @{ title = 'Dungeon Club: Mini Painting'; labels = @('library'); want = 'nightlife-social' }
+    @{ title = 'Preschool Storytime'; labels = @('library'); want = 'learning-business' }
+    @{ title = 'Teen Club | Hillcrest Library!'; labels = @(); want = 'learning-business' }
+    @{ title = 'Fit and Fall Proof'; labels = @('library'); want = 'learning-business' }
+  ) {
+    (Get-TvClassification $title '' -Labels $labels).Category | Should -Be $want
+  }
+
+  It 'still tags a library event as library-program when another tag sets the category' {
+    (Get-TvClassification 'Teen Club: Dungeons and Dragons | Cole & Ustick Library!' '').Tags | Should -Contain 'library-program'
+  }
+}

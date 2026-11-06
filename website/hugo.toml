@@ -20,3 +20,7 @@ disableKinds = ['taxonomy', 'term', 'rss', 'sitemap']
   [[module.mounts]]
     source = '../data'
     target = 'data'
+  # The source list, for the sources page and the header count.
+  [[module.mounts]]
+    source = '../ingestion/sources.json'
+    target = 'data/sources.json'

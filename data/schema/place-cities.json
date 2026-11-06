@@ -1,0 +1,33 @@
+{
+  "_comment": "Landmarks and businesses that pin an event to one city when its source gives no city. Matched as whole phrases, ignoring case, in the venue, title, and description of events stored as Other. ignore lists names that contain a city but are not places in it. See Get-TvCityClue in ingestion/scripts/lib/Cities.ps1.",
+  "places": {
+    "Ann Morrison Park": "Boise",
+    "Basque Block": "Boise",
+    "Bown Crossing": "Boise",
+    "Camel's Back Park": "Boise",
+    "Expo Idaho": "Garden City",
+    "Ford Idaho Center": "Nampa",
+    "Franz Witte": "Boise",
+    "Idaho Botanical Garden": "Boise",
+    "Idaho Humane Society": "Boise",
+    "Idaho State Capitol": "Boise",
+    "Indian Creek Plaza": "Caldwell",
+    "Julia Davis Park": "Boise",
+    "Kathryn Albertson Park": "Boise",
+    "Kleiner Park": "Meridian",
+    "Lakeview Park": "Nampa",
+    "Roaring Springs": "Meridian",
+    "Settlers Park": "Meridian",
+    "The Village at Meridian": "Meridian",
+    "Warhawk Air Museum": "Nampa",
+    "Zoo Boise": "Boise"
+  },
+  "ignore": [
+    "Boise Cascade",
+    "Boise Hawks",
+    "Boise Mom",
+    "Boise River",
+    "Boise Weekly",
+    "Payette River"
+  ]
+}

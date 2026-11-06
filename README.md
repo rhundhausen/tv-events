@@ -12,7 +12,7 @@ Requests come with this User-Agent:
 
 ## How it behaves
 
-- Runs once a day, overnight in Boise (10:00 UTC).
+- Runs once a day, at midnight Boise time.
 - Reads only public sources: calendar feeds (ICS), WordPress event APIs, the City of Boise events API, official APIs such as Ticketmaster's, and a few public calendar pages.
 - Calendar pages are checked against robots.txt on every run, including Crawl-delay, and a disallowed page is never requested.
 - Feeds and APIs are checked against the site's robots.txt and terms when they are added as a source.
@@ -35,6 +35,19 @@ You can also block the bot in robots.txt:
     Disallow: /
 
 This stops page reading on the next run. If your site is read through a calendar feed or API, please open an issue as well, so that source is removed too.
+
+## Getting listed
+
+Run a venue, organization, or calendar in the Treasure Valley that isn't listed? **Open an issue** in this repository with a link to your public events page. Listing is free.
+
+Any of these makes your events easiest to read, and most calendar tools already provide one:
+
+- A calendar feed (ICS or iCal subscribe link)
+- WordPress with The Events Calendar plugin
+- Event pages with schema.org Event data, which many event plugins add for search engines
+- An RSS feed of events
+
+A plain web page works too, as long as robots.txt allows it.
 
 ## Contact
 

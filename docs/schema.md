@@ -11,7 +11,7 @@
 | `allDay` | boolean | no | Defaults to false |
 | `venue` | string | yes | Display name |
 | `venueKey` | string | yes | Lowercase slug, for example `extramile-arena` |
-| `city` | string | no | `Boise`, `Meridian`, `Nampa`, `Caldwell`, `Eagle`, `Garden City`, `Kuna`, `Star`, or `Other` |
+| `city` | string | no | `Boise`, `Meridian`, `Nampa`, `Caldwell`, `Eagle`, `Garden City`, `Kuna`, `Star`, `Emmett`, `Marsing`, `Middleton`, `Mountain Home`, `Payette`, `Weiser`, or `Other` |
 | `category` | string | yes | One id from `data/schema/categories.json` |
 | `tags` | array | no | Zero or more ids from `data/schema/tags.json` |
 | `size` | string | no | Estimated crowd: `S`, `M`, `L`, or `XL`. A guess, see below |
@@ -57,6 +57,8 @@ Matching is by keyword, so some events are misfiled. An event whose title is onl
 ## Venues
 
 Sources spell a venue in different ways: Ticketmaster has `Neurolux Lounge` and `Knitting Factory - Boise`, and aggregators have `Extra Mile Arena`. Those would count as separate venues and block merging, so `data/schema/venue-aliases.json` maps each spelling to one `venueKey` and name. It applies to every source, before the `id` is computed. To fix a split venue, add a line there. No code changes are needed.
+
+Some sources, mostly Boise Mom, give no city, so their events fall back to `Other`. After merging, every run looks for the city in the event's own venue, title, and description, from strongest clue to weakest: an Idaho ZIP code, "City, ID", "(City)" in the title, a city in the venue name, a known place, a venue other sources place in one city, "in" or "downtown" before a city, then a city named in the title or description. A clue that names two cities is ambiguous and leaves `Other`. Star, Payette, Emmett, Middleton, and Weiser are also everyday words or surnames, so they count only from a ZIP code or "City, ID". Known places (the Basque Block, Warhawk Air Museum) and names to ignore (Boise Cascade, Boise Hawks) are in `data/schema/place-cities.json`; add a line there to teach it a place. Only the city changes, so the `id` stays the same. The code is `Resolve-TvOtherCity` in `ingestion/scripts/lib/Cities.ps1`, and `Invoke-Ingest.ps1 -CleanupOnly` applies it to stored data.
 
 ## Size
 
