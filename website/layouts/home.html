@@ -48,7 +48,7 @@
 
 <header class="top">
   <div class="wrap">
-    <h1>{{ site.Title }}</h1>
+    <h1 class="brand"><img class="logo" src="{{ relURL "favicon.svg" }}" alt="" width="28" height="28">{{ site.Title }}</h1>
     {{- /* Every running source, whether or not it has upcoming events. */}}
     {{- $running := where hugo.Data.sources.sources "status" "running" }}
     <p class="sub">

@@ -74,6 +74,24 @@ a { color: var(--accent); }
   font-size: 22px;
   letter-spacing: -0.01em;
 }
+/* The WB skyline icon beside the site name. Decorative: the name is the text. */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+}
+.logo-sm {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+.crumb .brand { gap: 6px; }
 .sub {
   margin: 2px 0 0;
   color: var(--muted);

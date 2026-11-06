@@ -17,6 +17,10 @@ disableKinds = ['taxonomy', 'term', 'rss', 'sitemap']
   [[module.mounts]]
     source = 'data'
     target = 'data'
+  # Favicons and the web manifest, served as-is from the site root.
+  [[module.mounts]]
+    source = 'static'
+    target = 'static'
   [[module.mounts]]
     source = '../data'
     target = 'data'

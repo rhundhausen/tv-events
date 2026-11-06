@@ -6,6 +6,10 @@
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
   <meta name="description" content="{{ .Description | default "Upcoming events in Boise, Meridian, Nampa, and the rest of the Treasure Valley." }}">
   <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="{{ relURL "favicon.ico" }}" sizes="any">
+  <link rel="icon" href="{{ relURL "favicon.svg" }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ relURL "apple-touch-icon.png" }}">
+  <link rel="manifest" href="{{ relURL "site.webmanifest" }}">
   {{ $css := resources.Get "css/site.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 </head>
