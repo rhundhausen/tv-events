@@ -92,8 +92,5 @@ if (-not $env:RESEND_API_KEY -or -not $env:REPORT_EMAIL) {
   exit 0
 }
 
-# REPORT_FROM, such as 'WeekendBoise <reports@example.com>', needs a domain verified in Resend.
-$from = @{}
-if ($env:REPORT_FROM) { $from.From = $env:REPORT_FROM }
-$sent = Send-TvReport -Report $report -To $env:REPORT_EMAIL -ApiKey $env:RESEND_API_KEY -Attachment $attachment @from
+$sent = Send-TvReport -Report $report -To $env:REPORT_EMAIL -ApiKey $env:RESEND_API_KEY -Attachment $attachment
 Write-Host "Emailed '$($report.Subject)' (Resend id $($sent.id))"

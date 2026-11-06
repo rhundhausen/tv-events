@@ -307,25 +307,29 @@ function Send-TvReport {
   .SYNOPSIS
     Sends a report with the Resend API. Returns Resend's response, which has the email id.
   .PARAMETER From
-    Without a verified domain, Resend sends only from onboarding@resend.dev, and only to the
-    address the Resend account was created with.
+    weekendboise.com is verified in Resend, and the API key is scoped to it.
+  .PARAMETER To
+    One or more addresses, separated by commas or semicolons. Replies go to the same addresses.
   #>
   [CmdletBinding()]
   param(
     [Parameter(Mandatory)][hashtable]$Report,
     [Parameter(Mandatory)][string]$To,
     [Parameter(Mandatory)][string]$ApiKey,
-    [string]$From = 'WeekendBoise <onboarding@resend.dev>',
+    [string]$From = 'WeekendBoise Reports <reports@weekendboise.com>',
     # A file to attach, sent base64-encoded under its own name. Resend allows 40 MB per email.
     [string]$Attachment
   )
 
+  $recipients = @($To -split '[,;]' | ForEach-Object Trim | Where-Object { $_ })
   $message = [ordered]@{
-    from    = $From
-    to      = @($To -split '[,;]' | ForEach-Object Trim | Where-Object { $_ })
-    subject = $Report.Subject
-    html    = $Report.Html
-    text    = $Report.Text
+    from     = $From
+    to       = $recipients
+    # reports@ has no mailbox, so a reply goes to REPORT_EMAIL instead.
+    reply_to = $recipients
+    subject  = $Report.Subject
+    html     = $Report.Html
+    text     = $Report.Text
   }
   if ($Attachment) {
     $message.attachments = @(@{

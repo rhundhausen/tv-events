@@ -33,9 +33,9 @@ Settings > Secrets and variables > Actions > New repository secret. The names mu
 | `SEATGEEK_CLIENT_ID` | No, adapter is disabled |
 | `SONGKICK_API_KEY` | No, adapter is disabled |
 | `RESEND_API_KEY` | For the report emails. A Resend API key (resend.com > API Keys, "Sending access") |
-| `REPORT_EMAIL` | For the report emails. Where they go. With no verified domain in Resend, this must be the address the Resend account was created with |
+| `REPORT_EMAIL` | For the report emails. Where they go, and where replies go. One address, or several separated by commas |
 
-Optional: `REPORT_FROM`, the sender, such as `WeekendBoise <reports@your-domain>`. It needs that domain verified in Resend (Domains > Add domain, then the DNS records it lists). Without it, the emails come from `onboarding@resend.dev`.
+The emails come from `WeekendBoise Reports <reports@weekendboise.com>` (weekendboise.com is verified in Resend; `RESEND_API_KEY` is a key scoped to that domain), and replies go to `REPORT_EMAIL`. The sender is set in `ingestion/scripts/lib/Report.ps1`, not in a secret.
 
 A secret you don't create reaches the scripts as empty, and that source fails with a warning while the rest run. Without `RESEND_API_KEY` or `REPORT_EMAIL`, the "Email the report" step warns and sends nothing.
 

@@ -178,7 +178,8 @@ Describe 'Send-TvReport' {
       $body = $Body | ConvertFrom-Json
       $Uri -eq 'https://api.resend.com/emails' -and $Method -eq 'Post' -and $Headers.Authorization -eq 'Bearer key123' -and
       $body.to[0] -eq 'me@test.example' -and $body.subject -eq 'S' -and $body.html -eq '<p>H</p>' -and $body.text -eq 'T' -and
-      $body.from -eq 'WeekendBoise <onboarding@resend.dev>'
+      $body.from -eq 'WeekendBoise Reports <reports@weekendboise.com>' -and
+      $body.reply_to[0] -eq 'me@test.example'
     }
   }
 }
