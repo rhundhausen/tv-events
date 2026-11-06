@@ -62,6 +62,17 @@
       "$comment": "Must match the level ids in data/schema/sizes.json.",
       "enum": ["L", "M", "S", "XL"]
     },
+    "cost": {
+      "type": "string",
+      "description": "Rough cost tier from the source's price data or the event text. Never the price itself.",
+      "$comment": "Must match the level ids in data/schema/costs.json. Free is $0, $ under $25, $$ $25 to $99, $$$ $100 or more.",
+      "enum": ["free", "$", "$$", "$$$"]
+    },
+    "costGuess": {
+      "type": "string",
+      "description": "Rough cost tier guessed from the rules in data/schema/costs.json, only when cost is unknown. Recomputed every run.",
+      "enum": ["free", "$", "$$", "$$$"]
+    },
     "url": {
       "type": "string",
       "description": "Canonical event page.",

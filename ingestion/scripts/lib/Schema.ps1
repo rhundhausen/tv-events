@@ -1,5 +1,7 @@
 # Event schema helpers. See schema/event.schema.json and docs/schema.md.
 
+. "$PSScriptRoot/Cost.ps1"
+
 function Get-BoiseTimeZone {
   [TimeZoneInfo]::FindSystemTimeZoneById('America/Boise')
 }
@@ -330,6 +332,9 @@ function New-TvEvent {
     The publisher's own categories or genres. See Get-TvClassification.
   .PARAMETER Sources
     Objects with name, url, and fetchedAt.
+  .PARAMETER Cost
+    The tier from the source's own price data (free, $, $$, $$$). Without it, a free-admission tag
+    means free, and otherwise the lowest dollar amount in the description sets the tier.
   #>
   [CmdletBinding()]
   param(
@@ -345,7 +350,8 @@ function New-TvEvent {
     [string[]]$Labels = @(),
     [Parameter(Mandatory)][string]$Url,
     [string]$Description,
-    [object[]]$Sources = @()
+    [object[]]$Sources = @(),
+    [AllowEmptyString()][ValidateSet('', 'free', '$', '$$', '$$$')][string]$Cost
   )
 
   $cleanTitle = ($Title -replace '\s+', ' ').Trim()
@@ -373,6 +379,15 @@ function New-TvEvent {
   $event.category = if ($InferCategory -and $classification.Category) { $classification.Category } else { $Category }
   $event.tags = $classification.Tags
   $event.size = Get-TvEventSize -VenueKey $key -Category $event.category -Tags $classification.Tags
+
+  # Read before the description loses its dollar amounts below. Only the tier is kept.
+  if (-not $Cost) {
+    $Cost = if ('free-admission' -in $classification.Tags) { 'free' } else {
+      $lowest = Get-TvLowestAmount (ConvertTo-PlainText $Description)
+      if ($null -ne $lowest) { Get-TvCostTier -Amount $lowest }
+    }
+  }
+  if ($Cost) { $event.cost = $Cost }
 
   $event.url = $Url
 

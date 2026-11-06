@@ -6,7 +6,8 @@
   Runs the entries in sources.json whose status is running. One broken source logs a warning and
   is skipped. Its stored events are kept until a later run refreshes them. The run exits non-zero
   only if zero sources succeed. Each run writes run.json to OutDir: per source, the count, status,
-  error, and warnings. Events any source reports as canceled are dropped, and events stored as
+  error, and warnings. Events get a rough cost tier guess (Set-TvCostGuess) when no source gave a
+  price. Events any source reports as canceled are dropped, and events stored as
   city Other get a city when their own text says where they are (Resolve-TvOtherCity). A run that fetched
   writes data/meta.json with the time of the last ingest.
 .PARAMETER Source
@@ -70,6 +71,7 @@ if ($CleanupOnly) {
   $merged = @(Merge-TvEvents $carried -Priorities $priorities -DropCanceled)
   $archived = @(if (Test-Path -LiteralPath $archiveDir) { Get-ChildItem -LiteralPath $archiveDir -Filter '*.json' | ForEach-Object { Read-TvEventFile $_.FullName } })
   $cityFixes = Resolve-TvOtherCity $merged -Known $archived
+  $costFixes = Set-TvCostGuess $merged
   $horizon = $now.AddDays($Days)
   $past = @($merged | Where-Object { Test-TvEventPast $_ $now })
   $upcoming = @(Sort-TvEvents @($merged | Where-Object { -not (Test-TvEventPast $_ $now) -and (Get-TvEventInstant $_.start) -le $horizon }))
@@ -81,10 +83,12 @@ if ($CleanupOnly) {
     $stored = @(Read-TvEventFile $file.FullName)
     $cleaned = @(Merge-TvEvents $stored -Priorities $priorities -DropCanceled)
     $monthFixes = Resolve-TvOtherCity $cleaned -Known $archived
+    $monthCosts = Set-TvCostGuess $cleaned
     $cityFixes += $monthFixes
+    $costFixes += $monthCosts
     $archiveBefore += $stored.Count
     $archiveAfter += $cleaned.Count
-    if (-not $NoWrite -and ($cleaned.Count -ne $stored.Count -or $monthFixes -gt 0)) {
+    if (-not $NoWrite -and ($cleaned.Count -ne $stored.Count -or $monthFixes -gt 0 -or $monthCosts -gt 0)) {
       Restore-TvFetchedAt $cleaned $stored
       Write-TvEventFile $file.FullName @(Sort-TvEvents $cleaned)
     }
@@ -94,7 +98,7 @@ if ($CleanupOnly) {
     Write-TvEventFile $dataPath $upcoming
   }
 
-  Write-Host "Cleanup: events.json $($existing.Count) -> $($upcoming.Count) upcoming ($($past.Count) moved to the archive), archive $archiveBefore -> $archiveAfter, $cityFixes cities filled in$($NoWrite ? ' (not written)' : '')"
+  Write-Host "Cleanup: events.json $($existing.Count) -> $($upcoming.Count) upcoming ($($past.Count) moved to the archive), archive $archiveBefore -> $archiveAfter, $cityFixes cities filled in, $costFixes cost guesses changed$($NoWrite ? ' (not written)' : '')"
   exit 0
 }
 
@@ -188,6 +192,7 @@ $carried = @(Get-CarriedTvEvents $existing -Refreshed $refreshed -Enabled @($run
 $merged = @(Merge-TvEvents (@($fetched) + $carried) -Priorities $priorities -DropCanceled)
 Restore-TvFetchedAt $merged $existing
 $cityFixes = Resolve-TvOtherCity $merged
+$null = Set-TvCostGuess $merged
 
 # Each event was valid when built, so a failure here is a merge bug. Never store one.
 $merged = @($merged | Where-Object {
