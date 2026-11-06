@@ -109,12 +109,13 @@ The last resort, for sites with no API or feed. Check for a feed first: a workin
 | `eventLinkPattern` | no | `jsonld`: regex for event links on the list page. Each linked page is read. Without it, the list page itself is read |
 | `maxPages` | no | `jsonld`: most event pages to read in one run. Defaults to 40. `civicplus` and `chambermaster`: months to read, starting with this one. Defaults to 3 |
 | `itemPattern` | `cards` | Regex matching one event's HTML block |
-| `datePattern` | no | `cards`: regex with named groups `month` and `day`, matched inside a card. Defaults to `month` and `day` spans |
+| `datePattern` | no | `cards`: regex with named groups `month` and `day`, matched inside a card. Defaults to `month` and `day` spans. Add a `year` group to read a numeric date, such as `date=2026-11-14` in a link (The Little Gym) |
 | `titlePattern` | no | `cards`: regex with a named group `title`. Defaults to the first heading |
 | `timePattern` | no | `cards`: regex with named groups `start` and optional `end`, such as `3:00 pm`. Without a match, the event is all-day |
 | `localTimeAsUtc` | no | `true` corrects sites that write local time as UTC |
 | `fixedVenue` | no | `true` uses the entry's venue for every event |
-| `excludeTitlePattern` | no | `civicplus` and `chambermaster`: regex. Matching titles are skipped, such as meetings and closures |
+| `excludeTitlePattern` | no | `jsonld`, `civicplus`, and `chambermaster`: regex. Matching titles are skipped, such as meetings and closures |
+| `excludeDescriptionPattern` | no | `jsonld`: regex, matched against the description as plain text with WordPress shortcodes such as `[post_title]` removed. Matching events are skipped. Bluebird Social uses it to skip food trucks, whose descriptions are only shortcodes |
 
 `url` is the list page.
 
@@ -142,7 +143,7 @@ Reads an RSS 2.0 feed that uses the RSS event module (`ev:` namespace), which ca
 
 `fixedVenue: true` on an `ics` entry uses the entry's venue for every event. The library LibCal feeds need it, because their `LOCATION` names rooms ("Children's Area"), not the building. `excludeTitlePattern` (regex) skips matching titles, such as library closures and board meetings.
 
-Compare scraped times with what the site displays before enabling a source. Modern Events Calendar sites write local time as if it were UTC, which makes every event 7 hours early. Both Idaho History and Visit Boise need `localTimeAsUtc`.
+Compare scraped times with what the site displays before enabling a source. Modern Events Calendar sites write local time as if it were UTC, which makes every event 7 hours early. Idaho History, Visit Boise, and Bluebird Social need `localTimeAsUtc`.
 
 The adapter's rules, enforced in code and covered by tests:
 

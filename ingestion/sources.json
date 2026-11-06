@@ -266,6 +266,26 @@
       "notes": "Hotel group page titled Boise Events Calendar. Static Webflow page with no event listings in the HTML (checked 2026-11-03); events may load from js/block22-hotels.js, not checked"
     },
     {
+      "name": "bluebird-social",
+      "displayName": "Bluebird Social",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://bluebirdsocial.com/calendar/",
+      "robotsChecked": "2026-11-06",
+      "category": "nightlife-social",
+      "inferCategory": true,
+      "city": "Boise",
+      "venue": "Bluebird Social",
+      "venueKey": "bluebird-social",
+      "priority": 20,
+      "fixedVenue": true,
+      "scrapeMode": "jsonld",
+      "localTimeAsUtc": true,
+      "excludeTitlePattern": "(?i)^closed\\b|^we.re open\\b",
+      "excludeDescriptionPattern": "^\\s*$|(?i)food truck calendar",
+      "notes": "Outdoor music venue and bar, 1401 W Shoreline Dr. Suggested 2026-11-06. robots.txt allows everything but /wp-admin/. Modern Events Calendar, so times need localTimeAsUtc. /calendar/ carries about 5 weeks of schema.org events (62 on 2026-11-06), more than /events (this week only) or /events/feed/ (10 items). Most are food trucks and open or closed days: those are skipped by title, or because the description is only shortcodes or 'BACK TO FOOD TRUCK CALENDAR'. That left the concerts, Pray for Snow, and BSU watch parties. Watch parties with no time yet are listed at noon. Category defaults to nightlife-social, because watch party titles such as 'Oregon State @ BSU' match no sports keyword. Terms not read"
+    },
+    {
       "name": "bogus-basin",
       "displayName": "Bogus Basin",
       "status": "running",
@@ -1178,6 +1198,25 @@
       "city": "Boise",
       "venue": "The Linen Building",
       "notes": "Downtown event venue on Grove St. Mostly private rentals; look for its public calendar"
+    },
+    {
+      "name": "little-gym-boise-west",
+      "displayName": "The Little Gym of Boise (West)",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://www.thelittlegym.com/idaho-boise-west/events-more/",
+      "robotsChecked": "2026-11-06",
+      "category": "community-civic",
+      "city": "Garden City",
+      "venue": "The Little Gym of Boise (West)",
+      "venueKey": "little-gym-boise-west",
+      "priority": 20,
+      "fixedVenue": true,
+      "scrapeMode": "cards",
+      "itemPattern": "(?s)<article class=\"uc-event-article.*?</article>",
+      "datePattern": "date=(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})",
+      "timePattern": "(?s)uc-start-time\">\\s*(?<start>\\d{1,2}:\\d{2}\\s*[AP]M)\\s*<.*?uc-end-time\">\\s*(?<end>\\d{1,2}:\\d{2}\\s*[AP]M)",
+      "notes": "Kids' gym, 7906 W Marigold St, Garden City. Suggested 2026-11-06. robots.txt allows the page but disallows any URL with a query string. The page lists 6 events server-side (Unleashed Brands calendar plugin, no feed, no schema.org events); a Load More button fetches the rest with JavaScript, which isn't read. Cards show the weekday and day, so the date comes from each card's booking link (store.unleashedbrands.com, which answers scripts with 403). On 2026-11-06: 5 Parents' Survival Nights ($50 drop-off, ages 3 to 12) and a Community Baby Shower. No inferCategory, because themed titles mislead it ('Turkey Trot Parent Survival Night' read as a race). Terms not read"
     },
     {
       "displayName": "The Olympic",

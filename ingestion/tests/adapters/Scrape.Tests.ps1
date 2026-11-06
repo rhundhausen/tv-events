@@ -63,6 +63,31 @@ Describe 'scrape adapter, jsonld from the list page' {
   }
 }
 
+Describe 'scrape adapter, jsonld with title and description filters' {
+  BeforeAll {
+    $events = @(& $adapter -Source (Get-TestSource 'bluebird-social') -FetchedAt $fetchedAt -Response (Get-Fixture 'bluebird-social.html'))
+  }
+
+  It 'skips closures, opening hours, and food trucks, and keeps shows and watch parties' {
+    $events.title | Should -Be @('Dillon Francis @ Bluebird Social', 'Pray for Snow Festival', 'Oregon State @ BSU')
+  }
+
+  It 'removes WordPress shortcodes from the description' {
+    $snow = $events | Where-Object title -eq 'Pray for Snow Festival'
+    $snow.description | Should -Not -Match '\['
+    $snow.description | Should -BeLike 'Send it, Boise!*'
+  }
+
+  It 'corrects the Modern Events Calendar times' {
+    # The page says doors at 5 pm.
+    $events[0].start | Should -Be '2026-10-30T17:00:00-06:00'
+  }
+
+  It 'uses the fixed venue' {
+    $events.venueKey | Sort-Object -Unique | Should -Be 'bluebird-social'
+  }
+}
+
 Describe 'scrape adapter, jsonld from linked pages' {
   BeforeAll {
     $source = Get-TestSource 'indian-creek-plaza'
@@ -227,6 +252,29 @@ Describe 'scrape adapter, cards with custom patterns' {
   It 'skips a card with no title' {
     $html = '<div class="event flex"><p class="text-xs">Dec</p><p class="relative">6</p><a href="/x">View Details</a></div>'
     @(& $adapter -Source $jump -FetchedAt $fetchedAt -Response $html -WarningAction SilentlyContinue).Count | Should -Be 0
+  }
+}
+
+Describe 'scrape adapter, cards with a numeric date' {
+  BeforeAll {
+    $events = @(& $adapter -Source (Get-TestSource 'little-gym-boise-west') -FetchedAt $fetchedAt -Response (Get-Fixture 'little-gym-boise-west.html'))
+  }
+
+  It 'reads every card' {
+    $events.Count | Should -Be 6
+    $events[0].title | Should -Be 'Turkey Trot Parent Survival Night'
+  }
+
+  It 'reads the year, month, and day from the booking link, across a new year' {
+    $events[0].start | Should -Be '2026-11-14T18:00:00-07:00'
+    $events[0].end | Should -Be '2026-11-14T21:00:00-07:00'
+    $events[5].start | Should -Be '2027-02-13T18:00:00-07:00'
+  }
+
+  It 'uses the booking link and the fixed venue in Garden City' {
+    $events[0].url | Should -BeLike 'https://store.unleashedbrands.com/the-little-gym/boisewestid/schedule/class?date=2026-11-14*'
+    $events[0].venueKey | Should -Be 'little-gym-boise-west'
+    $events[0].city | Should -Be 'Garden City'
   }
 }
 

@@ -143,6 +143,12 @@ function Read-JsonLdEvent {
   # Page titles often end with the site name, such as "Brewfest - Indian Creek Plaza".
   $separators = "$([char]0x2013)$([char]0x2014)-"
   $title = (ConvertTo-PlainText $Node.name) -replace " [$separators] $([regex]::Escape($Source.displayName))$", ''
+  if ($Source.excludeTitlePattern -and $title -match $Source.excludeTitlePattern) { return }
+
+  # WordPress shortcodes such as [post_title] leak into some sites' descriptions unexpanded.
+  $description = ((ConvertTo-PlainText $Node.description) -replace '\[[a-z]+(?:_[a-z0-9]+)+\]', '' -replace '\s+', ' ').Trim()
+  if ($Source.excludeDescriptionPattern -and $description -match $Source.excludeDescriptionPattern) { return }
+
   $offers = @($Node.offers) | Select-Object -First 1
   $url = if ($PageUrl) { $PageUrl } elseif ($Node.url) { $Node.url } elseif ($offers.url) { $offers.url } else { $Source.url }
 
@@ -151,7 +157,7 @@ function Read-JsonLdEvent {
   $cityText = if ($address -is [pscustomobject]) { "$($address.addressLocality)" } else { "$address" }
 
   New-ScrapeEvent -Title $title -Start $start.Value -End $endValue -AllDay $start.AllDay `
-    -VenueName $location.name -CityText $cityText -Url ([System.Net.WebUtility]::HtmlDecode($url)) -Description $Node.description `
+    -VenueName $location.name -CityText $cityText -Url ([System.Net.WebUtility]::HtmlDecode($url)) -Description $description `
     -Cost (Get-JsonLdCost $Node)
 }
 
@@ -227,8 +233,12 @@ function Read-CardsSource {
       if (-not $title) { throw 'no title on the card' }
       $url = [regex]::Match($text, 'href="([^"]+)"').Groups[1].Value
 
-      # Cards show no year: a date more than 2 months back is next year's.
+      # Most cards show no year: a date more than 2 months back is next year's. A datePattern
+      # with a year group reads a numeric date as is.
       $dates = @([regex]::Matches($text, $datePattern) | ForEach-Object {
+          if ($_.Groups['year'].Success) {
+            return [DateTime]::new([int]$_.Groups['year'].Value, [int]$_.Groups['month'].Value, [int]$_.Groups['day'].Value).ToString('yyyy-MM-dd', $invariant)
+          }
           $monthText = $_.Groups['month'].Value
           $month = $monthText.Substring(0, [Math]::Min(3, $monthText.Length))
           $date = [DateTime]::ParseExact("$($now.Year) $month $([int]$_.Groups['day'].Value)", 'yyyy MMM d', $invariant)

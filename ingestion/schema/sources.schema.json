@@ -189,7 +189,7 @@
         },
         "datePattern": {
           "type": "string",
-          "description": "scrape, cards: regex with named groups month and day, matched inside a card. Defaults to Boise Centre markup (class=\"month\" and class=\"day\").",
+          "description": "scrape, cards: regex with named groups month and day, matched inside a card. Month is a name unless the regex also has a year group, in which case month is a number and no year is guessed. Defaults to Boise Centre markup (class=\"month\" and class=\"day\").",
           "minLength": 1
         },
         "titlePattern": {
@@ -248,7 +248,12 @@
         },
         "excludeTitlePattern": {
           "type": "string",
-          "description": "ticketmaster, rss, ics, and scrape with scrapeMode civicplus or chambermaster: regex. Matching titles are skipped.",
+          "description": "ticketmaster, rss, ics, and scrape with scrapeMode jsonld, civicplus, or chambermaster: regex. Matching titles are skipped.",
+          "minLength": 1
+        },
+        "excludeDescriptionPattern": {
+          "type": "string",
+          "description": "scrape, jsonld: regex, matched against the description as plain text with WordPress shortcodes removed. Matching events are skipped.",
           "minLength": 1
         },
         "organizationIds": {
