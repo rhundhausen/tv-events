@@ -1,0 +1,11 @@
+{
+  "name": "weekendboise",
+  "compatibility_date": "2026-11-05",
+  "build": {
+    "command": "chmod +x build.sh && ./build.sh"
+  },
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}

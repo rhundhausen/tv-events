@@ -1,2 +1,3 @@
 data/** text eol=lf
 ingestion/tests/fixtures/** -text
+*.sh text eol=lf
