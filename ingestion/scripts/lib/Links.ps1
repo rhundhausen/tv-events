@@ -14,7 +14,9 @@ function Get-TvLinkVerdict {
     Only 404 and 410 say a page is gone. Every other 4xx (401, 403, 406, 429 and so on), any
     non-standard code, and any request error we can't place is a site turning away scripts or
     something we can't read, which says nothing about the page, so they never break a link.
-    Timeouts, 5xx, DNS failures and refused connections look the same as a host having a bad hour.
+    Timeouts, 500, 502, 503, 504, DNS failures and refused connections look the same as a host
+    having a bad hour. Other 5xx codes are bot walls in practice: TicketWeb answers scripts with
+    506 or 530 while the page works in a browser, so they count as blocked.
   #>
   [CmdletBinding()]
   [OutputType([string])]
@@ -26,7 +28,7 @@ function Get-TvLinkVerdict {
   if ($ErrorKind) { return ($ErrorKind -in 'dns', 'refused', 'timeout') ? 'transient' : 'blocked' }
   if ($Status -ge 200 -and $Status -lt 400) { return 'ok' }
   if ($Status -in 404, 410) { return 'broken' }
-  if ($Status -ge 500 -and $Status -lt 600) { return 'transient' }
+  if ($Status -in 500, 502, 503, 504) { return 'transient' }
   'blocked'
 }
 
@@ -308,6 +310,8 @@ function Write-TvLinkState {
     foreach ($field in 'verdict', 'status', 'error', 'checkedAt', 'brokenSince', 'failures') {
       if ($null -ne $entry[$field] -and "$($entry[$field])" -ne '') { $out[$field] = $entry[$field] }
     }
+    # ConvertFrom-TvJson reads every number as a double, which would write back as 200.0.
+    if ($out.Contains('status')) { $out.status = [int]$out.status }
     $out.failures = [int]$entry.failures
     $links[$url] = $out
   }

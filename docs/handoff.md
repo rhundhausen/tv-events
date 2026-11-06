@@ -1,5 +1,17 @@
 # Handoff
 
+## 2026-11-06: ingest split into ingest and refine
+
+The nightly run is now two workflows, an hour apart. Where this conflicts with the sections below, this section wins; [development.md](development.md#nightly-workflows) has the details.
+
+- **Ingest** (`ingest.yml`, midnight Boise time, `Invoke-Ingest.ps1`) only fetches. It writes `data/raw-events.json`: `asOf` plus each source's last good fetch. A failed source keeps its last entry; a one-source run (`source` input) replaces only that entry and keeps `asOf`. It commits that file alone, with `[skip ci]`. It is the only workflow given the API key secrets.
+- **Refine** (`refine.yml`, 1 AM Boise time, `Invoke-Refine.ps1`) reads the committed raw file and does everything else: merge and dedupe, canceled events, cities, cost guesses, the archive, and the link check. It writes and commits `data/events.json`, `data/archive/`, `data/links.json`, and `data/meta.json` (`lastIngest` copied from the raw file's `asOf`), which deploys the site. It uses no secrets and fails clearly if the raw file is missing.
+- **File ownership:** no file is written by both. `data/schema/` is hand-edited and neither workflow commits it.
+- **Rerunning refine by hand:** Actions > refine > Run workflow (optionally skip the link check), or `./ingestion/scripts/Invoke-Refine.ps1 -SkipLinkCheck` locally. It fetches no source and is safe to repeat, so rule changes can be tried without another ingest. `Invoke-Ingest.ps1 -CleanupOnly` is gone; refine replaces it.
+- **Scheduling:** `ingestion/scripts/Test-BoiseHour.ps1 -Hour <n>` is the shared daylight-saving gate (0 for ingest, 1 for refine). Both workflows share the concurrency group `data`.
+- **Prices:** adapters still build each event with `New-TvEvent`, which reads the cost tier from the description and then removes any sentence with a price, so the raw file never stores prices. Refine adds `costGuess` from `data/schema/costs.json`.
+- **Link check:** only 500, 502, 503, and 504 count as a temporary failure now. Other 5xx codes (TicketWeb answers scripts with 506 or 530) count as blocked and never unlink an event.
+
 ## 2026-11-04: moved back to GitHub, new layout
 
 The project returned to one public GitHub repo (rhundhausen/weekendboise, named tv-events until 2026-11-05) on 2026-11-04. The sections below describe the Azure DevOps period and are kept for history; where they conflict with this section, this section wins.

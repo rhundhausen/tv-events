@@ -17,7 +17,7 @@ Settings > General > Default branch: `main`. The nightly schedule only runs on t
 Settings > Actions > General:
 
 - Actions permissions: allow all actions, or at least actions created by GitHub (`actions/checkout`, `actions/upload-artifact`).
-- Workflow permissions: either setting works, because `ingest.yml` asks for `contents: write` itself. Read and write is not required.
+- Workflow permissions: either setting works, because `ingest.yml` and `refine.yml` ask for `contents: write` themselves. Read and write is not required.
 
 If `main` gets a branch protection rule or ruleset later, allow `github-actions[bot]` to push to it, or the nightly data commit will be rejected.
 
@@ -39,11 +39,14 @@ A secret you don't create reaches the scripts as empty, and that source fails wi
 
 Before the midnight (Boise time) schedule runs on its own:
 
-1. Actions > ingest > Run workflow, branch `main`, source `idaho-steelheads` (or any one running source).
+1. Actions > ingest > Run workflow, branch `main`, source `idaho-steelheads` (or any one running source). Leave the source blank the very first time, so the raw file starts with every source.
 2. When it finishes, check:
    - The run is green and the `out` artifact holds `idaho-steelheads.json` and `run.json`.
-   - `main` has a new commit by "WeekendBoise bot" titled `data: nightly ingest YYYY-MM-DD` that changes only files under `data/`.
-   - The test workflow did not run for that commit.
-3. If the commit step fails with a permission error, recheck step 3.
+   - `main` has a new commit by "WeekendBoise bot" titled `data: raw ingest YYYY-MM-DD [skip ci]` that changes only `data/raw-events.json`, and Cloudflare skipped it.
+3. Actions > refine > Run workflow, branch `main`. When it finishes, check:
+   - The run is green and its log starts with the raw file's `asOf` and source count.
+   - `main` has a new commit titled `data: nightly refine YYYY-MM-DD` that changes only `data/events.json`, `data/archive/`, `data/links.json`, and `data/meta.json`, and its "Workers Builds: weekendboise" check deployed the site.
+   - The test workflow did not run for either commit.
+4. If a commit step fails with a permission error, recheck step 3.
 
-After that, leave the schedule to run nightly. GitHub turns off scheduled workflows in a public repo after 60 days with no repository activity; the nightly data commits count as activity, so this only matters if ingest stops committing.
+After that, leave both schedules to run nightly: ingest at midnight Boise time, refine at 1 AM. GitHub turns off scheduled workflows in a public repo after 60 days with no repository activity; the nightly data commits count as activity, so this only matters if ingest stops committing.

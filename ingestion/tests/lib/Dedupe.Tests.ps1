@@ -100,6 +100,19 @@ Describe 'Merge-TvEvents' {
     (Merge-TvEvents @($first, $second) -Priorities @{ a = 90; b = 10 }).url | Should -Be 'https://b.test/e'
   }
 
+  It 'breaks a priority tie by input order, however many reports there are' {
+    # 100 equal-priority reports of one show mixed in with 200 other events. Sort-Object without
+    # -Stable reorders ties in a list like this, and a later source's url won.
+    $reports = @(1..300 | ForEach-Object {
+        if ($_ % 3 -eq 0) { New-TestEvent -Source ('s{0:d3}' -f $_) }
+        else { New-TestEvent -Title "Other Show $_" -Venue "Hall $_" -Source x }
+      })
+    $show = $reports[2].id
+    (@(Merge-TvEvents $reports) | Where-Object id -eq $show).url | Should -Be 'https://s003.test/e'
+    [array]::Reverse($reports)
+    (@(Merge-TvEvents $reports) | Where-Object id -eq $show).url | Should -Be 'https://s300.test/e'
+  }
+
   It 'treats a missing priority as 50' {
     (Merge-TvEvents @((New-TestEvent -Source a), (New-TestEvent -Source b)) -Priorities @{ b = 40 }).url | Should -Be 'https://b.test/e'
     (Merge-TvEvents @((New-TestEvent -Source a), (New-TestEvent -Source b)) -Priorities @{ b = 60 }).url | Should -Be 'https://a.test/e'

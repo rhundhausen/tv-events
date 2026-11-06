@@ -150,7 +150,8 @@ function Merge-TvEvents {
       "Boise State University Women's Basketball vs Portland State".
     A "canceled" marker in a title is ignored for matching, so a cancellation finds its listing.
 
-    The event from the best-priority source supplies the url and other fields, the longest
+    The event from the best-priority source supplies the url and other fields (between sources
+    of equal priority, the one earlier in the input; refine passes them in sources.json order), the longest
     description wins, tags are unioned, and sources are unioned by name. When two reports from one source
     disagree on fetchedAt, the earliest is kept so a re-run doesn't change stored data.
   .PARAMETER Priorities
@@ -171,7 +172,7 @@ function Merge-TvEvents {
 
   $ordered = $Events |
     Select-Object @{ n = 'Event'; e = { $_ } }, @{ n = 'Rank'; e = { Get-TvEventRank $_ $Priorities } }, @{ n = 'Instant'; e = { Get-TvEventInstant $_.start } } |
-    Sort-Object Rank, Instant, @{ e = { $_.Event.id } }
+    Sort-Object Rank, Instant, @{ e = { $_.Event.id } } -Stable
 
   $kept = [System.Collections.Generic.List[object]]::new()
   $byId = @{}

@@ -53,7 +53,14 @@ Describe 'Get-TvLinkVerdict' {
     @{ status = 403; kind = ''; want = 'blocked' }
     @{ status = 429; kind = ''; want = 'blocked' }
     @{ status = 500; kind = ''; want = 'transient' }
+    @{ status = 502; kind = ''; want = 'transient' }
     @{ status = 503; kind = ''; want = 'transient' }
+    @{ status = 504; kind = ''; want = 'transient' }
+    # TicketWeb answers scripts with 506 or 530 while the page works in a browser.
+    @{ status = 501; kind = ''; want = 'blocked' }
+    @{ status = 506; kind = ''; want = 'blocked' }
+    @{ status = 520; kind = ''; want = 'blocked' }
+    @{ status = 530; kind = ''; want = 'blocked' }
     @{ status = 0; kind = 'timeout'; want = 'transient' }
     @{ status = 0; kind = 'dns'; want = 'transient' }
     @{ status = 0; kind = 'refused'; want = 'transient' }
@@ -246,6 +253,14 @@ Describe 'Invoke-TvLinkCheck' {
 }
 
 Describe 'Write-TvLinkState and Read-TvLinkState' {
+  It 'writes a status it read back as a whole number, so an unchanged file stays unchanged' {
+    $path = Join-Path $TestDrive 'links-int.json'
+    Write-TvLinkState $path @{ 'https://a.test/e' = @{ verdict = 'ok'; status = 200; checkedAt = '2026-11-06T07:00:00Z'; failures = 0 } }
+    $before = Get-Content $path -Raw
+    Write-TvLinkState $path (Read-TvLinkState $path)
+    Get-Content $path -Raw | Should -BeExactly $before
+  }
+
   It 'round-trips with sorted keys' {
     $path = Join-Path $TestDrive 'links.json'
     $state = @{

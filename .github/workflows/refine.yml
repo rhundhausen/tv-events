@@ -1,0 +1,91 @@
+# Nightly refine, stage 2 of 2. Reads the committed data/raw-events.json, merges and cleans it,
+# checks event links, and commits the files the site reads, which deploys the site. Runs at 1 AM
+# Boise time, an hour after ingest, or by hand as often as needed. It never fetches a source.
+
+name: refine
+
+on:
+  # Cron is UTC and Boise is UTC-6 in summer and UTC-7 in winter, so both hours are scheduled
+  # and the when job skips the one that isn't 1 AM in Boise.
+  schedule:
+    - cron: '0 7 * * *'
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+    inputs:
+      skip_link_check:
+        description: Skip the link check (known link results still apply).
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+# Shared with ingest, so the two never run at once. A late ingest makes refine wait.
+concurrency:
+  group: data
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: pwsh
+
+jobs:
+  when:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          sparse-checkout: ingestion/scripts/Test-BoiseHour.ps1
+          sparse-checkout-cone-mode: false
+
+      # A manual run always goes ahead. A scheduled run goes ahead only for the cron line that is
+      # 1 AM in Boise. The scheduled time it reports is for the log only: the site shows the asOf
+      # time ingest wrote into the raw file.
+      - name: Check Boise time
+        id: check
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: ./ingestion/scripts/Test-BoiseHour.ps1 -Hour 1
+
+  refine:
+    needs: when
+    if: needs.when.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    # The link check stops itself after 15 minutes; the rest takes under a minute.
+    timeout-minutes: 30
+    steps:
+      # The head of the branch, so it reads whatever raw file ingest last committed.
+      - name: Check out
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      # No secrets: refine requests only event pages and robots.txt, never a source API.
+      # The input goes through env, not inline, so its text is never parsed as script.
+      - name: Refine
+        env:
+          SKIP_LINK_CHECK: ${{ inputs.skip_link_check }}
+        run: |
+          $options = @{}
+          if ($env:SKIP_LINK_CHECK -eq 'true') { $options.SkipLinkCheck = $true }
+          ./ingestion/scripts/Invoke-Refine.ps1 @options
+
+      - name: Upload refine output
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: refine-out
+          path: out
+          if-no-files-found: ignore
+
+      - name: Commit data
+        run: |
+          $paths = 'data/events.json', 'data/archive', 'data/links.json', 'data/meta.json'
+          ./ingestion/scripts/Publish-Data.ps1 -Path $paths -Message 'data: nightly refine'

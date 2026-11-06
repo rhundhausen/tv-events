@@ -1,5 +1,6 @@
-# Nightly ingest. Fetches every running source, then commits data/ to the branch it ran on.
-# Runs at midnight Boise time, or by hand with an optional source input.
+# Nightly ingest, stage 1 of 2. Fetches every running source into data/raw-events.json and commits
+# that file alone to the branch it ran on. Runs at midnight Boise time, or by hand with an optional
+# source input. The refine workflow turns the raw file into what the site reads, an hour later.
 
 name: ingest
 
@@ -20,8 +21,9 @@ on:
 permissions:
   contents: write
 
+# Shared with refine, so the two never run at once. A late ingest makes refine wait.
 concurrency:
-  group: ingest
+  group: data
   cancel-in-progress: false
 
 defaults:
@@ -36,26 +38,22 @@ jobs:
       run: ${{ steps.check.outputs.run }}
       at: ${{ steps.check.outputs.at }}
     steps:
+      - name: Check out
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+          sparse-checkout: ingestion/scripts/Test-BoiseHour.ps1
+          sparse-checkout-cone-mode: false
+
       # A manual run always goes ahead. A scheduled run goes ahead only for the cron line that is
-      # midnight in Boise. Scheduled runs can start late, so it checks the scheduled hour, not the clock,
-      # and passes the scheduled time on so the site reads 12:00 AM however late the run started.
+      # midnight in Boise, and passes the scheduled time on as asOf so the site reads 12:00 AM
+      # however late the run started.
       - name: Check Boise time
         id: check
         env:
           EVENT: ${{ github.event_name }}
           SCHEDULE: ${{ github.event.schedule }}
-        run: |
-          $run = 'true'
-          if ($env:EVENT -eq 'schedule') {
-            $utcHour = [int]($env:SCHEDULE -split ' ')[1]
-            $today = [DateTime]::UtcNow.Date
-            $scheduled = [DateTime]::SpecifyKind($today.AddHours($utcHour), 'Utc')
-            $boise = [TimeZoneInfo]::ConvertTimeBySystemTimeZoneId($scheduled, 'America/Boise')
-            $run = ($boise.Hour -eq 0) ? 'true' : 'false'
-            Write-Host "Scheduled $($env:SCHEDULE) is $($boise.ToString('HH:mm')) in Boise; run: $run"
-            "at=$($scheduled.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'"))" >> $env:GITHUB_OUTPUT
-          }
-          "run=$run" >> $env:GITHUB_OUTPUT
+        run: ./ingestion/scripts/Test-BoiseHour.ps1 -Hour 0
 
   ingest:
     needs: when
@@ -97,5 +95,7 @@ jobs:
           path: out
           if-no-files-found: ignore
 
-      - name: Commit data
-        run: ./ingestion/scripts/Publish-Data.ps1
+      # [skip ci], because the site doesn't read the raw file. Refine's commit deploys.
+      - name: Commit raw data
+        run: |
+          ./ingestion/scripts/Publish-Data.ps1 -Path data/raw-events.json -Message 'data: raw ingest' -SkipDeploy
