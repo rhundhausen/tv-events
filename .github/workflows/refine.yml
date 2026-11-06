@@ -19,6 +19,11 @@ on:
         type: boolean
         required: false
         default: false
+      skip_city_lookup:
+        description: Skip the city lookup for Other events (known cities still apply).
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: write
@@ -62,7 +67,8 @@ jobs:
     needs: when
     if: needs.when.outputs.run == 'true'
     runs-on: ubuntu-latest
-    # The link check stops itself after 15 minutes; the rest takes under a minute.
+    # The link check stops itself after 15 minutes and the city lookup after 3; the rest takes
+    # under a minute.
     timeout-minutes: 30
     steps:
       # The head of main, so it reads the raw file ingest just committed.
@@ -71,14 +77,16 @@ jobs:
         with:
           fetch-depth: 1
 
-      # No secrets: refine requests only event pages and robots.txt, never a source API.
+      # No API key secrets: refine requests only event pages and robots.txt, never a source API.
       # The input goes through env, not inline, so its text is never parsed as script.
       - name: Refine
         env:
           SKIP_LINK_CHECK: ${{ inputs.skip_link_check }}
+          SKIP_CITY_LOOKUP: ${{ inputs.skip_city_lookup }}
         run: |
           $options = @{}
           if ($env:SKIP_LINK_CHECK -eq 'true') { $options.SkipLinkCheck = $true }
+          if ($env:SKIP_CITY_LOOKUP -eq 'true') { $options.SkipCityLookup = $true }
           ./ingestion/scripts/Invoke-Refine.ps1 @options
 
       - name: Upload refine output
@@ -91,5 +99,16 @@ jobs:
 
       - name: Commit data
         run: |
-          $paths = 'data/events.json', 'data/archive', 'data/links.json', 'data/meta.json'
+          $paths = 'data/events.json', 'data/archive', 'data/links.json', 'data/city-lookup.json', 'data/meta.json'
           ./ingestion/scripts/Publish-Data.ps1 -Path $paths -Message 'data: nightly refine'
+
+      # Always, so a failed run is emailed too. These are the only secrets refine is given.
+      - name: Email the report
+        if: always()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+          JOB_STATUS: ${{ job.status }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EVENT: ${{ github.event_name }}
+        run: ./ingestion/scripts/Send-Report.ps1 -Kind refine

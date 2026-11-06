@@ -26,7 +26,7 @@ BeforeAll {
   function Invoke-TestRefine {
     param([hashtable]$Options = @{})
     $null = & $refine -InputPath $script:rawPath -OutputPath $script:eventsPath -SourcesPath $script:sourcesPath `
-      -OutDir (Join-Path $script:dir 'out') -Now $now -SkipLinkCheck @Options *>&1
+      -OutDir (Join-Path $script:dir 'out') -Now $now -SkipLinkCheck -SkipCityLookup @Options *>&1
   }
 }
 
@@ -120,6 +120,30 @@ Describe 'Invoke-Refine' {
     $report = Get-Content (Join-Path $dir 'out' 'refine.json') -Raw | ConvertFrom-Json -DateKind String
     $report.asOf | Should -BeExactly '2026-11-15T07:00:00Z'
     $report.upcoming | Should -Be 1
+  }
+
+  It 'applies a city remembered in city-lookup.json and keeps the file' {
+    $other = New-TvEvent -Title 'Nature Journaling' -Start '2026-11-20T13:30:00-07:00' -Venue 'Various Treasure Valley locations' -City 'Other' `
+      -Category 'learning-business' -Url 'https://beta.test/journal' -Sources @(@{ name = 'beta'; url = 'https://beta.test/journal'; fetchedAt = '2026-11-15T07:01:00Z' })
+    Write-TestRaw @{ beta = @($other) }
+    $lookupPath = Join-Path $dir 'city-lookup.json'
+    '{ "https://beta.test/journal": { "city": "Garden City", "website": "https://library.test/", "checkedAt": "2026-11-14T08:00:00Z" } }' | Set-Content -LiteralPath $lookupPath
+    Invoke-TestRefine
+    (Read-TvEventFile $eventsPath)[0].city | Should -Be 'Garden City'
+    (Get-Content $lookupPath -Raw | ConvertFrom-Json).'https://beta.test/journal'.city | Should -Be 'Garden City'
+    $report = Get-Content (Join-Path $dir 'out' 'refine.json') -Raw | ConvertFrom-Json
+    $report.cityLookup.found | Should -Be 1
+  }
+
+  It 'records start, finish, the raw totals, and whether links were skipped, for the email' {
+    Write-TestRaw @{ beta = @((New-TestEvent), (New-TestEvent -Title 'Second Show' -Url 'https://beta.test/2')) }
+    Invoke-TestRefine
+    $report = Get-Content (Join-Path $dir 'out' 'refine.json') -Raw | ConvertFrom-Json -DateKind String
+    $report.startedAt | Should -Match '^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$'
+    $report.finishedAt | Should -Match '^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$'
+    $report.rawSources | Should -Be 1
+    $report.rawEvents | Should -Be 2
+    $report.skipLinkCheck | Should -BeTrue
   }
 
   It 'writes nothing with -NoWrite' {

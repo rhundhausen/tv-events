@@ -32,8 +32,10 @@ Settings > Secrets and variables > Actions > New repository secret. The names mu
 | `EVENTBRITE_TOKEN` | No, adapter is disabled |
 | `SEATGEEK_CLIENT_ID` | No, adapter is disabled |
 | `SONGKICK_API_KEY` | No, adapter is disabled |
+| `RESEND_API_KEY` | For the report emails. A Resend API key (resend.com > API Keys, "Sending access") |
+| `REPORT_EMAIL` | For the report emails. Where they go. With no verified domain in Resend, this must be the address the Resend account was created with |
 
-A secret you don't create reaches the scripts as empty, and that source fails with a warning while the rest run.
+A secret you don't create reaches the scripts as empty, and that source fails with a warning while the rest run. Without `RESEND_API_KEY` or `REPORT_EMAIL`, the "Email the report" step warns and sends nothing.
 
 ## 5. Prove the data commit with one source
 
@@ -45,7 +47,7 @@ Before the midnight (Boise time) schedule runs on its own:
    - `main` has a new commit by "WeekendBoise bot" titled `data: raw ingest YYYY-MM-DD [skip ci]` that changes only `data/raw-events.json`, and Cloudflare skipped it.
 3. Refine starts by itself when ingest finishes (Actions > refine; it can also be run by hand, branch `main`). When it finishes, check:
    - The run is green and its log starts with the raw file's `asOf` and source count.
-   - `main` has a new commit titled `data: nightly refine YYYY-MM-DD` that changes only `data/events.json`, `data/archive/`, `data/links.json`, and `data/meta.json`, and its "Workers Builds: weekendboise" check deployed the site.
+   - `main` has a new commit titled `data: nightly refine YYYY-MM-DD` that changes only `data/events.json`, `data/archive/`, `data/links.json`, `data/city-lookup.json`, and `data/meta.json`, and its "Workers Builds: weekendboise" check deployed the site.
    - The test workflow did not run for either commit.
 4. If a commit step fails with a permission error, recheck step 3.
 

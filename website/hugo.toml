@@ -20,8 +20,9 @@ disableKinds = ['taxonomy', 'term', 'rss', 'sitemap']
   [[module.mounts]]
     source = '../data'
     target = 'data'
-    # The raw file is ingest's input for refine, not something the site reads.
-    files = ['! raw-events.json']
+    # The raw file is ingest's input for refine, and city-lookup.json is refine's memory of the
+    # pages it read; the site reads neither.
+    files = ['! raw-events.json', '! city-lookup.json']
   # The source list, for the sources page and the header count.
   [[module.mounts]]
     source = '../ingestion/sources.json'

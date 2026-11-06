@@ -78,6 +78,21 @@ Describe 'Invoke-Ingest' {
     $script:sourcesPath = Write-Sources @(@{ name = 'alpha'; url = 'https://fail.test' })
     Invoke-TestIngest | Should -Be 1
     Test-Path -LiteralPath $rawPath | Should -BeFalse
+    # run.json is still written, so the report can say what failed.
+    $run = Get-Content (Join-Path $TestDrive 'out' 'run.json') -Raw | ConvertFrom-Json
+    $run.sources[0].status | Should -Be 'failed'
+    $run.finishedAt | Should -Not -BeNullOrEmpty
+  }
+
+  It 'records start, finish, and the raw file totals in run.json for the report' {
+    Invoke-TestIngest @{ AsOf = '2026-11-06T07:00:00Z' } | Should -Be 0
+    $run = Get-Content (Join-Path $TestDrive 'out' 'run.json') -Raw | ConvertFrom-Json -DateKind String
+    $run.startedAt | Should -Match '^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$'
+    $run.finishedAt | Should -Match '^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ$'
+    $run.finishedAt | Should -Not -BeLessThan $run.startedAt
+    $run.asOf | Should -BeExactly '2026-11-06T07:00:00Z'
+    $run.rawSources | Should -Be 2
+    $run.rawEvents | Should -Be 2
   }
 
   It 'drops a source that is no longer running' {

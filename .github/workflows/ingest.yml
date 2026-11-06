@@ -101,3 +101,15 @@ jobs:
       - name: Commit raw data
         run: |
           ./ingestion/scripts/Publish-Data.ps1 -Path data/raw-events.json -Message 'data: raw ingest' -SkipDeploy
+
+      # Always, so a failed run is emailed too. The address is a secret because the repo is public.
+      - name: Email the report
+        if: always()
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
+          JOB_STATUS: ${{ job.status }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          EVENT: ${{ github.event_name }}
+          SOURCE: ${{ inputs.source }}
+        run: ./ingestion/scripts/Send-Report.ps1 -Kind ingest

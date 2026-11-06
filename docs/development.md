@@ -8,7 +8,7 @@ Treasure Valley event aggregator. A nightly GitHub Actions workflow pulls events
 
 1. `ingestion/sources.json` lists each source and the adapter that reads it (ICS feed, The Events Calendar REST API, a ticketing API, or, for sites with no feed, a `robots.txt`-respecting scraper). [ingest-report.md](ingest-report.md) shows every source, its state, and the last run's results.
 2. **Ingest** (`ingestion/scripts/Invoke-Ingest.ps1`, midnight Boise time) runs every adapter, normalizes each event to the common schema, and stores what each source returned in `data/raw-events.json`, one entry per source. It does nothing else.
-3. **Refine** (`ingestion/scripts/Invoke-Refine.ps1`, started when ingest finishes, even if ingest failed) reads the raw file, dedupes across sources, fills in cities and cost guesses, checks event links, and writes `data/events.json` (upcoming only), `data/archive/YYYY-MM.json` (past events), `data/links.json`, and `data/meta.json`. It never fetches a source, so it can be rerun by hand as often as needed.
+3. **Refine** (`ingestion/scripts/Invoke-Refine.ps1`, started when ingest finishes, even if ingest failed) reads the raw file, dedupes across sources, fills in cities and cost guesses, looks up the city of events still stored as Other by reading their pages, checks event links, and writes `data/events.json` (upcoming only), `data/archive/YYYY-MM.json` (past events), `data/links.json`, `data/city-lookup.json`, and `data/meta.json`. It never fetches a source, so it can be rerun by hand as often as needed.
 4. Each workflow commits only the files it owns. Refine's commit deploys the site.
 
 **File ownership.** No file is written by both stages:
@@ -16,7 +16,7 @@ Treasure Valley event aggregator. A nightly GitHub Actions workflow pulls events
 | File | Written by |
 | --- | --- |
 | `data/raw-events.json` | ingest |
-| `data/events.json`, `data/archive/`, `data/links.json`, `data/meta.json` | refine |
+| `data/events.json`, `data/archive/`, `data/links.json`, `data/city-lookup.json`, `data/meta.json` | refine |
 | `data/schema/` | people, by hand |
 
 The raw file holds `asOf` (the scheduled midnight, or the time a manual run started) and, per source, its last good fetch: `{ "asOf": "...", "sources": { "<name>": { "fetchedAt": "...", "events": [...] } } }`. A source that fails keeps its last good entry, and a one-source run replaces only that source's entry and keeps `asOf`, so refine always sees every source. Refine copies `asOf` into `data/meta.json` as `lastIngest`, which is what the site's header shows. Events in the raw file are already normalized by the adapters (id, category, tags, size, the cost tier the source gave, and a description with prices removed), because prices must never be stored; refine adds `costGuess` and everything after.
@@ -30,6 +30,7 @@ data/                 the contract between ingestion and the website
   events.json         upcoming events
   archive/            past events by month
   links.json          link check state
+  city-lookup.json    the cities the city lookup found, by event page
   meta.json           the time of the last ingest, shown in the site's header
   schema/             lookup tables: categories, tags, sizes, venue aliases, cost rules
 ingestion/
@@ -55,14 +56,24 @@ Requires PowerShell 7.4 or later and Pester 6.0.0. Run everything from the repo 
 ./ingestion/scripts/Invoke-Ingest.ps1 -NoWrite               # fetch and report, don't write the raw file
 ./ingestion/scripts/Invoke-Ingest.ps1                        # fetch every source into data/raw-events.json
 ./ingestion/scripts/Invoke-Ingest.ps1 -Source idaho-steelheads   # one source, merged into the raw file
-./ingestion/scripts/Invoke-Refine.ps1 -SkipLinkCheck         # raw file to the site's files, no network at all
-./ingestion/scripts/Invoke-Refine.ps1                        # the same, with the link check
+./ingestion/scripts/Invoke-Refine.ps1 -SkipLinkCheck -SkipCityLookup   # raw file to the site's files, no network at all
+./ingestion/scripts/Invoke-Refine.ps1                        # the same, with the city lookup and link check
 ./ingestion/scripts/Invoke-Refine.ps1 -NoWrite               # see refine's counts, write nothing
 Invoke-Pester -Path ./ingestion/tests                        # run the tests
 hugo server -s website                                       # the site, at http://localhost:1313
 ```
 
 Refine drops events any source titles as canceled, and dedupes across sources (see `Merge-TvEvents` in `ingestion/scripts/lib/Dedupe.ps1`). It re-cleans every archive month with the same rules, so rerunning it applies a rule change everywhere without fetching anything; add `-NoWrite` to see the counts first. Both scripts take `-InputPath`/`-OutputPath` (refine) or `-RawPath` (ingest) to work on copies outside `data/`.
+
+### City lookup
+
+Some events reach refine with the city Other, nearly all from Boise Mom listings with no venue. After the text-based fill-in, refine reads their pages to find the city (`ingestion/scripts/lib/CityLookup.ps1`).
+
+- **How:** it reads the event page and uses its venue block or schema.org location if it has one, never the whole page: Boise Mom's footer says "Boise, ID" on every page. Otherwise it follows the page's "Website" link to the organizer's page, then that site's home page. It takes a city only when the page names exactly one, as "City, ID", "City, Idaho", or an Idaho ZIP code after the state; a page that names two (Meriwether Cider writes "Boise, ID 83714", a Garden City ZIP code) leaves the event as Other.
+- **What it skips:** social networks and chain stores (Facebook, Instagram, Home Depot, Lowe's, JCPenney, and others in `$script:TvCityLookupSkipHosts`) are never requested, because their pages can't say which store or place.
+- **Politeness:** the same rules as the link check: robots.txt first, a disallowed page is never requested, 1 second between requests to a host or its Crawl-delay, and at most `-CityBudgetSeconds` (default 180) per run.
+- **Memory:** results go in `data/city-lookup.json` by event page, with the organizer link and the time checked. A found city is reused for 30 days and a miss is retried after 7, so most nights need few requests. On 2026-11-06 the first run placed 36 of 72 events (26 at the Garden City library) with 95 requests in about 2 minutes.
+- **Skipping it:** `-SkipCityLookup`, or the "Skip the city lookup" box on a manual refine run, makes no requests but still applies the cities already found.
 
 ### Link check
 
@@ -75,19 +86,25 @@ After the merge, refine checks the event links that are due (`ingestion/scripts/
 - **Where to look:** each refine lists every link it checked in `out/links.json` and adds counts to `out/refine.json`. The refine run's GitHub Actions summary has a "Broken links" section grouped by source, new breaks first. The state is `data/links.json`, committed by refine.
 - **Limits:** `-NoWrite` and `-SkipLinkCheck` make no link requests but still apply what `data/links.json` already knows.
 
-API keys are read from environment variables only. Copy `ingestion/.env.example.ps1` to `ingestion/.env.ps1` and fill in real values. `.env.ps1` and `.secrets.local.md` are gitignored; this repo is public, so never commit them. Sources whose key is missing fail with a warning and the rest still run. Only ingest needs keys; refine uses none. Raw per-source output and `run.json` (ingest) and `refine.json` and `links.json` (refine) go to `out/`, which is also gitignored.
+API keys are read from environment variables only. Copy `ingestion/.env.example.ps1` to `ingestion/.env.ps1` and fill in real values. `.env.ps1` and `.secrets.local.md` are gitignored; this repo is public, so never commit them. Sources whose key is missing fail with a warning and the rest still run. Only ingest needs source keys; refine uses none, and both use the Resend key only to email their report. Raw per-source output and `run.json` (ingest) and `refine.json` and `links.json` (refine) go to `out/`, which is also gitignored.
 
 ## Nightly workflows
 
 - **When:** `.github/workflows/ingest.yml` runs at midnight Boise time on the default branch. Cron is UTC and daylight saving moves Boise between UTC-6 and UTC-7, so it schedules both candidate UTC hours (06:00 and 07:00) and a first job, `ingestion/scripts/Test-BoiseHour.ps1 -Hour 0`, skips the one that isn't midnight in Boise that day. `.github/workflows/refine.yml` has no cron: it starts with `workflow_run` each time an ingest run on `main` completes, scheduled or manual, **whether ingest succeeded or failed**, so past events still move to the archive and links still get checked when every source is down. Its first job, `ingestion/scripts/Test-IngestRan.ps1`, reads the ingest run's jobs through the GitHub API and skips the run whose ingest job was skipped (the cron line that wasn't midnight), so refine runs once a night. Both share the concurrency group `data`, so a manual refine waits for a running ingest rather than racing it.
 - **The header time:** GitHub often starts scheduled runs late, so a scheduled ingest passes `-AsOf` with the scheduled midnight and the site's header reads 12:00 AM; a manual full ingest records the time it ran, and a one-source ingest keeps the time already there. Refine copies it unchanged.
 - **Ingest** fetches, uploads `out/` as the `out` artifact, then `Publish-Data.ps1` commits `data/raw-events.json` alone, with `[skip ci]` so Cloudflare doesn't deploy a commit the site doesn't read. Run it by hand from Actions > ingest > Run workflow, with an optional `source` input to fetch one source.
-- **Refine** checks out the head of `main`, so it sees the raw file ingest just committed, logs the raw file's `asOf` and source count, and fails with a clear message if there is no raw file. It doesn't depend on ingest succeeding: it uses whatever raw file is committed. It uploads `out/` as the `refine-out` artifact, then commits `data/events.json`, `data/archive/`, `data/links.json`, and `data/meta.json` without `[skip ci]`, which deploys the site. **To rerun it by hand** (after changing a merge, city, or cost rule): Actions > refine > Run workflow, optionally ticking "Skip the link check". No source is fetched.
+- **Refine** checks out the head of `main`, so it sees the raw file ingest just committed, logs the raw file's `asOf` and source count, and fails with a clear message if there is no raw file. It doesn't depend on ingest succeeding: it uses whatever raw file is committed. It uploads `out/` as the `refine-out` artifact, then commits `data/events.json`, `data/archive/`, `data/links.json`, `data/city-lookup.json`, and `data/meta.json` without `[skip ci]`, which deploys the site. **To rerun it by hand** (after changing a merge, city, or cost rule): Actions > refine > Run workflow, optionally ticking "Skip the link check" or "Skip the city lookup". No source is fetched.
 - Both commit as "WeekendBoise bot" and push to the branch the run started on. The test workflow doesn't run on those commits, because GitHub never starts workflows from a push made with the workflow's `GITHUB_TOKEN`.
-- **Deploying:** Cloudflare Workers Builds is connected to this repo as the `weekendboise` Worker, with `website/` as its root. `website/wrangler.jsonc` runs `build.sh`, which installs Hugo and builds the site, then the build output in `website/public` is deployed. Every push to `main` deploys, including refine's data commit. A deploy shows as the "Workers Builds: weekendboise" check on the commit in GitHub. Cloudflare skips any commit whose message contains `[skip ci]`, so leave it out of commits that should reach the site. The site doesn't read `data/raw-events.json`: `website/hugo.toml` leaves it out of the data mount.
+- **Deploying:** Cloudflare Workers Builds is connected to this repo as the `weekendboise` Worker, with `website/` as its root. `website/wrangler.jsonc` runs `build.sh`, which installs Hugo and builds the site, then the build output in `website/public` is deployed. Every push to `main` deploys, including refine's data commit. A deploy shows as the "Workers Builds: weekendboise" check on the commit in GitHub. Cloudflare skips any commit whose message contains `[skip ci]`, so leave it out of commits that should reach the site. The site doesn't read `data/raw-events.json` or `data/city-lookup.json`: `website/hugo.toml` leaves them out of the data mount.
 - `.github/workflows/test.yml` runs the Pester tests on every push and pull request and uploads `testResults.xml`.
 
-Create these repository secrets (Settings > Secrets and variables > Actions). Only `TICKETMASTER_KEY` is needed today; the others are for sources that are built but not running yet. An unset secret reaches the scripts as empty. Only the ingest workflow is given them.
+- **Report emails:** each workflow's last step, "Email the report", runs even when an earlier step failed. `ingestion/scripts/Send-Report.ps1` builds a summary and sends it with the Resend API to `REPORT_EMAIL`.
+  - **Ingest's email:** start, finish, and duration; sources that failed, with their page and error (such as `HTTP 405`); sources that succeeded with no events; warnings; events per source; and the sources not running yet (ready, investigating, ideas).
+  - **Refine's email:** the same basics, the raw file totals, upcoming and archived counts, cities filled in, link check counts, broken links grouped by source (new ones marked), and events by category and source.
+  - **Resend:** without a verified domain, it sends from `onboarding@resend.dev`, and only to the address the account was created with. A failed send fails the step.
+  - **Previewing locally:** `./ingestion/scripts/Send-Report.ps1 -Kind ingest -PreviewPath ./out/report` writes `out/report.txt` and `.html`, and sends nothing unless both secrets are set as environment variables.
+
+Create these repository secrets (Settings > Secrets and variables > Actions). Only `TICKETMASTER_KEY` is needed for sources today; the other API keys are for sources that are built but not running yet. An unset secret reaches the scripts as empty. Only the ingest step gets the API keys; both workflows' email steps get `RESEND_API_KEY` and `REPORT_EMAIL`, which is kept as a secret so the address stays out of this public repo.
 
 | Secret | Used by |
 | --- | --- |
@@ -96,6 +113,8 @@ Create these repository secrets (Settings > Secrets and variables > Actions). On
 | `EVENTBRITE_TOKEN` | Eventbrite (disabled) |
 | `SEATGEEK_CLIENT_ID` | SeatGeek (disabled) |
 | `SONGKICK_API_KEY` | Songkick (disabled) |
+| `RESEND_API_KEY` | The report emails, both workflows |
+| `REPORT_EMAIL` | Where the report emails go, both workflows |
 
 First-time setup in the GitHub UI is in [github-setup.md](github-setup.md).
 

@@ -101,9 +101,14 @@ foreach ($entry in $selected) {
 }
 
 $null = New-Item -ItemType Directory -Force -Path $outPath
+$stamp = { [DateTimeOffset]::UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'", [Globalization.CultureInfo]::InvariantCulture) }
+$writeLog = { [IO.File]::WriteAllText((Join-Path $outPath 'run.json'), (($log | ConvertTo-Json -Depth 5) -replace "`r`n", "`n") + "`n") }
+# startedAt and finishedAt are for the report email. The raw file totals are added at the end.
 $log = [ordered]@{
-  fetchedAt = $fetchedAt
-  noWrite   = [bool]$NoWrite
+  startedAt  = $fetchedAt
+  finishedAt = & $stamp
+  fetchedAt  = $fetchedAt
+  noWrite    = [bool]$NoWrite
   sources   = @($results | ForEach-Object {
       [ordered]@{
         name     = $_.Name
@@ -115,7 +120,7 @@ $log = [ordered]@{
       }
     })
 }
-[IO.File]::WriteAllText((Join-Path $outPath 'run.json'), (($log | ConvertTo-Json -Depth 5) -replace "`r`n", "`n") + "`n")
+& $writeLog
 
 $display = @(@{ Name = 'Source'; Expression = { $_.Name } }, 'Fetched', 'Status', 'Duration', @{ Name = 'Warnings'; Expression = { @($_.Warnings).Count } })
 $results | Format-Table $display | Out-String | Write-Host
@@ -132,5 +137,10 @@ $raw = Update-TvRawFile $previous -Results $results -Keep $keep -AsOf $asOfValue
 if (-not $NoWrite) { Write-TvRawFile $rawFile $raw }
 
 $stored = @(Get-TvRawEvents $raw).Count
+$log.finishedAt = & $stamp
+$log.asOf = $asOfValue
+$log.rawSources = @($raw.sources.PSObject.Properties).Count
+$log.rawEvents = $stored
+& $writeLog
 Write-Host "$($results.Count - $failed) of $($results.Count) sources succeeded, raw file holds $(@($raw.sources.PSObject.Properties).Count) sources and $stored events, asOf $asOfValue$($NoWrite ? ' (not written)' : '')"
 exit 0

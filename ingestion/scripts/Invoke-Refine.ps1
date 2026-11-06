@@ -11,11 +11,14 @@
     raw file keeps its stored upcoming events;
   - fills in cities for events stored as Other when their own text says where they are
     (Resolve-TvOtherCity), and cost tier guesses for events no source priced (Set-TvCostGuess);
+  - for upcoming events still stored as Other, reads the event page and the organizer site its
+    Website link points to (lib/CityLookup.ps1), unless -SkipCityLookup, remembering what it
+    found in city-lookup.json;
   - re-cleans every archive month the same way, and appends past events to it;
   - runs the link check (lib/Links.ps1), unless -SkipLinkCheck, and marks events whose link is
     gone with linkBroken;
-  - writes events.json, archive/YYYY-MM.json, links.json, and meta.json (the raw file's asOf, as
-    lastIngest) next to OutputPath, and refine.json and links.json to OutDir.
+  - writes events.json, archive/YYYY-MM.json, links.json, city-lookup.json, and meta.json (the raw
+    file's asOf, as lastIngest) next to OutputPath, and refine.json and links.json to OutDir.
 
   Running it again over the same raw file is safe, so it can be rerun by hand as the rules change.
 .PARAMETER InputPath
@@ -25,6 +28,10 @@
   Defaults to data/events.json.
 .PARAMETER SkipLinkCheck
   Make no link requests. Known link results from links.json still apply. -NoWrite implies it.
+.PARAMETER SkipCityLookup
+  Read no pages to find cities. Cities already in city-lookup.json still apply. -NoWrite implies it.
+.PARAMETER CityBudgetSeconds
+  How long the city lookup may spend making requests. Pages left over wait for a later run.
 .PARAMETER NoWrite
   Do everything and report, but write nothing to the data folder.
 .PARAMETER OutDir
@@ -43,25 +50,31 @@ param(
   [string]$InputPath = (Join-Path $PSScriptRoot '..' '..' 'data' 'raw-events.json'),
   [string]$OutputPath = (Join-Path $PSScriptRoot '..' '..' 'data' 'events.json'),
   [switch]$SkipLinkCheck,
+  [switch]$SkipCityLookup,
   [switch]$NoWrite,
   [string]$OutDir = './out',
   [int]$Days = 180,
   [int]$LinkBudgetSeconds = 900,
+  [int]$CityBudgetSeconds = 180,
   [string]$SourcesPath = (Join-Path $PSScriptRoot '..' 'sources.json'),
   [DateTimeOffset]$Now = [DateTimeOffset]::UtcNow
 )
 
 $ErrorActionPreference = 'Stop'
+$stamp = { [DateTimeOffset]::UtcNow.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'", [Globalization.CultureInfo]::InvariantCulture) }
+$startedAt = & $stamp
 
 . (Join-Path $PSScriptRoot 'lib' 'Raw.ps1')
 . (Join-Path $PSScriptRoot 'lib' 'Cities.ps1')
 . (Join-Path $PSScriptRoot 'lib' 'Links.ps1')
+. (Join-Path $PSScriptRoot 'lib' 'CityLookup.ps1')
 
 $rawFile = [IO.Path]::GetFullPath($InputPath, $PWD.Path)
 $dataPath = [IO.Path]::GetFullPath($OutputPath, $PWD.Path)
 $dataDir = Split-Path -Parent $dataPath
 $archiveDir = Join-Path $dataDir 'archive'
 $linksPath = Join-Path $dataDir 'links.json'
+$cityLookupPath = Join-Path $dataDir 'city-lookup.json'
 $metaPath = Join-Path $dataDir 'meta.json'
 $outPath = [IO.Path]::GetFullPath($OutDir, $PWD.Path)
 
@@ -119,6 +132,17 @@ foreach ($file in $months) {
   }
 }
 
+# Find cities for upcoming events still stored as Other by reading their pages. Like the link
+# check, a failure only warns, and known cities still apply when no requests are made.
+$cityState = Read-TvCityLookupState $cityLookupPath
+$cityBudget = if ($SkipCityLookup -or $NoWrite) { 0 } else { $CityBudgetSeconds }
+$lookup = try {
+  Invoke-TvCityLookup $upcoming -State $cityState -Now $Now -BudgetSeconds $cityBudget
+} catch {
+  Write-Warning "City lookup failed, events keep their stored cities: $_"
+  [pscustomobject]@{ State = $cityState; Others = 0; Pages = 0; Requests = 0; Found = 0; Errors = @("$_") }
+}
+
 # Check the links that are due, then mark every upcoming event from what is known.
 $linkState = Read-TvLinkState $linksPath
 $linkBudget = if ($SkipLinkCheck -or $NoWrite) { 0 } else { $LinkBudgetSeconds }
@@ -134,6 +158,7 @@ if (-not $NoWrite) {
   Add-TvArchive $archiveDir $past -Priorities $priorities
   Write-TvEventFile $dataPath $upcoming
   Write-TvLinkState $linksPath $links.State
+  Write-TvCityLookupState $cityLookupPath $lookup.State
   # Read by the website for its "as of" time: the time ingest ran for, not the time refine ran.
   [IO.File]::WriteAllText($metaPath, (([ordered]@{ lastIngest = $raw.asOf } | ConvertTo-Json) -replace "`r`n", "`n") + "`n", [Text.UTF8Encoding]::new($false))
 }
@@ -149,12 +174,26 @@ $countBy = {
 $published = [ordered]@{}
 foreach ($name in $refreshed) { $published[$name] = @($upcoming | Where-Object { $name -in @($_.sources.name) }).Count }
 $report = [ordered]@{
-  asOf        = $raw.asOf
-  refinedAt   = $Now.UtcDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'", [Globalization.CultureInfo]::InvariantCulture)
-  noWrite     = [bool]$NoWrite
+  # startedAt and finishedAt are clock times for the report email; refinedAt is -Now.
+  startedAt     = $startedAt
+  finishedAt    = & $stamp
+  asOf          = $raw.asOf
+  refinedAt     = $Now.UtcDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss'Z'", [Globalization.CultureInfo]::InvariantCulture)
+  noWrite       = [bool]$NoWrite
+  skipLinkCheck = [bool]($SkipLinkCheck -or $NoWrite)
+  rawSources    = $refreshed.Count
+  rawEvents     = $rawEvents.Count
   upcoming    = $upcoming.Count
   past        = $past.Count
   cityFixes   = $cityFixes
+  cityLookup  = [ordered]@{
+    skipped  = [bool]($SkipCityLookup -or $NoWrite)
+    others   = $lookup.Others
+    pages    = $lookup.Pages
+    requests = $lookup.Requests
+    found    = $lookup.Found
+    errors   = @($lookup.Errors)
+  }
   costGuesses = $costGuesses
   categories  = & $countBy 'category'
   sizes       = & $countBy 'size'
