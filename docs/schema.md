@@ -15,8 +15,7 @@
 | `category` | string | yes | One id from `data/schema/categories.json` |
 | `tags` | array | no | Zero or more ids from `data/schema/tags.json` |
 | `size` | string | no | Estimated crowd: `S`, `M`, `L`, or `XL`. A guess, see below |
-| `cost` | string | no | Rough cost tier from the source's own price data or the event text: `free`, `$`, `$$`, or `$$$`. See below |
-| `costGuess` | string | no | Rough cost tier from the rules in `data/schema/costs.json`, only when `cost` is unknown. Recomputed every run |
+| `costTier` | string | no | `free`, `$`, `$$`, or `$$$`, from the cheapest adult ticket. Left out when the price is unknown. See below |
 | `url` | string | yes | Canonical event page, from the source with the best `priority` |
 | `description` | string | no | Plain text, at most 300 characters |
 | `linkBroken` | boolean | no | Set by the nightly link check when `url` is gone and no other source's link works. See below |
@@ -34,15 +33,15 @@ Stored data stays minimal because event data belongs to the publishers: no image
 
 ## Cost tiers
 
-Free is $0, `$` is under $25, `$$` is $25 to $99, and `$$$` is $100 or more. When a source gives a range, the lowest price decides. The site shows `$`, `$$` and `$$$`; free and unknown both show nothing, and its "Free or unknown" filter covers both.
+The rules are in [cost-tiers.md](cost-tiers.md): free is $0, and the breakpoints (`$CostTierBreakpoints` in `ingestion/scripts/lib/Cost.ps1`, $15 and $40 as of 2026-11-06) split `$`, `$$`, and `$$$`. `Get-CostTier` is the only function that turns a price into a tier. The site shows `Free`, `$`, `$$`, or `$$$` and leaves unknown blank.
 
-`cost` comes from, in order:
+The price (`priceMin`, the cheapest adult ticket, face value) comes from, in order, and is never stored:
 
-1. The source's price data: Ticketmaster `priceRanges`, the tribe and calendarapp `cost` text, schema.org `offers` (a price of 0 is ignored there, since sites use it as a placeholder), SeatGeek `lowest_price`, and the Eventbrite event page.
-2. The `free-admission` tag, which means free.
-3. The lowest dollar amount in the description, read before it is removed.
+1. The source's price data: Ticketmaster `priceRanges` (face value ranges before ranges that include fees), the tribe and calendarapp `cost` text (`ConvertFrom-TvPriceText`), schema.org `offers` (a price of 0 is ignored there, since sites use it as a placeholder), SeatGeek `lowest_price`, and the Eventbrite event page.
+2. The `free-admission` tag, which means 0.
+3. The description's price text, read before its price sentences are removed. In prose only phrases like "free admission" count as free.
 
-When duplicates merge, the best source keeps its own `cost`, and a duplicate's `cost` fills in when the best source has none. `costGuess` is set after the merge from `data/schema/costs.json`: by source, then by venue (optionally only for some categories), then by tag, then by category. It never overrides `cost`, so a guess can't beat real price data. Refine (`Invoke-Refine.ps1`) sets it on every run, so rerunning refine recomputes it over stored events.
+When duplicates merge, the best source keeps its own `costTier`, and a duplicate's fills in when the best source has none. Nothing is guessed: an event with no price is unknown. Events stored before 2026-11-06 carried `cost` and `costGuess`; refine moves them to `costTier` (see cost-tiers.md, Backfill).
 
 ## Link check
 

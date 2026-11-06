@@ -59,7 +59,7 @@ foreach ($item in ($pages | ForEach-Object { $_.events } | Where-Object { $_ }))
     New-TvEvent -Title (ConvertTo-PlainText $item.title) -Start $start -End $end -AllDay:$allDay `
       -Venue ($name ? $name : $Source.venue) -VenueKey ($name ? (Get-VenueKey $name) : $Source.venueKey) -City $city `
       -Category $Source.category -InferCategory:([bool]$Source.inferCategory) -Labels @($item.categories.name) -Url $url -Description $item.description `
-      -Cost (ConvertFrom-TvCostText (ConvertTo-PlainText $item.cost)) -Sources @(@{ name = $Source.name; url = $url; fetchedAt = $FetchedAt })
+      -PriceMin (ConvertFrom-TvPriceText (ConvertTo-PlainText $item.cost)) -Sources @(@{ name = $Source.name; url = $url; fetchedAt = $FetchedAt })
   } catch {
     Write-Warning "$($Source.name): skipping '$($item.title)': $_"
   }

@@ -10,6 +10,17 @@
 {{- $lastIngest := "" }}
 {{- with hugo.Data.meta }}{{ $lastIngest = .lastIngest }}{{ end }}
 
+{{- /* Cost tier ranges, from the breakpoints refine copies into meta.json from Cost.ps1, the one
+     place they are set. Before the first refine writes them, the filter and legend show tiers only. */}}
+{{- $costRange := dict "free" "" "1" "" "2" "" "3" "" }}
+{{- $costLegend := "" }}
+{{- with (hugo.Data.meta).costTierBreakpoints }}
+  {{- $low := printf "$%v" .low }}
+  {{- $high := printf "$%v" .high }}
+  {{- $costRange = dict "free" " (no charge)" "1" (printf " (under %s)" $low) "2" (printf " (%s to under %s)" $low $high) "3" (printf " (%s or more)" $high) }}
+  {{- $costLegend = printf "Cheapest adult ticket, before fees. Free: no charge. $: under %s. $$: %s to under %s. $$$: %s or more. Blank: unknown." $low $low $high $high }}
+{{- end }}
+
 {{- /* A slimmer copy of events.json for the browser: short keys, only the fields the page uses. */}}
 {{- $list := slice }}
 {{- range hugo.Data.events }}
@@ -23,7 +34,7 @@
     "k" (.category | default "")
     "g" (.tags | default slice)
     "z" (.size | default "")
-    "p" (.cost | default (.costGuess | default ""))
+    "p" (.costTier | default "")
     "x" (.linkBroken | default false)
     "u" (.url | default "")
     "d" (.description | default "")
@@ -87,10 +98,10 @@
         <span class="label">Cost</span>
         <select id="cost">
           <option value="">Any cost</option>
-          <option value="free">Free or unknown</option>
-          <option value="1">$ (under $25)</option>
-          <option value="2">$$ ($25 to $99)</option>
-          <option value="3">$$$ ($100 or more)</option>
+          <option value="free">Free{{ index $costRange "free" }}</option>
+          <option value="1">${{ index $costRange "1" }}</option>
+          <option value="2">$${{ index $costRange "2" }}</option>
+          <option value="3">$$${{ index $costRange "3" }}</option>
         </select>
       </label>
       <button id="reset" class="btn" type="button">Reset</button>
@@ -121,7 +132,7 @@
           <th scope="col" data-sort="city"><button type="button">City</button></th>
           <th scope="col">Category</th>
           <th scope="col" title="Estimated crowd size">Size</th>
-          <th scope="col" title="Rough cost of a ticket">Cost</th>
+          <th scope="col"{{ with $costLegend }} title="{{ . }}"{{ end }}>Cost</th>
         </tr>
       </thead>
       <tbody id="rows"></tbody>
@@ -133,6 +144,9 @@
 
 <footer class="wrap foot">
   <p>Every listing links to the organizer's own page. Collected nightly from public calendars and APIs by <a href="https://github.com/rhundhausen/weekendboise">WeekendBoise</a>.</p>
+  {{- with $costLegend }}
+  <p class="cost-legend">Cost: {{ . }}</p>
+  {{- end }}
 </footer>
 
 <script type="application/json" id="tv-config">{{ $cfg | jsonify | safeJS }}</script>

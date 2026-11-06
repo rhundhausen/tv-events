@@ -10,7 +10,8 @@
     fetchedAt. Past events stay so they can be archived. A running source with no entry in the
     raw file keeps its stored upcoming events;
   - fills in cities for events stored as Other when their own text says where they are
-    (Resolve-TvOtherCity), and cost tier guesses for events no source priced (Set-TvCostGuess);
+    (Resolve-TvOtherCity), and moves events stored before cost tiers changed to costTier
+    (Update-TvLegacyCost);
   - for upcoming events still stored as Other, reads the event page and the organizer site its
     Website link points to (lib/CityLookup.ps1), unless -SkipCityLookup, remembering what it
     found in city-lookup.json;
@@ -95,13 +96,15 @@ foreach ($entry in $allSources) {
 
 $existing = @(Read-TvEventFile $dataPath)
 $carried = @(Get-CarriedTvEvents $existing -Refreshed $refreshed -Enabled $running -Now $Now)
+# Events stored before the cost tier change carry cost and costGuess; move them to costTier
+# before the merge compares tiers. A no-op once every stored file has been rewritten.
+$legacyCosts = Update-TvLegacyCost (@($rawEvents) + $carried)
 $merged = @(Merge-TvEvents (@($rawEvents) + $carried) -Priorities $priorities -DropCanceled)
 Restore-TvFetchedAt $merged $existing
 
 $months = @(if (Test-Path -LiteralPath $archiveDir) { Get-ChildItem -LiteralPath $archiveDir -Filter '*.json' | Sort-Object Name })
 $archived = @($months | ForEach-Object { Read-TvEventFile $_.FullName })
 $cityFixes = Resolve-TvOtherCity $merged -Known $archived
-$costGuesses = Set-TvCostGuess $merged
 
 # Each event was valid when built, so a failure here is a merge bug. Never store one.
 $merged = @($merged | Where-Object {
@@ -119,11 +122,11 @@ $archiveBefore = 0
 $archiveAfter = 0
 foreach ($file in $months) {
   $stored = @(Read-TvEventFile $file.FullName)
+  $monthCosts = Update-TvLegacyCost $stored
   $cleaned = @(Merge-TvEvents $stored -Priorities $priorities -DropCanceled)
   $monthCities = Resolve-TvOtherCity $cleaned -Known $archived
-  $monthCosts = Set-TvCostGuess $cleaned
   $cityFixes += $monthCities
-  $costGuesses += $monthCosts
+  $legacyCosts += $monthCosts
   $archiveBefore += $stored.Count
   $archiveAfter += $cleaned.Count
   if (-not $NoWrite -and ($cleaned.Count -ne $stored.Count -or $monthCities -gt 0 -or $monthCosts -gt 0)) {
@@ -160,7 +163,12 @@ if (-not $NoWrite) {
   Write-TvLinkState $linksPath $links.State
   Write-TvCityLookupState $cityLookupPath $lookup.State
   # Read by the website for its "as of" time: the time ingest ran for, not the time refine ran.
-  [IO.File]::WriteAllText($metaPath, (([ordered]@{ lastIngest = $raw.asOf } | ConvertTo-Json) -replace "`r`n", "`n") + "`n", [Text.UTF8Encoding]::new($false))
+  # The cost tier breakpoints too, so the site's legend comes from the same config block as the tiers.
+  $meta = [ordered]@{
+    lastIngest          = $raw.asOf
+    costTierBreakpoints = [ordered]@{ low = $script:CostTierBreakpoints.Low; high = $script:CostTierBreakpoints.High }
+  }
+  [IO.File]::WriteAllText($metaPath, (($meta | ConvertTo-Json) -replace "`r`n", "`n") + "`n", [Text.UTF8Encoding]::new($false))
 }
 
 $null = New-Item -ItemType Directory -Force -Path $outPath
@@ -194,7 +202,9 @@ $report = [ordered]@{
     found    = $lookup.Found
     errors   = @($lookup.Errors)
   }
-  costGuesses = $costGuesses
+  # Upcoming events per tier, so each run's email shows what the breakpoints do.
+  costTiers   = Get-TvCostTierCounts $upcoming
+  legacyCosts = $legacyCosts
   categories  = & $countBy 'category'
   sizes       = & $countBy 'size'
   links       = [ordered]@{
@@ -209,4 +219,4 @@ if ($env:GITHUB_STEP_SUMMARY) {
   Add-Content -LiteralPath $env:GITHUB_STEP_SUMMARY -Value (ConvertTo-TvLinkSummary $links.Broken -Checked $links.Checked.Count)
 }
 
-Write-Host "Refine: $($upcoming.Count) upcoming, $($past.Count) past to the archive (archive $archiveBefore -> $archiveAfter before this run's additions), $cityFixes cities filled in, $costGuesses cost guesses changed, $($links.Checked.Count) links checked, $($links.Broken.Count) broken ($(@($links.Broken | Where-Object new).Count) new)$($NoWrite ? ' (not written)' : '')"
+Write-Host "Refine: $($upcoming.Count) upcoming, $($past.Count) past to the archive (archive $archiveBefore -> $archiveAfter before this run's additions), $cityFixes cities filled in, $legacyCosts events moved to costTier, $($links.Checked.Count) links checked, $($links.Broken.Count) broken ($(@($links.Broken | Where-Object new).Count) new)$($NoWrite ? ' (not written)' : '')"

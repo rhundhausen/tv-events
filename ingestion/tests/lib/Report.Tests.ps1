@@ -98,7 +98,8 @@ Describe 'New-TvRefineReport' {
   BeforeAll {
     $refine = [pscustomobject]@{
       startedAt = '2026-11-07T07:06:00Z'; finishedAt = '2026-11-07T07:22:30Z'; asOf = '2026-11-07T07:00:00Z'
-      rawSources = 40; rawEvents = 4997; upcoming = 2745; past = 31; cityFixes = 4; costGuesses = 12
+      rawSources = 40; rawEvents = 4997; upcoming = 2745; past = 31; cityFixes = 4
+      costTiers = [pscustomobject]@{ free = 700; '$' = 300; '$$' = 250; '$$$' = 95; unknown = 1400 }
       archiveMonths = 2; skipLinkCheck = $false
       cityLookup = [pscustomobject]@{ skipped = $false; others = 72; pages = 40; requests = 61; found = 27; errors = @('https://x.test/e : HTTP 404 from https://x.test/e') }
       categories = [pscustomobject]@{ music = 900; sports = 300 }
@@ -124,6 +125,7 @@ Describe 'New-TvRefineReport' {
     $report.Text | Should -Match 'Duration: +16m 30s'
     $report.Text | Should -Match 'Raw file: +40 sources, 4997 events, as of Nov 7, 2026 12:00:00 AM MST'
     $report.Text | Should -Match 'Cities filled in: +4'
+    $report.Text | Should -Match 'Cost tiers: +Free 700, \$ 300, \$\$ 250, \$\$\$ 95, unknown 1400'
     $report.Text | Should -Match 'City lookup: +27 of 72 Other events placed, 40 pages read'
     $report.Text | Should -Match '(?s)City lookup errors.*HTTP 404 from https://x\.test/e'
     $report.Text | Should -Match 'Links checked: +812'

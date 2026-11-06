@@ -117,7 +117,7 @@ Describe 'seatgeek adapter' {
   }
 
   It 'reads the cost tier from the lowest price' {
-    ($events | Where-Object title -eq 'Example Band').cost | Should -BeExactly '$$'
+    ($events | Where-Object title -eq 'Example Band').costTier | Should -BeExactly '$$$'
   }
 
   It 'reads an event in Boise time and maps its type' {

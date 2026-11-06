@@ -37,9 +37,9 @@ Describe 'scrape adapter, jsonld from the list page' {
   It 'reads a price from the offers, and ignores a price of 0, which sites use as a placeholder' {
     $html = { param($offers) "<script type=`"application/ld+json`">{`"@type`":`"Event`",`"name`":`"Priced Show`",`"startDate`":`"2026-11-20T19:00:00-07:00`",`"location`":{`"name`":`"Test Hall`"},`"offers`":$offers}</script>" }
     $source = Get-TestSource 'visit-boise'
-    (& $adapter -Source $source -FetchedAt $fetchedAt -Response (& $html '{"price":"45","priceCurrency":"USD"}')).cost | Should -BeExactly '$$'
-    (& $adapter -Source $source -FetchedAt $fetchedAt -Response (& $html '[{"lowPrice":12,"highPrice":30}]')).cost | Should -BeExactly '$'
-    (& $adapter -Source $source -FetchedAt $fetchedAt -Response (& $html '{"price":"0"}')).PSObject.Properties.Name | Should -Not -Contain 'cost'
+    (& $adapter -Source $source -FetchedAt $fetchedAt -Response (& $html '{"price":"45","priceCurrency":"USD"}')).costTier | Should -BeExactly '$$$'
+    (& $adapter -Source $source -FetchedAt $fetchedAt -Response (& $html '[{"lowPrice":12,"highPrice":30}]')).costTier | Should -BeExactly '$'
+    (& $adapter -Source $source -FetchedAt $fetchedAt -Response (& $html '{"price":"0"}')).PSObject.Properties.Name | Should -Not -Contain 'costTier'
   }
 
   It 'corrects times written as UTC, matching what the site displays' {
@@ -289,7 +289,7 @@ Describe 'scrape adapter, calendarapp' {
   }
 
   It 'reads the cost tier from the cost text' {
-    $events[0].cost | Should -BeExactly 'free'
+    $events[0].costTier | Should -BeExactly 'free'
   }
 
   It 'reads start and end as Boise wall-clock time' {

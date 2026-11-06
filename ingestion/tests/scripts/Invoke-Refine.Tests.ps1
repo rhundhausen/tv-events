@@ -47,7 +47,7 @@ Describe 'Invoke-Refine' {
     { Invoke-TestRefine } | Should -Throw '*raw-events.json*ingest*'
   }
 
-  It 'merges the sources, copies asOf to meta.json, and adds cost guesses' {
+  It 'merges the sources, copies asOf and the cost tier breakpoints to meta.json, and guesses no cost' {
     Write-TestRaw @{
       'nampa-public-library' = @(New-TestEvent -Source 'nampa-public-library' -Url 'https://nampa.test/show'), (New-TestEvent -Title 'Story Time' -Source 'nampa-public-library' -Url 'https://nampa.test/story')
       beta                   = @(New-TestEvent)
@@ -58,8 +58,31 @@ Describe 'Invoke-Refine' {
     $show = $events | Where-Object title -eq 'Show'
     @($show.sources.name) | Should -Be @('beta', 'nampa-public-library')
     $show.url | Should -Be 'https://beta.test/show'
-    ($events | Where-Object title -eq 'Story Time').costGuess | Should -BeExactly 'free'
-    (Get-Content (Join-Path $dir 'meta.json') -Raw | ConvertFrom-Json -DateKind String).lastIngest | Should -BeExactly '2026-11-15T07:00:00Z'
+    $story = $events | Where-Object title -eq 'Story Time'
+    $story.PSObject.Properties.Name | Should -Not -Contain 'costGuess'
+    $story.PSObject.Properties.Name | Should -Not -Contain 'costTier'
+    $meta = Get-Content (Join-Path $dir 'meta.json') -Raw | ConvertFrom-Json -DateKind String
+    $meta.lastIngest | Should -BeExactly '2026-11-15T07:00:00Z'
+    $meta.costTierBreakpoints.low | Should -Be 15
+    $meta.costTierBreakpoints.high | Should -Be 40
+  }
+
+  It 'moves events stored with the old cost fields to costTier, and counts the tiers' {
+    $old = New-TestEvent -Title 'Old Gala'
+    $old | Add-Member -NotePropertyName cost -NotePropertyValue '$$$'
+    $guessed = New-TestEvent -Title 'Old Guess' -Url 'https://beta.test/guess'
+    $guessed | Add-Member -NotePropertyName costGuess -NotePropertyValue 'free'
+    Write-TestRaw @{ beta = @($old, $guessed) }
+    Invoke-TestRefine
+    $events = @(Read-TvEventFile $eventsPath)
+    ($events | Where-Object title -eq 'Old Gala').costTier | Should -BeExactly '$$$'
+    foreach ($event in $events) {
+      $event.PSObject.Properties.Name | Should -Not -Contain 'cost'
+      $event.PSObject.Properties.Name | Should -Not -Contain 'costGuess'
+    }
+    $report = Get-Content (Join-Path $dir 'out' 'refine.json') -Raw | ConvertFrom-Json
+    $report.costTiers.'$$$' | Should -Be 1
+    $report.costTiers.unknown | Should -Be 1
   }
 
   It 'breaks a priority tie by sources.json order, not by name' {

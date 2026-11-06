@@ -354,9 +354,9 @@ input:focus-visible, select:focus-visible, button:focus-visible {
   background: var(--surface-2);
   border: 1px solid var(--border);
   color: var(--text);
-  cursor: help;
 }
 .c-size .cost { margin-left: 4px; }
+.cost-legend { margin-top: 4px; }
 .c-title.no-link { color: var(--muted); cursor: help; }
 .v-sep { color: var(--muted); opacity: 0.6; }
 

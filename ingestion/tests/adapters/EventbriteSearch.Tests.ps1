@@ -46,9 +46,9 @@ Describe 'eventbrite-search adapter' {
   It 'reads the cost tier from each event page' {
     $pages = @(Get-Fixture 'emmett.html'; Get-Fixture 'event-free.html'; New-OfferPage '35.0')
     $priced = @(& $adapter -Source $source -FetchedAt $fetchedAt -Response $pages)
-    $priced[0].cost | Should -BeExactly 'free'
-    $priced[1].cost | Should -BeExactly '$$'
-    $priced[2].PSObject.Properties.Name | Should -Not -Contain 'cost'
+    $priced[0].costTier | Should -BeExactly 'free'
+    $priced[1].costTier | Should -BeExactly '$$'
+    $priced[2].PSObject.Properties.Name | Should -Not -Contain 'costTier'
   }
 
   It 'fails when the page has no event data' {

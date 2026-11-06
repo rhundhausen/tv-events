@@ -67,18 +67,19 @@ function Read-ServerData {
   ConvertFrom-TvJson ([Newtonsoft.Json.Linq.JToken]::ReadFrom($reader).ToString([Newtonsoft.Json.Formatting]::None))
 }
 
-function Get-EventbriteCost {
-  # Eventbrite's offers are reliable, so a lowest price of 0 means free here.
+function Get-EventbritePriceMin {
+  # The lowest price in the event page's offers, or $null. Eventbrite's offers are reliable, so a
+  # lowest price of 0 means free here.
   param([string]$Html)
 
   $node = @(Get-TvJsonLdEvent $Html) | Select-Object -First 1
-  if (-not $node) { return '' }
+  if (-not $node) { return $null }
   $prices = @(@($node.offers) | ForEach-Object { $_.lowPrice; $_.price } | ForEach-Object {
-      $value = 0.0
-      if ([double]::TryParse("$_", [Globalization.NumberStyles]::Float, [Globalization.CultureInfo]::InvariantCulture, [ref]$value)) { $value }
+      $value = [decimal]0
+      if ([decimal]::TryParse("$_", [Globalization.NumberStyles]::Float, [Globalization.CultureInfo]::InvariantCulture, [ref]$value)) { $value }
     })
-  if ($prices.Count -eq 0) { return '' }
-  Get-TvCostTier -Amount ($prices | Measure-Object -Minimum).Minimum
+  if ($prices.Count -eq 0) { return $null }
+  ($prices | Measure-Object -Minimum).Minimum
 }
 
 $html = if ($Response) { $Response[0] } else { Get-EventbritePage $listUri }
@@ -116,12 +117,12 @@ for ($n = 0; $n -lt $kept.Count; $n++) {
         Write-Warning "$($Source.name): no price for '$($item.name)': $_"
       }
     }
-    $cost = if ($page) { Get-EventbriteCost $page } else { '' }
+    $priceMin = if ($page) { Get-EventbritePriceMin $page }
 
     New-TvEvent -Title (ConvertTo-PlainText $item.name) -Start $start -End $end -AllDay:$allDay `
       -Venue ($venueName ? $venueName : $Source.venue) -VenueKey ($venueName ? (Get-VenueKey $venueName) : $Source.venueKey) `
       -City ($city ? $city : $Source.city) -Category $Source.category -InferCategory:([bool]$Source.inferCategory) `
-      -Url $url -Description $item.summary -Cost $cost -Sources @(@{ name = $Source.name; url = $url; fetchedAt = $FetchedAt })
+      -Url $url -Description $item.summary -PriceMin $priceMin -Sources @(@{ name = $Source.name; url = $url; fetchedAt = $FetchedAt })
   } catch {
     if ("$_" -match 'robots.txt disallows') { throw }
     Write-Warning "$($Source.name): skipping '$($item.name)': $_"

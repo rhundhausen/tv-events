@@ -218,8 +218,8 @@ function Merge-TvEvents {
         $target | Add-Member -NotePropertyName description -NotePropertyValue $event.description -Force
       }
       # Real price data from any duplicate beats none. The best source's own tier stays.
-      if ($event.cost -and -not $target.cost) {
-        $target | Add-Member -NotePropertyName cost -NotePropertyValue $event.cost -Force
+      if ($event.costTier -and -not $target.costTier) {
+        $target | Add-Member -NotePropertyName costTier -NotePropertyValue $event.costTier -Force
       }
       # A timed end doesn't fit an all-day event, or the other way around.
       if ($event.end -and -not $target.end -and $event.allDay -eq $target.allDay) {

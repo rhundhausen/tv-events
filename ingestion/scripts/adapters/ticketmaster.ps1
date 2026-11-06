@@ -80,14 +80,17 @@ foreach ($item in ($pages | ForEach-Object { $_._embedded.events } | Where-Objec
     $city = if ($Source.venueId) { $Source.city } else { Resolve-TvCity $venue.city.name }
     if (-not $city) { $city = $Source.city }
 
-    # The cheapest ticket in any price range decides the tier.
-    $prices = @($item.priceRanges | ForEach-Object { $_.min } | Where-Object { $null -ne $_ })
-    $cost = if ($prices.Count) { Get-TvCostTier -Amount ($prices | Measure-Object -Minimum).Minimum }
+    # The cheapest ticket in any price range is priceMin. Face value: a range whose type
+    # includes fees ("standard including fees") is used only when no other range is given.
+    $ranges = @($item.priceRanges | Where-Object { $null -ne $_.min })
+    $faceValue = @($ranges | Where-Object { "$($_.type)" -notmatch '(?i)fee' })
+    if ($faceValue.Count) { $ranges = $faceValue }
+    $priceMin = if ($ranges.Count) { [decimal]($ranges.min | Measure-Object -Minimum).Minimum }
 
     New-TvEvent -Title (ConvertTo-PlainText $item.name) -Start $start -AllDay:$allDay `
       -Venue $venueName -VenueKey $venueKey -City $city `
       -Category $category -InferCategory:([bool]$Source.inferCategory) -Labels $labels -Url $item.url -Description $item.info `
-      -Cost $cost -Sources @(@{ name = $Source.name; url = $item.url; fetchedAt = $FetchedAt })
+      -PriceMin $priceMin -Sources @(@{ name = $Source.name; url = $item.url; fetchedAt = $FetchedAt })
   } catch {
     Write-Warning "$($Source.name): skipping '$($item.name)': $_"
   }

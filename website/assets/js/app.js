@@ -37,9 +37,10 @@ const shorten = (s) => PHRASES.reduce((text, [re, short]) => text.replace(re, sh
 // "Wassmuth Center for Human Rights, 777 South 8th Street, Boise, ID 83702" keeps only the name.
 const dropAddress = (v) => (/^\D[^,]*,.*(\b\d{5}\b|,\s*(ID|Idaho)\b)/.test(v) ? v.split(',')[0] : v);
 
-// Cost filter values to tiers. Free and unknown look the same on the site, so "free" matches both.
-const COST_TIERS = { 1: '$', 2: '$$', 3: '$$$' };
-const COST_TITLES = { $: 'Under $25', $$: '$25 to $99', $$$: '$100 or more' };
+// Cost filter values (kept in the URL as ?cost=) to tiers. An unknown cost matches only "Any cost".
+// The ranges are in the Cost header's tooltip and the footer, not on each cell (docs/cost-tiers.md).
+const COST_TIERS = { free: 'free', 1: '$', 2: '$$', 3: '$$$' };
+const COST_LABELS = { free: 'Free', $: '$', $$: '$$', $$$: '$$$' };
 const NO_LINK = 'Information not available';
 
 const state = { q: '', cats: new Set(), city: '', size: '', cost: '', source: '', when: '', from: '', to: '', sort: 'date', dir: 1, page: 1, per: DEFAULT_PER };
@@ -85,7 +86,6 @@ function matches(e, words, from, to, skipCats) {
   if (to && e.sd > to) return false;
   if (state.city && e.city !== state.city) return false;
   if (state.size && e.size !== state.size) return false;
-  if (state.cost === 'free' && e.cost && e.cost !== 'free') return false;
   if (COST_TIERS[state.cost] && e.cost !== COST_TIERS[state.cost]) return false;
   if (state.source && !e.src.includes(state.source)) return false;
   if (!skipCats && state.cats.size && !state.cats.has(e.cat)) return false;
@@ -179,8 +179,7 @@ function cell(text, className) {
 function costBadge(tier) {
   const badge = document.createElement('span');
   badge.className = 'cost';
-  badge.textContent = tier;
-  badge.title = COST_TITLES[tier];
+  badge.textContent = COST_LABELS[tier];
   return badge;
 }
 
@@ -247,7 +246,7 @@ function renderRows(list) {
 
     // Desktop shows cost in its own column; phones show it beside the size badge.
     const cost = cell('', 'c-cost');
-    if (COST_TITLES[e.cost]) {
+    if (COST_LABELS[e.cost]) {
       cost.append(costBadge(e.cost));
       const beside = costBadge(e.cost);
       beside.classList.add('m-only');

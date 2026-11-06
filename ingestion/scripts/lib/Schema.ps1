@@ -332,9 +332,10 @@ function New-TvEvent {
     The publisher's own categories or genres. See Get-TvClassification.
   .PARAMETER Sources
     Objects with name, url, and fetchedAt.
-  .PARAMETER Cost
-    The tier from the source's own price data (free, $, $$, $$$). Without it, a free-admission tag
-    means free, and otherwise the lowest dollar amount in the description sets the tier.
+  .PARAMETER PriceMin
+    The cheapest adult ticket from the source's own price data, in dollars (docs/cost-tiers.md).
+    Without it, a free-admission tag means 0, and otherwise the description's price text is read.
+    costTier is derived from it with Get-CostTier; the price itself is never stored.
   #>
   [CmdletBinding()]
   param(
@@ -351,7 +352,7 @@ function New-TvEvent {
     [Parameter(Mandatory)][string]$Url,
     [string]$Description,
     [object[]]$Sources = @(),
-    [AllowEmptyString()][ValidateSet('', 'free', '$', '$$', '$$$')][string]$Cost
+    [AllowNull()][Nullable[decimal]]$PriceMin
   )
 
   $cleanTitle = ($Title -replace '\s+', ' ').Trim()
@@ -381,13 +382,13 @@ function New-TvEvent {
   $event.size = Get-TvEventSize -VenueKey $key -Category $event.category -Tags $classification.Tags
 
   # Read before the description loses its dollar amounts below. Only the tier is kept.
-  if (-not $Cost) {
-    $Cost = if ('free-admission' -in $classification.Tags) { 'free' } else {
-      $lowest = Get-TvLowestAmount (ConvertTo-PlainText $Description)
-      if ($null -ne $lowest) { Get-TvCostTier -Amount $lowest }
+  if ($null -eq $PriceMin) {
+    $PriceMin = if ('free-admission' -in $classification.Tags) { [decimal]0 } else {
+      ConvertFrom-TvPriceText (ConvertTo-PlainText $Description) -Prose
     }
   }
-  if ($Cost) { $event.cost = $Cost }
+  $tier = Get-CostTier -PriceMin $PriceMin
+  if ($tier) { $event.costTier = $tier }
 
   $event.url = $Url
 

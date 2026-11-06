@@ -266,7 +266,7 @@ function New-TvRefineReport {
     , @('Moved to archive:', "$($Refine.past)")
     , @('Cities filled in:', "$($Refine.cityFixes)")
     , @('City lookup:', $lookupLine)
-    , @('Cost guesses changed:', "$($Refine.costGuesses)")
+    , @('Cost tiers:', ($Refine.costTiers ? "Free $($Refine.costTiers.free), `$ $($Refine.costTiers.'$'), `$`$ $($Refine.costTiers.'$$'), `$`$`$ $($Refine.costTiers.'$$$'), unknown $($Refine.costTiers.unknown)" : 'not counted'))
     , @('Links checked:', $linkLine)
     , @('Broken links:', "$($Refine.links.broken) ($($Refine.links.newBroken) new)")
   )
