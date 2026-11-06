@@ -142,28 +142,6 @@
     ]
   },
   {
-    "id": "4d0e23bef2a0",
-    "title": "Flower Bundle Friday",
-    "start": "2026-11-06T08:00:00-07:00",
-    "end": "2026-11-06T08:30:00-07:00",
-    "allDay": false,
-    "venue": "Victory Gardens Nursery",
-    "venueKey": "victory-gardens-nursery",
-    "city": "Meridian",
-    "category": "community-civic",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisemom.com/event/flower-bundle-friday-2/2026-11-06/",
-    "description": "Treat yourself this Friday with a small, fresh flower bundle paired with a 20 oz drink of your choice. It’s the perfect little pick-me-up and a great gift for yourself, a partner, a friend, or a family member. Because everyone deserves a little something special. We only make a limited amount, co...",
-    "sources": [
-      {
-        "name": "boise-mom",
-        "url": "https://boisemom.com/event/flower-bundle-friday-2/2026-11-06/",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
     "id": "eb6f03a850ec",
     "title": "History Harvest to document Idaho’s environmental history and Andrus legacy",
     "start": "2026-11-06T09:00:00-07:00",
@@ -186,57 +164,6 @@
     "city": "Boise"
   },
   {
-    "id": "291ee55ebc30",
-    "title": "Homeschoolers @ the Library",
-    "start": "2026-11-06T09:30:00-07:00",
-    "end": "2026-11-06T10:30:00-07:00",
-    "allDay": false,
-    "venue": "Kuna Library",
-    "venueKey": "kuna-library",
-    "city": "Kuna",
-    "category": "learning-business",
-    "tags": [
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://kunalibrary.libcal.com/event/17253230",
-    "description": "This week, the Homeschoolers @ the Library group will create encouraging notes to include with snacks and drinks donated to the Boise Ronald McDonald House. The Ronald McDonald House serves families with ill or injured children receiving medical care in the Treasure Valley, providing them with a...",
-    "sources": [
-      {
-        "name": "kuna-library",
-        "url": "https://kunalibrary.libcal.com/event/17253230",
-        "fetchedAt": "2026-11-06T07:04:43Z"
-      }
-    ],
-    "costGuess": "free"
-  },
-  {
-    "id": "4e4855bbda51",
-    "title": "English Practice Meet-Up",
-    "start": "2026-11-06T10:00:00-07:00",
-    "end": "2026-11-06T11:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "nightlife-social",
-    "tags": [
-      "meetup"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15302450",
-    "description": "Do you want to practice speaking English? Come and talk with us! We'll meet weekly in the Catalpa Room at the Library! at Collister for guided conversation and practice.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15302450",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ],
-    "costGuess": "free"
-  },
-  {
     "id": "a66b7aa0591e",
     "title": "Homeschool Day: Make Your Mark with Aly McKnight",
     "start": "2026-11-06T10:00:00-07:00",
@@ -256,212 +183,13 @@
         "name": "idaho-history",
         "url": "https://history.idaho.gov/event/homeschool-day-make-your-mark-with-aly-mcknight/",
         "fetchedAt": "2026-11-03T17:00:01Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "http://history.idaho.gov/events",
+        "fetchedAt": "2026-11-06T19:12:30Z"
       }
     ]
-  },
-  {
-    "id": "14b25631a53c",
-    "title": "Preschool Storytime",
-    "start": "2026-11-06T10:15:00-07:00",
-    "end": "2026-11-06T10:45:00-07:00",
-    "allDay": false,
-    "venue": "Nampa Public Library",
-    "venueKey": "nampa-public-library",
-    "city": "Nampa",
-    "category": "learning-business",
-    "tags": [
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://nampalibrary.libcal.com/event/16156588",
-    "description": "Join us in the children's area for Preschool Storytime to explore Kindergarten readiness skills! Geared for children ages 3-5 and their caregivers; featuring stories, songs, fingerplays, and rhymes.",
-    "sources": [
-      {
-        "name": "nampa-public-library",
-        "url": "https://nampalibrary.libcal.com/event/16156588",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ],
-    "costGuess": "free"
-  },
-  {
-    "id": "df660a5bc4da",
-    "title": "Music & Movement",
-    "start": "2026-11-06T10:15:00-07:00",
-    "end": "2026-11-06T10:45:00-07:00",
-    "allDay": false,
-    "venue": "Mountain Home Public Library",
-    "venueKey": "mountain-home-public-library",
-    "city": "Mountain Home",
-    "category": "learning-business",
-    "tags": [
-      "kids"
-    ],
-    "size": "S",
-    "url": "https://mhlibrary.libcal.com/event/17221179",
-    "description": "Join us ever Friday at 10:15 am and 11:15 am for Music & Movement in the conference room at the library! Get ready to sing, dance, and play musical instruments. This program is designed for children with an adult companion. Please be advised that this specific program has been limited to 30 peopl...",
-    "sources": [
-      {
-        "name": "mountain-home-library",
-        "url": "https://mhlibrary.libcal.com/event/17221179",
-        "fetchedAt": "2026-11-06T07:04:43Z"
-      }
-    ],
-    "costGuess": "free"
-  },
-  {
-    "id": "1a700cd3dfab",
-    "title": "PLay and Learn | Cole & Ustick Library!",
-    "start": "2026-11-06T10:30:00-07:00",
-    "end": "2026-11-06T11:30:00-07:00",
-    "allDay": false,
-    "venue": "Library! at Cole & Ustick",
-    "venueKey": "library-at-cole-and-ustick",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "free-admission",
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "cost": "free",
-    "url": "https://boisemom.com/event/play-and-learn-cole-ustick-library/2026-11-06/",
-    "description": "This open play time is designed for children ages 5 and under and their caregivers to enjoy open-ended play and socialization together. While all ages are welcome to attend, this program is intended for children ages 0-5.",
-    "sources": [
-      {
-        "name": "boise-mom",
-        "url": "https://boisemom.com/event/play-and-learn-cole-ustick-library/2026-11-06/",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
-    "id": "39e3b71db632",
-    "title": "Bown Library Book Club",
-    "start": "2026-11-06T10:30:00-07:00",
-    "end": "2026-11-06T11:30:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "library-program"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/17112241",
-    "description": "Join us for a lively discussion about our monthly book! SEPTEMBER: Tilt By Emma Pattee OCTOBER: The Haunting of Hill House by Shirley Jackson NOVEMBER: Are You There God? It's Me, Margaret by Judy Blume DECEMBER: The Bear and the Nightingale by Katherine Arden",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/17112241",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ],
-    "costGuess": "free"
-  },
-  {
-    "id": "7448d6a18990",
-    "title": "Guided Walk-In Capitol Tours",
-    "start": "2026-11-06T10:30:00-07:00",
-    "end": "2026-11-06T12:00:00-07:00",
-    "allDay": false,
-    "venue": "Idaho State Capital",
-    "venueKey": "idaho-state-capital",
-    "city": "Boise",
-    "category": "outdoors-recreation",
-    "tags": [
-      "free-admission",
-      "tour"
-    ],
-    "size": "S",
-    "cost": "free",
-    "url": "https://boisemom.com/event/guided-walk-in-capitol-tours/2026-11-06/",
-    "description": "Guided Walk-in Tours Guided tours, on a walk-in basis are available every Friday and Saturday at 10:30 am year-round, except major holidays (New Years Day, Christmas Day, 4th of July). Summer Tours: From June 1st to October 31st we will have extra guided tours, on a walk-in basis available every...",
-    "sources": [
-      {
-        "name": "boise-mom",
-        "url": "https://boisemom.com/event/guided-walk-in-capitol-tours/2026-11-06/",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
-    "id": "86f66dce7b0f",
-    "title": "Play and Learn",
-    "start": "2026-11-06T10:30:00-07:00",
-    "end": "2026-11-06T11:30:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "kids"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/16415175",
-    "description": "This open play time is designed for children ages 5 and under and their caregivers to enjoy open-ended play and socialization together. While all ages are welcome to attend, this program is intended for children ages 0-5.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/16415175",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ],
-    "costGuess": "free"
-  },
-  {
-    "id": "bde13face1f8",
-    "title": "Baby Story & Play | Hillcrest Library!",
-    "start": "2026-11-06T10:30:00-07:00",
-    "end": "2026-11-06T11:30:00-07:00",
-    "allDay": false,
-    "venue": "Library! at Hillcrest",
-    "venueKey": "library-at-hillcrest",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "free-admission",
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "cost": "free",
-    "url": "https://boisemom.com/event/baby-story-play-hillcrest-library/2026-11-06/",
-    "description": "Join us for rhymes, songs, stories, and open play time. This program is a great way to meet others in the community and set your baby up for early literacy success! This program is designed for babies (0-24 months) and their caregivers.",
-    "sources": [
-      {
-        "name": "boise-mom",
-        "url": "https://boisemom.com/event/baby-story-play-hillcrest-library/2026-11-06/",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
-    "id": "df983a2c7372",
-    "title": "Baby Stories and Play",
-    "start": "2026-11-06T10:30:00-07:00",
-    "end": "2026-11-06T11:30:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15118769",
-    "description": "Join us for rhymes, songs, stories, and open play time. This program is a great way to meet others in the community and set your baby up for early literacy success! This program is designed for babies (0-24 months) and their caregivers.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15118769",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ],
-    "costGuess": "free"
   },
   {
     "id": "9bd8da4a26a2",
@@ -487,27 +215,28 @@
     "costGuess": "free"
   },
   {
-    "id": "ad1ba8550046",
-    "title": "Fit and Fall Proof",
-    "start": "2026-11-06T11:30:00-07:00",
-    "end": "2026-11-06T12:15:00-07:00",
+    "id": "a0adbeef34f0",
+    "title": "Distillery Tour",
+    "start": "2026-11-06T11:00:00-07:00",
+    "end": "2026-11-06T20:00:00-07:00",
     "allDay": false,
-    "venue": "Kuna Library",
-    "venueKey": "kuna-library",
-    "city": "Kuna",
-    "category": "learning-business",
-    "tags": [],
+    "venue": "Bardenay Distilling Co.",
+    "venueKey": "bardenay-distilling-co",
+    "city": "Boise",
+    "category": "food-drink",
+    "tags": [
+      "brewery"
+    ],
     "size": "S",
-    "url": "https://kunalibrary.libcal.com/event/17346792",
-    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "url": "https://www.bardenaydistilling.com/",
+    "description": "Bardenay Distilling Co. — Idaho’s Original Craft Spirit Experience Established in Boise as the nation’s first restaurant-distillery post-Prohibition, Bardenay has been an Idaho icon for decades. Now, Bardenay Distilling Co. carries that pioneering spirit forward, offering complimentary tours that...",
     "sources": [
       {
-        "name": "kuna-library",
-        "url": "https://kunalibrary.libcal.com/event/17346792",
-        "fetchedAt": "2026-11-06T07:04:43Z"
+        "name": "visit-boise",
+        "url": "https://www.bardenaydistilling.com/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
       }
-    ],
-    "costGuess": "free"
+    ]
   },
   {
     "id": "8ec494234fa8",
@@ -851,6 +580,29 @@
     ]
   },
   {
+    "id": "0f76b1084665",
+    "title": "Skosh + Glutonia = Wine & Pizza Nights!",
+    "start": "2026-11-06T17:00:00-07:00",
+    "end": "2026-11-06T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Skosh Wine Bar",
+    "venueKey": "skosh-wine-bar",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "S",
+    "cost": "$",
+    "url": "https://skoshwinebar.com/events",
+    "description": "Pizza + Wine Nights, Thursdays through Saturdays Every Thursday, Friday, and Saturday, Skosh Wine Bar teams up with Glutonia next door for Pizza + Wine Nights. Order a pie from Glutonia's pizzaiolo, pepperoni with arugula, four cheese, margarita, or the rotating chef's choice, and it gets deliver...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://skoshwinebar.com/events",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
     "id": "a6d90a4bd087",
     "title": "Mitch Wieland Book Launch",
     "start": "2026-11-06T17:00:00-07:00",
@@ -934,7 +686,6 @@
     ],
     "size": "XL",
     "url": "https://admin.broncosports.com/calendar.aspx?game_id=23283&sport_id=10",
-    "description": "TV: Pac-12 YouTube Radio: KBOI 670 AM Streaming Video: https://www.youtube.com/@pac12 Streaming Audio: https://thevarsitynetwork.com/audioapplink/source/oas-1455/content/boisest:allaccess-Live-899",
     "sources": [
       {
         "name": "boise-mom",
@@ -945,8 +696,14 @@
         "name": "boise-state-athletics",
         "url": "https://admin.broncosports.com/calendar.aspx?game_id=23283&sport_id=10",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "https://broncosports.com/sports/womens-basketball/schedule",
+        "fetchedAt": "2026-11-06T19:12:30Z"
       }
     ],
+    "description": "The Boise State Broncos women's basketball team represents Boise State University in Boise, Idaho, United States. The school's team currently competes in the Pac-12 Conference. They play their home games at ExtraMile Arena.",
     "costGuess": "$"
   },
   {
@@ -1026,10 +783,59 @@
         "name": "morrison-center",
         "url": "https://www.ticketmaster.com/killers-of-kill-tony-boise-idaho-11-06-2026/event/1E00645B9DCA9455",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "https://www.morrisoncenter.com/events/detail/killers-of-kill-tony",
+        "fetchedAt": "2026-11-06T19:12:30Z"
       }
     ],
     "end": "2026-11-06T21:00:00-07:00",
     "cost": "$$"
+  },
+  {
+    "id": "9d6d8cf5d20b",
+    "title": "Killers of Kill Tony with David Lucas, Martin Phillips, Dedrick Flynn and Ahren Balisle",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T22:00:00-07:00",
+    "allDay": false,
+    "venue": "Morrison Center for the Performing Arts",
+    "venueKey": "morrison-center-for-the-performing-arts",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "L",
+    "url": "https://www.ticketsmarter.com/e/killers-of-kill-tony-with-david-lucas-martin-phillips-dedrick-flynn-and-ahren-balisle-tickets-boise-11-6-2026-morrison-center-for-the-performing-arts/3331935?utm_source=dmo&utm_medium=visitboise&utm_campaign=3331935",
+    "description": "Killers of Kill Tony brings a stand-up comedy showcase to the Morrison Center, featuring comedians associated with the live podcast Kill Tony. The performers take the stage for extended stand-up sets, each bringing their own comedic style. The announced lineup includes David Lucas, Martin Phillip...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://www.ticketsmarter.com/e/killers-of-kill-tony-with-david-lucas-martin-phillips-dedrick-flynn-and-ahren-balisle-tickets-boise-11-6-2026-morrison-center-for-the-performing-arts/3331935?utm_source=dmo&utm_medium=visitboise&utm_campaign=3331935",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
+    "id": "9e307d99e025",
+    "title": "4th Annual Spoonful Night",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T23:00:00-07:00",
+    "allDay": false,
+    "venue": "Treefort Music Hall",
+    "venueKey": "treefort-music-hall",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://dice.fm/event/oeaola-spoonful-night-a-benefit-concert-for-radio-boise-6th-nov-treefort-music-hall-boise-tickets?lng=en-US",
+    "description": "Come and join us for a spoonful of Georgia blues, country, and bluegrass with grammy-nominated artist Jontavious Willis, queen of the minor key Eilen Jewell, country swing legends The Country Club, and local bluegrass veterans Tater Patch. All tickets support independent, community radio at Radio...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://dice.fm/event/oeaola-spoonful-night-a-benefit-concert-for-radio-boise-6th-nov-treefort-music-hall-boise-tickets?lng=en-US",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
   },
   {
     "id": "e62d7c81945c",
@@ -1052,6 +858,54 @@
         "name": "mike-brown-group",
         "url": "https://www.mikebrowngroup.com/event/river-shook/",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "fb8acda7cd8a",
+    "title": "Paint Nite @ Amsterdam Lounge",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T21:00:00-07:00",
+    "allDay": false,
+    "venue": "Amsterdam Lounge",
+    "venueKey": "amsterdam-lounge",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "S",
+    "cost": "$$",
+    "url": "https://tinyurl.com/y8v52twy",
+    "description": "Paint Nite at Amsterdam Lounge: Sip, Paint & Unwind! Looking for a fun night out in Boise? Join Paint Nite Boise at Amsterdam Lounge for a creative evening filled with painting, laughter, and good company! Follow along with a guided painting experience and create your own artwork to take home, al...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://tinyurl.com/y8v52twy",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
+    "id": "fd42e6928a3a",
+    "title": "Spoonful Night – A Benefit Concert For Radio Boise",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T23:00:00-07:00",
+    "allDay": false,
+    "venue": "Treefort Music Hall",
+    "venueKey": "treefort-music-hall",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "M",
+    "cost": "$$",
+    "url": "https://dice.fm/event/oeaola-spoonful-night-a-benefit-concert-for-radio-boise-6th-nov-treefort-music-hall-boise-tickets?lng=en-US",
+    "description": "Come and join us for Spoonful Night – A Benefit Concert For Radio Boise w/ Jontavious Willis, Eilen Jewell, The Country Club, Tater Patch at Treefort Music Hall Friday, November 6th, 2026 DOORS: 7pm SHOW: 8pm https://dice.fm/event/oeaola-spoonful-night-a-benefit-concert-for-radio-boise-6th-nov-tr...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://dice.fm/event/oeaola-spoonful-night-a-benefit-concert-for-radio-boise-6th-nov-treefort-music-hall-boise-tickets?lng=en-US",
+        "fetchedAt": "2026-11-06T19:12:30Z"
       }
     ]
   },
@@ -3832,7 +3686,7 @@
   {
     "id": "d9a323b4f511",
     "title": "Planning and Zoning Commission - Work Session",
-    "start": "2026-11-09T17:30:00-07:00",
+    "start": "2026-11-09T17:45:00-07:00",
     "end": "2026-11-09T18:30:00-07:00",
     "allDay": false,
     "venue": "Boise City Hall",
@@ -6152,6 +6006,29 @@
     "costGuess": "free"
   },
   {
+    "id": "645eacc4ccc1",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2026-11-12T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/november/3-thursdays-at-zoo-boise-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/november/3-thursdays-at-zoo-boise-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "79bcf5426da9",
     "title": "Coffee and Conversations",
     "start": "2026-11-12T10:00:00-07:00",
@@ -6294,12 +6171,12 @@
     ],
     "size": "S",
     "cost": "free",
-    "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-3/2026-11-12/",
+    "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-11-12/",
     "description": "Join us every Thursday at 10:30 AM for this kindergarten readiness storytime and craft! This storytime is designed for children ages 3-5 and their caregiver.",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-3/2026-11-12/",
+        "url": "https://boisemom.com/event/preschool-storytime-cole-ustick-library-2/2026-11-12/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
@@ -10123,15 +10000,16 @@
     "id": "c2c7ce01a5a9",
     "title": "Boise PhotoGrid: The Midway Opening Reception",
     "start": "2026-11-14T19:00:00-07:00",
-    "end": "2026-11-14T21:00:00-07:00",
     "allDay": false,
     "venue": "MING Studios",
     "venueKey": "ming-studios",
     "city": "Boise",
-    "category": "community-civic",
+    "category": "arts-culture",
     "tags": [],
     "size": "S",
-    "url": "https://www.cityofboise.org/events/arts-and-history/2026/november/boise-photogrid-the-midway-opening-reception/",
+    "cost": "free",
+    "url": "https://www.boiseartsandhistory.org/calendar/event?key=boise-photogrid-the-midway-opening-reception_20261114",
+    "description": "The Midway marks the halfway point of Boise PhotoGrid, an ongoing collective project capturing Boise and Garden City amid rapid change. Through the perspectives of 15 photographers, the exhibition documents the places, details, and everyday scenes of the cities in transformation. This exhibition...",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -10144,8 +10022,7 @@
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ],
-    "description": "The Midway marks the halfway point of Boise PhotoGrid, an ongoing collective project capturing Boise and Garden City amid rapid change. Through the perspectives of 15 photographers, the exhibition documents the places, details, and everyday scenes of the cities in transformation. This exhibition...",
-    "cost": "free"
+    "end": "2026-11-14T21:00:00-07:00"
   },
   {
     "id": "bc4ab9b3bafc",
@@ -14369,6 +14246,29 @@
         "name": "kuna-library",
         "url": "https://kunalibrary.libcal.com/event/17209635",
         "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "57670b7e537f",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2026-11-19T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/november/3-thursdays-at-zoo-boise-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/november/3-thursdays-at-zoo-boise-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
       }
     ],
     "costGuess": "free"
@@ -18698,12 +18598,12 @@
       "holiday-event"
     ],
     "size": "L",
-    "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-8/",
+    "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-7/",
     "description": "“It is not what we say about our blessings, but how we use them – that is the true measure of Thanksgiving.” – W.T. Purkiser This is an opportunity for you to directly impact a family in need! Please consider helping us provide a Thanksgiving dinner for those who would otherwise be unable to affo...",
     "sources": [
       {
         "name": "expo-idaho",
-        "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-8/",
+        "url": "https://expoidaho.com/event/st-vincent-de-paul-thanksgiving-food-box-7/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       },
       {
@@ -20518,17 +20418,19 @@
   },
   {
     "id": "cfd32596fd83",
-    "title": "STORY STORY NIGHT: TRiVIAL PURSUiTS - GEOGRAPHY",
+    "title": "Story Story Night: TRiViAL PURSUiTS: GEOGRAPHY",
     "start": "2026-11-24T19:00:00-07:00",
     "end": "2026-11-24T21:00:00-07:00",
     "allDay": false,
     "venue": "JUMP",
     "venueKey": "jump",
     "city": "Boise",
-    "category": "community-civic",
+    "category": "arts-culture",
     "tags": [],
     "size": "M",
-    "url": "https://jumpboise.org/events/story-story-night-trivial-pursuits-geography",
+    "cost": "$",
+    "url": "https://www.boiseartsandhistory.org/calendar/event?key=story-story-night-trivial-pursuits-geography_20261124",
+    "description": "REAL ANSWERS YOU CAN’T LOOK UP Bored? Game on. Forget what you find on the back of a card or the other side of a Google rabbit hole. Some facts are only checked by actual experience and questionable judgment. For the 17th mainstage season of Story Story Night, we take trivia personally with true...",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -20545,9 +20447,7 @@
         "url": "https://jumpboise.org/events/story-story-night-trivial-pursuits-geography",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
-    ],
-    "description": "REAL ANSWERS YOU CAN’T LOOK UP Bored? Game on. Forget what you find on the back of a card or the other side of a Google rabbit hole. Some facts are only checked by actual experience and questionable judgment. For the 17th mainstage season of Story Story Night, we take trivia personally with true...",
-    "cost": "$"
+    ]
   },
   {
     "id": "edc4cbc36dc0",
@@ -21824,6 +21724,29 @@
       }
     ],
     "city": "Boise"
+  },
+  {
+    "id": "7816fbc7a173",
+    "title": "$3 Black Friday at Zoo Boise",
+    "start": "2026-11-27T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/november/3-black-friday-at-zoo-boise/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/november/3-black-friday-at-zoo-boise/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "a4df64089284",
@@ -23950,7 +23873,7 @@
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/elf-in-concert/",
+        "url": "https://boisemom.com/event/elf-in-concert-2/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       },
       {
@@ -26856,6 +26779,29 @@
     ]
   },
   {
+    "id": "c42204cf5333",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2026-12-03T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-thursdays-at-zoo-boise-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-thursdays-at-zoo-boise-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "dbe57109c29a",
     "title": "Active Tots",
     "start": "2026-12-03T10:00:00-07:00",
@@ -27298,12 +27244,12 @@
     ],
     "size": "S",
     "cost": "free",
-    "url": "https://boisemom.com/event/teen-club-video-games-cole-ustick-library-5/",
+    "url": "https://boisemom.com/event/teen-club-video-games-cole-ustick-library-4/",
     "description": "Join us after school for a variety of video games! Ages 12-17.",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/teen-club-video-games-cole-ustick-library-5/",
+        "url": "https://boisemom.com/event/teen-club-video-games-cole-ustick-library-4/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
@@ -27346,12 +27292,14 @@
     "venue": "JUMP",
     "venueKey": "jump",
     "city": "Boise",
-    "category": "community-civic",
+    "category": "arts-culture",
     "tags": [
       "kids"
     ],
     "size": "M",
-    "url": "https://www.cityofboise.org/events/arts-and-history/2026/december/open-arms-dance-project-family-boogie/",
+    "cost": "free",
+    "url": "https://www.boiseartsandhistory.org/calendar/event?key=open-arms-dance-project-family-boogie_20261203",
+    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot...",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -27368,9 +27316,7 @@
         "url": "https://jumpboise.org/events/family-boogie",
         "fetchedAt": "2026-11-06T07:04:43Z"
       }
-    ],
-    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot...",
-    "cost": "free"
+    ]
   },
   {
     "id": "89d7246fb456",
@@ -32951,12 +32897,12 @@
     ],
     "size": "S",
     "cost": "free",
-    "url": "https://boisemom.com/event/teens-cozy-gnomes-2/",
+    "url": "https://boisemom.com/event/teens-cozy-gnomes/",
     "description": "Gnome-y it’s cold outside! Location: Library Corner",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/teens-cozy-gnomes-2/",
+        "url": "https://boisemom.com/event/teens-cozy-gnomes/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
@@ -33380,6 +33326,29 @@
         "name": "mountain-home-library",
         "url": "https://mhlibrary.libcal.com/event/17221347",
         "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "1e60a880e8de",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2026-12-10T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-thursdays-at-zoo-boise-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-thursdays-at-zoo-boise-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
       }
     ],
     "costGuess": "free"
@@ -34281,12 +34250,12 @@
     "category": "markets-shopping",
     "tags": [],
     "size": "L",
-    "url": "https://expoidaho.com/event/teddy-bear-classic-6/",
+    "url": "https://expoidaho.com/event/teddy-bear-classic-5/",
     "description": "See website for more information.",
     "sources": [
       {
         "name": "expo-idaho",
-        "url": "https://expoidaho.com/event/teddy-bear-classic-6/",
+        "url": "https://expoidaho.com/event/teddy-bear-classic-5/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       }
     ]
@@ -36724,12 +36693,12 @@
     ],
     "size": "S",
     "cost": "free",
-    "url": "https://boisemom.com/event/storytime-winter-2/",
-    "description": "Start Date Monday, December 14, 2026 at 10:00 AM End Date Monday, December 14, 2026 at 11:00 AM Location The WaterShed, 6411 N. Ancell Avenue, Boise, ID 83714 Tags Boise WaterShed Come learn and listen with us at our free Story Time at the WaterShed. Designed for children ages 2-5 to learn and pl...",
+    "url": "https://boisemom.com/event/storytime-winter/",
+    "description": "Come learn and listen with us at our free Story Time at the WaterShed. Designed for children ages 2-5 to learn and play, but all ages are welcome to attend. Hear a story and participate in an activity all about Winter! Story time is a shared experience, we ask that parents or caregivers stay with...",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/storytime-winter-2/",
+        "url": "https://boisemom.com/event/storytime-winter/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
@@ -37786,7 +37755,7 @@
   },
   {
     "id": "86fc4b83518d",
-    "title": "Kid’s Class: Ridiculous Reindeer",
+    "title": "Kids’ Class: Ridiculous Reindeer",
     "start": "2026-12-15T16:00:00-07:00",
     "end": "2026-12-15T17:00:00-07:00",
     "allDay": false,
@@ -37802,15 +37771,15 @@
     ],
     "size": "S",
     "cost": "free",
-    "url": "https://boisemom.com/event/kids-class-ridiculous-reindeer-2/",
+    "url": "https://boisemom.com/event/kids-class-ridiculous-reindeer/",
+    "description": "20261215 KIDS Ridiculous Reindeer long These reindeer might be too ridiculous to pull Santa’s sleigh, but they sure will be fun to make! Location: Community Hall, Eagle City Hall",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/kids-class-ridiculous-reindeer-2/",
+        "url": "https://boisemom.com/event/kids-class-ridiculous-reindeer/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ],
-    "description": "20261215 KIDS Ridiculous Reindeer long These reindeer might be too ridiculous to pull Santa’s sleigh, but they sure will be fun to make! Location: Community Hall, Eagle City Hall"
+    ]
   },
   {
     "id": "8881d84ca2e3",
@@ -39056,6 +39025,29 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "e519490707c2",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2026-12-17T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-thursdays-at-zoo-boise-1-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-thursdays-at-zoo-boise-1-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "3c4c39aa592a",
@@ -40857,6 +40849,27 @@
     "city": "Boise"
   },
   {
+    "id": "5710bf8c37cd",
+    "title": "$3 December Days",
+    "start": "2026-12-19T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "5bc448d0d9c2",
     "title": "2026 YMCA Christmas Run",
     "start": "2026-12-19T10:00:00-07:00",
@@ -41605,13 +41618,11 @@
       "kids"
     ],
     "size": "L",
-    "cost": "$",
-    "url": "https://www.ticketweb.com/event/emo-nite-knitting-factory-boise-tickets/14402084",
-    "description": "DELAYED DELIVERY: There is a ticket delivery delay in place for this event. Tickets will be emailed 48 hours prior to the event. The age limit for this event is 21+. Donations are allocated for worthwhile organizations focusing on: · Mental Health · Harm Reduction · Children & Families · Poverty...",
+    "url": "https://www.ticketmaster.com/event/Z7r9jZ1AA7gr4",
     "sources": [
       {
         "name": "knitting-factory-boise",
-        "url": "https://www.ticketweb.com/event/emo-nite-knitting-factory-boise-tickets/14402084",
+        "url": "https://www.ticketmaster.com/event/Z7r9jZ1AA7gr4",
         "fetchedAt": "2026-11-02T21:24:51Z"
       },
       {
@@ -41619,7 +41630,9 @@
         "url": "https://www.ticketweb.com/event/emo-nite-knitting-factory-boise-tickets/14402084",
         "fetchedAt": "2026-11-03T17:00:01Z"
       }
-    ]
+    ],
+    "description": "DELAYED DELIVERY: There is a ticket delivery delay in place for this event. Tickets will be emailed 48 hours prior to the event. The age limit for this event is 21+. Donations are allocated for worthwhile organizations focusing on: · Mental Health · Harm Reduction · Children & Families · Poverty...",
+    "cost": "$"
   },
   {
     "id": "3e7591b8e151",
@@ -41646,6 +41659,27 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "09387eb2b024",
+    "title": "$3 December Days",
+    "start": "2026-12-20T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "3ada02dd7a9f",
@@ -42080,6 +42114,27 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "ab856c8d9fcb",
+    "title": "$3 December Days",
+    "start": "2026-12-21T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "bcec5e5ec670",
@@ -42680,6 +42735,27 @@
     ]
   },
   {
+    "id": "ce0253483a01",
+    "title": "$3 December Days",
+    "start": "2026-12-22T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "ffed179f27e3",
     "title": "Preschool STEAM Storytime | Garden City Public Library",
     "start": "2026-12-22T10:00:00-07:00",
@@ -43236,6 +43312,27 @@
         "name": "kuna-library",
         "url": "https://kunalibrary.libcal.com/event/17048646",
         "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "1e41700c202b",
+    "title": "$3 December Days",
+    "start": "2026-12-23T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
       }
     ],
     "costGuess": "free"
@@ -43872,10 +43969,9 @@
     ]
   },
   {
-    "id": "61c6fb0f0e65",
-    "title": "Zoo Boise $3 Admission Winter Break",
+    "id": "530992f82595",
+    "title": "$3 Thursdays at Zoo Boise",
     "start": "2026-12-24T10:00:00-07:00",
-    "end": "2027-01-05T17:00:00-07:00",
     "allDay": false,
     "venue": "Zoo Boise",
     "venueKey": "zoo-boise",
@@ -43887,16 +43983,22 @@
       "zoo"
     ],
     "size": "M",
-    "cost": "$",
-    "url": "https://boisemom.com/event/zoo-boise-3-admission-winter-break-3/2026-12-24/",
-    "description": "An inexpensive way to have a wild adventure in Boise! (Open 10AM – 5PM, last admission at 4PM. Closed on Christmas Day.)",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-thursdays-at-zoo-boise-1-1-1-1-1/",
     "sources": [
       {
         "name": "boise-mom",
         "url": "https://boisemom.com/event/zoo-boise-3-admission-winter-break-3/2026-12-24/",
-        "fetchedAt": "2026-11-03T17:00:01Z"
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      },
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-thursdays-at-zoo-boise-1-1-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
       }
-    ]
+    ],
+    "description": "An inexpensive way to have a wild adventure in Boise! (Open 10AM – 5PM, last admission at 4PM. Closed on Christmas Day.)",
+    "cost": "$",
+    "end": "2027-01-05T17:00:00-07:00"
   },
   {
     "id": "6469b8f1f304",
@@ -44316,6 +44418,27 @@
     "city": "Boise"
   },
   {
+    "id": "2bf8a3f5048f",
+    "title": "$3 December Days",
+    "start": "2026-12-26T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "3c5ae926efb2",
     "title": "Zoo Boise $3 Admission Winter Break",
     "start": "2026-12-26T10:00:00-07:00",
@@ -44624,12 +44747,12 @@
       "holiday-event"
     ],
     "size": "M",
-    "url": "https://boisemom.com/event/winter-garden-aglow-opening-2/2026-12-26/",
+    "url": "https://boisemom.com/event/winter-garden-aglow-4/2026-12-26/",
     "description": "Come Together.Glow Together. Bundle up and wander a Garden glowing with 900,000 holiday lights, from lit-up trees and pathways to the all-new Lake of Lights on Outlaw Field. The lights are just the beginning Not a drive-through. You walk it, together: lights wrap the trees, follow winding paths a...",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/winter-garden-aglow-opening-2/2026-12-26/",
+        "url": "https://boisemom.com/event/winter-garden-aglow-4/2026-12-26/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       }
     ]
@@ -44686,6 +44809,27 @@
         "fetchedAt": "2026-11-03T17:00:01Z"
       }
     ]
+  },
+  {
+    "id": "caeb33b104c9",
+    "title": "$3 December Days",
+    "start": "2026-12-27T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "013ef45f0f2b",
@@ -44924,6 +45068,27 @@
       }
     ],
     "city": "Boise"
+  },
+  {
+    "id": "6f7cbc4ade50",
+    "title": "$3 December Days",
+    "start": "2026-12-28T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
   },
   {
     "id": "afeaa4eb1420",
@@ -45565,6 +45730,27 @@
     ]
   },
   {
+    "id": "e3770b9616f2",
+    "title": "$3 December Days",
+    "start": "2026-12-29T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1-1-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1-1-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "30bec9a4c7a6",
     "title": "Fit and Fall Proof",
     "start": "2026-12-29T10:15:00-07:00",
@@ -45934,6 +46120,27 @@
     ]
   },
   {
+    "id": "63eb4a4bf2ea",
+    "title": "$3 December Days",
+    "start": "2026-12-30T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1-1-1-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-december-days-1-1-1-1-1-1-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "88c2e91ca491",
     "title": "Public Skate at Idaho IceWorld",
     "start": "2026-12-30T10:00:00-07:00",
@@ -46158,12 +46365,12 @@
     ],
     "size": "S",
     "cost": "free",
-    "url": "https://boisemom.com/event/teens-new-years-vision-boards-2/",
+    "url": "https://boisemom.com/event/teens-new-years-vision-boards/",
     "description": "Create a vision board for the New Year! Location: Library Corner",
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/teens-new-years-vision-boards-2/",
+        "url": "https://boisemom.com/event/teens-new-years-vision-boards/",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
@@ -46375,33 +46582,6 @@
     "costGuess": "free"
   },
   {
-    "id": "205b3b2a7e91",
-    "title": "Zoo Boise $3 Admission Winter Break",
-    "start": "2026-12-31T10:00:00-07:00",
-    "end": "2027-01-12T17:00:00-07:00",
-    "allDay": false,
-    "venue": "Zoo Boise",
-    "venueKey": "zoo-boise",
-    "city": "Boise",
-    "category": "outdoors-recreation",
-    "tags": [
-      "family-friendly",
-      "kids",
-      "zoo"
-    ],
-    "size": "M",
-    "cost": "$",
-    "url": "https://boisemom.com/event/zoo-boise-3-admission-winter-break-3/2026-12-31/",
-    "description": "An inexpensive way to have a wild adventure in Boise! (Open 10AM – 5PM, last admission at 4PM. Closed on Christmas Day.)",
-    "sources": [
-      {
-        "name": "boise-mom",
-        "url": "https://boisemom.com/event/zoo-boise-3-admission-winter-break-3/2026-12-31/",
-        "fetchedAt": "2026-11-03T17:00:01Z"
-      }
-    ]
-  },
-  {
     "id": "34802208e954",
     "title": "Tunes & Tales | Garden City Public Library",
     "start": "2026-12-31T10:00:00-07:00",
@@ -46427,6 +46607,38 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "49d2d6fd3478",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2026-12-31T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "family-friendly",
+      "kids",
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2026/december/3-thursdays-at-zoo-boise-1-1-1-1-1-1/",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/zoo-boise-3-admission-winter-break-3/2026-12-31/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      },
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2026/december/3-thursdays-at-zoo-boise-1-1-1-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "description": "An inexpensive way to have a wild adventure in Boise! (Open 10AM – 5PM, last admission at 4PM. Closed on Christmas Day.)",
+    "cost": "$",
+    "end": "2027-01-12T17:00:00-07:00"
   },
   {
     "id": "713868fa88e1",
@@ -48383,6 +48595,29 @@
     "city": "Boise"
   },
   {
+    "id": "a6c9d8a1d912",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2027-01-07T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2027/january/3-thursdays-at-zoo-boise-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2027/january/3-thursdays-at-zoo-boise-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "d5a4a9526132",
     "title": "Fit and Fall Proof",
     "start": "2027-01-07T10:15:00-07:00",
@@ -48520,14 +48755,16 @@
     "venue": "JUMP",
     "venueKey": "jump",
     "city": "Boise",
-    "category": "community-civic",
+    "category": "arts-culture",
     "tags": [
       "family-friendly",
       "free-admission",
       "kids"
     ],
     "size": "M",
-    "url": "https://www.cityofboise.org/events/arts-and-history/2027/january/open-arms-dance-project-family-boogie/",
+    "cost": "free",
+    "url": "https://www.boiseartsandhistory.org/calendar/event?key=open-arms-dance-project-family-boogie_20270107",
+    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot...",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -48544,9 +48781,7 @@
         "url": "https://www.cityofboise.org/events/arts-and-history/2027/january/open-arms-dance-project-family-boogie/",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
-    ],
-    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot...",
-    "cost": "free"
+    ]
   },
   {
     "id": "d0610afccdf1",
@@ -50112,6 +50347,29 @@
     "city": "Boise"
   },
   {
+    "id": "a6f2c1a97e60",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2027-01-14T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2027/january/3-thursdays-at-zoo-boise-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2027/january/3-thursdays-at-zoo-boise-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "d07f62f5ded9",
     "title": "Fit and Fall Proof",
     "start": "2027-01-14T10:15:00-07:00",
@@ -50667,6 +50925,30 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "710128ef1093",
+    "title": "Boise State University Women's Gymnastics vs Sacramento State",
+    "start": "2027-01-15T19:00:00-07:00",
+    "end": "2027-01-15T22:00:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "college-sports"
+    ],
+    "size": "XL",
+    "url": "https://admin.broncosports.com/calendar.aspx?game_id=23331&sport_id=14",
+    "sources": [
+      {
+        "name": "boise-state-athletics",
+        "url": "https://admin.broncosports.com/calendar.aspx?game_id=23331&sport_id=14",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "$"
   },
   {
     "id": "4f9c4c8e86b2",
@@ -52003,6 +52285,29 @@
         "name": "kuna-library",
         "url": "https://kunalibrary.libcal.com/event/17209644",
         "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "2d8990724575",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2027-01-21T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2027/january/3-thursdays-at-zoo-boise-1-1-2/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2027/january/3-thursdays-at-zoo-boise-1-1-2/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
       }
     ],
     "costGuess": "free"
@@ -54161,6 +54466,29 @@
     "city": "Boise"
   },
   {
+    "id": "4da35d07c19f",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2027-01-28T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2027/january/3-thursdays-at-zoo-boise-1-1-2-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2027/january/3-thursdays-at-zoo-boise-1-1-2-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "f3d99aa5600e",
     "title": "Fit and Fall Proof",
     "start": "2027-01-28T10:15:00-07:00",
@@ -55637,6 +55965,29 @@
     "costGuess": "free"
   },
   {
+    "id": "aa7437100974",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2027-02-04T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2027/february/3-thursdays-at-zoo-boise-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2027/february/3-thursdays-at-zoo-boise-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "ce263feaf211",
     "title": "$3 Admission Day at Zoo Boise",
     "start": "2027-02-04T10:00:00-07:00",
@@ -55694,14 +56045,16 @@
     "venue": "JUMP",
     "venueKey": "jump",
     "city": "Boise",
-    "category": "community-civic",
+    "category": "arts-culture",
     "tags": [
       "family-friendly",
       "free-admission",
       "kids"
     ],
     "size": "M",
-    "url": "https://www.cityofboise.org/events/arts-and-history/2027/february/open-arms-dance-project-family-boogie/",
+    "cost": "free",
+    "url": "https://www.boiseartsandhistory.org/calendar/event?key=open-arms-dance-project-family-boogie_20270204",
+    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot...",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -55718,9 +56071,7 @@
         "url": "https://www.cityofboise.org/events/arts-and-history/2027/february/open-arms-dance-project-family-boogie/",
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
-    ],
-    "description": "Family Boogie classes are designed for toddlers through preschool age kids to joyfully dance alongside their grown ups! New babies up to elementary age kiddos are also encouraged to join the fun. In fact, kids (and their grown ups) of any age who want to be silly, playful, and creative should tot...",
-    "cost": "free"
+    ]
   },
   {
     "id": "c713c180e587",
@@ -55855,7 +56206,6 @@
     "id": "67937d149fb7",
     "title": "Wassmuth Center for Human Rights: Art of Belonging Writing Workshop with CMarie Fuhrman",
     "start": "2027-02-04T18:30:00-07:00",
-    "end": "2027-02-04T20:00:00-07:00",
     "allDay": false,
     "venue": "Wassmuth Center for Human Rights",
     "venueKey": "wassmuth-center-for-human-rights",
@@ -55866,7 +56216,9 @@
       "workshop"
     ],
     "size": "S",
-    "url": "https://www.cityofboise.org/events/arts-and-history/2027/february/wassmuth-center-for-human-rights-art-of-belonging-writing-workshop-with-cmarie-fuhrman/",
+    "cost": "free",
+    "url": "https://www.boiseartsandhistory.org/calendar/event?key=wassmuth-center-for-human-rights-art-of-belonging-writing-workshop-with-cmarie-fuhrman_20270204",
+    "description": "Every sentence makes a small world. Through poetry, conversation, and generative writing, you’re invited to explore how even the smallest choices in language shape belonging. A simple and can make room for another person, another truth, or even a contradiction. And sometimes what we leave unsaid...",
     "sources": [
       {
         "name": "boise-arts-history",
@@ -55879,8 +56231,7 @@
         "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ],
-    "description": "Every sentence makes a small world. Through poetry, conversation, and generative writing, you’re invited to explore how even the smallest choices in language shape belonging. A simple and can make room for another person, another truth, or even a contradiction. And sometimes what we leave unsaid...",
-    "cost": "free"
+    "end": "2027-02-04T20:00:00-07:00"
   },
   {
     "id": "0ef208f728d8",
@@ -56128,6 +56479,97 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "0b6e9d0934ea",
+    "title": "MVP Court Pass (check In By 6:30pm)",
+    "start": "2027-02-05T19:00:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "city": "Boise",
+    "category": "performing-arts",
+    "tags": [
+      "kids"
+    ],
+    "size": "XL",
+    "url": "https://www.ticketmaster.com/mvp-court-pass-check-in-by-boise-idaho-02-05-2027/event/1E006564E19C5CF7",
+    "description": "THIS IS AN OPTIONAL UPGRADE. TICKET TO THE MAIN EVENT IS ALSO REQUIRED. Get closer than courtside with the MVP Court Pass! Join the Pre-Game Fan Tunnel to welcome the Harlem Globetrotters to the floor, step into the Pre-Game Huddle, warm up with the team, and watch the famous Globetrotters Magic...",
+    "sources": [
+      {
+        "name": "extramile-arena",
+        "url": "https://www.ticketmaster.com/mvp-court-pass-check-in-by-boise-idaho-02-05-2027/event/1E006564E19C5CF7",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "$$"
+  },
+  {
+    "id": "0bc1c62ad552",
+    "title": "Harlem Globetrotters: Rivalry Tour Presented By Sprite",
+    "start": "2027-02-05T19:00:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "city": "Boise",
+    "category": "performing-arts",
+    "tags": [
+      "family-friendly"
+    ],
+    "size": "XL",
+    "url": "https://www.ticketmaster.com/harlem-globetrotters-rivalry-tour-presented-by-boise-idaho-02-05-2027/event/1E006563BCF34646",
+    "sources": [
+      {
+        "name": "extramile-arena",
+        "url": "https://www.ticketmaster.com/harlem-globetrotters-rivalry-tour-presented-by-boise-idaho-02-05-2027/event/1E006563BCF34646",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "$$"
+  },
+  {
+    "id": "8b424803aad7",
+    "title": "Limited Edition Rivals Replica Game Ball From Spalding®",
+    "start": "2027-02-05T19:00:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "city": "Boise",
+    "category": "performing-arts",
+    "tags": [],
+    "size": "XL",
+    "url": "https://www.ticketmaster.com/limited-edition-rivals-replica-game-ball-boise-idaho-02-05-2027/event/1E006564E3175E03",
+    "description": "THIS IS AN OPTIONAL UPGRADE. TICKET TO THE MAIN EVENT IS ALSO REQUIRED. How to Redeem Your Limited Edition Rivals Replica Game Ball from Spalding® Limited Edition Rivals Replica Game Ball from Spalding. Half Harlem Globetrotters, half Washington Generals, commemorating 75 years of the rivalry tha...",
+    "sources": [
+      {
+        "name": "extramile-arena",
+        "url": "https://www.ticketmaster.com/limited-edition-rivals-replica-game-ball-boise-idaho-02-05-2027/event/1E006564E3175E03",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "$$"
+  },
+  {
+    "id": "db2005d08842",
+    "title": "Ultimate Fan Pass: 30-min Exclusive On-court Access From 5:30pm-6:00pm",
+    "start": "2027-02-05T19:00:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "city": "Boise",
+    "category": "performing-arts",
+    "tags": [],
+    "size": "XL",
+    "url": "https://www.ticketmaster.com/ultimate-fan-pass-30min-exclusive-oncourt-boise-idaho-02-05-2027/event/1E006564DFF85C22",
+    "description": "TICKET TO MAIN EVENT ALSO REQUIRED. Get closer to the action with the all-new Ultimate Fan Pass - a limited-capacity, 30-minute pregame on-court experience featuring the Harlem Globetrotters and their Rivals. Be first through the doors and first on the court, where you get exclusive access up clo...",
+    "sources": [
+      {
+        "name": "extramile-arena",
+        "url": "https://www.ticketmaster.com/ultimate-fan-pass-30min-exclusive-oncourt-boise-idaho-02-05-2027/event/1E006564DFF85C22",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "$$"
   },
   {
     "id": "5e1b165e09f3",
@@ -57403,6 +57845,29 @@
     "costGuess": "free"
   },
   {
+    "id": "7610d36203bc",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2027-02-11T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2027/february/3-thursdays-at-zoo-boise-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2027/february/3-thursdays-at-zoo-boise-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "d4890e7cccbb",
     "title": "$3 Admission Day at Zoo Boise",
     "start": "2027-02-11T10:00:00-07:00",
@@ -58576,6 +59041,29 @@
     "costGuess": "free"
   },
   {
+    "id": "0f85eca2652b",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2027-02-18T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2027/february/3-thursdays-at-zoo-boise-1-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2027/february/3-thursdays-at-zoo-boise-1-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "48a9fa5bef82",
     "title": "$3 Admission Day at Zoo Boise",
     "start": "2027-02-18T10:00:00-07:00",
@@ -58914,6 +59402,30 @@
         "name": "college-of-idaho-athletics",
         "url": "https://www.yoteathletics.com/calendar.aspx?game_id=8413&sport_id=11",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ],
+    "costGuess": "$"
+  },
+  {
+    "id": "d6169fb72808",
+    "title": "Boise State University Women's Gymnastics vs Southern Utah",
+    "start": "2027-02-19T19:00:00-07:00",
+    "end": "2027-02-19T22:00:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "college-sports"
+    ],
+    "size": "XL",
+    "url": "https://admin.broncosports.com/calendar.aspx?game_id=23338&sport_id=14",
+    "sources": [
+      {
+        "name": "boise-state-athletics",
+        "url": "https://admin.broncosports.com/calendar.aspx?game_id=23338&sport_id=14",
+        "fetchedAt": "2026-11-06T19:12:30Z"
       }
     ],
     "costGuess": "$"
@@ -59607,6 +60119,29 @@
     "costGuess": "free"
   },
   {
+    "id": "040036fb1b21",
+    "title": "$3 Thursdays at Zoo Boise",
+    "start": "2027-02-25T10:00:00-07:00",
+    "allDay": false,
+    "venue": "Zoo Boise",
+    "venueKey": "zoo-boise",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "zoo"
+    ],
+    "size": "M",
+    "url": "https://www.cityofboise.org/events/parks/2027/february/3-thursdays-at-zoo-boise-1-1-1-1-1/",
+    "sources": [
+      {
+        "name": "city-of-boise",
+        "url": "https://www.cityofboise.org/events/parks/2027/february/3-thursdays-at-zoo-boise-1-1-1-1-1/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
     "id": "f060e5142a2d",
     "title": "$3 Admission Day at Zoo Boise",
     "start": "2027-02-25T10:00:00-07:00",
@@ -60056,6 +60591,30 @@
       }
     ],
     "costGuess": "free"
+  },
+  {
+    "id": "1bd74f6f97ef",
+    "title": "Boise State University Women's Gymnastics vs Oregon State",
+    "start": "2027-02-26T19:00:00-07:00",
+    "end": "2027-02-26T22:00:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "college-sports"
+    ],
+    "size": "XL",
+    "url": "https://admin.broncosports.com/calendar.aspx?game_id=23339&sport_id=14",
+    "sources": [
+      {
+        "name": "boise-state-athletics",
+        "url": "https://admin.broncosports.com/calendar.aspx?game_id=23339&sport_id=14",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "$"
   },
   {
     "id": "3fab8d64a169",
@@ -61347,6 +61906,30 @@
         "fetchedAt": "2026-11-04T21:43:45Z"
       }
     ]
+  },
+  {
+    "id": "4c61ff783e0e",
+    "title": "Boise State University Women's Gymnastics vs Utah State",
+    "start": "2027-03-05T19:00:00-07:00",
+    "end": "2027-03-05T22:00:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "college-sports"
+    ],
+    "size": "XL",
+    "url": "https://admin.broncosports.com/calendar.aspx?game_id=23340&sport_id=14",
+    "sources": [
+      {
+        "name": "boise-state-athletics",
+        "url": "https://admin.broncosports.com/calendar.aspx?game_id=23340&sport_id=14",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "costGuess": "$"
   },
   {
     "id": "9eeb1398597b",
@@ -62719,6 +63302,33 @@
       }
     ],
     "costGuess": "$"
+  },
+  {
+    "id": "31ee24e56558",
+    "title": "Noah Gundersen (21+ Event)",
+    "start": "2027-03-13T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Neurolux",
+    "venueKey": "neurolux",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "M",
+    "url": "https://www.ticketmaster.com/event/Z7r9jZ1AA7Mq8",
+    "sources": [
+      {
+        "name": "neurolux",
+        "url": "https://www.ticketmaster.com/event/Z7r9jZ1AA7Mq8",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      },
+      {
+        "name": "ticketmaster-metro",
+        "url": "https://www.ticketmaster.com/event/Z7r9jZ1AA7Mq8",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
   },
   {
     "id": "dacc6931ba8b",
@@ -65334,6 +65944,28 @@
     "end": "2027-04-01T21:30:00-06:00"
   },
   {
+    "id": "fb252a9215c1",
+    "title": "Hackfort Tech Challenge",
+    "start": "2027-04-02T09:00:00-06:00",
+    "end": "2027-04-02T12:00:00-06:00",
+    "allDay": false,
+    "venue": "JUMP",
+    "venueKey": "jump",
+    "city": "Boise",
+    "category": "arts-culture",
+    "tags": [],
+    "size": "M",
+    "url": "https://events.boisestate.edu/event/hackfort-tech-challenge",
+    "description": "The Hackfort Tech Challenge is a statewide pitch competition open to higher education students across Idaho, inviting teams to pitch technology-driven ideas that strengthen communities and create meaningful impact. Student teams compete for cash prizes while showcasing how technology can drive po...",
+    "sources": [
+      {
+        "name": "boise-state-arts",
+        "url": "https://events.boisestate.edu/event/hackfort-tech-challenge",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
     "id": "bcabe75ffdef",
     "title": "Homeschoolers @ the Library",
     "start": "2027-04-02T09:30:00-06:00",
@@ -66890,7 +67522,7 @@
     "sources": [
       {
         "name": "boise-mom",
-        "url": "https://boisemom.com/event/heroes-a-video-game-symphony-2/",
+        "url": "https://boisemom.com/event/heroes-a-video-game-symphony/",
         "fetchedAt": "2026-11-03T17:00:01Z"
       },
       {

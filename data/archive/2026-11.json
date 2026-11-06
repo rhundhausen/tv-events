@@ -4596,5 +4596,329 @@
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
+  },
+  {
+    "id": "4d0e23bef2a0",
+    "title": "Flower Bundle Friday",
+    "start": "2026-11-06T08:00:00-07:00",
+    "end": "2026-11-06T08:30:00-07:00",
+    "allDay": false,
+    "venue": "Victory Gardens Nursery",
+    "venueKey": "victory-gardens-nursery",
+    "city": "Meridian",
+    "category": "community-civic",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisemom.com/event/flower-bundle-friday-2/2026-11-06/",
+    "description": "Treat yourself this Friday with a small, fresh flower bundle paired with a 20 oz drink of your choice. It’s the perfect little pick-me-up and a great gift for yourself, a partner, a friend, or a family member. Because everyone deserves a little something special. We only make a limited amount, co...",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/flower-bundle-friday-2/2026-11-06/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "291ee55ebc30",
+    "title": "Homeschoolers @ the Library",
+    "start": "2026-11-06T09:30:00-07:00",
+    "end": "2026-11-06T10:30:00-07:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17253230",
+    "description": "This week, the Homeschoolers @ the Library group will create encouraging notes to include with snacks and drinks donated to the Boise Ronald McDonald House. The Ronald McDonald House serves families with ill or injured children receiving medical care in the Treasure Valley, providing them with a...",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17253230",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "4e4855bbda51",
+    "title": "English Practice Meet-Up",
+    "start": "2026-11-06T10:00:00-07:00",
+    "end": "2026-11-06T11:00:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "nightlife-social",
+    "tags": [
+      "meetup"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/15302450",
+    "description": "Do you want to practice speaking English? Come and talk with us! We'll meet weekly in the Catalpa Room at the Library! at Collister for guided conversation and practice.",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/15302450",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "14b25631a53c",
+    "title": "Preschool Storytime",
+    "start": "2026-11-06T10:15:00-07:00",
+    "end": "2026-11-06T10:45:00-07:00",
+    "allDay": false,
+    "venue": "Nampa Public Library",
+    "venueKey": "nampa-public-library",
+    "city": "Nampa",
+    "category": "learning-business",
+    "tags": [
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://nampalibrary.libcal.com/event/16156588",
+    "description": "Join us in the children's area for Preschool Storytime to explore Kindergarten readiness skills! Geared for children ages 3-5 and their caregivers; featuring stories, songs, fingerplays, and rhymes.",
+    "sources": [
+      {
+        "name": "nampa-public-library",
+        "url": "https://nampalibrary.libcal.com/event/16156588",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "df660a5bc4da",
+    "title": "Music & Movement",
+    "start": "2026-11-06T10:15:00-07:00",
+    "end": "2026-11-06T10:45:00-07:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17221179",
+    "description": "Join us ever Friday at 10:15 am and 11:15 am for Music & Movement in the conference room at the library! Get ready to sing, dance, and play musical instruments. This program is designed for children with an adult companion. Please be advised that this specific program has been limited to 30 peopl...",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17221179",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "1a700cd3dfab",
+    "title": "PLay and Learn | Cole & Ustick Library!",
+    "start": "2026-11-06T10:30:00-07:00",
+    "end": "2026-11-06T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Library! at Cole & Ustick",
+    "venueKey": "library-at-cole-and-ustick",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "free-admission",
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "cost": "free",
+    "url": "https://boisemom.com/event/play-and-learn-cole-ustick-library/2026-11-06/",
+    "description": "This open play time is designed for children ages 5 and under and their caregivers to enjoy open-ended play and socialization together. While all ages are welcome to attend, this program is intended for children ages 0-5.",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/play-and-learn-cole-ustick-library/2026-11-06/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "39e3b71db632",
+    "title": "Bown Library Book Club",
+    "start": "2026-11-06T10:30:00-07:00",
+    "end": "2026-11-06T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "library-program"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/17112241",
+    "description": "Join us for a lively discussion about our monthly book! SEPTEMBER: Tilt By Emma Pattee OCTOBER: The Haunting of Hill House by Shirley Jackson NOVEMBER: Are You There God? It's Me, Margaret by Judy Blume DECEMBER: The Bear and the Nightingale by Katherine Arden",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/17112241",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "7448d6a18990",
+    "title": "Guided Walk-In Capitol Tours",
+    "start": "2026-11-06T10:30:00-07:00",
+    "end": "2026-11-06T12:00:00-07:00",
+    "allDay": false,
+    "venue": "Idaho State Capital",
+    "venueKey": "idaho-state-capital",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "free-admission",
+      "tour"
+    ],
+    "size": "S",
+    "cost": "free",
+    "url": "https://boisemom.com/event/guided-walk-in-capitol-tours/2026-11-06/",
+    "description": "Guided Walk-in Tours Guided tours, on a walk-in basis are available every Friday and Saturday at 10:30 am year-round, except major holidays (New Years Day, Christmas Day, 4th of July). Summer Tours: From June 1st to October 31st we will have extra guided tours, on a walk-in basis available every...",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/guided-walk-in-capitol-tours/2026-11-06/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "86f66dce7b0f",
+    "title": "Play and Learn",
+    "start": "2026-11-06T10:30:00-07:00",
+    "end": "2026-11-06T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "kids"
+    ],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/16415175",
+    "description": "This open play time is designed for children ages 5 and under and their caregivers to enjoy open-ended play and socialization together. While all ages are welcome to attend, this program is intended for children ages 0-5.",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/16415175",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "bde13face1f8",
+    "title": "Baby Story & Play | Hillcrest Library!",
+    "start": "2026-11-06T10:30:00-07:00",
+    "end": "2026-11-06T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Library! at Hillcrest",
+    "venueKey": "library-at-hillcrest",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [
+      "free-admission",
+      "kids",
+      "library-program"
+    ],
+    "size": "S",
+    "cost": "free",
+    "url": "https://boisemom.com/event/baby-story-play-hillcrest-library/2026-11-06/",
+    "description": "Join us for rhymes, songs, stories, and open play time. This program is a great way to meet others in the community and set your baby up for early literacy success! This program is designed for babies (0-24 months) and their caregivers.",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/baby-story-play-hillcrest-library/2026-11-06/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "df983a2c7372",
+    "title": "Baby Stories and Play",
+    "start": "2026-11-06T10:30:00-07:00",
+    "end": "2026-11-06T11:30:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/15118769",
+    "description": "Join us for rhymes, songs, stories, and open play time. This program is a great way to meet others in the community and set your baby up for early literacy success! This program is designed for babies (0-24 months) and their caregivers.",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/15118769",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ],
+    "costGuess": "free"
+  },
+  {
+    "id": "f4483a574b16",
+    "title": "Walk-In Guided Tours, Idaho State Capitol Building",
+    "start": "2026-11-06T10:30:00-07:00",
+    "end": "2026-11-06T12:00:00-07:00",
+    "allDay": false,
+    "venue": "Idaho State Capitol Building",
+    "venueKey": "idaho-state-capitol-building",
+    "city": "Boise",
+    "category": "outdoors-recreation",
+    "tags": [
+      "tour"
+    ],
+    "size": "S",
+    "url": "https://legislature.idaho.gov/capitol/tours/",
+    "description": "We will have a tour guide available and ready to give you a full tour of the Capitol Building. You will learn all about the history of our Capitol Building and the State of Idaho.",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://legislature.idaho.gov/capitol/tours/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
+    "id": "ad1ba8550046",
+    "title": "Fit and Fall Proof",
+    "start": "2026-11-06T11:30:00-07:00",
+    "end": "2026-11-06T12:15:00-07:00",
+    "allDay": false,
+    "venue": "Kuna Library",
+    "venueKey": "kuna-library",
+    "city": "Kuna",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://kunalibrary.libcal.com/event/17346792",
+    "description": "A FREE fitness program designed to help older adults prevent injury. Participants learn simple exercises to increase strength, mobility, balance, and endurance, which can help prevent accidental falls and tripping. All fitness levels are welcome.",
+    "sources": [
+      {
+        "name": "kuna-library",
+        "url": "https://kunalibrary.libcal.com/event/17346792",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ],
+    "costGuess": "free"
   }
 ]
