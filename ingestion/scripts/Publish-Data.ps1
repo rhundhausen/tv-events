@@ -40,13 +40,25 @@ $date = (ConvertTo-BoiseTime ([DateTimeOffset]::UtcNow)).Substring(0, 10)
 # commit is what puts the new data on the site. The test workflow doesn't run either way, because
 # GitHub never starts workflows from a push made with the workflow's own GITHUB_TOKEN.
 $subject = "$Message $date$($SkipDeploy ? ' [skip ci]' : '')"
-Invoke-Git -c 'user.name=WeekendBoise bot' -c 'user.email=weekendboise-bot@noreply.invalid' commit -m $subject
+$bot = @('-c', 'user.name=WeekendBoise bot', '-c', 'user.email=weekendboise-bot@noreply.invalid')
+Invoke-Git @bot commit -m $subject
 
 # Push to the branch the run was triggered on. GitHub Actions sets GITHUB_REF.
-$branchRef = $env:GITHUB_REF
-if ($branchRef -like 'refs/heads/*') {
-  Invoke-Git push origin "HEAD:$branchRef"
-}
-else {
-  Invoke-Git push
+$branch = if ("$env:GITHUB_REF" -like 'refs/heads/*') { $env:GITHUB_REF.Substring(11) } else { git rev-parse --abbrev-ref HEAD }
+
+# Refine takes 15 minutes or more, so someone may push code to the branch while it runs, and
+# the push is then rejected as out of date. Each workflow commits only its own data files, so
+# replay this commit on top of the new branch head and push again. If someone changed the same
+# files, stop rather than overwrite their change.
+for ($attempt = 1; ; $attempt++) {
+  git push origin "HEAD:refs/heads/$branch"
+  if ($LASTEXITCODE -eq 0) { break }
+  if ($attempt -ge 3) { throw "git push failed $attempt times; giving up" }
+  Write-Host "Push rejected, so replaying the commit on top of origin/$branch (attempt $attempt)"
+  Invoke-Git fetch origin $branch
+  git @bot rebase FETCH_HEAD
+  if ($LASTEXITCODE -ne 0) {
+    git rebase --abort
+    throw "Someone changed the same files ($($Path -join ', ')) on $branch during this run, so this run's data was not pushed. Run the workflow again."
+  }
 }
