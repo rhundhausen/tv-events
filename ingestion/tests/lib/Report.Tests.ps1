@@ -58,7 +58,18 @@ Describe 'New-TvIngestReport' {
     $report.Text | Should -Match '(?s)Ready.*Waiting Venue'
     $report.Text | Should -Match '(?s)Investigating.*Puzzling Site.*Loads with JavaScript'
     $report.Text | Should -Match '(?s)Ideas.*Someday Club'
-    $report.Text | Should -Match 'Ruled out: 1'
+    $report.Text | Should -Match '(?s)Ruled out \(1\).*Never Again.*HTTP 403'
+  }
+
+  It 'explains each status under its heading' {
+    $report.Text | Should -Match 'Ready \(1\): built and tested'
+    $report.Text | Should -Match 'Investigating \(1\): looked at'
+    $report.Text | Should -Match 'Ideas \(1\): suggested'
+    $report.Text | Should -Match 'Ruled out \(1\): will not be used'
+  }
+
+  It 'links each succeeded source to its page' {
+    $report.Html | Should -Match '<a href="https://good\.test/cal\.ics">Good Venue \(good\)</a>'
   }
 
   It 'links the workflow run' {
@@ -135,6 +146,25 @@ Describe 'New-TvRefineReport' {
 
   It 'still reports when there is no refine file' {
     (New-TvRefineReport -Refine $null -Links $null -Sources $sources -Context @{ Outcome = 'failure'; RunUrl = 'u' }).Subject | Should -Be 'WeekendBoise refine FAILED: no refine.json'
+  }
+}
+
+Describe 'Send-TvReport attachments' {
+  It 'sends a file as a base64 attachment' {
+    $file = Join-Path $TestDrive 'out.zip'
+    [IO.File]::WriteAllBytes($file, [byte[]](1, 2, 3, 250))
+    Mock Invoke-RestMethod { [pscustomobject]@{ id = 'abc' } }
+    $null = Send-TvReport -Report @{ Subject = 'S'; Html = 'H'; Text = 'T' } -To 'me@test.example' -ApiKey 'k' -Attachment $file
+    Should -Invoke Invoke-RestMethod -Times 1 -ParameterFilter {
+      $body = $Body | ConvertFrom-Json
+      $body.attachments[0].filename -eq 'out.zip' -and
+      ([Convert]::FromBase64String($body.attachments[0].content) -join ',') -eq '1,2,3,250'
+    }
+  }
+
+  It 'names the attachment in the report' {
+    $report = New-TvIngestReport -Run $run -Sources $sources -Context ($context + @{ Attachment = 'out.zip (415 KB)' })
+    $report.Text | Should -Match 'Attached: +out\.zip \(415 KB\)'
   }
 }
 

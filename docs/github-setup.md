@@ -35,6 +35,8 @@ Settings > Secrets and variables > Actions > New repository secret. The names mu
 | `RESEND_API_KEY` | For the report emails. A Resend API key (resend.com > API Keys, "Sending access") |
 | `REPORT_EMAIL` | For the report emails. Where they go. With no verified domain in Resend, this must be the address the Resend account was created with |
 
+Optional: `REPORT_FROM`, the sender, such as `WeekendBoise <reports@your-domain>`. It needs that domain verified in Resend (Domains > Add domain, then the DNS records it lists). Without it, the emails come from `onboarding@resend.dev`.
+
 A secret you don't create reaches the scripts as empty, and that source fails with a warning while the rest run. Without `RESEND_API_KEY` or `REPORT_EMAIL`, the "Email the report" step warns and sends nothing.
 
 ## 5. Prove the data commit with one source

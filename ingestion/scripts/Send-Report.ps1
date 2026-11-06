@@ -10,6 +10,9 @@
   still work. A failed send fails the script, so the workflow step shows it.
 
   A run that stopped before writing its file still gets a short report that says so.
+
+  The OutDir folder is zipped and attached, named like the workflow's artifact: out.zip for ingest,
+  refine-out.zip for refine. A zip over MaxAttachmentBytes is left off, and the email says so.
 .PARAMETER Kind
   ingest or refine.
 .PARAMETER PreviewPath
@@ -22,6 +25,10 @@
   What started the run (schedule, workflow_dispatch, workflow_run). Defaults to EVENT.
 .PARAMETER Source
   The one source an ingest ran, if any. Defaults to SOURCE.
+.PARAMETER ZipDir
+  Where the attachment zip is written. Defaults to a new temp folder.
+.PARAMETER MaxAttachmentBytes
+  The largest zip to attach. Resend allows 40 MB per email after base64, which adds a third.
 #>
 [CmdletBinding()]
 param(
@@ -32,7 +39,9 @@ param(
   [string]$Outcome = $env:JOB_STATUS,
   [string]$RunUrl = $env:RUN_URL,
   [string]$Trigger = $env:EVENT,
-  [string]$Source = $env:SOURCE
+  [string]$Source = $env:SOURCE,
+  [string]$ZipDir = (Join-Path ([IO.Path]::GetTempPath()) "weekendboise-report-$([guid]::NewGuid().ToString('n'))"),
+  [long]$MaxAttachmentBytes = 28MB
 )
 
 $ErrorActionPreference = 'Stop'
@@ -45,6 +54,26 @@ $read = {
 }
 $sources = @((Get-Content -LiteralPath $SourcesPath -Raw | ConvertFrom-Json -DateKind String).sources)
 $context = @{ Outcome = $Outcome; RunUrl = $RunUrl; Trigger = $Trigger; Source = "$Source".Trim() }
+
+# Zip the output folder, named like the workflow artifact.
+$zipName = if ($Kind -eq 'ingest') { 'out.zip' } else { 'refine-out.zip' }
+$attachment = $null
+$files = @(if (Test-Path -LiteralPath $OutDir) { Get-ChildItem -LiteralPath $OutDir -File -Recurse })
+if ($files.Count -eq 0) {
+  $context.Attachment = "none, $OutDir has no files"
+} else {
+  $null = New-Item -ItemType Directory -Force -Path $ZipDir
+  $zipPath = Join-Path $ZipDir $zipName
+  Compress-Archive -Path (Join-Path $OutDir '*') -DestinationPath $zipPath -Force
+  $size = (Get-Item -LiteralPath $zipPath).Length
+  $sizeText = if ($size -ge 1MB) { '{0:n1} MB' -f ($size / 1MB) } else { '{0:n0} KB' -f [Math]::Ceiling($size / 1KB) }
+  if ($size -gt $MaxAttachmentBytes) {
+    $context.Attachment = "none, $zipName is $sizeText, over the $('{0:n0} MB' -f ($MaxAttachmentBytes / 1MB)) limit; download the artifact from the workflow run"
+  } else {
+    $attachment = $zipPath
+    $context.Attachment = "$zipName ($sizeText)"
+  }
+}
 
 $report = if ($Kind -eq 'ingest') {
   New-TvIngestReport -Run (& $read 'run.json') -Sources $sources -Context $context
@@ -63,5 +92,8 @@ if (-not $env:RESEND_API_KEY -or -not $env:REPORT_EMAIL) {
   exit 0
 }
 
-$sent = Send-TvReport -Report $report -To $env:REPORT_EMAIL -ApiKey $env:RESEND_API_KEY
+# REPORT_FROM, such as 'WeekendBoise <reports@example.com>', needs a domain verified in Resend.
+$from = @{}
+if ($env:REPORT_FROM) { $from.From = $env:REPORT_FROM }
+$sent = Send-TvReport -Report $report -To $env:REPORT_EMAIL -ApiKey $env:RESEND_API_KEY -Attachment $attachment @from
 Write-Host "Emailed '$($report.Subject)' (Resend id $($sent.id))"

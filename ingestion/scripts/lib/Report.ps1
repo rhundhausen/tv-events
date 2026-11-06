@@ -116,22 +116,22 @@ function Get-TvWaitingSections {
   # The sources that don't run yet, by status, so the report shows what's left to build.
   param([object[]]$Sources)
 
-  $describe = { param($entry) $text = "$($entry.notes)"; if ($text.Length -gt 140) { $text.Substring(0, 137) + '...' } else { $text } }
-  $byStatus = {
-    param($status)
-    @($Sources | Where-Object { "$($_.status)" -eq $status } | Sort-Object displayName | ForEach-Object {
-        , @(@{ Text = "$($_.displayName)"; Url = "$($_.url)" }, (& $describe $_))
-      })
+  $shorten = { param($text) $text = "$text"; if ($text.Length -gt 160) { $text.Substring(0, 157) + '...' } else { $text } }
+  $group = {
+    # One sub-heading per status: name (linked) and the notes, or the reason for ruled-out ones.
+    param([string]$Status, [string]$Title, [string]$Meaning)
+    $rows = [Collections.Generic.List[object]]::new()
+    foreach ($entry in @($Sources | Where-Object { "$($_.status)" -eq $Status } | Sort-Object displayName)) {
+      $detail = if ($Status -eq 'ruled-out') { "$($entry.reason)" } else { & $shorten $entry.notes }
+      $rows.Add(@(@{ Text = "$($entry.displayName)"; Url = "$($entry.url)" }, $detail))
+    }
+    [pscustomobject]@{ Title = "$Title ($($rows.Count)): $Meaning"; Rows = $rows.ToArray(); Count = $rows.Count }
   }
-  $ready = & $byStatus 'ready'
-  $investigating = & $byStatus 'investigating'
-  $ideas = & $byStatus ''
-  $ruledOut = @($Sources | Where-Object status -eq 'ruled-out').Count
-  New-TvReportSection -Title "Not running yet: $($ready.Count) ready, $($investigating.Count) investigating, $($ideas.Count) ideas" -Note "Ruled out: $ruledOut" -Groups @(
-    [pscustomobject]@{ Title = "Ready ($($ready.Count))"; Rows = $ready }
-    [pscustomobject]@{ Title = "Investigating ($($investigating.Count))"; Rows = $investigating }
-    [pscustomobject]@{ Title = "Ideas ($($ideas.Count))"; Rows = $ideas }
-  )
+  $ready = & $group 'ready' 'Ready' 'built and tested, not switched on yet'
+  $investigating = & $group 'investigating' 'Investigating' 'looked at, but something stands in the way (pages that need JavaScript, blocked scripts, no feed); the notes say what was tried'
+  $ideas = & $group '' 'Ideas' 'suggested, not looked at yet'
+  $ruledOut = & $group 'ruled-out' 'Ruled out' 'will not be used, for the reason given'
+  New-TvReportSection -Title "Not running: $($ready.Count) ready, $($investigating.Count) investigating, $($ideas.Count) ideas, $($ruledOut.Count) ruled out" -Groups @($ready, $investigating, $ideas, $ruledOut)
 }
 
 function New-TvIngestReport {
@@ -159,6 +159,7 @@ function New-TvIngestReport {
     $sections = @(
       New-TvReportSection -Title 'What happened' -Kind pairs -Rows @(
         , @('Result:', 'Ingest stopped before it wrote run.json, so no source results are available.')
+        , @('Attached:', ($Context.Attachment ? "$($Context.Attachment)" : 'none'))
         , @('Workflow run:', $runLink)
       )
     )
@@ -188,6 +189,7 @@ function New-TvIngestReport {
   if ($null -ne $Run.rawEvents) {
     $basics += , @('Raw file:', "$($Run.rawSources) sources, $($Run.rawEvents) events, as of $(Format-TvReportTime $Run.asOf)$($Run.noWrite ? ' (not written)' : '')")
   }
+  if ($Context.Attachment) { $basics += , @('Attached:', "$($Context.Attachment)") }
   $basics += , @('Workflow run:', $runLink)
 
   $sections = [Collections.Generic.List[object]]::new()
@@ -204,7 +206,7 @@ function New-TvIngestReport {
         $warned | ForEach-Object { [pscustomobject]@{ Title = (Get-TvSourceLabel $_.name $Sources); Rows = @($_.warnings | ForEach-Object { , @("$_") }) } }
       )))
   $sections.Add((New-TvReportSection -Title "Succeeded ($($ok.Count))" -Rows @(
-        $ok | Sort-Object { -[int]$_.fetched } | ForEach-Object { , @((Get-TvSourceLabel $_.name $Sources), "$($_.fetched) events", "$($_.duration)") }
+        $ok | Sort-Object { -[int]$_.fetched } | ForEach-Object { , @(@{ Text = (Get-TvSourceLabel $_.name $Sources); Url = (& $pageOf $_.name) }, "$($_.fetched) events", "$($_.duration)") }
       )))
   $sections.Add((Get-TvWaitingSections $Sources))
 
@@ -239,6 +241,7 @@ function New-TvRefineReport {
     $sections = @(
       New-TvReportSection -Title 'What happened' -Kind pairs -Rows @(
         , @('Result:', 'Refine stopped before it wrote refine.json. The site was not updated.')
+        , @('Attached:', ($Context.Attachment ? "$($Context.Attachment)" : 'none'))
         , @('Workflow run:', $runLink)
       )
     )
@@ -266,8 +269,9 @@ function New-TvRefineReport {
     , @('Cost guesses changed:', "$($Refine.costGuesses)")
     , @('Links checked:', $linkLine)
     , @('Broken links:', "$($Refine.links.broken) ($($Refine.links.newBroken) new)")
-    , @('Workflow run:', $runLink)
   )
+  if ($Context.Attachment) { $basics += , @('Attached:', "$($Context.Attachment)") }
+  $basics += , @('Workflow run:', $runLink)
 
   $sections = [Collections.Generic.List[object]]::new()
   $sections.Add((New-TvReportSection -Title 'Run' -Kind pairs -Rows $basics))
@@ -311,16 +315,25 @@ function Send-TvReport {
     [Parameter(Mandatory)][hashtable]$Report,
     [Parameter(Mandatory)][string]$To,
     [Parameter(Mandatory)][string]$ApiKey,
-    [string]$From = 'WeekendBoise <onboarding@resend.dev>'
+    [string]$From = 'WeekendBoise <onboarding@resend.dev>',
+    # A file to attach, sent base64-encoded under its own name. Resend allows 40 MB per email.
+    [string]$Attachment
   )
 
-  $body = [ordered]@{
+  $message = [ordered]@{
     from    = $From
     to      = @($To -split '[,;]' | ForEach-Object Trim | Where-Object { $_ })
     subject = $Report.Subject
     html    = $Report.Html
     text    = $Report.Text
-  } | ConvertTo-Json -Depth 4
+  }
+  if ($Attachment) {
+    $message.attachments = @(@{
+        filename = [IO.Path]::GetFileName($Attachment)
+        content  = [Convert]::ToBase64String([IO.File]::ReadAllBytes($Attachment))
+      })
+  }
+  $body = $message | ConvertTo-Json -Depth 4
   Invoke-RestMethod -Uri 'https://api.resend.com/emails' -Method Post -ContentType 'application/json' `
     -Headers @{ Authorization = "Bearer $ApiKey" } -Body $body -TimeoutSec 30
 }

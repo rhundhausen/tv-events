@@ -101,6 +101,7 @@ API keys are read from environment variables only. Copy `ingestion/.env.example.
 - **Report emails:** each workflow's last step, "Email the report", runs even when an earlier step failed. `ingestion/scripts/Send-Report.ps1` builds a summary and sends it with the Resend API to `REPORT_EMAIL`.
   - **Ingest's email:** start, finish, and duration; sources that failed, with their page and error (such as `HTTP 405`); sources that succeeded with no events; warnings; events per source; and the sources not running yet (ready, investigating, ideas).
   - **Refine's email:** the same basics, the raw file totals, upcoming and archived counts, cities filled in, link check counts, broken links grouped by source (new ones marked), and events by category and source.
+  - **Attachments:** each email attaches the run's `out/` folder, zipped and named like its artifact: `out.zip` for ingest, `refine-out.zip` for refine. A zip over 28 MB is left off and the email says so (Resend allows 40 MB per email, and base64 adds a third).
   - **Resend:** without a verified domain, it sends from `onboarding@resend.dev`, and only to the address the account was created with. A failed send fails the step.
   - **Previewing locally:** `./ingestion/scripts/Send-Report.ps1 -Kind ingest -PreviewPath ./out/report` writes `out/report.txt` and `.html`, and sends nothing unless both secrets are set as environment variables.
 

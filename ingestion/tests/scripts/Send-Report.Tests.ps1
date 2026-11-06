@@ -35,6 +35,28 @@ Describe 'Send-Report' {
     Get-Content "$preview.html" -Raw | Should -Match 'Alpha Hall \(alpha\)'
   }
 
+  It 'zips the output folder as the attachment, named like the workflow artifact' {
+    @{ startedAt = '2026-11-07T07:00:05Z'; finishedAt = '2026-11-07T07:01:05Z'; sources = @() } |
+      ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $out 'run.json')
+    'x' | Set-Content -LiteralPath (Join-Path $out 'alpha.json')
+    $zipDir = Join-Path $TestDrive "zip-$([guid]::NewGuid().ToString('n'))"
+    $preview = Join-Path $TestDrive 'preview-zip'
+    & $send -Kind refine -OutDir $out -SourcesPath $sourcesPath -PreviewPath $preview -ZipDir $zipDir -WarningAction SilentlyContinue
+    $zip = Join-Path $zipDir 'refine-out.zip'
+    Test-Path -LiteralPath $zip | Should -BeTrue
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $entries = [IO.Compression.ZipFile]::OpenRead($zip)
+    try { @($entries.Entries.FullName | Sort-Object) | Should -Be @('alpha.json', 'run.json') } finally { $entries.Dispose() }
+    Get-Content "$preview.txt" -Raw | Should -Match 'Attached: +refine-out\.zip'
+  }
+
+  It 'leaves the attachment off, and says so, when the zip is over the limit' {
+    'x' | Set-Content -LiteralPath (Join-Path $out 'alpha.json')
+    $preview = Join-Path $TestDrive 'preview-big'
+    & $send -Kind ingest -OutDir $out -SourcesPath $sourcesPath -PreviewPath $preview -ZipDir (Join-Path $TestDrive 'zip-big') -MaxAttachmentBytes 1 -WarningAction SilentlyContinue
+    Get-Content "$preview.txt" -Raw | Should -Match 'Attached: +none, out\.zip is .* over the .* limit; download the artifact from the workflow run'
+  }
+
   It 'reports a refine that wrote no refine.json' {
     $preview = Join-Path $TestDrive 'preview-refine'
     & $send -Kind refine -OutDir $out -SourcesPath $sourcesPath -PreviewPath $preview -Outcome failure -WarningAction SilentlyContinue
