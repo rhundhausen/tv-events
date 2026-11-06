@@ -2,7 +2,7 @@
 
 ## 2026-11-04: moved back to GitHub, new layout
 
-The project returned to one public GitHub repo (rhundhausen/tv-events) on 2026-11-04. The sections below describe the Azure DevOps period and are kept for history; where they conflict with this section, this section wins.
+The project returned to one public GitHub repo (rhundhausen/weekendboise, named tv-events until 2026-11-05) on 2026-11-04. The sections below describe the Azure DevOps period and are kept for history; where they conflict with this section, this section wins.
 
 Layout:
 
@@ -48,8 +48,8 @@ GitHub-specific pieces that need replacing or editing:
 | `.github/workflows/ingest.yml` | Becomes an Azure Pipelines YAML with a nightly schedule (10:00 UTC) and a manual run with an optional `source` parameter |
 | `.github/workflows/test.yml` | Becomes a pipeline that runs `Invoke-Pester -CI` on push and PR |
 | Secrets | Pipeline secret variables or a variable group. Secret variables are not exposed to scripts automatically; map each one in `env:` (`TICKETMASTER_KEY: $(TICKETMASTER_KEY)`) |
-| `scripts/Publish-Data.ps1` | Commits and pushes as "tv-events bot". The build service identity needs Contribute permission on the repo, and the checkout step needs `persistCredentials: true`. `[skip ci]` in the message works in Azure Repos too. Change the noreply.github.com email |
-| User-Agent in `scripts/lib/Http.ps1` and `tests/lib/Http.Tests.ps1` | Decided 2026-11-03: keep the GitHub URL for now, and switch to a contact page on the user's future Cloudflare site once it exists. Keep the `tv-events` product token so robots.txt rules still match |
+| `scripts/Publish-Data.ps1` | Commits and pushes as "WeekendBoise bot". The build service identity needs Contribute permission on the repo, and the checkout step needs `persistCredentials: true`. `[skip ci]` in the message works in Azure Repos too. Change the noreply.github.com email |
+| User-Agent in `scripts/lib/Http.ps1` and `tests/lib/Http.Tests.ps1` | Decided 2026-11-03: keep the GitHub URL for now, and switch to a contact page on the user's future Cloudflare site once it exists. Keep the product token (now `WeekendBoise`, renamed from `tv-events` on 2026-11-05) so robots.txt rules still match |
 | `$id` in `schema/*.schema.json` | GitHub URLs. Only identifiers, but update for consistency |
 | `README.md` | "GitHub setup" section and the Action wording |
 | Hugo site | Phase 2 plan assumed GitHub Pages. Pick a host that can read a private repo (Azure Static Web Apps fits) |

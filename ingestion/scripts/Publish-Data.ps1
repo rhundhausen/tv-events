@@ -24,7 +24,7 @@ if ($LASTEXITCODE -eq 0) {
 
 $date = (ConvertTo-BoiseTime ([DateTimeOffset]::UtcNow)).Substring(0, 10)
 # [skip ci] keeps this commit from triggering the test workflow.
-Invoke-Git -c 'user.name=tv-events bot' -c 'user.email=tv-events-bot@noreply.invalid' commit -m "data: nightly ingest $date [skip ci]"
+Invoke-Git -c 'user.name=WeekendBoise bot' -c 'user.email=weekendboise-bot@noreply.invalid' commit -m "data: nightly ingest $date [skip ci]"
 
 # Push to the branch the run was triggered on. GitHub Actions sets GITHUB_REF.
 $branchRef = $env:GITHUB_REF

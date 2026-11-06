@@ -1,14 +1,14 @@
-# tv-events
+# WeekendBoise
 
-tv-events is an automated reader of public event calendars in Idaho's Treasure Valley (Boise, Meridian, Nampa, Eagle, Caldwell, Garden City, Kuna, Star and nearby). It collects upcoming events into one non-commercial calendar. The public site is not live yet.
+WeekendBoise is an automated reader of public event calendars in Idaho's Treasure Valley (Boise, Meridian, Nampa, Eagle, Caldwell, Garden City, Kuna, Star and nearby). It collects upcoming events into one non-commercial calendar. The public site is not live yet.
 
-This page is for site owners who see the tv-events bot in their logs.
+This page is for site owners who see the WeekendBoise bot in their logs.
 
 ## Identifying the bot
 
 Requests come with this User-Agent:
 
-    tv-events/1.0 (+https://github.com/rhundhausen/tv-events)
+    WeekendBoise/1.0 (+https://github.com/rhundhausen/weekendboise)
 
 ## How it behaves
 
@@ -31,7 +31,7 @@ The surest way is to **open an issue** in this repository naming the site you'd 
 
 You can also block the bot in robots.txt:
 
-    User-agent: tv-events
+    User-agent: WeekendBoise
     Disallow: /
 
 This stops page reading on the next run. If your site is read through a calendar feed or API, please open an issue as well, so that source is removed too.

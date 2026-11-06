@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://dev.azure.com/accentient/tv-events/_git/tv-events?path=/schema/sources.schema.json",
-  "title": "tv-events sources",
+  "$id": "https://github.com/rhundhausen/weekendboise/blob/main/ingestion/schema/sources.schema.json",
+  "title": "WeekendBoise sources",
   "description": "Every source: running, configured but waiting, ideas, and sites ruled out. Only displayName is required. An entry with a name is a configured source and needs its full adapter configuration. Ingest runs only status running. Per-adapter fields are documented in docs/sources.md.",
   "type": "object",
   "required": [

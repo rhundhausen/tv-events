@@ -3,7 +3,7 @@
 . "$PSScriptRoot/Http.ps1"
 
 function Get-TvRobotsGroup {
-  # Returns the rules that apply to us: a group naming tv-events if there is one, otherwise *.
+  # Returns the rules that apply to us: a group naming WeekendBoise if there is one, otherwise *.
   [CmdletBinding()]
   param(
     [Parameter(Mandatory, Position = 0)]
@@ -40,7 +40,7 @@ function Get-TvRobotsGroup {
     }
   }
 
-  $named = @($groups | Where-Object { $_.Agents -contains 'tv-events' })
+  $named = @($groups | Where-Object { $_.Agents -contains 'weekendboise' })
   $selected = if ($named.Count -gt 0) { $named } else { @($groups | Where-Object { $_.Agents -contains '*' }) }
   [pscustomobject]@{
     Rules = @($selected | ForEach-Object { $_.Rules })

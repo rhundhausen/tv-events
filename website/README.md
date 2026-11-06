@@ -2,7 +2,7 @@
 
 Hugo site, to be deployed to Cloudflare. A single page lists upcoming events in a grid, 50 per page, with search and filters.
 
-Reads events from the repo-level `data/` folder via a `module.mounts` entry (source `../data`, target `data`), so ingestion never writes into this tree. `ingestion/sources.json` is mounted the same way as `data/sources.json`, for the `/sources/` page (every running source, with its upcoming event count linking to the grid filtered by `?source=<name>`) and the header count. The `/bot` page for site owners who see the `tv-events` user agent will live at `content/bot.md`.
+Reads events from the repo-level `data/` folder via a `module.mounts` entry (source `../data`, target `data`), so ingestion never writes into this tree. `ingestion/sources.json` is mounted the same way as `data/sources.json`, for the `/sources/` page (every running source, with its upcoming event count linking to the grid filtered by `?source=<name>`) and the header count. The `/bot` page for site owners who see the `WeekendBoise` user agent will live at `content/bot.md`.
 
 ## Run it
 

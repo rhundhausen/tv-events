@@ -348,7 +348,7 @@ Describe 'scrape adapter, staying out of bounds' {
   It 'obeys a site that names us' {
     Mock Invoke-WebRequest {
       $global:TvScrapeRequests.Add("$Uri")
-      New-FakeResponse 200 "User-agent: tv-events`nDisallow: /"
+      New-FakeResponse 200 "User-agent: WeekendBoise`nDisallow: /"
     }
     { & $adapter -Source $source -FetchedAt $fetchedAt } | Should -Throw '*robots.txt disallows*'
     $global:TvScrapeRequests.Count | Should -Be 1

@@ -4,7 +4,7 @@ Manual steps in the GitHub UI after the move back from Azure DevOps on 2026-11-0
 
 ## 1. The repository
 
-`rhundhausen/tv-events` already exists. It was recreated on 2026-11-03 and holds 3 commits that only touch `README.md`; the pre-ADO history is not in it. The local clone at `C:\Projects\Data\Repos\GitHub\rhundhausen\tv-events` tracks it, so commit the moved files on top of `main` and push normally. No force push is needed.
+`rhundhausen/weekendboise` (named `WeekendBoise` until 2026-11-05) already exists. It was recreated on 2026-11-03 and holds 3 commits that only touch `README.md`; the pre-ADO history is not in it. The local clone at `C:\Projects\Data\Repos\GitHub\rhundhausen\WeekendBoise` tracks it, so commit the moved files on top of `main` and push normally. No force push is needed.
 
 If you would rather start from an empty history, delete and recreate the repo instead. Force-pushing over it works too, but it rewrites the 3 README commits.
 
@@ -42,7 +42,7 @@ Before the midnight (Boise time) schedule runs on its own:
 1. Actions > ingest > Run workflow, branch `main`, source `idaho-steelheads` (or any one running source).
 2. When it finishes, check:
    - The run is green and the `out` artifact holds `idaho-steelheads.json` and `run.json`.
-   - `main` has a new commit by "tv-events bot" titled `data: nightly ingest YYYY-MM-DD [skip ci]` that changes only files under `data/`.
+   - `main` has a new commit by "WeekendBoise bot" titled `data: nightly ingest YYYY-MM-DD [skip ci]` that changes only files under `data/`.
    - The test workflow did not run for that commit.
 3. If the commit step fails with a permission error, recheck step 3.
 

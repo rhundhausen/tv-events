@@ -1,6 +1,6 @@
 # Development
 
-This page is for working on tv-events. If you run a site and found this repo through the `tv-events` user agent, see the [README](../README.md) instead.
+This page is for working on WeekendBoise. If you run a site and found this repo through the `WeekendBoise` user agent, see the [README](../README.md) instead.
 
 Treasure Valley event aggregator. A nightly GitHub Actions workflow pulls events from venue, team, and community sources around Boise, Meridian, Nampa, Caldwell, and Eagle, and merges them into a single flat file. A Hugo site will publish the result; it is not built yet.
 
@@ -51,7 +51,7 @@ API keys are read from environment variables only. Copy `ingestion/.env.example.
 
 ## Nightly workflow
 
-- `.github/workflows/ingest.yml` runs at midnight Boise time on the default branch. Cron is UTC, so it is scheduled at both 06:00 and 07:00 UTC, and a first job skips whichever one isn't midnight in Boise that day (daylight saving moves it). GitHub often starts scheduled runs late, so a scheduled run passes `-AsOf` with the scheduled midnight and the site's header reads 12:00 AM; a manual run records the time it ran. Run it by hand from Actions > ingest > Run workflow, with an optional `source` input to fetch one source. It uploads `out/` as an artifact, then `Publish-Data.ps1` commits `data/` as "tv-events bot" with `[skip ci]` and pushes to the branch the run started on. Only one ingest runs at a time.
+- `.github/workflows/ingest.yml` runs at midnight Boise time on the default branch. Cron is UTC, so it is scheduled at both 06:00 and 07:00 UTC, and a first job skips whichever one isn't midnight in Boise that day (daylight saving moves it). GitHub often starts scheduled runs late, so a scheduled run passes `-AsOf` with the scheduled midnight and the site's header reads 12:00 AM; a manual run records the time it ran. Run it by hand from Actions > ingest > Run workflow, with an optional `source` input to fetch one source. It uploads `out/` as an artifact, then `Publish-Data.ps1` commits `data/` as "WeekendBoise bot" with `[skip ci]` and pushes to the branch the run started on. Only one ingest runs at a time.
 - `.github/workflows/test.yml` runs the Pester tests on every push and pull request and uploads `testResults.xml`.
 
 Create these repository secrets (Settings > Secrets and variables > Actions). Only `TICKETMASTER_KEY` is needed today; the others are for sources that are built but not running yet. An unset secret reaches the scripts as empty.

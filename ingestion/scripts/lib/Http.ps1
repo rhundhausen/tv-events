@@ -1,7 +1,7 @@
 # HTTP and JSON helpers. Every outbound request goes through Invoke-TvRequest.
 
 function Get-TvUserAgent {
-  'tv-events/1.0 (+https://github.com/rhundhausen/tv-events)'
+  'WeekendBoise/1.0 (+https://github.com/rhundhausen/weekendboise)'
 }
 
 function Hide-TvSecret {

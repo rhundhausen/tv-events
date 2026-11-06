@@ -53,7 +53,7 @@ Describe 'Invoke-TvRequest' {
   It 'sends the project User-Agent and parses JSON' {
     Mock Invoke-WebRequest { New-FakeResponse 200 '{"a":1}' }
     (Invoke-TvRequest 'https://x.test/').a | Should -Be 1
-    Should -Invoke Invoke-WebRequest -Times 1 -ParameterFilter { $UserAgent -eq 'tv-events/1.0 (+https://github.com/rhundhausen/tv-events)' }
+    Should -Invoke Invoke-WebRequest -Times 1 -ParameterFilter { $UserAgent -eq 'WeekendBoise/1.0 (+https://github.com/rhundhausen/weekendboise)' }
   }
 
   It 'returns text with -Raw' {

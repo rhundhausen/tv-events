@@ -49,12 +49,12 @@ Describe 'Test-TvRobotsAllowed' {
   }
 
   It 'prefers a group naming us over *' {
-    $robots = "User-agent: *`nDisallow: /`n`nUser-agent: tv-events`nDisallow: /private/"
+    $robots = "User-agent: *`nDisallow: /`n`nUser-agent: WeekendBoise`nDisallow: /private/"
     Test-TvRobotsAllowed $robots '/events/' | Should -BeTrue
   }
 
   It 'obeys a group naming us' {
-    $robots = "User-agent: *`nDisallow:`n`nUser-agent: tv-events`nDisallow: /"
+    $robots = "User-agent: *`nDisallow:`n`nUser-agent: WeekendBoise`nDisallow: /"
     Test-TvRobotsAllowed $robots '/events/' | Should -BeFalse
   }
 

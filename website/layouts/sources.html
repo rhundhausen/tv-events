@@ -67,7 +67,7 @@
 
 <footer class="wrap foot">
   {{- /* New-issue links with the title and prompts filled in. Opening one needs a GitHub account. */}}
-  {{- $newIssue := "https://github.com/rhundhausen/tv-events/issues/new?" }}
+  {{- $newIssue := "https://github.com/rhundhausen/weekendboise/issues/new?" }}
   {{- $listMe := querify "title" "Add a source: " "body" "Venue or organization:\n\nLink to your public events page:\n\nCity:\n" }}
   {{- $leaveOut := querify "title" "Remove a source: " "body" "Site to remove:\n\nAnything else we should know:\n" }}
   <p>Don't see your venue or calendar? <a href="{{ print $newIssue $listMe }}" rel="noopener" target="_blank">Create an issue</a> to get listed. Run one of these sites and want it left out? <a href="{{ print $newIssue $leaveOut }}" rel="noopener" target="_blank">Create an issue</a> to opt out.</p>
