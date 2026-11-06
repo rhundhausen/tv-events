@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1D4ED8"/><stop offset="1" stop-color="#7DD3FC"/></linearGradient></defs>
+  <rect width="64" height="64" rx="14" fill="url(#sky)"/>
+  <circle cx="52" cy="13" r="6" fill="#FDE047"/>
+  <text x="32" y="36" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="30" text-anchor="middle" fill="#FFFFFF" letter-spacing="-2">WB</text>
+  <path d="M0 64 L0 52 L7 52 L7 46 L12 46 L12 52 L16 52 L16 42 L21 42 L21 52 L24 52 L24 44 L29 44 L29 52 L33 52 L33 48 A4 4 0 0 1 41 48 L41 52 L45 52 L45 40 L51 40 L51 52 L55 52 L55 46 L64 46 L64 64 Z" fill="#1E3A5F"/>
+</svg>

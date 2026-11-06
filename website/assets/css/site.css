@@ -1,17 +1,91 @@
+/* Three looks, each taken from its own icon in static/icons/:
+   - day: blue sky (#1D4ED8 to #7DD3FC), yellow sun (#FDE047), slate skyline (#1E3A5F)
+   - sunset: pink to amber sky (#EC4899 to #F59E0B), navy skyline (#1E1B4B)
+   - night: indigo sky (#020617 to #312E81), moon (#FDE68A), dark skyline (#0B0A2A) with lit windows
+   Day is the default. A script in baseof.html sets data-period to "sunset" from 6 PM to 9 PM and
+   "night" from 9 PM to 6 AM on the visitor's clock. The logo and the top stripe follow the period
+   in every color scheme; the page colors follow it only in light mode, so dark mode stays dark.
+   The filter panel and event table stay light in every period, so long lists read the same. */
 :root {
-  --bg: #f6f7f9;
+  --logo: url("/icons/day/favicon.svg");
+  --sky: linear-gradient(90deg, #1d4ed8, #7dd3fc);
+  --bg: #f5f8fc;
   --surface: #ffffff;
-  --surface-2: #f1f3f6;
-  --border: #e2e5ea;
+  --surface-2: #f1f5fb;
+  --border: #e1e8f2;
   --text: #1c2330;
   --muted: #5d6675;
-  --accent: #1f6f8b;
-  --accent-soft: #e3f0f4;
+  --accent: #1d4ed8;
+  --accent-soft: #dbeafe;
   --accent-text: #ffffff;
-  --row-hover: #f3f8fa;
+  --row-hover: #f2f7ff;
+  --cost-bg: #fef9c3;
+  --cost-border: #fde047;
+  --cost-text: #854d0e;
+  --header-bg: var(--surface);
+  --header-image: none;
+  --header-text: var(--text);
+  --header-muted: var(--muted);
+  --header-link: var(--accent);
+  --skyline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 38 64 14' preserveAspectRatio='none'%3E%3Cpath d='M0 64 L0 52 L7 52 L7 46 L12 46 L12 52 L16 52 L16 42 L21 42 L21 52 L24 52 L24 44 L29 44 L29 52 L33 52 L33 48 A4 4 0 0 1 41 48 L41 52 L45 52 L45 40 L51 40 L51 52 L55 52 L55 46 L64 46 L64 64 Z' fill='%231e3a5f' fill-opacity='0.12'/%3E%3C/svg%3E");
   --shadow: 0 1px 2px rgb(16 24 40 / 6%), 0 1px 3px rgb(16 24 40 / 8%);
   --radius: 8px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+:root[data-period="sunset"] {
+  --logo: url("/icons/sunset/favicon.svg");
+  --sky: linear-gradient(90deg, #ec4899, #f59e0b);
+}
+:root[data-period="night"] {
+  /* The night icon is dark, so a faint outline keeps it from vanishing on a dark header. */
+  --logo-ring: 0 0 0 1px rgb(255 255 255 / 30%);
+  --logo: url("/icons/night/favicon.svg");
+  --sky: linear-gradient(90deg, #312e81, #fde68a);
+}
+
+/* Sunset: the header is the icon's pink-to-amber sky with the navy skyline along the bottom,
+   and the page warms to peach with orange accents. Header text is navy, because white on the
+   icon's pink is too faint for small text. */
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+  :root[data-period="sunset"]:not([data-theme="dark"]) {
+    --bg: #fdf3ee;
+    --surface-2: #fdf1ea;
+    --border: #f1e0d6;
+    --accent: #c2410c;
+    --accent-soft: #ffedd5;
+    --row-hover: #fff6ef;
+    --cost-bg: #fef3c7;
+    --cost-border: #fcd34d;
+    --cost-text: #92400e;
+    --header-bg: #f59e0b;
+    --header-image: var(--sky);
+    --header-text: #1e1b4b;
+    --header-muted: #2a2660;
+    --header-link: #ffffff;
+    --skyline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 38 64 14' preserveAspectRatio='none'%3E%3Cpath d='M0 64 L0 52 L7 52 L7 46 L12 46 L12 52 L16 52 L16 42 L21 42 L21 52 L24 52 L24 44 L29 44 L29 52 L33 52 L33 48 A4 4 0 0 1 41 48 L41 52 L45 52 L45 40 L51 40 L51 52 L55 52 L55 46 L64 46 L64 64 Z' fill='%231e1b4b' fill-opacity='0.6'/%3E%3C/svg%3E");
+  }
+}
+
+/* Night, not dark mode: the header is the icon's indigo sky with its skyline and lit windows,
+   the page turns a cool lavender, and accents are indigo. */
+@media (prefers-color-scheme: light), (prefers-color-scheme: no-preference) {
+  :root[data-period="night"]:not([data-theme="dark"]) {
+    --bg: #eef0f9;
+    --surface-2: #f1f2fa;
+    --border: #dcdff0;
+    --accent: #4338ca;
+    --accent-soft: #e0e7ff;
+    --row-hover: #f4f5fd;
+    --cost-bg: #fef3c7;
+    --cost-border: #fcd34d;
+    --cost-text: #92400e;
+    --header-bg: #020617;
+    --header-image: linear-gradient(180deg, #020617, #312e81);
+    --header-text: #ffffff;
+    --header-muted: #c7d2fe;
+    --header-link: #fde68a;
+    --skyline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 38 64 14' preserveAspectRatio='none'%3E%3Cpath d='M0 64 L0 52 L7 52 L7 46 L12 46 L12 52 L16 52 L16 42 L21 42 L21 52 L24 52 L24 44 L29 44 L29 52 L33 52 L33 48 A4 4 0 0 1 41 48 L41 52 L45 52 L45 40 L51 40 L51 52 L55 52 L55 46 L64 46 L64 64 Z' fill='%230b0a2a'/%3E%3Cg fill='%23fbbf24'%3E%3Crect x='8.5' y='48' width='1.5' height='1.5'/%3E%3Crect x='17.5' y='45' width='1.5' height='1.5'/%3E%3Crect x='18.5' y='48.5' width='1.5' height='1.5'/%3E%3Crect x='25.5' y='47' width='1.5' height='1.5'/%3E%3Crect x='46.5' y='43' width='1.5' height='1.5'/%3E%3Crect x='48.5' y='47' width='1.5' height='1.5'/%3E%3Crect x='58' y='49' width='1.5' height='1.5'/%3E%3C/g%3E%3C/svg%3E");
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,10 +96,13 @@
     --border: #2d3441;
     --text: #e6e9ef;
     --muted: #9aa3b2;
-    --accent: #5bb4d1;
-    --accent-soft: #1d3540;
-    --accent-text: #0d1a20;
-    --row-hover: #1f2a33;
+    --accent: #7dd3fc;
+    --accent-soft: #12324a;
+    --accent-text: #0b1a24;
+    --row-hover: #1c2633;
+    --cost-bg: #3a2a10;
+    --cost-border: #7c5a14;
+    --cost-text: #fcd34d;
     --shadow: none;
   }
 }
@@ -37,10 +114,13 @@
   --border: #2d3441;
   --text: #e6e9ef;
   --muted: #9aa3b2;
-  --accent: #5bb4d1;
-  --accent-soft: #1d3540;
-  --accent-text: #0d1a20;
-  --row-hover: #1f2a33;
+  --accent: #7dd3fc;
+  --accent-soft: #12324a;
+  --accent-text: #0b1a24;
+  --row-hover: #1c2633;
+  --cost-bg: #3a2a10;
+  --cost-border: #7c5a14;
+  --cost-text: #fcd34d;
   --shadow: none;
 }
 
@@ -65,9 +145,23 @@ a { color: var(--accent); }
 
 /* Header */
 .top {
-  background: var(--surface);
+  position: relative;
+  background-color: var(--header-bg);
+  background-image: var(--skyline), var(--header-image);
+  background-position: left bottom, 0 0;
+  background-size: 96px 21px, 100% 100%;
+  background-repeat: repeat-x, no-repeat;
+  color: var(--header-text);
   border-bottom: 1px solid var(--border);
-  padding: 18px 0 14px;
+  padding: 22px 0 22px;
+}
+/* The icon's sky, as a thin stripe along the top edge. */
+.top::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: var(--sky);
 }
 .top h1 {
   margin: 0;
@@ -80,11 +174,15 @@ a { color: var(--accent); }
   align-items: center;
   gap: 8px;
 }
+/* A CSS image, not an img, so it follows data-period before the page draws. */
 .logo {
   flex: none;
+  display: inline-block;
   width: 28px;
   height: 28px;
   border-radius: 7px;
+  background: var(--logo) center / contain no-repeat;
+  box-shadow: var(--logo-ring, none);
 }
 .logo-sm {
   width: 18px;
@@ -94,7 +192,7 @@ a { color: var(--accent); }
 .crumb .brand { gap: 6px; }
 .sub {
   margin: 2px 0 0;
-  color: var(--muted);
+  color: var(--header-muted);
   font-size: 13px;
 }
 .sub .sep {
@@ -102,10 +200,10 @@ a { color: var(--accent); }
   opacity: 0.5;
 }
 .sub a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
-.sub a:hover { color: var(--accent); }
+.sub a:hover { color: var(--header-link); }
 .crumb { margin: 0 0 4px; font-size: 12px; }
-.crumb a { color: var(--muted); text-decoration: none; }
-.crumb a:hover { color: var(--accent); text-decoration: underline; }
+.crumb a { color: var(--header-muted); text-decoration: none; }
+.crumb a:hover { color: var(--header-link); text-decoration: underline; }
 
 .source-note {
   margin: 10px 0 0;
@@ -369,9 +467,9 @@ input:focus-visible, select:focus-visible, button:focus-visible {
   font-weight: 600;
   padding: 1px 5px;
   border-radius: 4px;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  color: var(--text);
+  background: var(--cost-bg);
+  border: 1px solid var(--cost-border);
+  color: var(--cost-text);
 }
 .c-size .cost { margin-left: 4px; }
 .cost-legend { margin-top: 4px; }

@@ -6,10 +6,33 @@
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
   <meta name="description" content="{{ .Description | default "Upcoming events in Boise, Meridian, Nampa, and the rest of the Treasure Valley." }}">
   <meta name="color-scheme" content="light dark">
-  <link rel="icon" href="{{ relURL "favicon.ico" }}" sizes="any">
-  <link rel="icon" href="{{ relURL "favicon.svg" }}" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="{{ relURL "apple-touch-icon.png" }}">
+  {{- /* The day icons until the script below picks the look; without JavaScript they stay. */}}
+  <link id="icon-ico" rel="icon" href="{{ relURL "icons/day/favicon.ico" }}" sizes="any">
+  <link id="icon-svg" rel="icon" href="{{ relURL "icons/day/favicon.svg" }}" type="image/svg+xml">
+  <link id="icon-apple" rel="apple-touch-icon" href="{{ relURL "icons/day/apple-touch-icon.png" }}">
   <link rel="manifest" href="{{ relURL "site.webmanifest" }}">
+  {{- /* Day, sunset, or night look and icons, set before the first paint so the page never
+       flashes. On the visitor's clock: day 6 AM to 6 PM, sunset 6 PM to 9 PM, night 9 PM to 6 AM.
+       Checked again every 10 minutes for open tabs. The CSS colors and the header logo follow
+       data-period; this script points the favicon links at the matching icons.
+       TESTING ONLY, remove before launch: ?period=day, ?period=sunset, or ?period=night forces one. */}}
+  <script>
+    (function () {
+      var base = {{ relURL "icons/" }};
+      var forced = (location.search.match(/[?&]period=(day|sunset|night)\b/) || [])[1];
+      function set() {
+        var hour = new Date().getHours();
+        var period = forced || (hour >= 21 || hour < 6 ? 'night' : hour >= 18 ? 'sunset' : 'day');
+        if (document.documentElement.dataset.period === period) return;
+        document.documentElement.dataset.period = period;
+        document.getElementById('icon-ico').href = base + period + '/favicon.ico';
+        document.getElementById('icon-svg').href = base + period + '/favicon.svg';
+        document.getElementById('icon-apple').href = base + period + '/apple-touch-icon.png';
+      }
+      set();
+      setInterval(set, 600000);
+    })();
+  </script>
   {{ $css := resources.Get "css/site.css" | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 </head>

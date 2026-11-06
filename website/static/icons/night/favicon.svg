@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#020617"/><stop offset="1" stop-color="#312E81"/></linearGradient></defs>
+  <rect width="64" height="64" rx="14" fill="url(#sky)"/>
+  <g fill="#FFFFFF"><circle cx="8" cy="9" r="0.9"/><circle cx="18" cy="14" r="0.7"/><circle cx="40" cy="7" r="0.8"/><circle cx="57" cy="20" r="0.7"/><circle cx="30" cy="11" r="0.6"/></g>
+  <circle cx="52" cy="12" r="6" fill="#FDE68A"/><circle cx="54.5" cy="10.5" r="5" fill="#1A1A4E"/>
+  <text x="32" y="36" font-family="Arial Black, Arial, Helvetica, sans-serif" font-weight="900" font-size="30" text-anchor="middle" fill="#FFFFFF" letter-spacing="-2">WB</text>
+  <path d="M0 64 L0 52 L7 52 L7 46 L12 46 L12 52 L16 52 L16 42 L21 42 L21 52 L24 52 L24 44 L29 44 L29 52 L33 52 L33 48 A4 4 0 0 1 41 48 L41 52 L45 52 L45 40 L51 40 L51 52 L55 52 L55 46 L64 46 L64 64 Z" fill="#0B0A2A"/>
+  <g fill="#FBBF24"><rect x="8.5" y="48" width="1.5" height="1.5"/><rect x="17.5" y="45" width="1.5" height="1.5"/><rect x="18.5" y="48.5" width="1.5" height="1.5"/><rect x="25.5" y="47" width="1.5" height="1.5"/><rect x="46.5" y="43" width="1.5" height="1.5"/><rect x="48.5" y="47" width="1.5" height="1.5"/><rect x="58" y="49" width="1.5" height="1.5"/></g>
+</svg>
