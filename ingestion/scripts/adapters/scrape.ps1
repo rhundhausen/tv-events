@@ -12,7 +12,8 @@
   linked by eventLinkPattern. With scrapeMode cards, they come from HTML blocks matched by
   itemPattern, read with datePattern, titlePattern, and timePattern. With scrapeMode
   calendarapp, they come from the event JSON that City of Boise calendar pages embed in the
-  data-config attribute of #calendar-app. See docs/sources.md.
+  data-config attribute of #calendar-app. With scrapeMode civicplus, they come from a CivicPlus
+  city calendar (Calendar.aspx), one month per page. See docs/sources.md.
 .PARAMETER Source
   One entry from sources.json.
 .PARAMETER FetchedAt
@@ -285,9 +286,82 @@ function Read-CalendarAppSource {
   }
 }
 
+function Read-CivicPlusSource {
+  # CivicPlus city calendars (Calendar.aspx) list one month per page: a title, a date line, and
+  # usually hidden schema.org microdata with the place. Their iCalendar export is disallowed by
+  # robots.txt on every site seen, so this reads the list for this month and the next
+  # maxPages - 1 months (default 3 in all).
+  $months = if ($Source.maxPages) { [int]$Source.maxPages } else { 3 }
+  $invariant = [Globalization.CultureInfo]::InvariantCulture
+  $first = [DateTime]::ParseExact($today, 'yyyy-MM-dd', $invariant)
+  $seen = [Collections.Generic.HashSet[string]]::new()
+
+  for ($i = 0; $i -lt $months; $i++) {
+    $month = $first.AddMonths($i)
+    $html = if ($Response) { $Response[$i] } else {
+      $query = if ($i -eq 0) { '' } else { "?month=$($month.Month)&year=$($month.Year)&day=1" }
+      Get-ScrapePage ([uri]::new($listUri, "$($listUri.AbsolutePath)$query"))
+    }
+    if (-not $html) { break }
+
+    foreach ($item in [regex]::Matches($html, '(?s)<li>\s*<h3>.*?</li>')) {
+      $text = $item.Value
+      $title = ''
+      try {
+        # The title and date line are always shown; the microdata is missing on some events.
+        $title = ConvertTo-PlainText ([regex]::Match($text, '(?s)<h3>.*?<span>(?<v>.*?)</span>').Groups['v'].Value)
+        if (-not $title) { throw 'no title' }
+        if ($Source.excludeTitlePattern -and $title -match $Source.excludeTitlePattern) { continue }
+        $body = [regex]::Match($text, '(?s)itemtype="http://schema\.org/Event">(?<body>.*)$').Groups['body'].Value
+
+        # The date line reads "November 6, 2026, All Day", "November 10, 2026, 6:30 PM - 8:00 PM",
+        # or, for several days, "November 6, 2026 - November 8, 2026".
+        $when = (ConvertTo-PlainText ([regex]::Match($text, '(?s)class="date">(?<v>.*?)</div>').Groups['v'].Value)) -replace '\s+', ' '
+        $line = [regex]::Match($when, '(?i)^(?<date>[A-Z]+ \d{1,2}, \d{4})(?:,? (?<from>\d{1,2}:\d{2} [AP]M))?(?: ?- ?(?:(?<endDate>[A-Z]+ \d{1,2}, \d{4}),? ?)?(?<to>\d{1,2}:\d{2} [AP]M)?)?')
+        if (-not $line.Success) { throw "unreadable date '$when'" }
+        $day = [DateTime]::ParseExact($line.Groups['date'].Value, 'MMMM d, yyyy', $invariant)
+        $lastDay = if ($line.Groups['endDate'].Success) { [DateTime]::ParseExact($line.Groups['endDate'].Value, 'MMMM d, yyyy', $invariant) } else { $day }
+        if ($lastDay.ToString('yyyy-MM-dd', $invariant) -lt $today) { continue }
+
+        $startMinutes = if ($line.Groups['from'].Success) { ConvertFrom-ClockTime $line.Groups['from'].Value }
+        $endMinutes = if ($line.Groups['to'].Success) { ConvertFrom-ClockTime $line.Groups['to'].Value }
+        $allDay = $null -eq $startMinutes
+        $end = $null
+        if ($allDay) {
+          $start = $day.ToString('yyyy-MM-dd', $invariant)
+          if ($lastDay -gt $day) { $end = $lastDay.ToString('yyyy-MM-dd', $invariant) }
+        } else {
+          $start = ConvertTo-BoiseTime $day.AddMinutes($startMinutes)
+          if ($null -ne $endMinutes) {
+            $endAt = $lastDay.AddMinutes($endMinutes)
+            if ($endAt -gt $day.AddMinutes($startMinutes)) { $end = ConvertTo-BoiseTime $endAt }
+          }
+        }
+
+        $eid = [regex]::Match($text, 'Calendar\.aspx\?EID=(?<id>\d+)').Groups['id'].Value
+        if (-not $seen.Add("$eid|$start")) { continue }
+        $url = if ($eid) { [uri]::new($listUri, "/Calendar.aspx?EID=$eid").AbsoluteUri } else { $Source.url }
+
+        # The place name is often the placeholder "Event Location", or a sentence instead of a name.
+        $place = [regex]::Match($body, '(?s)itemtype="http://schema\.org/Place">\s*<span itemprop="name">(?<v>.*?)</span>').Groups['v'].Value
+        $venueName = ConvertTo-PlainText $place
+        if ($venueName -eq 'Event Location' -or $venueName.Length -gt 60) { $venueName = '' }
+        $cityText = ConvertTo-PlainText ([regex]::Match($body, 'itemprop="addressLocality">(?<v>[^<]*)<').Groups['v'].Value)
+        $description = [regex]::Match($body, '(?s)itemprop="description">(?<v>.*?)</p>').Groups['v'].Value
+
+        New-ScrapeEvent -Title $title -Start $start -End $end -AllDay $allDay `
+          -VenueName $venueName -CityText $cityText -Url $url -Description $description
+      } catch {
+        Write-Warning "$($Source.name): skipping '$title': $_"
+      }
+    }
+  }
+}
+
 switch ($Source.scrapeMode) {
   'jsonld' { Read-JsonLdSource }
   'cards' { Read-CardsSource }
   'calendarapp' { Read-CalendarAppSource }
+  'civicplus' { Read-CivicPlusSource }
   default { throw "$($Source.name): unknown scrapeMode '$($Source.scrapeMode)'" }
 }

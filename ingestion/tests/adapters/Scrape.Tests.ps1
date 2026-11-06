@@ -256,6 +256,62 @@ Describe 'scrape adapter, calendarapp' {
   }
 }
 
+Describe 'scrape adapter, civicplus' {
+  BeforeAll {
+    $source = Get-TestSource 'city-of-star'
+    $html = Get-Fixture 'civicplus.html'
+    # 2026-11-02 in Boise. Two pages, so the second month repeats the first and shows dedupe by event id.
+    $events = @(& $adapter -Source $source -FetchedAt $fetchedAt -Response @($html, $html))
+    $byTitle = @{}
+    $events | ForEach-Object { $byTitle[$_.title] = $_ }
+  }
+
+  It 'skips meetings by title, past events, and repeats across months' {
+    $events.title | Should -Be @('Veterans Day Potato Feed', 'HALO Teen Meetup', 'Kuna Arbor Day', 'Holiday Market')
+  }
+
+  It 'reads an all-day event as a date' {
+    $byTitle['Veterans Day Potato Feed'].start | Should -Be '2026-11-06'
+    $byTitle['Veterans Day Potato Feed'].allDay | Should -BeTrue
+    $byTitle['Veterans Day Potato Feed'].description | Should -Be 'Baked potatoes for veterans and their families.'
+  }
+
+  It 'reads start and end times from the date line' {
+    $byTitle['HALO Teen Meetup'].start | Should -Be '2026-11-24T18:30:00-07:00'
+    $byTitle['HALO Teen Meetup'].end | Should -Be '2026-11-24T20:00:00-07:00'
+  }
+
+  It 'reads an event with no microdata' {
+    $byTitle['Kuna Arbor Day'].start | Should -Be '2026-11-18T08:00:00-07:00'
+    $byTitle['Kuna Arbor Day'].end | Should -Be '2026-11-18T17:00:00-07:00'
+  }
+
+  It 'reads a multi-day event' {
+    $byTitle['Holiday Market'].start | Should -Be '2026-11-27'
+    $byTitle['Holiday Market'].end | Should -Be '2026-11-29'
+  }
+
+  It 'uses a real place name, and the source venue for the placeholder' {
+    $byTitle['HALO Teen Meetup'].venue | Should -Be 'Star Community Center'
+    $byTitle['Veterans Day Potato Feed'].venueKey | Should -Be 'city-of-star'
+    $byTitle['Veterans Day Potato Feed'].city | Should -Be 'Star'
+  }
+
+  It 'links the event by id' {
+    $byTitle['Veterans Day Potato Feed'].url | Should -Be 'https://www.staridaho.org/Calendar.aspx?EID=539'
+  }
+}
+
+Describe 'ics adapter, excludeTitlePattern' {
+  It 'skips matching titles' {
+    $source = Get-TestSource 'mountain-home-library'
+    $feed = "BEGIN:VCALENDAR`r`nBEGIN:VEVENT`r`nUID:1`r`nSUMMARY:CLOSED for Thanksgiving Day Holiday`r`nDTSTART;VALUE=DATE:20261126`r`nEND:VEVENT`r`nBEGIN:VEVENT`r`nUID:2`r`nSUMMARY:Chess Club`r`nDTSTART:20261110T230000Z`r`nEND:VEVENT`r`nEND:VCALENDAR`r`n"
+    $events = @(& (Join-Path $repo 'scripts' 'adapters' 'ics.ps1') -Source $source -FetchedAt $fetchedAt -Response $feed)
+    $events.title | Should -Be @('Chess Club')
+    $events[0].city | Should -Be 'Mountain Home'
+  }
+}
+
 Describe 'scrape adapter, staying out of bounds' {
   BeforeAll {
     $source = Get-TestSource 'indian-creek-plaza'

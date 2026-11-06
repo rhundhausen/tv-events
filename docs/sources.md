@@ -101,21 +101,23 @@ The last resort, for sites with no API or feed. Check for a feed first: a workin
 
 | Field | Required | Notes |
 | --- | --- | --- |
-| `scrapeMode` | yes | `jsonld`, `cards`, or `calendarapp`, see below |
+| `scrapeMode` | yes | `jsonld`, `cards`, `calendarapp`, or `civicplus`, see below |
 | `eventLinkPattern` | no | `jsonld`: regex for event links on the list page. Each linked page is read. Without it, the list page itself is read |
-| `maxPages` | no | `jsonld`: most event pages to read in one run. Defaults to 40 |
+| `maxPages` | no | `jsonld`: most event pages to read in one run. Defaults to 40. `civicplus`: months to read, starting with this one. Defaults to 3 |
 | `itemPattern` | `cards` | Regex matching one event's HTML block |
 | `datePattern` | no | `cards`: regex with named groups `month` and `day`, matched inside a card. Defaults to `month` and `day` spans |
 | `titlePattern` | no | `cards`: regex with a named group `title`. Defaults to the first heading |
 | `timePattern` | no | `cards`: regex with named groups `start` and optional `end`, such as `3:00 pm`. Without a match, the event is all-day |
 | `localTimeAsUtc` | no | `true` corrects sites that write local time as UTC |
 | `fixedVenue` | no | `true` uses the entry's venue for every event |
+| `excludeTitlePattern` | no | `civicplus`: regex. Matching titles are skipped, such as meetings and closures |
 
 `url` is the list page.
 
 - **`jsonld`** reads schema.org `Event` data embedded in the page. This is the preferred mode, because the site publishes it for machines and it survives a redesign.
 - **`cards`** reads HTML blocks: dates with no year, a title, a link, and optionally a time. It breaks when the site's markup changes, so use it only when `jsonld` isn't possible. `jump-boise` shows the pattern fields.
 - **`calendarapp`** reads the event JSON that City of Boise calendar pages (boiseartsandhistory.org) embed in the `data-config` attribute of `#calendar-app`. It reads the `start` and `end` fields, which are Boise wall-clock time, and skips past events.
+- **`civicplus`** reads a CivicPlus city calendar (`Calendar.aspx`, as on staridaho.org and kunacity.id.gov). `url` is the `Calendar.aspx` page. Each month is its own page (`?month=12&year=2026&day=1`), so one run makes `maxPages` requests at the site's crawl delay. It reads each event's title and date line ("November 10, 2026, 6:30 PM - 8:00 PM", "All Day", or a range of dates), and the hidden schema.org microdata for the place, city, and description when it's there. The placeholder place "Event Location" falls back to the entry's venue. CivicPlus sites disallow their iCalendar export and RSS.aspx in robots.txt, which is why this reads the HTML. City calendars are mostly meetings and closures, so set `excludeTitlePattern`.
 
 ### cityofboise
 
@@ -133,7 +135,7 @@ Reads an RSS 2.0 feed that uses the RSS event module (`ev:` namespace), which ca
 
 ### ics: fixedVenue
 
-`fixedVenue: true` on an `ics` entry uses the entry's venue for every event. The library LibCal feeds need it, because their `LOCATION` names rooms ("Children's Area"), not the building.
+`fixedVenue: true` on an `ics` entry uses the entry's venue for every event. The library LibCal feeds need it, because their `LOCATION` names rooms ("Children's Area"), not the building. `excludeTitlePattern` (regex) skips matching titles, such as library closures and board meetings.
 
 Compare scraped times with what the site displays before enabling a source. Modern Events Calendar sites write local time as if it were UTC, which makes every event 7 hours early. Both Idaho History and Visit Boise need `localTimeAsUtc`.
 

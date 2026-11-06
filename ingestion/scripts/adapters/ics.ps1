@@ -32,6 +32,7 @@ foreach ($item in (ConvertFrom-Ics $text)) {
   try {
     # SIDEARM feeds prefix played games with the result, such as "[W] ". Dropping it keeps the id stable.
     $title = ConvertTo-PlainText ($item.Summary -replace '^\[[A-Z]\]\s*', '')
+    if ($Source.excludeTitlePattern -and $title -match $Source.excludeTitlePattern) { continue }
     $description = if ($item.Description.StartsWith($item.Summary)) { $item.Description.Substring($item.Summary.Length) } else { $item.Description }
     $location = ConvertFrom-TvLocation $item.Location -Source $Source
     if ($Source.fixedVenue) {

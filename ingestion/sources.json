@@ -20,7 +20,9 @@
       "url": "https://www.cityofemmett.org",
       "category": "community-civic",
       "city": "Emmett",
-      "notes": "City site, added 2026-11-05. No calendar page found yet. Not probed"
+      "status": "investigating",
+      "robotsChecked": "2026-11-05",
+      "notes": "City site, added 2026-11-05. A Wix site; robots.txt allows it. The library calendar (https://www.cityofemmett.org/library-calendar) is a Wix Events widget that loads with JavaScript, so the HTML has no events (checked 2026-11-05). No feed found"
     },
     {
       "displayName": "City of Garden City",
@@ -30,25 +32,47 @@
       "notes": "City site, added 2026-11-05. Calendar path not confirmed. Not probed"
     },
     {
+      "name": "city-of-kuna",
       "displayName": "City of Kuna",
-      "url": "https://www.kunacity.id.gov/calendar.aspx",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://www.kunacity.id.gov/Calendar.aspx",
+      "robotsChecked": "2026-11-05",
       "category": "community-civic",
+      "inferCategory": true,
       "city": "Kuna",
-      "notes": "CivicPlus calendar, added 2026-11-05; path not confirmed. Kuna Days page: https://www.kunacity.id.gov/569/Kuna-Days, and a news item https://www.kunacity.id.gov/CivicAlerts.asp?AID=527. CivicPlus calendars offer iCalendar export, but City of Eagle's robots.txt blocks that module on the same platform, so check Kuna's. Not probed"
+      "venue": "City of Kuna",
+      "venueKey": "city-of-kuna",
+      "priority": 20,
+      "scrapeMode": "civicplus",
+      "excludeTitlePattern": "(?i)\\bmeeting\\b|\\bclosed\\b",
+      "notes": "CivicPlus calendar. robots.txt allows Calendar.aspx with a 10 second crawl delay, but disallows the iCalendar module (/common/modules/icalendar/) and RSS.aspx, so scrapeMode civicplus reads the list pages, 3 months. Calendars on 2026-11-05: Holidays, Public Meetings, and Special Events; meetings and closures are skipped by title, which left 1 event (Kuna Arbor Day). Kuna Days page: https://www.kunacity.id.gov/569/Kuna-Days. Configured 2026-11-05. Terms not read"
     },
     {
+      "name": "city-of-star",
       "displayName": "City of Star",
-      "url": "https://www.staridaho.org/calendar",
+      "status": "running",
+      "adapter": "scrape",
+      "url": "https://www.staridaho.org/Calendar.aspx",
+      "robotsChecked": "2026-11-05",
       "category": "community-civic",
+      "inferCategory": true,
       "city": "Star",
-      "notes": "City calendar, added 2026-11-05. Not probed"
+      "venue": "City of Star",
+      "venueKey": "city-of-star",
+      "priority": 20,
+      "scrapeMode": "civicplus",
+      "excludeTitlePattern": "(?i)\\bmeeting\\b|\\bclosed\\b|\\bcouncil\\b|\\bcommission\\b",
+      "notes": "CivicPlus calendar, same platform and robots.txt as City of Kuna: the list pages are allowed with a 10 second crawl delay, the iCalendar module and RSS.aspx are not. Calendars on 2026-11-05: City Council Meetings and Main Calendar. Meetings and closures are skipped by title, which left 2 events in November (Veterans Day Potato Feed, HALO Teen Meetup) and none in December. Configured 2026-11-05. Terms not read"
     },
     {
       "displayName": "City of Weiser",
+      "status": "ruled-out",
+      "reason": "The Calendar of Events (https://www.cityofweiser.net/calendar-of-events) loads with JavaScript, and the footer says no portion of the site may be reproduced without the express written permission of the Mayor (checked 2026-11-05)",
       "url": "https://www.cityofweiser.net/events-attractions",
       "category": "community-civic",
       "city": "Weiser",
-      "notes": "City events and attractions page, added 2026-11-05. Not probed"
+      "notes": "City events and attractions page, added 2026-11-05. It describes annual events (National Oldtime Fiddlers Contest in June, Festival of Trees at the Vendome, the chamber's Crab Feed) without dates. Asking the city for permission or a feed would reopen it"
     },
     {
       "displayName": "Destination Caldwell",
@@ -83,7 +107,9 @@
       "url": "https://www.emmettidaho.com",
       "category": "community-civic",
       "city": "Emmett",
-      "notes": "Emmett community or visitor site, added 2026-11-05. Owner and calendar to confirm. Not probed"
+      "status": "investigating",
+      "robotsChecked": "2026-11-05",
+      "notes": "Emmett community or visitor site, added 2026-11-05. WordPress (Beaver Builder). /events/ redirects to an article page, and no calendar plugin, ICS, or event feed was found (checked 2026-11-05); robots.txt blocks old All-in-One Event Calendar views that are no longer there. Owner to confirm"
     },
     {
       "displayName": "Garden City Public Library",
@@ -105,14 +131,43 @@
       "url": "https://www.middletonchamber.org",
       "category": "learning-business",
       "city": "Middleton",
-      "notes": "Chamber site, added 2026-11-05. No city calendar was found for Middleton. Not probed"
+      "notes": "Chamber site, added 2026-11-05. No city calendar was found for Middleton. On 2026-11-05 the TLS connection failed when fetching robots.txt, so nothing else was requested; try again another day. The Middleton Public Library (https://www.middletonlibrary.org/event-list) is a Wix Events widget that loads with JavaScript, with no events in the HTML"
+    },
+    {
+      "displayName": "Mountain Home Chamber of Commerce",
+      "status": "investigating",
+      "adapter": "tribe",
+      "url": "https://mountainhomechamber.com/events/",
+      "robotsChecked": "2026-11-05",
+      "category": "community-civic",
+      "city": "Mountain Home",
+      "notes": "WordPress with The Events Calendar; robots.txt has no rules. The tribe API answered on 2026-11-05 with 0 upcoming events. Annual events (Air Force Appreciation Day, Crazee Dayz, Light the Forest) are on https://mountainhomechamber.com/annual-events/. Check again when events are posted, then configure as tribe"
+    },
+    {
+      "name": "mountain-home-library",
+      "displayName": "Mountain Home Public Library",
+      "status": "running",
+      "adapter": "ics",
+      "url": "https://mhlibrary.libcal.com/ical_subscribe.php?src=p&cid=11695",
+      "robotsChecked": "2026-11-05",
+      "category": "learning-business",
+      "inferCategory": true,
+      "city": "Mountain Home",
+      "venue": "Mountain Home Public Library",
+      "venueKey": "mountain-home-public-library",
+      "priority": 30,
+      "fixedVenue": true,
+      "excludeTitlePattern": "(?i)^closed\\b|\\bboard meeting\\b",
+      "notes": "LibCal ICS feed, calendar id 11695, the only one linked from https://mhlibrary.libcal.com/. robots.txt allows it with a 10 second crawl delay. 177 events dated 2026-10-05 to 2026-12-31 on 2026-11-05, 105 upcoming; mostly storytimes, crafts, and clubs. Closures and board meetings are skipped by title. fixedVenue, because the feed names rooms. Configured 2026-11-05. Terms not read"
     },
     {
       "displayName": "Mountain Home News",
+      "status": "ruled-out",
+      "reason": "HTTP 403 for /calendar on 2026-11-05. robots.txt allows it, so the 403 is a bot block",
       "url": "https://mountainhomenews.com/calendar",
       "category": "community-civic",
       "city": "Mountain Home",
-      "notes": "Newspaper community calendar, added 2026-11-05. Path not confirmed. No city calendar was found for Mountain Home, Idaho; enjoymountainhome.com is Mountain Home, Arkansas. Not probed"
+      "notes": "Newspaper community calendar, added 2026-11-05. enjoymountainhome.com and cityofmountainhome.com are Mountain Home, Arkansas"
     },
     {
       "displayName": "Nampa Chamber of Commerce",
@@ -138,7 +193,7 @@
       "displayName": "Ada Community Library",
       "status": "investigating",
       "adapter": "tribe",
-      "notes": "Checked 2026-10-30 with the project User-Agent. Tribe endpoint responds, but with zero upcoming events. Past events not checked. ICS not tried"
+      "notes": "Checked 2026-10-30 with the project User-Agent. Tribe endpoint responds, but with zero upcoming events. Past events not checked. ICS not tried. Rechecked 2026-11-05: the tribe API still has 0 events. The real calendars are Google Calendars embedded on https://adalib.org/whats-happening-at-the-library/, one per branch (Star branch: adalib.org_ql1qt4vfh2pnvjffht98bfkmso@group.calendar.google.com), but calendar.google.com's robots.txt disallows everything but the home page, so their ICS is out. Branches: Victory, Star, Lake Hazel, Hidden Springs, Connect. Ask the library for another feed; the Star Chamber of Commerce reposts some Star branch events"
     },
     {
       "displayName": "Air shows",
@@ -943,19 +998,38 @@
       "displayName": "Patch city calendars",
       "url": "https://patch.com/idaho/caldwell-id/calendar",
       "category": "community-civic",
-      "notes": "Patch community calendars, one per city, added 2026-11-05. Patch is a commercial local-news network; read its terms and robots.txt once for all of them before probing any. Calendars: https://patch.com/idaho/caldwell-id/calendar, https://patch.com/idaho/eagle-id/calendar, https://patch.com/idaho/emmett-id/calendar, https://patch.com/idaho/garden-city-id/calendar, https://patch.com/idaho/kuna-id/calendar, https://patch.com/idaho/marsing-id/calendar, https://patch.com/idaho/meridian-id/calendar, https://patch.com/idaho/middleton-id/calendar, https://patch.com/idaho/mountain-home-id/calendar, https://patch.com/idaho/nampa-id/calendar, https://patch.com/idaho/payette-id/calendar, https://patch.com/idaho/star-id/calendar, https://patch.com/idaho/weiser-id/calendar"
+      "notes": "Patch community calendars, one per city, added 2026-11-05. Patch is a commercial local-news network; read its terms and robots.txt once for all of them before probing any. 2026-11-05: robots.txt allows the calendar pages, and the Star page was fetched once before the terms were read (a React app; events not checked). Read the terms before any further request. Calendars: https://patch.com/idaho/caldwell-id/calendar, https://patch.com/idaho/eagle-id/calendar, https://patch.com/idaho/emmett-id/calendar, https://patch.com/idaho/garden-city-id/calendar, https://patch.com/idaho/kuna-id/calendar, https://patch.com/idaho/marsing-id/calendar, https://patch.com/idaho/meridian-id/calendar, https://patch.com/idaho/middleton-id/calendar, https://patch.com/idaho/mountain-home-id/calendar, https://patch.com/idaho/nampa-id/calendar, https://patch.com/idaho/payette-id/calendar, https://patch.com/idaho/star-id/calendar, https://patch.com/idaho/weiser-id/calendar"
     },
     {
       "displayName": "Payette Chamber of Commerce",
       "url": "https://payettechamberofcommerce.wildapricot.org",
       "category": "learning-business",
       "city": "Payette",
-      "notes": "Wild Apricot site, added 2026-11-05. Wild Apricot event lists can export iCalendar. No city calendar was found for Payette. Not probed"
+      "status": "investigating",
+      "robotsChecked": "2026-11-05",
+      "notes": "Wild Apricot site, added 2026-11-05. No city calendar was found for Payette. robots.txt allows /events with a 10 second crawl delay (it blocks /Sys/Api/). The events list links its own RSS, https://payettechamberofcommerce.wildapricot.org/events/RSS, which had no items on 2026-11-05. Check again when events are posted; rss could read it"
+    },
+    {
+      "name": "kuna-library",
+      "displayName": "Kuna Library District",
+      "status": "running",
+      "adapter": "ics",
+      "url": "https://kunalibrary.libcal.com/ical_subscribe.php?src=p&cid=20071",
+      "robotsChecked": "2026-11-05",
+      "category": "learning-business",
+      "inferCategory": true,
+      "city": "Kuna",
+      "venue": "Kuna Library",
+      "venueKey": "kuna-library",
+      "priority": 30,
+      "fixedVenue": true,
+      "excludeTitlePattern": "(?i)^closed\\b|\\bboard meeting\\b",
+      "notes": "LibCal ICS feed, calendar id 20071 ('Events and Programs' on https://kunalibrary.libcal.com/calendar; the other is 20092, Artist Showcase). Linked from kunalibrary.org. robots.txt allows it with a 10 second crawl delay. 324 events dated 2026-10-05 to 2027-04-30 on 2026-11-05, 214 upcoming; mostly storytimes and recurring programs. Board meetings are skipped by title. fixedVenue, because the feed names rooms (Owl Programs Room). Configured 2026-11-05. Terms not read"
     },
     {
       "displayName": "Public libraries outside Boise",
       "category": "learning-business",
-      "notes": "Meridian Library District, Caldwell Public Library, Eagle Public Library. Boise Public Library, Ada Community Library, and Nampa Public Library have their own entries. City of Nampa and City of Eagle are ruled out; check whether a library site is a separate host before probing. Many libraries use LibCal, which publishes ICS"
+      "notes": "Meridian Library District, Caldwell Public Library, Eagle Public Library. Boise Public Library, Ada Community Library, Nampa Public Library, Kuna Library District, and Mountain Home Public Library have their own entries. City of Nampa and City of Eagle are ruled out; check whether a library site is a separate host before probing. Many libraries use LibCal, which publishes ICS. Checked 2026-11-05 and out for now: Middleton Public Library and Emmett Public Library (Wix Events widgets that load with JavaScript; see Middleton Chamber of Commerce and City of Emmett), Payette and Weiser public libraries (no calendar found)"
     },
     {
       "displayName": "Radio station calendars",
@@ -1043,7 +1117,9 @@
       "url": "https://staridahochamber.com/events",
       "category": "learning-business",
       "city": "Star",
-      "notes": "Chamber events, added 2026-11-05. Also https://business.staridahochamber.com/events, which suggests GrowthZone. Not probed"
+      "status": "investigating",
+      "robotsChecked": "2026-11-05",
+      "notes": "Chamber events, added 2026-11-05. robots.txt allows everything. business.staridahochamber.com (ChamberMaster/GrowthZone) redirects to staridahochamber.com, whose events page renders with JavaScript, with no events in the HTML. On 2026-11-05 /events/rss returned 404 and an event detail page returned 500. Search results show it reposts Star branch library events. GrowthZone may offer an ICS or RSS export on request"
     },
     {
       "displayName": "Ste. Chapelle Winery",
