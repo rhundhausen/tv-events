@@ -43,10 +43,10 @@ Before the midnight (Boise time) schedule runs on its own:
 2. When it finishes, check:
    - The run is green and the `out` artifact holds `idaho-steelheads.json` and `run.json`.
    - `main` has a new commit by "WeekendBoise bot" titled `data: raw ingest YYYY-MM-DD [skip ci]` that changes only `data/raw-events.json`, and Cloudflare skipped it.
-3. Actions > refine > Run workflow, branch `main`. When it finishes, check:
+3. Refine starts by itself when ingest finishes (Actions > refine; it can also be run by hand, branch `main`). When it finishes, check:
    - The run is green and its log starts with the raw file's `asOf` and source count.
    - `main` has a new commit titled `data: nightly refine YYYY-MM-DD` that changes only `data/events.json`, `data/archive/`, `data/links.json`, and `data/meta.json`, and its "Workers Builds: weekendboise" check deployed the site.
    - The test workflow did not run for either commit.
 4. If a commit step fails with a permission error, recheck step 3.
 
-After that, leave both schedules to run nightly: ingest at midnight Boise time, refine at 1 AM. GitHub turns off scheduled workflows in a public repo after 60 days with no repository activity; the nightly data commits count as activity, so this only matters if ingest stops committing.
+After that, leave ingest's schedule to run nightly at midnight Boise time; refine follows each ingest run. GitHub turns off scheduled workflows in a public repo after 60 days with no repository activity; the nightly data commits count as activity, so this only matters if ingest stops committing.

@@ -20,7 +20,7 @@ Describe 'Test-BoiseHour' {
     @{ hour = 0; season = 'winter'; cron = '0 7 * * *'; want = $true }
     @{ hour = 0; season = 'summer'; cron = '0 6 * * *'; want = $true }
     @{ hour = 0; season = 'summer'; cron = '0 7 * * *'; want = $false }
-    # Refine, 1 AM: 08:00 UTC in winter, 07:00 UTC in summer.
+    # Another hour, 1 AM: 08:00 UTC in winter, 07:00 UTC in summer.
     @{ hour = 1; season = 'winter'; cron = '0 7 * * *'; want = $false }
     @{ hour = 1; season = 'winter'; cron = '0 8 * * *'; want = $true }
     @{ hour = 1; season = 'summer'; cron = '0 7 * * *'; want = $true }

@@ -1,6 +1,7 @@
 # Nightly ingest, stage 1 of 2. Fetches every running source into data/raw-events.json and commits
 # that file alone to the branch it ran on. Runs at midnight Boise time, or by hand with an optional
-# source input. The refine workflow turns the raw file into what the site reads, an hour later.
+# source input. When it finishes, whether it succeeded or not, the refine workflow starts and turns
+# the raw file into what the site reads.
 
 name: ingest
 
@@ -21,7 +22,7 @@ on:
 permissions:
   contents: write
 
-# Shared with refine, so the two never run at once. A late ingest makes refine wait.
+# Shared with refine, so the two never run at once. A manual refine waits for a running ingest.
 concurrency:
   group: data
   cancel-in-progress: false
@@ -95,7 +96,8 @@ jobs:
           path: out
           if-no-files-found: ignore
 
-      # [skip ci], because the site doesn't read the raw file. Refine's commit deploys.
+      # [skip ci], because the site doesn't read the raw file. Refine starts after this run and its
+      # commit deploys.
       - name: Commit raw data
         run: |
           ./ingestion/scripts/Publish-Data.ps1 -Path data/raw-events.json -Message 'data: raw ingest' -SkipDeploy

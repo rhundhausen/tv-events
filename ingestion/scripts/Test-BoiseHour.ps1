@@ -13,7 +13,7 @@
 
   Returns an object with Run (bool) and At (string, empty for a manual run).
 .PARAMETER Hour
-  The target hour in Boise, 0 to 23. Ingest uses 0 (midnight), refine uses 1.
+  The target hour in Boise, 0 to 23. Ingest uses 0 (midnight).
 .PARAMETER EventName
   github.event_name. Defaults to the EVENT environment variable.
 .PARAMETER Schedule

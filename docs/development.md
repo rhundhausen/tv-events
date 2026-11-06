@@ -8,7 +8,7 @@ Treasure Valley event aggregator. A nightly GitHub Actions workflow pulls events
 
 1. `ingestion/sources.json` lists each source and the adapter that reads it (ICS feed, The Events Calendar REST API, a ticketing API, or, for sites with no feed, a `robots.txt`-respecting scraper). [ingest-report.md](ingest-report.md) shows every source, its state, and the last run's results.
 2. **Ingest** (`ingestion/scripts/Invoke-Ingest.ps1`, midnight Boise time) runs every adapter, normalizes each event to the common schema, and stores what each source returned in `data/raw-events.json`, one entry per source. It does nothing else.
-3. **Refine** (`ingestion/scripts/Invoke-Refine.ps1`, 1 AM Boise time) reads the raw file, dedupes across sources, fills in cities and cost guesses, checks event links, and writes `data/events.json` (upcoming only), `data/archive/YYYY-MM.json` (past events), `data/links.json`, and `data/meta.json`. It never fetches a source, so it can be rerun by hand as often as needed.
+3. **Refine** (`ingestion/scripts/Invoke-Refine.ps1`, started when ingest finishes, even if ingest failed) reads the raw file, dedupes across sources, fills in cities and cost guesses, checks event links, and writes `data/events.json` (upcoming only), `data/archive/YYYY-MM.json` (past events), `data/links.json`, and `data/meta.json`. It never fetches a source, so it can be rerun by hand as often as needed.
 4. Each workflow commits only the files it owns. Refine's commit deploys the site.
 
 **File ownership.** No file is written by both stages:
@@ -24,7 +24,7 @@ The raw file holds `asOf` (the scheduled midnight, or the time a manual run star
 ## Repo layout
 
 ```
-.github/workflows/    ingest.yml (midnight fetch), refine.yml (1 AM refine), test.yml (Pester)
+.github/workflows/    ingest.yml (midnight fetch), refine.yml (after ingest), test.yml (Pester)
 data/                 the contract between ingestion and the website
   raw-events.json     what each source returned, written by ingest, read by refine
   events.json         upcoming events
@@ -33,7 +33,7 @@ data/                 the contract between ingestion and the website
   meta.json           the time of the last ingest, shown in the site's header
   schema/             lookup tables: categories, tags, sizes, venue aliases, cost rules
 ingestion/
-  scripts/            Invoke-Ingest, Invoke-Refine, Publish-Data, Test-BoiseHour, Test-Sources, Test-Schema
+  scripts/            Invoke-Ingest, Invoke-Refine, Publish-Data, Test-BoiseHour, Test-IngestRan, Test-Sources, Test-Schema
     adapters/         one script per adapter type
     lib/              shared library
   tests/              Pester tests and fixtures
@@ -79,10 +79,10 @@ API keys are read from environment variables only. Copy `ingestion/.env.example.
 
 ## Nightly workflows
 
-- **When:** `.github/workflows/ingest.yml` runs at midnight Boise time and `.github/workflows/refine.yml` at 1 AM, both on the default branch. Cron is UTC and daylight saving moves Boise between UTC-6 and UTC-7, so each workflow schedules both candidate UTC hours (ingest 06:00 and 07:00, refine 07:00 and 08:00) and a first job, `ingestion/scripts/Test-BoiseHour.ps1 -Hour <n>`, skips the one that isn't the right Boise hour that day. The hour between them leaves ingest (about 6 minutes) plenty of room. Both share the concurrency group `data`, so a late ingest makes refine wait rather than race it.
-- **The header time:** GitHub often starts scheduled runs late, so a scheduled ingest passes `-AsOf` with the scheduled midnight and the site's header reads 12:00 AM; a manual full ingest records the time it ran, and a one-source ingest keeps the time already there. Refine copies it unchanged; its own scheduled time is only logged.
+- **When:** `.github/workflows/ingest.yml` runs at midnight Boise time on the default branch. Cron is UTC and daylight saving moves Boise between UTC-6 and UTC-7, so it schedules both candidate UTC hours (06:00 and 07:00) and a first job, `ingestion/scripts/Test-BoiseHour.ps1 -Hour 0`, skips the one that isn't midnight in Boise that day. `.github/workflows/refine.yml` has no cron: it starts with `workflow_run` each time an ingest run on `main` completes, scheduled or manual, **whether ingest succeeded or failed**, so past events still move to the archive and links still get checked when every source is down. Its first job, `ingestion/scripts/Test-IngestRan.ps1`, reads the ingest run's jobs through the GitHub API and skips the run whose ingest job was skipped (the cron line that wasn't midnight), so refine runs once a night. Both share the concurrency group `data`, so a manual refine waits for a running ingest rather than racing it.
+- **The header time:** GitHub often starts scheduled runs late, so a scheduled ingest passes `-AsOf` with the scheduled midnight and the site's header reads 12:00 AM; a manual full ingest records the time it ran, and a one-source ingest keeps the time already there. Refine copies it unchanged.
 - **Ingest** fetches, uploads `out/` as the `out` artifact, then `Publish-Data.ps1` commits `data/raw-events.json` alone, with `[skip ci]` so Cloudflare doesn't deploy a commit the site doesn't read. Run it by hand from Actions > ingest > Run workflow, with an optional `source` input to fetch one source.
-- **Refine** checks out the head of the branch, logs the raw file's `asOf` and source count, and fails with a clear message if there is no raw file. It doesn't depend on ingest succeeding: it uses whatever raw file is committed. It uploads `out/` as the `refine-out` artifact, then commits `data/events.json`, `data/archive/`, `data/links.json`, and `data/meta.json` without `[skip ci]`, which deploys the site. **To rerun it by hand** (after changing a merge, city, or cost rule): Actions > refine > Run workflow, optionally ticking "Skip the link check". No source is fetched.
+- **Refine** checks out the head of `main`, so it sees the raw file ingest just committed, logs the raw file's `asOf` and source count, and fails with a clear message if there is no raw file. It doesn't depend on ingest succeeding: it uses whatever raw file is committed. It uploads `out/` as the `refine-out` artifact, then commits `data/events.json`, `data/archive/`, `data/links.json`, and `data/meta.json` without `[skip ci]`, which deploys the site. **To rerun it by hand** (after changing a merge, city, or cost rule): Actions > refine > Run workflow, optionally ticking "Skip the link check". No source is fetched.
 - Both commit as "WeekendBoise bot" and push to the branch the run started on. The test workflow doesn't run on those commits, because GitHub never starts workflows from a push made with the workflow's `GITHUB_TOKEN`.
 - **Deploying:** Cloudflare Workers Builds is connected to this repo as the `weekendboise` Worker, with `website/` as its root. `website/wrangler.jsonc` runs `build.sh`, which installs Hugo and builds the site, then the build output in `website/public` is deployed. Every push to `main` deploys, including refine's data commit. A deploy shows as the "Workers Builds: weekendboise" check on the commit in GitHub. Cloudflare skips any commit whose message contains `[skip ci]`, so leave it out of commits that should reach the site. The site doesn't read `data/raw-events.json`: `website/hugo.toml` leaves it out of the data mount.
 - `.github/workflows/test.yml` runs the Pester tests on every push and pull request and uploads `testResults.xml`.

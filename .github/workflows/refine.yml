@@ -1,15 +1,17 @@
 # Nightly refine, stage 2 of 2. Reads the committed data/raw-events.json, merges and cleans it,
-# checks event links, and commits the files the site reads, which deploys the site. Runs at 1 AM
-# Boise time, an hour after ingest, or by hand as often as needed. It never fetches a source.
+# checks event links, and commits the files the site reads, which deploys the site. Starts when an
+# ingest run finishes, whether it succeeded or not, or by hand as often as needed. It never fetches
+# a source.
 
 name: refine
 
 on:
-  # Cron is UTC and Boise is UTC-6 in summer and UTC-7 in winter, so both hours are scheduled
-  # and the when job skips the one that isn't 1 AM in Boise.
-  schedule:
-    - cron: '0 7 * * *'
-    - cron: '0 8 * * *'
+  # Every completed ingest run on main, scheduled or manual. The when job skips the runs whose
+  # ingest job never started (the cron line that isn't midnight in Boise).
+  workflow_run:
+    workflows: [ingest]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
     inputs:
       skip_link_check:
@@ -20,8 +22,10 @@ on:
 
 permissions:
   contents: write
+  # To read the ingest run's jobs in the when job.
+  actions: read
 
-# Shared with ingest, so the two never run at once. A late ingest makes refine wait.
+# Shared with ingest, so the two never run at once. A manual refine waits for a running ingest.
 concurrency:
   group: data
   cancel-in-progress: false
@@ -41,18 +45,18 @@ jobs:
         uses: actions/checkout@v5
         with:
           fetch-depth: 1
-          sparse-checkout: ingestion/scripts/Test-BoiseHour.ps1
+          sparse-checkout: ingestion/scripts/Test-IngestRan.ps1
           sparse-checkout-cone-mode: false
 
-      # A manual run always goes ahead. A scheduled run goes ahead only for the cron line that is
-      # 1 AM in Boise. The scheduled time it reports is for the log only: the site shows the asOf
-      # time ingest wrote into the raw file.
-      - name: Check Boise time
+      # A manual run always goes ahead. After ingest, refine goes ahead if ingest's job started,
+      # whatever its outcome, so a failed ingest still moves past events and checks links.
+      - name: Check the ingest run
         id: check
         env:
           EVENT: ${{ github.event_name }}
-          SCHEDULE: ${{ github.event.schedule }}
-        run: ./ingestion/scripts/Test-BoiseHour.ps1 -Hour 1
+          INGEST_RUN_ID: ${{ github.event.workflow_run.id }}
+          GH_TOKEN: ${{ github.token }}
+        run: ./ingestion/scripts/Test-IngestRan.ps1
 
   refine:
     needs: when
@@ -61,7 +65,7 @@ jobs:
     # The link check stops itself after 15 minutes; the rest takes under a minute.
     timeout-minutes: 30
     steps:
-      # The head of the branch, so it reads whatever raw file ingest last committed.
+      # The head of main, so it reads the raw file ingest just committed.
       - name: Check out
         uses: actions/checkout@v5
         with:

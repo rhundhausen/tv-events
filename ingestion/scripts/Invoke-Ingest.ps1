@@ -5,7 +5,7 @@
 .DESCRIPTION
   Runs the entries in sources.json whose status is running, and stores what each adapter returned
   in the raw file, one entry per source. That is all it does: merging, cost guesses, cities, the
-  link check, and the files the site reads are Invoke-Refine.ps1's job, an hour later.
+  link check, and the files the site reads are Invoke-Refine.ps1's job, which the refine workflow runs as soon as ingest finishes.
 
   One broken source logs a warning and keeps its last good entry in the raw file, so refine still
   sees its events. The run exits non-zero only if zero sources succeed, and then writes nothing.
