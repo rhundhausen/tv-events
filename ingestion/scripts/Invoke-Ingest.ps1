@@ -233,7 +233,13 @@ foreach ($result in $results) {
 # Check the links that are due, then mark every upcoming event from what is known.
 $linkState = Read-TvLinkState $linksPath
 $linkBudget = if ($NoLinkCheck -or $NoWrite) { 0 } else { $LinkBudgetSeconds }
-$links = Invoke-TvLinkCheck $upcoming -State $linkState -Now $now -BudgetSeconds $linkBudget -OnlySource $Source
+# A link check failure must not cost the night's events, so it only warns.
+$links = try {
+  Invoke-TvLinkCheck $upcoming -State $linkState -Now $now -BudgetSeconds $linkBudget -OnlySource $Source
+} catch {
+  Write-Warning "Link check failed, events keep their stored link flags: $_"
+  [pscustomobject]@{ State = $linkState; Checked = @(); Broken = @() }
+}
 $null = New-Item -ItemType Directory -Force -Path $outPath
 [IO.File]::WriteAllText((Join-Path $outPath 'links.json'), (([ordered]@{ checked = @($links.Checked); broken = @($links.Broken) } | ConvertTo-Json -Depth 4) -replace "`r`n", "`n") + "`n")
 if ($env:GITHUB_STEP_SUMMARY) {

@@ -11,9 +11,10 @@ function Get-TvLinkVerdict {
   .SYNOPSIS
     ok, broken, blocked, or transient.
   .DESCRIPTION
-    Only 404 and 410 say a page is gone. 401, 403 and 429 are a site turning away scripts, which says
-    nothing about the page, so they never break a link. Timeouts, 5xx, DNS failures and refused
-    connections look the same as a host having a bad hour.
+    Only 404 and 410 say a page is gone. Every other 4xx (401, 403, 406, 429 and so on), any
+    non-standard code, and any request error we can't place is a site turning away scripts or
+    something we can't read, which says nothing about the page, so they never break a link.
+    Timeouts, 5xx, DNS failures and refused connections look the same as a host having a bad hour.
   #>
   [CmdletBinding()]
   [OutputType([string])]
@@ -22,11 +23,11 @@ function Get-TvLinkVerdict {
     [AllowEmptyString()][string]$ErrorKind
   )
 
-  if ($ErrorKind) { return 'transient' }
+  if ($ErrorKind) { return ($ErrorKind -in 'dns', 'refused', 'timeout') ? 'transient' : 'blocked' }
   if ($Status -ge 200 -and $Status -lt 400) { return 'ok' }
   if ($Status -in 404, 410) { return 'broken' }
-  if ($Status -in 401, 403, 429) { return 'blocked' }
-  'transient'
+  if ($Status -ge 500 -and $Status -lt 600) { return 'transient' }
+  'blocked'
 }
 
 function Get-TvLinkErrorKind {
@@ -58,7 +59,8 @@ function Test-TvLink {
   $status = 0
   $kind = ''
   try {
-    $response = Invoke-WebRequest -Uri $Url -UserAgent (Get-TvUserAgent) -MaximumRedirection 10 -TimeoutSec 20 -SkipHttpErrorCheck -ErrorAction Stop
+    # Browsers follow a redirect from https to http, and PowerShell refuses it unless told to.
+    $response = Invoke-WebRequest -Uri $Url -UserAgent (Get-TvUserAgent) -MaximumRedirection 10 -TimeoutSec 20 -SkipHttpErrorCheck -AllowInsecureRedirect -ErrorAction Stop
     $status = [int]$response.StatusCode
   } catch {
     $kind = Get-TvLinkErrorKind $_.Exception
@@ -117,14 +119,23 @@ function Invoke-TvLinkCheck {
   $nowText = $Now.UtcDateTime.ToString($script:LinkStamp, $invariant)
   $timer = [Diagnostics.Stopwatch]::StartNew()
   $robots = @{}
+  $down = @{}
   $delays = @{}
   $lastRequest = @{}
   $checked = [Collections.Generic.List[object]]::new()
 
+  function Get-Checked([object]$Entry) {
+    # When the entry was last checked, or $null if it has no readable time.
+    $at = [DateTimeOffset]::MinValue
+    if ($Entry -and [DateTimeOffset]::TryParse("$($Entry.checkedAt)", $invariant, [Globalization.DateTimeStyles]::AssumeUniversal, [ref]$at)) { return $at }
+    $null
+  }
+
   function Test-Due([string]$Url) {
     $entry = $State[$Url]
-    if (-not $entry) { return $true }
-    $age = $Now - [DateTimeOffset]::Parse($entry.checkedAt, $invariant)
+    $at = Get-Checked $entry
+    if (-not $at) { return $true }
+    $age = $Now - $at
     if ($entry.verdict -in 'ok', 'blocked', 'skipped') { return $age.TotalDays -ge 7 }
     $age.TotalHours -ge 20
   }
@@ -135,6 +146,23 @@ function Invoke-TvLinkCheck {
       if ($gap -gt 0) { Start-Sleep -Milliseconds $gap }
     }
     $lastRequest[$Origin] = $timer.ElapsedMilliseconds
+  }
+
+  function Save-Result([string]$Url, [hashtable]$Result, [string]$Names, [string]$Title) {
+    $previous = $State[$Url]
+    $entry = [ordered]@{
+      verdict   = $Result.Verdict
+      status    = $Result.Status
+      checkedAt = $nowText
+      failures  = if ($Result.Verdict -eq 'transient') { [int]$previous.failures + 1 } else { 0 }
+    }
+    if ($Result.ErrorKind) { $entry.error = $Result.ErrorKind }
+    if ($Result.Verdict -eq 'transient' -and $previous.brokenSince) { $entry.brokenSince = $previous.brokenSince }
+    if (Test-TvLinkEntryBroken $entry) {
+      $entry.brokenSince = if ($previous.brokenSince) { $previous.brokenSince } else { $nowText }
+    }
+    $State[$Url] = $entry
+    $checked.Add([pscustomobject]@{ url = $Url; verdict = $Result.Verdict; status = $Result.Status; error = $Result.ErrorKind; sources = $Names; title = $Title })
   }
 
   function Invoke-Probe([string]$Url, [string]$Names, [string]$Title) {
@@ -148,16 +176,26 @@ function Invoke-TvLinkCheck {
       $delays[$origin] = 1
       Wait-Host $origin
       $text = try { Invoke-TvRequest "$origin/robots.txt" -Raw } catch {
-        # No robots.txt means no rules. Any other failure means we can't tell, so leave the host alone.
-        if ("$_" -match 'HTTP 40[14]|HTTP 410') { '' } else { $null }
+        # No robots.txt means no rules. A host that doesn't resolve, refuses or times out is down,
+        # which counts against its links. Any other answer means we can't tell, so leave it alone.
+        $message = "$_"
+        if ($message -match 'HTTP 40[14]|HTTP 410') { '' }
+        else {
+          $kind = if ($message -notmatch 'HTTP \d{3}') { Get-TvLinkErrorKind $_.Exception }
+          if ($kind -in 'dns', 'refused', 'timeout') { $down[$origin] = $kind }
+          $null
+        }
       }
       $robots[$origin] = $text
       if ($null -ne $text) { $delays[$origin] = [Math]::Max(1, [int](Get-TvRobotsGroup $text).Delay) }
     }
+    if ($down.ContainsKey($origin)) {
+      Save-Result $Url @{ Status = 0; ErrorKind = $down[$origin]; Verdict = 'transient' } $Names $Title
+      return $true
+    }
     $rules = $robots[$origin]
     if ($null -eq $rules -or $delays[$origin] -gt 60) { return $true }
 
-    $previous = $State[$Url]
     if (-not (Test-TvRobotsAllowed $rules $uri.PathAndQuery)) {
       $State[$Url] = [ordered]@{ verdict = 'skipped'; status = 0; checkedAt = $nowText; failures = 0 }
       $checked.Add([pscustomobject]@{ url = $Url; verdict = 'skipped'; status = 0; error = 'robots.txt disallows'; sources = $Names; title = $Title })
@@ -165,20 +203,7 @@ function Invoke-TvLinkCheck {
     }
 
     Wait-Host $origin
-    $result = Test-TvLink $Url
-    $entry = [ordered]@{
-      verdict   = $result.Verdict
-      status    = $result.Status
-      checkedAt = $nowText
-      failures  = if ($result.Verdict -eq 'transient') { [int]$previous.failures + 1 } else { 0 }
-    }
-    if ($result.ErrorKind) { $entry.error = $result.ErrorKind }
-    if ($result.Verdict -eq 'transient' -and $previous.brokenSince) { $entry.brokenSince = $previous.brokenSince }
-    if (Test-TvLinkEntryBroken $entry) {
-      $entry.brokenSince = if ($previous.brokenSince) { $previous.brokenSince } else { $nowText }
-    }
-    $State[$Url] = $entry
-    $checked.Add([pscustomobject]@{ url = $Url; verdict = $result.Verdict; status = $result.Status; error = $result.ErrorKind; sources = $Names; title = $Title })
+    Save-Result $Url (Test-TvLink $Url) $Names $Title
     $true
   }
 
@@ -243,7 +268,8 @@ function Invoke-TvLinkCheck {
   }
   foreach ($url in @($State.Keys)) {
     if ($used.Contains($url)) { continue }
-    if (($Now - [DateTimeOffset]::Parse($State[$url].checkedAt, $invariant)).TotalDays -ge 30) { $State.Remove($url) }
+    $at = Get-Checked $State[$url]
+    if (-not $at -or ($Now - $at).TotalDays -ge 30) { $State.Remove($url) }
   }
 
   [pscustomobject]@{ State = $State; Checked = @($checked); Broken = @($broken) }

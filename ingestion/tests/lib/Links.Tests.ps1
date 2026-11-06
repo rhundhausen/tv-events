@@ -57,7 +57,11 @@ Describe 'Get-TvLinkVerdict' {
     @{ status = 0; kind = 'timeout'; want = 'transient' }
     @{ status = 0; kind = 'dns'; want = 'transient' }
     @{ status = 0; kind = 'refused'; want = 'transient' }
-    @{ status = 0; kind = 'error'; want = 'transient' }
+    @{ status = 0; kind = 'error'; want = 'blocked' }
+    @{ status = 400; kind = ''; want = 'blocked' }
+    @{ status = 406; kind = ''; want = 'blocked' }
+    @{ status = 451; kind = ''; want = 'blocked' }
+    @{ status = 999; kind = ''; want = 'blocked' }
   ) {
     Get-TvLinkVerdict -Status $status -ErrorKind $kind | Should -BeExactly $want
   }
@@ -85,6 +89,12 @@ Describe 'Test-TvLink' {
     Mock Invoke-WebRequest { New-FakeResponse 200 }
     $null = Test-TvLink 'https://a.test/e'
     Should -Invoke Invoke-WebRequest -Times 1 -ParameterFilter { $UserAgent -eq (Get-TvUserAgent) -and $MaximumRedirection -ge 5 }
+  }
+
+  It 'follows a redirect from https to http, as a browser does' {
+    Mock Invoke-WebRequest { New-FakeResponse 200 }
+    $null = Test-TvLink 'https://a.test/e'
+    Should -Invoke Invoke-WebRequest -Times 1 -ParameterFilter { $AllowInsecureRedirect }
   }
 }
 
@@ -119,6 +129,27 @@ Describe 'Invoke-TvLinkCheck' {
     $second = Invoke-TvLinkCheck @($again) -State $first.State -Now $now.AddHours(24) -BudgetSeconds 60
     $again.linkBroken | Should -BeTrue
     $second.Broken[0].reason | Should -Be 'timeout, 2 nights in a row'
+  }
+
+  It 'catches a host that no longer resolves, even though its robots.txt fails first' {
+    Mock Start-Sleep {}
+    Mock Invoke-WebRequest { throw [System.Net.Http.HttpRequestException]::new('No such host is known.', [System.Net.Sockets.SocketException]::new(11001)) }
+    $event = New-TestEvent
+    $first = Invoke-TvLinkCheck @($event) -State @{} -Now $now -BudgetSeconds 60
+    $event.PSObject.Properties.Name | Should -Not -Contain 'linkBroken'
+    $first.State['https://a.test/e'].error | Should -Be 'dns'
+
+    $again = New-TestEvent
+    $second = Invoke-TvLinkCheck @($again) -State $first.State -Now $now.AddHours(24) -BudgetSeconds 60
+    $again.linkBroken | Should -BeTrue
+    $second.Broken[0].reason | Should -Be 'dns, 2 nights in a row'
+  }
+
+  It 'treats a damaged state entry as due instead of failing the run' {
+    Set-Responses @{}
+    $state = @{ 'https://a.test/e' = @{ verdict = 'ok'; status = 200; failures = 0 } }
+    $result = Invoke-TvLinkCheck @(New-TestEvent) -State $state -Now $now -BudgetSeconds 60
+    $result.Checked.Count | Should -Be 1
   }
 
   It 'switches to another source''s working link instead of unlinking' {
