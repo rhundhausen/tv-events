@@ -42,7 +42,7 @@ Before the midnight (Boise time) schedule runs on its own:
 1. Actions > ingest > Run workflow, branch `main`, source `idaho-steelheads` (or any one running source).
 2. When it finishes, check:
    - The run is green and the `out` artifact holds `idaho-steelheads.json` and `run.json`.
-   - `main` has a new commit by "WeekendBoise bot" titled `data: nightly ingest YYYY-MM-DD [skip ci]` that changes only files under `data/`.
+   - `main` has a new commit by "WeekendBoise bot" titled `data: nightly ingest YYYY-MM-DD` that changes only files under `data/`.
    - The test workflow did not run for that commit.
 3. If the commit step fails with a permission error, recheck step 3.
 
