@@ -116,6 +116,10 @@ Describe 'seatgeek adapter' {
     $events.title | Should -Not -Contain 'Example Oregon Show'
   }
 
+  It 'reads the cost tier from the lowest price' {
+    ($events | Where-Object title -eq 'Example Band').cost | Should -BeExactly '$$'
+  }
+
   It 'reads an event in Boise time and maps its type' {
     $events[0].start | Should -Be '2026-11-14T20:00:00-07:00'
     $events[0].category | Should -Be 'music'

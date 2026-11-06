@@ -108,6 +108,13 @@ Describe 'tribe adapter' {
     $events.description | Where-Object { $_ -match '\$\d' } | Should -BeNullOrEmpty
   }
 
+  It 'reads the cost tier from the cost text' {
+    ($events | Where-Object title -eq 'Kyle Gordon').cost | Should -BeExactly '$$'
+    $page = '{"total_pages":1,"events":[{"title":"Priced Show","all_day":false,"utc_start_date":"2026-11-15 02:00:00","utc_end_date":"2026-11-15 04:00:00","url":"https://x.test/e","description":"","cost":"$120 - $250","venue":[]}]}'
+    $path = Join-Path $repo 'scripts' 'adapters' 'tribe.ps1'
+    (& $path -Source (Get-TestSource 'mike-brown-group') -FetchedAt $fetchedAt -Response $page).cost | Should -BeExactly '$$$'
+  }
+
   It 'uses the fallback venue when an event has none' {
     $page = '{"total_pages":1,"events":[{"title":"No Venue","all_day":false,"utc_start_date":"2026-11-15 02:00:00","utc_end_date":"2026-11-15 04:00:00","url":"https://x.test/e","description":"","venue":[]}]}'
     $path = Join-Path $repo 'scripts' 'adapters' 'tribe.ps1'
@@ -147,6 +154,16 @@ Describe 'ticketmaster adapter' {
     $event.title | Should -Be 'Jo Koy (12 and Over)'
     $event.start | Should -Be '2026-11-07T20:00:00-07:00'
     $event.url | Should -Be 'https://www.ticketmaster.com/event/Z7r9jZ1A7PePd'
+  }
+
+  It 'reads the cost tier from the lowest price range' {
+    $page = Get-Content (Join-Path $repo 'tests/fixtures/ticketmaster/ford-idaho-center-arena.json') -Raw | ConvertFrom-Json
+    $first = $page._embedded.events[0]
+    $first | Add-Member -NotePropertyName priceRanges -NotePropertyValue @(@{ type = 'standard'; min = 129.5; max = 300 }, @{ type = 'resale'; min = 49.5; max = 90 })
+    $path = Join-Path $repo 'scripts' 'adapters' 'ticketmaster.ps1'
+    $priced = @(& $path -Source $source -FetchedAt $fetchedAt -Response ($page | ConvertTo-Json -Depth 20))
+    $priced[0].cost | Should -BeExactly '$$'
+    $events[0].PSObject.Properties.Name | Should -Not -Contain 'cost'
   }
 
   It 'takes the venue from the source entry' {

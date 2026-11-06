@@ -75,7 +75,7 @@ Unknown fields fail validation, so a typo can't silently turn a setting off. A n
 | --- | --- | --- |
 | `latlong`, `radius` | yes | Center as `lat,lon`, and radius in miles |
 
-`url` is `https://api.seatgeek.com/2/events`. Requires the `SEATGEEK_CLIENT_ID` environment variable. Only Idaho venues are kept, and prices in the response are ignored. Disabled: built from the documented response and never run live.
+`url` is `https://api.seatgeek.com/2/events`. Requires the `SEATGEEK_CLIENT_ID` environment variable. Only Idaho venues are kept. The lowest price sets the cost tier; the price itself is not stored. Disabled: built from the documented response and never run live.
 
 ### songkick
 

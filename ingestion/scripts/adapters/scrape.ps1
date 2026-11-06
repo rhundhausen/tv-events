@@ -93,7 +93,8 @@ function New-ScrapeEvent {
     [string]$VenueName,
     [string]$CityText,
     [string]$Url,
-    [string]$Description
+    [string]$Description,
+    [string]$Cost
   )
 
   $name = if ($Source.fixedVenue) { '' } else { ConvertTo-PlainText $VenueName }
@@ -106,7 +107,21 @@ function New-ScrapeEvent {
   New-TvEvent -Title $Title -Start $Start -End $End -AllDay:$AllDay `
     -Venue ($name ? $name : $Source.venue) -VenueKey ($name ? (Get-VenueKey $name) : $Source.venueKey) `
     -City ($city ? $city : $Source.city) -Category $Source.category -InferCategory:([bool]$Source.inferCategory) `
-    -Url $Url -Description $Description -Sources @(@{ name = $Source.name; url = $Url; fetchedAt = $FetchedAt })
+    -Url $Url -Description $Description -Cost $Cost -Sources @(@{ name = $Source.name; url = $Url; fetchedAt = $FetchedAt })
+}
+
+function Get-JsonLdCost {
+  # The tier from schema.org offers, or ''. A price of 0 is ignored: sites put it in as a
+  # placeholder, so only isAccessibleForFree counts as free.
+  param([object]$Node)
+
+  if ($Node.isAccessibleForFree -eq $true -or "$($Node.isAccessibleForFree)" -eq 'true') { return 'free' }
+  $prices = @(@($Node.offers) | ForEach-Object { $_.price; $_.lowPrice } | ForEach-Object {
+      $value = 0.0
+      if ([double]::TryParse(("$_" -replace '[$,]', ''), [Globalization.NumberStyles]::Float, [Globalization.CultureInfo]::InvariantCulture, [ref]$value) -and $value -gt 0) { $value }
+    })
+  if ($prices.Count -eq 0) { return '' }
+  Get-TvCostTier -Amount ($prices | Measure-Object -Minimum).Minimum
 }
 
 function Read-JsonLdEvent {
@@ -133,7 +148,8 @@ function Read-JsonLdEvent {
   $cityText = if ($address -is [pscustomobject]) { "$($address.addressLocality)" } else { "$address" }
 
   New-ScrapeEvent -Title $title -Start $start.Value -End $endValue -AllDay $start.AllDay `
-    -VenueName $location.name -CityText $cityText -Url ([System.Net.WebUtility]::HtmlDecode($url)) -Description $Node.description
+    -VenueName $location.name -CityText $cityText -Url ([System.Net.WebUtility]::HtmlDecode($url)) -Description $Node.description `
+    -Cost (Get-JsonLdCost $Node)
 }
 
 function Read-JsonLdSource {
@@ -279,7 +295,7 @@ function Read-CalendarAppSource {
       $url = if ($item.eventUrl) { [uri]::new($listUri, [System.Net.WebUtility]::HtmlDecode($item.eventUrl)).AbsoluteUri } else { $Source.url }
 
       New-ScrapeEvent -Title $title -Start $start.Value -End $endValue -AllDay $start.AllDay `
-        -VenueName $venueName -CityText '' -Url $url -Description $item.bodyText
+        -VenueName $venueName -CityText '' -Url $url -Description $item.bodyText -Cost (ConvertFrom-TvCostText $item.cost)
     } catch {
       Write-Warning "$($Source.name): skipping '$($item.title)': $_"
     }
