@@ -343,6 +343,23 @@ input:focus-visible, select:focus-visible, button:focus-visible {
   cursor: help;
 }
 
+.cost {
+  display: inline-block;
+  min-width: 24px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: help;
+}
+.c-size .cost { margin-left: 4px; }
+.c-title.no-link { color: var(--muted); cursor: help; }
+.v-sep { color: var(--muted); opacity: 0.6; }
+
 .link {
   all: unset;
   color: var(--accent);
@@ -366,6 +383,8 @@ input:focus-visible, select:focus-visible, button:focus-visible {
   .events .w-city { width: 100px; }
   .events .w-cat { width: 170px; }
   .events .w-size { width: 56px; }
+  .events .w-cost { width: 56px; }
+  .events .v-city, .events .v-sep, .events .m-only { display: none; }
   .events td {
     white-space: nowrap;
     overflow: hidden;
@@ -397,9 +416,10 @@ input:focus-visible, select:focus-visible, button:focus-visible {
   .c-time { grid-column: 2; grid-row: 1; }
   .c-size { grid-column: 3; grid-row: 1; text-align: right; }
   .c-title { grid-column: 1 / -1; grid-row: 2; min-width: 0; font-size: 14px; }
-  .c-venue { grid-column: 1 / 3; grid-row: 3; }
-  .c-city { grid-column: 1 / 3; grid-row: 4; }
-  .c-cat { grid-column: 3; grid-row: 3 / 5; text-align: right; align-self: end; }
+  /* Line 3 is "City | Venue" with the category on the right, so each event stays at 3 lines. */
+  .c-venue { grid-column: 1 / 3; grid-row: 3; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .events .c-city, .events .c-cost { display: none; }
+  .c-cat { grid-column: 3; grid-row: 3; text-align: right; align-self: center; }
   .pager { flex-wrap: wrap; }
   .list tr { grid-template-columns: 1fr auto; }
   .list .s-name { grid-column: 1; grid-row: 1; }

@@ -23,6 +23,8 @@
     "k" (.category | default "")
     "g" (.tags | default slice)
     "z" (.size | default "")
+    "p" (.cost | default (.costGuess | default ""))
+    "x" (.linkBroken | default false)
     "u" (.url | default "")
     "d" (.description | default "")
     "r" (apply (.sources | default slice) "index" "." "name")
@@ -81,6 +83,16 @@
         <span class="label">Venue Size</span>
         <select id="size"><option value="">Any size</option></select>
       </label>
+      <label class="field">
+        <span class="label">Cost</span>
+        <select id="cost">
+          <option value="">Any cost</option>
+          <option value="free">Free or unknown</option>
+          <option value="1">$ (under $25)</option>
+          <option value="2">$$ ($25 to $99)</option>
+          <option value="3">$$$ ($100 or more)</option>
+        </select>
+      </label>
       <button id="reset" class="btn" type="button">Reset</button>
     </div>
     <div class="chips" id="cats" role="group" aria-label="Categories"></div>
@@ -98,7 +110,7 @@
   <div class="table-wrap">
     <table class="grid events">
       <colgroup>
-        <col class="w-date"><col class="w-time"><col class="w-title"><col class="w-venue"><col class="w-city"><col class="w-cat"><col class="w-size">
+        <col class="w-date"><col class="w-time"><col class="w-title"><col class="w-venue"><col class="w-city"><col class="w-cat"><col class="w-size"><col class="w-cost">
       </colgroup>
       <thead>
         <tr>
@@ -109,6 +121,7 @@
           <th scope="col" data-sort="city"><button type="button">City</button></th>
           <th scope="col">Category</th>
           <th scope="col" title="Estimated crowd size">Size</th>
+          <th scope="col" title="Rough cost of a ticket">Cost</th>
         </tr>
       </thead>
       <tbody id="rows"></tbody>

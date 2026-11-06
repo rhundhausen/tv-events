@@ -14,7 +14,7 @@ const numFmt = new Intl.NumberFormat('en-US');
 
 const $ = (id) => document.getElementById(id);
 const el = {
-  q: $('q'), when: $('when'), from: $('from'), to: $('to'), city: $('city'), size: $('size'),
+  q: $('q'), when: $('when'), from: $('from'), to: $('to'), city: $('city'), size: $('size'), cost: $('cost'),
   reset: $('reset'), cats: $('cats'), count: $('count'), rows: $('rows'), sourceNote: $('source-note'),
   pagerTop: $('pager-top'), pagerBottom: $('pager-bottom'), per: $('per'),
 };
@@ -37,7 +37,12 @@ const shorten = (s) => PHRASES.reduce((text, [re, short]) => text.replace(re, sh
 // "Wassmuth Center for Human Rights, 777 South 8th Street, Boise, ID 83702" keeps only the name.
 const dropAddress = (v) => (/^\D[^,]*,.*(\b\d{5}\b|,\s*(ID|Idaho)\b)/.test(v) ? v.split(',')[0] : v);
 
-const state = { q: '', cats: new Set(), city: '', size: '', source: '', when: '', from: '', to: '', sort: 'date', dir: 1, page: 1, per: DEFAULT_PER };
+// Cost filter values to tiers. Free and unknown look the same on the site, so "free" matches both.
+const COST_TIERS = { 1: '$', 2: '$$', 3: '$$$' };
+const COST_TITLES = { $: 'Under $25', $$: '$25 to $99', $$$: '$100 or more' };
+const NO_LINK = 'Information not available';
+
+const state = { q: '', cats: new Set(), city: '', size: '', cost: '', source: '', when: '', from: '', to: '', sort: 'date', dir: 1, page: 1, per: DEFAULT_PER };
 let events = [];
 
 function prepare(e) {
@@ -47,7 +52,7 @@ function prepare(e) {
   if (ed < sd) ed = sd;
   const catLabel = cfg.categories[e.k] || e.k;
   return {
-    title: e.t, venue: e.v, shortTitle: shorten(e.t), shortVenue: shorten(dropAddress(e.v || '')), city: e.c, cat: e.k, catLabel, tags: e.g || [], size: e.z, url: e.u, desc: e.d, src: e.r || [],
+    title: e.t, venue: e.v, shortTitle: shorten(e.t), shortVenue: shorten(dropAddress(e.v || '')), city: e.c, cat: e.k, catLabel, tags: e.g || [], size: e.z, cost: e.p || '', broken: Boolean(e.x), url: e.u, desc: e.d, src: e.r || [],
     sd, ed, allDay,
     instant: allDay ? 0 : Date.parse(e.s),
     dateText: sd === ed ? dayFmt.format(asDate(sd)) : `${dayFmt.format(asDate(sd))} to ${shortFmt.format(asDate(ed))}`,
@@ -80,6 +85,8 @@ function matches(e, words, from, to, skipCats) {
   if (to && e.sd > to) return false;
   if (state.city && e.city !== state.city) return false;
   if (state.size && e.size !== state.size) return false;
+  if (state.cost === 'free' && e.cost && e.cost !== 'free') return false;
+  if (COST_TIERS[state.cost] && e.cost !== COST_TIERS[state.cost]) return false;
   if (state.source && !e.src.includes(state.source)) return false;
   if (!skipCats && state.cats.size && !state.cats.has(e.cat)) return false;
   for (const forms of words) if (!forms.some((f) => e.hay.includes(f))) return false;
@@ -169,6 +176,14 @@ function cell(text, className) {
   return td;
 }
 
+function costBadge(tier) {
+  const badge = document.createElement('span');
+  badge.className = 'cost';
+  badge.textContent = tier;
+  badge.title = COST_TITLES[tier];
+  return badge;
+}
+
 function renderRows(list) {
   const frag = document.createDocumentFragment();
   for (const e of list) {
@@ -180,7 +195,12 @@ function renderRows(list) {
     time.dataset.label = 'Time';
 
     const title = cell('', 'c-title');
-    if (/^https?:\/\//i.test(e.url)) {
+    if (e.broken) {
+      // The nightly link check found this page gone, so there is nothing to link to.
+      title.textContent = e.shortTitle;
+      title.classList.add('no-link');
+      title.title = NO_LINK;
+    } else if (/^https?:\/\//i.test(e.url)) {
       const a = document.createElement('a');
       a.href = e.url;
       a.target = '_blank';
@@ -191,9 +211,20 @@ function renderRows(list) {
       title.textContent = e.shortTitle;
     }
     // Hover shows the full title, then the description.
-    title.title = e.desc ? `\n\n` : e.title;
+    if (!e.broken) title.title = e.desc ? `${e.title}\n\n${e.desc}` : e.title;
 
-    const venue = cell(e.shortVenue, 'c-venue');
+    // On phones the venue line reads "Nampa | Ford Idaho Center"; the city part is hidden on desktop.
+    const venue = cell('', 'c-venue');
+    if (e.city && e.city !== 'Other') {
+      const place = document.createElement('span');
+      place.className = 'v-city';
+      place.textContent = e.city;
+      const sep = document.createElement('span');
+      sep.className = 'v-sep';
+      sep.textContent = ' | ';
+      venue.append(place, sep);
+    }
+    venue.append(e.shortVenue || '');
     if (e.venue) venue.title = e.venue;
     venue.dataset.label = 'Venue';
     const city = cell(e.city, 'c-city');
@@ -214,13 +245,22 @@ function renderRows(list) {
       size.append(badge);
     }
 
-    tr.append(date, time, title, venue, city, cat, size);
+    // Desktop shows cost in its own column; phones show it beside the size badge.
+    const cost = cell('', 'c-cost');
+    if (COST_TITLES[e.cost]) {
+      cost.append(costBadge(e.cost));
+      const beside = costBadge(e.cost);
+      beside.classList.add('m-only');
+      size.append(beside);
+    }
+
+    tr.append(date, time, title, venue, city, cat, size, cost);
     frag.append(tr);
   }
   if (!list.length) {
     const tr = document.createElement('tr');
     const td = cell('', 'empty-row');
-    td.colSpan = 7;
+    td.colSpan = 8;
     const p = document.createElement('span');
     p.textContent = 'Nothing matches. ';
     const b = document.createElement('button');
@@ -299,6 +339,7 @@ function syncControls() {
   el.when.value = state.when;
   el.city.value = state.city;
   el.size.value = state.size;
+  el.cost.value = state.cost;
   el.per.value = String(state.per);
   const [f, t] = presetRange(state.when);
   el.from.value = f;
@@ -311,6 +352,7 @@ function readUrl() {
   state.cats = new Set((p.get('cat') || '').split(',').filter((c) => c in cfg.categories));
   state.city = p.get('city') || '';
   state.size = p.get('size') || '';
+  state.cost = ['free', '1', '2', '3'].includes(p.get('cost')) ? p.get('cost') : '';
   state.source = p.get('source') || '';
   state.when = p.get('when') || '';
   state.from = p.get('from') || '';
@@ -330,6 +372,7 @@ function writeUrl() {
   if (state.cats.size) p.set('cat', [...state.cats].join(','));
   if (state.city) p.set('city', state.city);
   if (state.size) p.set('size', state.size);
+  if (state.cost) p.set('cost', state.cost);
   if (state.source) p.set('source', state.source);
   if (state.when === 'custom') {
     if (state.from) p.set('from', state.from);
@@ -345,7 +388,7 @@ function writeUrl() {
 }
 
 function resetAll() {
-  Object.assign(state, { q: '', cats: new Set(), city: '', size: '', source: '', when: '', from: '', to: '', sort: 'date', dir: 1, page: 1 });
+  Object.assign(state, { q: '', cats: new Set(), city: '', size: '', cost: '', source: '', when: '', from: '', to: '', sort: 'date', dir: 1, page: 1 });
   syncControls();
   render();
 }
@@ -376,6 +419,7 @@ for (const input of [el.from, el.to]) {
 }
 el.city.addEventListener('change', onFilter(() => { state.city = el.city.value; }));
 el.size.addEventListener('change', onFilter(() => { state.size = el.size.value; }));
+el.cost.addEventListener('change', onFilter(() => { state.cost = el.cost.value; }));
 el.reset.addEventListener('click', resetAll);
 for (const n of PAGE_SIZES) {
   const o = document.createElement('option');
