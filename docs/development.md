@@ -2,11 +2,11 @@
 
 This page is for working on WeekendBoise. If you run a site and found this repo through the `WeekendBoise` user agent, see the [README](../README.md) instead.
 
-Treasure Valley event aggregator. A nightly GitHub Actions workflow pulls events from venue, team, and community sources around Boise, Meridian, Nampa, Caldwell, and Eagle, and merges them into a single flat file. A Hugo site will publish the result; it is not built yet.
+Treasure Valley event aggregator. A nightly GitHub Actions workflow pulls events from venue, team, and community sources around Boise, Meridian, Nampa, Caldwell, and Eagle, and merges them into a single flat file. A Hugo site in `website/` publishes the result, deployed by Cloudflare on every push to `main`.
 
 ## How it works
 
-1. `ingestion/sources.json` lists each source and the adapter that reads it (ICS feed, The Events Calendar REST API, a ticketing API, or, for sites with no feed, a `robots.txt`-respecting scraper). [ingest-report.md](ingest-report.md) shows every source, its state, and the last run's results.
+1. `ingestion/sources.json` lists each source and the adapter that reads it (ICS feed, Meetup group feed, The Events Calendar REST API, RSS, the City of Boise API, a ticketing API, or, for sites with no feed, a `robots.txt`-respecting scraper). [ingest-report.md](ingest-report.md) shows every source, its state, and the last run's results.
 2. **Ingest** (`ingestion/scripts/Invoke-Ingest.ps1`, midnight Boise time) runs every adapter, normalizes each event to the common schema, and stores what each source returned in `data/raw-events.json`, one entry per source. It does nothing else.
 3. **Refine** (`ingestion/scripts/Invoke-Refine.ps1`, started when ingest finishes, even if ingest failed) reads the raw file, dedupes across sources, fills in cities, moves old cost fields to `costTier`, looks up the city of events still stored as Other by reading their pages, checks event links, and writes `data/events.json` (upcoming only), `data/archive/YYYY-MM.json` (past events), `data/links.json`, `data/city-lookup.json`, and `data/meta.json`. It never fetches a source, so it can be rerun by hand as often as needed.
 4. Each workflow commits only the files it owns. Refine's commit deploys the site.
@@ -34,14 +34,14 @@ data/                 the contract between ingestion and the website
   meta.json           the time of the last ingest, shown in the site's header
   schema/             lookup tables: categories, tags, sizes, venue aliases
 ingestion/
-  scripts/            Invoke-Ingest, Invoke-Refine, Publish-Data, Test-BoiseHour, Test-IngestRan, Test-Sources, Test-Schema
+  scripts/            Invoke-Ingest, Invoke-Refine, Publish-Data, Save-RunLogs, Send-Report, Test-BoiseHour, Test-IngestRan, Test-Sources, Test-Schema
     adapters/         one script per adapter type
     lib/              shared library
   tests/              Pester tests and fixtures
   schema/             JSON Schemas for events and sources
   sources.json        every source: running, waiting, ideas, ruled out
   .env.example.ps1    template for local API keys
-website/              Hugo site (not built yet)
+website/              Hugo site, see website/README.md
 docs/                 schema, source reference, reports
 ```
 
@@ -99,7 +99,7 @@ API keys are read from environment variables only. Copy `ingestion/.env.example.
 - `.github/workflows/test.yml` runs the Pester tests on every push and pull request and uploads `testResults.xml`.
 
 - **Report emails:** each workflow ends with a `report` job that runs after the main job, even when it failed. It is a separate job because GitHub serves a job's log only once that job has finished. It downloads the main job's artifact, saves the finished jobs' logs with `ingestion/scripts/Save-RunLogs.ps1` (needs `actions: read`), and `ingestion/scripts/Send-Report.ps1` builds a summary and sends it with the Resend API to `REPORT_EMAIL`.
-  - **Ingest's email:** start, finish, and duration; sources that failed, with their page and error (such as `HTTP 405`); sources that succeeded with no events; warnings; events per source; and the sources not running yet (ready, investigating, ideas).
+  - **Ingest's email:** start, finish, and duration; sources that failed, with their page and error (such as `HTTP 405`); sources that succeeded with no events (Meetup groups are left out of that list and get one summary line instead); warnings; events per source; the sources not running yet (ready, investigating, ideas); and the ruled-out sources with the reason for each.
   - **Refine's email:** the same basics, the raw file totals, upcoming and archived counts, cities filled in, link check counts, broken links grouped by source (new ones marked), and events by category and source.
   - **Attachments:** each email attaches two zips: the run's `out/` folder, named like its artifact (`out.zip` for ingest, `refine-out.zip` for refine), and the GitHub Actions logs of the run's finished jobs (`ingest-logs.zip` or `refine-logs.zip`), the same text as the run's page shows. Together they stay under 28 MB; a zip that doesn't fit is left off and the email says so (Resend allows 40 MB per email, and base64 adds a third).
   - **Resend:** weekendboise.com is verified in Resend and `RESEND_API_KEY` is scoped to it. The emails come from `WeekendBoise Reports <reports@weekendboise.com>`, set in `Send-TvReport` (`lib/Report.ps1`), with `reply_to` set to `REPORT_EMAIL`, so a reply reaches you rather than the unmonitored reports@ address. A failed send fails the step.
@@ -127,7 +127,7 @@ Prefer official APIs and published feeds over scraping. Adapters identify themse
 
 ## Status
 
-Phase 1: ingestion and the nightly workflow. The website and notifications come later.
+Ingestion, the nightly ingest and refine workflows, the report emails, and the website are built. The site still has the TESTING ONLY `?period=day|sunset|night` switch in `website/layouts/baseof.html`, to remove before launch.
 
 ## Built with
 

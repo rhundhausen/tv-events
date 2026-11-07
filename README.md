@@ -13,8 +13,9 @@ Requests come with this User-Agent:
 ## How it behaves
 
 - Runs once a day, at midnight Boise time.
-- Reads only public sources: calendar feeds (ICS), WordPress event APIs, the City of Boise events API, official APIs such as Ticketmaster's, and a few public calendar pages.
-- Calendar pages are checked against robots.txt on every run, including Crawl-delay, and a disallowed page is never requested.
+- Reads only public sources: calendar feeds (ICS, including public Meetup group calendars), WordPress event APIs, the City of Boise events API, official APIs such as Ticketmaster's, and a few public calendar pages.
+- May also open a single event's own page: to find the venue and city when a feed leaves them out, and to check now and then that a listed link still works. Each page is requested once and the result remembered, so repeat requests are rare.
+- Calendar and event pages are checked against robots.txt on every run, including Crawl-delay, and a disallowed page is never requested.
 - Feeds and APIs are checked against the site's robots.txt and terms when they are added as a source.
 - Waits at least 1 second between paged requests.
 - Never logs in, never bypasses paywalls or bot protection, and never disguises itself as a browser.
@@ -56,3 +57,7 @@ Questions, corrections, or concerns: open an issue in this repository.
 ## For developers
 
 How the project is built, tested, and run: [docs/development.md](docs/development.md).
+
+## License
+
+The code is released into the public domain under the [Unlicense](LICENSE). Event data belongs to the venues and organizers who publish it.

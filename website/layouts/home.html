@@ -147,6 +147,9 @@
   {{- with $costLegend }}
   <p class="cost-legend">Cost: {{ . }}</p>
   {{- end }}
+  {{- /* A new-issue link with the title filled in. Opening one needs a GitHub account. */}}
+  {{- $feedback := querify "title" "Feedback: " "body" "What's on your mind (a wrong listing, a missing event, an idea):\n" }}
+  <p class="feedback">We welcome feedback. Spot a mistake, miss an event, or have an idea? <a href="{{ print "https://github.com/rhundhausen/weekendboise/issues/new?" $feedback }}" rel="noopener" target="_blank">Create a GitHub issue</a>.</p>
 </footer>
 
 <script type="application/json" id="tv-config">{{ $cfg | jsonify | safeJS }}</script>
