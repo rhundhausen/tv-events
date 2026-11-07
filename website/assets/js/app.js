@@ -60,9 +60,13 @@ function prepare(e) {
   const timeText = allDay ? 'All day' : timeFmt.format(new Date(e.s));
   // Search reads everything a card shows (date, time, size, title, Meetup, city, venue, category,
   // cost) plus the tags, the description, and the names of the sources that listed the event.
+  const meetupSlug = meetup ? ((e.u || '').match(/meetup\.com\/([^/?#]+)/i) || [])[1] || '' : '';
   const searchable = [
     dateText, timeText, (cfg.sizes[e.z] || '').split(':')[0], e.t, shorten(e.t), meetup ? 'Meetup' : '', e.c, e.v,
     catLabel, e.p === 'free' ? 'Free' : '', (e.g || []).join(' '), e.d, (e.r || []).map((n) => cfg.sources[n] || n).join(' '),
+    // Source ids such as meetup-boise-ai-builders, and the Meetup group's slug from the link, with
+    // its hyphens also as spaces so "boise ai" finds it.
+    (e.r || []).join(' '), meetupSlug, meetupSlug.replace(/-/g, ' '),
   ];
   return {
     title: e.t, venue: e.v, shortTitle: shorten(e.t), shortVenue: shorten(dropAddress(e.v || '')), city: e.c, cat: e.k, catLabel, tags: e.g || [], size: e.z, cost: e.p || '', broken: Boolean(e.x), url: e.u, desc: e.d, src: e.r || [], meetup,
@@ -93,15 +97,15 @@ function presetRange(when) {
 }
 
 // Meetup events are hidden until "Include Meetups" is checked. Two things include them without it:
-// opening the page for one Meetup group from the sources page, and searching for "meetup" (or
-// "meetups", or the start of it, such as "meet"), since that search asks for them.
+// opening the page for one Meetup group from the sources page; searching for "meetup" (or
+// "meetups", or the start of it, such as "meet"), since that search asks for them; and a search
+// that only Meetup events match, so it finds them instead of nothing. render() decides the last.
 const searchesMeetup = (words) => words.some((forms) => forms.some((f) => f.length >= 4 && 'meetups'.startsWith(f)));
 const meetupsForced = (words) => state.source.startsWith('meetup-') || searchesMeetup(words);
-const meetupsShown = (words) => state.meetup || meetupsForced(words);
 
-function matches(e, words, from, to, skipCats, skipMeetup) {
+// Every filter except the Meetup one, which render() applies.
+function matches(e, words, from, to, skipCats) {
   if (e.ed < from) return false;
-  if (!skipMeetup && e.meetup && !meetupsShown(words)) return false;
   if (to && e.sd > to) return false;
   if (state.city && e.city !== state.city) return false;
   if (state.size && e.size !== state.size) return false;
@@ -126,16 +130,18 @@ function render() {
 
   // Category counts reflect every other filter, so a chip shows what clicking it would give.
   // The Meetup count is how many Meetup events checking the box would add, or did add.
+  const found = events.filter((e) => matches(e, words, from, to, true));
+  const inCats = (e) => !state.cats.size || state.cats.has(e.cat);
+  const meetups = found.filter((e) => e.meetup && inCats(e)).length;
+  let forced = meetupsForced(words);
+  if (!state.meetup && !forced && words.length && meetups && !found.some((e) => !e.meetup && inCats(e))) forced = true;
+  const include = state.meetup || forced;
   const counts = {};
   const shown = [];
-  let meetups = 0;
-  for (const e of events) {
-    if (!matches(e, words, from, to, true, true)) continue;
-    const inCats = !state.cats.size || state.cats.has(e.cat);
-    if (e.meetup && inCats) meetups += 1;
-    if (e.meetup && !meetupsShown(words)) continue;
+  for (const e of found) {
+    if (e.meetup && !include) continue;
     counts[e.cat] = (counts[e.cat] || 0) + 1;
-    if (inCats) shown.push(e);
+    if (inCats(e)) shown.push(e);
   }
   const sorter = sorters[state.sort] || sorters.date;
   shown.sort((a, b) => sorter(a, b) * state.dir);
@@ -146,8 +152,8 @@ function render() {
   const slice = shown.slice(start, start + state.per);
 
   renderChips(counts);
-  el.meetup.checked = meetupsShown(words);
-  el.meetup.disabled = meetupsForced(words);
+  el.meetup.checked = include;
+  el.meetup.disabled = forced;
   el.meetupCount.textContent = numFmt.format(meetups);
   el.meetupChip.classList.toggle('empty', !meetups);
   renderSourceNote();
