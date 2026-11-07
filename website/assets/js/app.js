@@ -27,7 +27,7 @@ const addDays = (ymd, n) => { const d = asDate(ymd); d.setUTCDate(d.getUTCDate()
 // Lowercase, no accents, no apostrophes: "Women's" and "womens" both become "womens".
 const fold = (s) => (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/['‘’]/g, '').toLowerCase();
 // Short forms people search with. A search word matches if the event has it or any of its long forms.
-const ALIASES = { bsu: ['boise state'], nnu: ['northwest nazarene'], cofi: ['college of idaho'] };
+const ALIASES = { bsu: ['boise state'], nnu: ['northwest nazarene'], cofi: ['college of idaho'], meetups: ['meetup'] };
 const searchTerms = (q) => fold(q).split(/\s+/).filter(Boolean).map((w) => [w, ...(ALIASES[w] || [])]);
 const today = () => boiseDay(new Date());
 
@@ -92,13 +92,16 @@ function presetRange(when) {
   }
 }
 
-// Meetup events are hidden until "Show Meetups" is checked. Opening the page for one Meetup group
-// from the sources page shows that group's events without it.
-const meetupsShown = () => state.meetup || state.source.startsWith('meetup-');
+// Meetup events are hidden until "Include Meetups" is checked. Two things include them without it:
+// opening the page for one Meetup group from the sources page, and searching for "meetup" (or
+// "meetups", or the start of it, such as "meet"), since that search asks for them.
+const searchesMeetup = (words) => words.some((forms) => forms.some((f) => f.length >= 4 && 'meetups'.startsWith(f)));
+const meetupsForced = (words) => state.source.startsWith('meetup-') || searchesMeetup(words);
+const meetupsShown = (words) => state.meetup || meetupsForced(words);
 
 function matches(e, words, from, to, skipCats, skipMeetup) {
   if (e.ed < from) return false;
-  if (!skipMeetup && e.meetup && !meetupsShown()) return false;
+  if (!skipMeetup && e.meetup && !meetupsShown(words)) return false;
   if (to && e.sd > to) return false;
   if (state.city && e.city !== state.city) return false;
   if (state.size && e.size !== state.size) return false;
@@ -130,7 +133,7 @@ function render() {
     if (!matches(e, words, from, to, true, true)) continue;
     const inCats = !state.cats.size || state.cats.has(e.cat);
     if (e.meetup && inCats) meetups += 1;
-    if (e.meetup && !meetupsShown()) continue;
+    if (e.meetup && !meetupsShown(words)) continue;
     counts[e.cat] = (counts[e.cat] || 0) + 1;
     if (inCats) shown.push(e);
   }
@@ -143,8 +146,8 @@ function render() {
   const slice = shown.slice(start, start + state.per);
 
   renderChips(counts);
-  el.meetup.checked = meetupsShown();
-  el.meetup.disabled = state.source.startsWith('meetup-');
+  el.meetup.checked = meetupsShown(words);
+  el.meetup.disabled = meetupsForced(words);
   el.meetupCount.textContent = numFmt.format(meetups);
   el.meetupChip.classList.toggle('empty', !meetups);
   renderSourceNote();
