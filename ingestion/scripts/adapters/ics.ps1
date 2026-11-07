@@ -40,7 +40,8 @@ foreach ($item in (ConvertFrom-Ics $text)) {
       $location.Venue = $Source.venue
       $location.VenueKey = $Source.venueKey
     }
-    $url = if ($item.Url) { [System.Net.WebUtility]::HtmlDecode($item.Url) } else { $Source.url }
+    # Some feeds (SIDEARM-style team sites) give a link relative to the site, such as /games/1.
+    $url = if ($item.Url) { [uri]::new([uri]$Source.url, [System.Net.WebUtility]::HtmlDecode($item.Url)).AbsoluteUri } else { $Source.url }
 
     New-TvEvent -Title $title -Start $item.Start -End $item.End -AllDay:$item.AllDay `
       -Venue $location.Venue -VenueKey $location.VenueKey -City $location.City `

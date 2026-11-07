@@ -31,7 +31,7 @@ Describe 'Send-Report' {
       ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $out 'run.json')
     $preview = Join-Path $TestDrive 'preview'
     & $send -Kind ingest -OutDir $out -SourcesPath $sourcesPath -PreviewPath $preview -Outcome success -WarningAction SilentlyContinue
-    Get-Content "$preview.txt" -TotalCount 1 | Should -Be 'WeekendBoise ingest: 1 of 1 sources ok, 3 events'
+    Get-Content "$preview.txt" -TotalCount 1 | Should -BeExactly 'WeekendBoise Ingest: 1 of 1 sources ok, 3 events'
     Get-Content "$preview.html" -Raw | Should -Match 'Alpha Hall \(alpha\)'
   }
 
@@ -79,6 +79,6 @@ Describe 'Send-Report' {
   It 'reports a refine that wrote no refine.json' {
     $preview = Join-Path $TestDrive 'preview-refine'
     & $send -Kind refine -OutDir $out -SourcesPath $sourcesPath -PreviewPath $preview -Outcome failure -WarningAction SilentlyContinue
-    Get-Content "$preview.txt" -TotalCount 1 | Should -Be 'WeekendBoise refine FAILED: no refine.json'
+    Get-Content "$preview.txt" -TotalCount 1 | Should -BeExactly 'WeekendBoise Refine FAILED: no refine.json'
   }
 }

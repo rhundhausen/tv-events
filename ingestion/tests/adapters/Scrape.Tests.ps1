@@ -249,6 +249,14 @@ Describe 'scrape adapter, cards with custom patterns' {
     (& $adapter -Source $jump -FetchedAt $fetchedAt -Response $midnight).start | Should -Be '2026-12-06T00:00:00-07:00'
   }
 
+  It 'skips cards whose title matches excludeTitlePattern' {
+    $filtered = $jump | Select-Object *
+    $filtered | Add-Member -NotePropertyName excludeTitlePattern -NotePropertyValue '(?i)^tractor' -Force
+    $kept = @(& $adapter -Source $filtered -FetchedAt $fetchedAt -Response (Get-Fixture 'jump-boise.html'))
+    $kept.Count | Should -Be 2
+    $kept.title | Should -Not -Contain 'Tractor Tours'
+  }
+
   It 'skips a card with no title' {
     $html = '<div class="event flex"><p class="text-xs">Dec</p><p class="relative">6</p><a href="/x">View Details</a></div>'
     @(& $adapter -Source $jump -FetchedAt $fetchedAt -Response $html -WarningAction SilentlyContinue).Count | Should -Be 0
@@ -275,6 +283,23 @@ Describe 'scrape adapter, cards with a numeric date' {
     $events[0].url | Should -BeLike 'https://store.unleashedbrands.com/the-little-gym/boisewestid/schedule/class?date=2026-11-14*'
     $events[0].venueKey | Should -Be 'little-gym-boise-west'
     $events[0].city | Should -Be 'Garden City'
+  }
+}
+
+Describe 'scrape adapter, cards from a Simple Calendar page (Reuseum)' {
+  BeforeAll {
+    $events = @(& $adapter -Source (Get-TestSource 'reuseum') -FetchedAt $fetchedAt -Response (Get-Fixture 'reuseum.html'))
+  }
+
+  It 'keeps the public workshops and skips closures, private coaching, and school outreach' {
+    @($events.title | Sort-Object -Unique) | Should -Be @('Reuseum Soldering Workshop', 'Saturday Family Fun Workshop')
+  }
+
+  It 'reads the ISO date and the start and end times' {
+    $e = $events | Where-Object title -eq 'Reuseum Soldering Workshop'
+    $e.start | Should -Be '2026-11-07T13:00:00-07:00'
+    $e.end | Should -Be '2026-11-07T14:30:00-07:00'
+    $e.venueKey | Should -Be 'reuseum'
   }
 }
 
@@ -416,6 +441,15 @@ Describe 'scrape adapter, chambermaster' {
   It 'skips events whose last listed day has passed' {
     $later = @(& $adapter -Source $source -FetchedAt '2026-11-04T18:00:00Z' -Response @(Get-Fixture 'chambermaster-calendar.html'))
     $later.Count | Should -Be 0
+  }
+}
+
+Describe 'ics adapter, relative event links' {
+  It 'makes a relative URL absolute against the feed address' {
+    $ics = Join-Path $repo 'scripts' 'adapters' 'ics.ps1'
+    $source = [pscustomobject]@{ name = 'test-ics'; displayName = 'Test'; adapter = 'ics'; url = 'https://team.test/schedule/feed.ics'; category = 'sports'; city = 'Boise'; venue = 'Park'; venueKey = 'park' }
+    $feed = "BEGIN:VCALENDAR`r`nBEGIN:VEVENT`r`nUID:1`r`nDTSTART:20261120T020000Z`r`nSUMMARY:Home Game`r`nURL:/games/1`r`nEND:VEVENT`r`nEND:VCALENDAR"
+    (& $ics -Source $source -FetchedAt $fetchedAt -Response $feed).url | Should -Be 'https://team.test/games/1'
   }
 }
 

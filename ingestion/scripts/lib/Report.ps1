@@ -163,7 +163,7 @@ function New-TvIngestReport {
         , @('Workflow run:', $runLink)
       )
     )
-    $heading = 'WeekendBoise ingest FAILED: no run.json'
+    $heading = 'WeekendBoise Ingest FAILED: no run.json'
     return @{ Subject = $heading; Text = ConvertTo-TvReportText $heading $sections; Html = ConvertTo-TvReportHtml $heading $sections }
   }
 
@@ -171,7 +171,7 @@ function New-TvIngestReport {
   $ok = @($results | Where-Object status -eq 'ok')
   $failed = @($results | Where-Object status -ne 'ok')
   $events = ($results | Measure-Object fetched -Sum).Sum
-  $subject = "WeekendBoise ingest$($failedPrefix): $($ok.Count) of $($results.Count) sources ok, $events events$($failed.Count ? ", $($failed.Count) failed" : '')"
+  $subject = "WeekendBoise Ingest$($failedPrefix): $($ok.Count) of $($results.Count) sources ok, $events events$($failed.Count ? ", $($failed.Count) failed" : '')"
   $pageOf = { param($name) $entry = $Sources | Where-Object name -eq $name | Select-Object -First 1; "$($entry.url)" }
 
   $trigger = "$($Context.Trigger)"
@@ -186,6 +186,13 @@ function New-TvIngestReport {
     , @('Duration:', (Format-TvDuration $started $Run.finishedAt))
     , @('Sources:', "$($ok.Count) ok, $($failed.Count) failed, $events events fetched")
   )
+  # Meetup groups are many and often have nothing scheduled, which is normal, so they get one line.
+  $meetupNames = @($Sources | Where-Object adapter -eq 'meetup' | ForEach-Object name)
+  $meetup = @($results | Where-Object { $_.name -in $meetupNames })
+  if ($meetup.Count) {
+    $meetupOk = @($meetup | Where-Object status -eq 'ok')
+    $basics += , @('Meetup groups:', "$($meetupOk.Count) ok, $(@($meetupOk | Where-Object { $_.fetched -gt 0 }).Count) with events, $(($meetup | Measure-Object fetched -Sum).Sum) events")
+  }
   if ($null -ne $Run.rawEvents) {
     $basics += , @('Raw file:', "$($Run.rawSources) sources, $($Run.rawEvents) events, as of $(Format-TvReportTime $Run.asOf)$($Run.noWrite ? ' (not written)' : '')")
   }
@@ -197,7 +204,7 @@ function New-TvIngestReport {
   $sections.Add((New-TvReportSection -Title "Failed ($($failed.Count))" -Note ($failed.Count ? 'A failed source keeps its last good events in the raw file.' : 'None.') -Rows @(
         $failed | ForEach-Object { , @((Get-TvSourceLabel $_.name $Sources), @{ Text = (& $pageOf $_.name); Url = (& $pageOf $_.name) }, "$($_.error)") }
       )))
-  $empty = @($ok | Where-Object { $_.fetched -eq 0 })
+  $empty = @($ok | Where-Object { $_.fetched -eq 0 -and $_.name -notin $meetupNames })
   $sections.Add((New-TvReportSection -Title "No events ($($empty.Count))" -Note ($empty.Count ? 'Succeeded but returned nothing. A scraper whose site changed looks like this.' : 'None.') -Rows @(
         $empty | ForEach-Object { , @((Get-TvSourceLabel $_.name $Sources), @{ Text = (& $pageOf $_.name); Url = (& $pageOf $_.name) }) }
       )))
@@ -245,11 +252,11 @@ function New-TvRefineReport {
         , @('Workflow run:', $runLink)
       )
     )
-    $heading = 'WeekendBoise refine FAILED: no refine.json'
+    $heading = 'WeekendBoise Refine FAILED: no refine.json'
     return @{ Subject = $heading; Text = ConvertTo-TvReportText $heading $sections; Html = ConvertTo-TvReportHtml $heading $sections }
   }
 
-  $subject = "WeekendBoise refine$($failedPrefix): $($Refine.upcoming) upcoming, $($Refine.links.broken) broken links ($($Refine.links.newBroken) new)"
+  $subject = "WeekendBoise Refine$($failedPrefix): $($Refine.upcoming) upcoming, $($Refine.links.broken) broken links ($($Refine.links.newBroken) new)"
   $linkLine = if ($Refine.skipLinkCheck) { 'Link check skipped; known link results still applied' } else { "$($Refine.links.checked)" }
   $lookup = $Refine.cityLookup
   $lookupLine = if (-not $lookup) { 'not run' }

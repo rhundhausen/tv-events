@@ -40,6 +40,12 @@ Unknown fields fail validation, so a typo can't silently turn a setting off. A n
 
 `url` is the ICS feed. `RRULE` isn't expanded yet: a recurring event yields its first occurrence and logs a warning.
 
+### meetup
+
+One entry per Meetup group, named `meetup-<group slug>` (lowercase, underscores as hyphens), with `url` set to `https://www.meetup.com/<group slug>/events/ical/`. Meetup's feed has each event's title, times, description, and link, but no `LOCATION`, so for each new event the adapter reads its Meetup page once, whose schema.org data gives the venue, the city, and whether the event is online. Online events and events whose city isn't one this site covers are dropped. Events already in `data/raw-events.json` from an earlier night reuse the venue and city stored there, so only new events cost a request; a page that can't be read drops that event for the night with a warning. Canceled and past events are skipped before any page is read, and the group's name is removed from the start of each description.
+
+robots.txt allows the iCal feeds and event pages (it disallows Meetup's atom, rss, and xml feeds). It is read once per run for every Meetup source, and requests to meetup.com are at least 1 second apart across all of them. A private group's feed answers 403; those are `ruled-out`, never worked around. `venue`, `venueKey`, and `city` are fallbacks only. The ingest email sums the groups up in one "Meetup groups" line and leaves empty groups out of "No events", since a group with nothing scheduled is normal.
+
 ### tribe
 
 | Field | Required | Notes |
@@ -114,7 +120,7 @@ The last resort, for sites with no API or feed. Check for a feed first: a workin
 | `timePattern` | no | `cards`: regex with named groups `start` and optional `end`, such as `3:00 pm`. Without a match, the event is all-day |
 | `localTimeAsUtc` | no | `true` corrects sites that write local time as UTC |
 | `fixedVenue` | no | `true` uses the entry's venue for every event |
-| `excludeTitlePattern` | no | `jsonld`, `civicplus`, and `chambermaster`: regex. Matching titles are skipped, such as meetings and closures |
+| `excludeTitlePattern` | no | `jsonld`, `cards`, `civicplus`, and `chambermaster`: regex. Matching titles are skipped, such as meetings and closures |
 | `excludeDescriptionPattern` | no | `jsonld`: regex, matched against the description as plain text with WordPress shortcodes such as `[post_title]` removed. Matching events are skipped. Bluebird Social uses it to skip food trucks, whose descriptions are only shortcodes |
 
 `url` is the list page.

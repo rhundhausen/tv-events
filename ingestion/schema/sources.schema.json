@@ -67,6 +67,7 @@
             "eventbrite",
             "eventbrite-search",
             "ics",
+            "meetup",
             "rss",
             "scrape",
             "seatgeek",
@@ -248,7 +249,7 @@
         },
         "excludeTitlePattern": {
           "type": "string",
-          "description": "ticketmaster, rss, ics, and scrape with scrapeMode jsonld, civicplus, or chambermaster: regex. Matching titles are skipped.",
+          "description": "ticketmaster, rss, ics, and scrape with scrapeMode jsonld, cards, civicplus, or chambermaster: regex. Matching titles are skipped.",
           "minLength": 1
         },
         "excludeDescriptionPattern": {

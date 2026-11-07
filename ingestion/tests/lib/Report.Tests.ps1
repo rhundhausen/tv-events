@@ -33,7 +33,7 @@ Describe 'New-TvIngestReport' {
   }
 
   It 'sums up the run in the subject' {
-    $report.Subject | Should -Be 'WeekendBoise ingest: 2 of 3 sources ok, 120 events, 1 failed'
+    $report.Subject | Should -BeExactly 'WeekendBoise Ingest: 2 of 3 sources ok, 120 events, 1 failed'
   }
 
   It 'shows start, finish, and duration in Boise time' {
@@ -48,6 +48,22 @@ Describe 'New-TvIngestReport' {
 
   It 'flags a source that succeeded with no events' {
     $report.Text | Should -Match '(?s)No events.*Empty Site \(empty\)'
+  }
+
+  It 'leaves empty Meetup groups out of No events, and sums the groups up instead' {
+    $withMeetup = $sources + @(
+      [pscustomobject]@{ name = 'meetup-a'; displayName = 'Group A (Meetup)'; status = 'running'; adapter = 'meetup'; url = 'https://m.test/a' }
+      [pscustomobject]@{ name = 'meetup-b'; displayName = 'Group B (Meetup)'; status = 'running'; adapter = 'meetup'; url = 'https://m.test/b' }
+    )
+    $runMeetup = $run | Select-Object *
+    $runMeetup.sources = @($run.sources) + @(
+      [pscustomobject]@{ name = 'meetup-a'; status = 'ok'; fetched = 0; duration = '1s'; warnings = @() }
+      [pscustomobject]@{ name = 'meetup-b'; status = 'ok'; fetched = 4; duration = '1s'; warnings = @() }
+    )
+    $text = (New-TvIngestReport -Run $runMeetup -Sources $withMeetup -Context $context).Text
+    $text | Should -Match '(?s)== No events \(1\) ==.*Empty Site'
+    $text | Should -Not -Match '(?s)== No events.*Group A \(Meetup\).*== Warnings'
+    $text | Should -Match 'Meetup groups: +2 ok, 1 with events, 4 events'
   }
 
   It 'lists warnings by source' {
@@ -84,12 +100,12 @@ Describe 'New-TvIngestReport' {
 
   It 'says so in the subject when the job failed' {
     $failed = @{ Outcome = 'failure'; RunUrl = 'https://github.test/runs/1'; Trigger = 'schedule' }
-    (New-TvIngestReport -Run $run -Sources $sources -Context $failed).Subject | Should -BeLike 'WeekendBoise ingest FAILED:*'
+    (New-TvIngestReport -Run $run -Sources $sources -Context $failed).Subject | Should -BeLikeExactly 'WeekendBoise Ingest FAILED:*'
   }
 
   It 'still reports when there is no run file' {
     $report = New-TvIngestReport -Run $null -Sources $sources -Context @{ Outcome = 'failure'; RunUrl = 'https://github.test/runs/2' }
-    $report.Subject | Should -Be 'WeekendBoise ingest FAILED: no run.json'
+    $report.Subject | Should -BeExactly 'WeekendBoise Ingest FAILED: no run.json'
     $report.Text | Should -Match 'https://github\.test/runs/2'
   }
 }
@@ -118,7 +134,7 @@ Describe 'New-TvRefineReport' {
   }
 
   It 'sums up the run in the subject' {
-    $report.Subject | Should -Be 'WeekendBoise refine: 2745 upcoming, 3 broken links (1 new)'
+    $report.Subject | Should -BeExactly 'WeekendBoise Refine: 2745 upcoming, 3 broken links (1 new)'
   }
 
   It 'shows the basics' {
@@ -147,7 +163,7 @@ Describe 'New-TvRefineReport' {
   }
 
   It 'still reports when there is no refine file' {
-    (New-TvRefineReport -Refine $null -Links $null -Sources $sources -Context @{ Outcome = 'failure'; RunUrl = 'u' }).Subject | Should -Be 'WeekendBoise refine FAILED: no refine.json'
+    (New-TvRefineReport -Refine $null -Links $null -Sources $sources -Context @{ Outcome = 'failure'; RunUrl = 'u' }).Subject | Should -BeExactly 'WeekendBoise Refine FAILED: no refine.json'
   }
 }
 
