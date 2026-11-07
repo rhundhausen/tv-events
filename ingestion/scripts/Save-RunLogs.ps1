@@ -9,7 +9,9 @@
   OutDir. Send-Report.ps1 then zips that folder into the email.
 
   It never fails: a log it can't read gets a warning, so the email still goes out without it.
-  Needs GH_TOKEN and the actions: read permission.
+  GitHub's logs carry terminal color codes, which are stripped so the files read as plain text.
+  Needs GH_TOKEN and the actions: read permission. It calls the REST API directly rather than
+  gh api, which refuses to print text that contains terminal escape sequences.
 .PARAMETER RunId
   github.run_id. Defaults to the RUN_ID environment variable.
 .PARAMETER Repository
@@ -26,10 +28,12 @@ param(
   [string]$OutDir = './logs',
   [string[]]$ExcludeJob = @('report'),
   [scriptblock]$Fetch = {
+    # The logs endpoint redirects to a storage URL; PowerShell follows it and drops the token there.
     param([string]$Endpoint)
-    $text = gh api $Endpoint | Out-String
-    if ($LASTEXITCODE -ne 0) { throw "gh api $Endpoint failed" }
-    $text
+    $headers = @{ Accept = 'application/vnd.github+json'; 'X-GitHub-Api-Version' = '2022-11-28' }
+    if ($env:GH_TOKEN) { $headers.Authorization = "Bearer $env:GH_TOKEN" }
+    $response = Invoke-WebRequest -Uri "https://api.github.com/$Endpoint" -TimeoutSec 60 -Headers $headers
+    if ($response.Content -is [byte[]]) { [Text.Encoding]::UTF8.GetString($response.Content) } else { "$($response.Content)" }
   }
 )
 
@@ -40,17 +44,20 @@ $jobs = try {
   @((& $Fetch "repos/$Repository/actions/runs/$RunId/jobs" | ConvertFrom-Json).jobs)
 } catch {
   Write-Warning "Can't list the jobs of run $RunId, so no logs are attached: $_"
-  return
+  @()
 }
 
 foreach ($job in $jobs | Where-Object { $_.name -notin $ExcludeJob }) {
   # Job names become file names, so keep them plain.
   $name = ("$($job.name)" -replace '[^\w.-]+', '-').Trim('-')
   try {
-    $text = & $Fetch "repos/$Repository/actions/jobs/$($job.id)/logs"
-    [IO.File]::WriteAllText((Join-Path $OutDir "$name.log"), "$text")
+    $text = "$(& $Fetch "repos/$Repository/actions/jobs/$($job.id)/logs")" -replace "$([char]27)\[[0-9;]*[A-Za-z]", ''
+    [IO.File]::WriteAllText((Join-Path $OutDir "$name.log"), $text)
     Write-Host "Saved the log of job $($job.name)"
   } catch {
     Write-Warning "Can't read the log of job $($job.name): $_"
   }
 }
+
+# A failed request can leave a failing exit code behind, and the workflow step would report it.
+exit 0

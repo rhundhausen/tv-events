@@ -126,7 +126,9 @@ jobs:
           name: out
           path: out
 
+      # Never blocks the email: without logs, the email says so.
       - name: Save the job logs
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
           RUN_ID: ${{ github.run_id }}
@@ -134,6 +136,7 @@ jobs:
 
       # The address is a secret because the repo is public.
       - name: Email the report
+        if: always()
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}

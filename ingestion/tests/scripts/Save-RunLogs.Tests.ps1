@@ -33,6 +33,27 @@ Describe 'Save-RunLogs' {
     $requests | Should -Not -Contain 'repos/o/r/actions/jobs/33/logs'
   }
 
+  It 'strips the terminal color codes GitHub puts in its logs' {
+    $esc = [char]27
+    $fetch = New-Fetcher @{
+      'repos/o/r/actions/runs/7/jobs' = $jobs
+      'repos/o/r/actions/jobs/11/logs' = 'x'
+      'repos/o/r/actions/jobs/22/logs' = "$esc[36;1m./ingestion/scripts/Invoke-Refine.ps1$esc[0m done"
+    }
+    & $save -RunId 7 -Repository 'o/r' -OutDir $dir -Fetch $fetch
+    Get-Content (Join-Path $dir 'ingest.log') -Raw | Should -Match '^\./ingestion/scripts/Invoke-Refine\.ps1 done'
+  }
+
+  It 'ends with exit code 0 even when a failed request left a failing exit code behind' {
+    $fetch = {
+      param([string]$Endpoint)
+      $global:LASTEXITCODE = 1
+      throw "failed $Endpoint"
+    }
+    & $save -RunId 7 -Repository 'o/r' -OutDir $dir -Fetch $fetch -WarningAction SilentlyContinue
+    $LASTEXITCODE | Should -Be 0
+  }
+
   It 'warns and keeps going when one job''s log can''t be read' {
     $fetch = New-Fetcher @{
       'repos/o/r/actions/runs/7/jobs' = $jobs
