@@ -4863,6 +4863,30 @@
     ]
   },
   {
+    "id": "a0adbeef34f0",
+    "title": "Distillery Tour",
+    "start": "2026-11-06T11:00:00-07:00",
+    "end": "2026-11-06T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Bardenay Distilling Co.",
+    "venueKey": "bardenay-distilling-co",
+    "city": "Boise",
+    "category": "food-drink",
+    "tags": [
+      "brewery"
+    ],
+    "size": "S",
+    "url": "https://www.bardenaydistilling.com/",
+    "description": "Bardenay Distilling Co. — Idaho’s Original Craft Spirit Experience Established in Boise as the nation’s first restaurant-distillery post-Prohibition, Bardenay has been an Idaho icon for decades. Now, Bardenay Distilling Co. carries that pioneering spirit forward, offering complimentary tours that...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://www.bardenaydistilling.com/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
     "id": "ad1ba8550046",
     "title": "Fit and Fall Proof",
     "start": "2026-11-06T11:30:00-07:00",
@@ -4881,6 +4905,28 @@
         "name": "kuna-library",
         "url": "https://kunalibrary.libcal.com/event/17346792",
         "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ]
+  },
+  {
+    "id": "8ec494234fa8",
+    "title": "Your Health Idaho Open Enrollment",
+    "start": "2026-11-06T12:00:00-07:00",
+    "end": "2026-11-06T17:45:00-07:00",
+    "allDay": false,
+    "venue": "Boise Public Library",
+    "venueKey": "boise-public-library",
+    "city": "Boise",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://boisepubliclibrary.libcal.com/event/17705528",
+    "description": "Enroll in 2027 Health Insurance. Meet with Your Health Idaho team members and certified agents who can answer your questions, help you check your eligibility for a tax credit, and get you enrolled.",
+    "sources": [
+      {
+        "name": "boise-public-library",
+        "url": "https://boisepubliclibrary.libcal.com/event/17705528",
+        "fetchedAt": "2026-11-04T06:01:16Z"
       }
     ]
   },
@@ -4995,6 +5041,27 @@
     ]
   },
   {
+    "id": "b54984ebce79",
+    "title": "Open Studios: MOVE Studio",
+    "start": "2026-11-06T15:00:00-07:00",
+    "end": "2026-11-06T18:00:00-07:00",
+    "allDay": false,
+    "venue": "JUMP",
+    "venueKey": "jump",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://jumpboise.org/events/open-studios-move-studio",
+    "sources": [
+      {
+        "name": "jump-boise",
+        "url": "https://jumpboise.org/events/open-studios-move-studio",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
     "id": "c5a1ffef53f3",
     "title": "Northwest Nazarene University Women's Basketball vs Walla Walla - Homecoming | Exhibition",
     "start": "2026-11-06T15:00:00-07:00",
@@ -5010,14 +5077,14 @@
     ],
     "size": "M",
     "url": "https://nnusports.com/calendar.aspx?game_id=9537&sport_id=13",
-    "description": "Streaming Video: https://www.gnacnetwork.com/nnunighthawks/?B=4757623 Tickets: https://northwest-nazarene-university-ogbx.vivenushop.com/event/mens-basketball-vs-walla-walla-uyir40",
     "sources": [
       {
         "name": "nnu-athletics",
         "url": "https://nnusports.com/calendar.aspx?game_id=9537&sport_id=13",
         "fetchedAt": "2026-11-05T10:10:50Z"
       }
-    ]
+    ],
+    "description": "W 107-35 Streaming Video: https://www.gnacnetwork.com/nnunighthawks/?B=4757623 Tickets: https://northwest-nazarene-university-ogbx.vivenushop.com/event/mens-basketball-vs-walla-walla-uyir40"
   },
   {
     "id": "70a286ec19f0",
@@ -5137,6 +5204,406 @@
         "name": "boise-state-arts",
         "url": "https://events.boisestate.edu/event/a-little-afternoon-music-Horzowski-Trio-Fall-2026",
         "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "0f76b1084665",
+    "title": "Skosh + Glutonia = Wine & Pizza Nights!",
+    "start": "2026-11-06T17:00:00-07:00",
+    "end": "2026-11-06T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Skosh Wine Bar",
+    "venueKey": "skosh-wine-bar",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "S",
+    "costTier": "$",
+    "url": "https://skoshwinebar.com/events",
+    "description": "Pizza + Wine Nights, Thursdays through Saturdays Every Thursday, Friday, and Saturday, Skosh Wine Bar teams up with Glutonia next door for Pizza + Wine Nights. Order a pie from Glutonia's pizzaiolo, pepperoni with arugula, four cheese, margarita, or the rotating chef's choice, and it gets deliver...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://skoshwinebar.com/events",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
+    "id": "a6d90a4bd087",
+    "title": "Mitch Wieland Book Launch",
+    "start": "2026-11-06T17:00:00-07:00",
+    "end": "2026-11-06T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Westmark Student Union Building",
+    "venueKey": "westmark-student-union-building",
+    "city": "Boise",
+    "category": "arts-culture",
+    "tags": [],
+    "size": "S",
+    "url": "https://events.boisestate.edu/event/mitch-wieland-book-launch",
+    "description": "Join us in celebrating Professor Mitch Wieland and the publication of his latest novel, \"The Ghosts of Okuma,\" with a reception and reading on Friday, November 6 starting at 5 PM. Event Details 5 PM - 7 PM Friday, November 6 Bishop Barnwell Room, Student Union Building Free - There will light ref...",
+    "sources": [
+      {
+        "name": "boise-state-arts",
+        "url": "https://events.boisestate.edu/event/mitch-wieland-book-launch",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "04d1b95eff6c",
+    "title": "Spin Jams: Flow Arts Gatherings",
+    "start": "2026-11-06T17:30:00-07:00",
+    "end": "2026-11-06T19:30:00-07:00",
+    "allDay": false,
+    "venue": "JUMP",
+    "venueKey": "jump",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://jumpboise.org/events/spin-jams-fridays",
+    "sources": [
+      {
+        "name": "jump-boise",
+        "url": "https://jumpboise.org/events/spin-jams-fridays",
+        "fetchedAt": "2026-11-04T06:01:16Z"
+      }
+    ]
+  },
+  {
+    "id": "b82e681aa04c",
+    "title": "College of Idaho Men's Basketball vs Northwest University vs. Carroll College",
+    "start": "2026-11-06T17:30:00-07:00",
+    "end": "2026-11-06T19:30:00-07:00",
+    "allDay": false,
+    "venue": "J.A. Albertson Activities Center",
+    "venueKey": "j-a-albertson-activities-center",
+    "city": "Caldwell",
+    "category": "sports",
+    "tags": [
+      "college-sports"
+    ],
+    "size": "M",
+    "url": "https://www.yoteathletics.com/calendar.aspx?game_id=8479&sport_id=3",
+    "description": "Streaming Video: https://www.cascadesportsnetwork.com/",
+    "sources": [
+      {
+        "name": "college-of-idaho-athletics",
+        "url": "https://www.yoteathletics.com/calendar.aspx?game_id=8479&sport_id=3",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "672fda685857",
+    "title": "Veterans Day Potato Feed",
+    "start": "2026-11-06T18:00:00-07:00",
+    "end": "2026-11-06T20:00:00-07:00",
+    "allDay": false,
+    "venue": "City of Star",
+    "venueKey": "city-of-star",
+    "city": "Star",
+    "category": "holiday-seasonal",
+    "tags": [
+      "veterans"
+    ],
+    "size": "M",
+    "url": "https://www.staridaho.org/Calendar.aspx?EID=539",
+    "sources": [
+      {
+        "name": "city-of-star",
+        "url": "https://www.staridaho.org/Calendar.aspx?EID=539",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ]
+  },
+  {
+    "id": "6a9daf7f9baf",
+    "title": "SoulCollage® Series",
+    "start": "2026-11-06T18:30:00-07:00",
+    "end": "2026-11-06T20:30:00-07:00",
+    "allDay": false,
+    "venue": "Catalyst Arts Collaborative",
+    "venueKey": "catalyst-arts-collaborative",
+    "city": "Boise",
+    "category": "nightlife-social",
+    "tags": [],
+    "size": "S",
+    "costTier": "$$",
+    "url": "https://www.meetup.com/boise-arts-community/events/317029965/",
+    "description": "Explore and understand your personal, complex being through this creative, expressive art! Ages 18+ Ongoing, biweekly Fridays, 6:30pm - 8:30pm. **Attendees must pre-register through this link:** https://www.catalystartscollaborative.com/service-page/soulcollage-series-fri-6-30pm-1 How do I use my...",
+    "sources": [
+      {
+        "name": "meetup-boise-arts-community",
+        "url": "https://www.meetup.com/boise-arts-community/events/317029965/",
+        "fetchedAt": "2026-11-07T03:22:23Z"
+      }
+    ]
+  },
+  {
+    "id": "72d2737c3796",
+    "title": "Boise State University Women's Basketball vs Portland State - Trivia Friday",
+    "start": "2026-11-06T18:30:00-07:00",
+    "end": "2026-11-06T20:30:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "college-sports",
+      "trivia"
+    ],
+    "size": "XL",
+    "url": "https://admin.broncosports.com/calendar.aspx?game_id=23283&sport_id=10",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/bsu-womens-basketball-game/2026-11-06/",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      },
+      {
+        "name": "boise-state-athletics",
+        "url": "https://admin.broncosports.com/calendar.aspx?game_id=23283&sport_id=10",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "https://broncosports.com/sports/womens-basketball/schedule",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "description": "The Boise State Broncos women's basketball team represents Boise State University in Boise, Idaho, United States. The school's team currently competes in the Pac-12 Conference. They play their home games at ExtraMile Arena."
+  },
+  {
+    "id": "a8148543cd4f",
+    "title": "BSU Women’s Basketball Game",
+    "start": "2026-11-06T18:30:00-07:00",
+    "end": "2026-11-06T20:30:00-07:00",
+    "allDay": false,
+    "venue": "ExtraMile Arena",
+    "venueKey": "extramile-arena",
+    "category": "sports",
+    "tags": [
+      "college-sports"
+    ],
+    "size": "XL",
+    "url": "https://boisemom.com/event/bsu-womens-basketball-game/2026-11-06/",
+    "sources": [
+      {
+        "name": "boise-mom",
+        "url": "https://boisemom.com/event/bsu-womens-basketball-game/2026-11-06/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "https://broncosports.com/sports/womens-basketball/schedule",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "description": "The Boise State Broncos women's basketball team represents Boise State University in Boise, Idaho, United States. The school's team currently competes in the Pac-12 Conference. They play their home games at ExtraMile Arena.",
+    "city": "Boise"
+  },
+  {
+    "id": "5bc4002ea817",
+    "title": "The Cabin Presents: Tony Shalhoub and Josie Adams",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T20:00:00-07:00",
+    "allDay": false,
+    "venue": "The Egyptian Theatre",
+    "venueKey": "the-egyptian-theatre",
+    "city": "Boise",
+    "category": "arts-culture",
+    "tags": [],
+    "size": "M",
+    "url": "https://www.thecabinidaho.org/all-events/tony-shalhoub",
+    "sources": [
+      {
+        "name": "the-cabin",
+        "url": "https://www.thecabinidaho.org/all-events/tony-shalhoub",
+        "fetchedAt": "2026-11-07T03:22:23Z"
+      }
+    ]
+  },
+  {
+    "id": "5e68dc1ae73b",
+    "title": "MHAC Living Voices: Winning Her Wings",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T20:30:00-07:00",
+    "allDay": false,
+    "venue": "Mountain Home Public Library",
+    "venueKey": "mountain-home-public-library",
+    "city": "Mountain Home",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://mhlibrary.libcal.com/event/17775814",
+    "description": "The Mountain Home Arts Council is proud to present Living Voices: Winning Her Wings on Friday, November 6th, at the Mountain Home Public Library. Doors open at 6:30 pm and the program begins at 7:00 pm. Living Voices blends dynamic solo performance with archival film and historical storytelling....",
+    "sources": [
+      {
+        "name": "mountain-home-library",
+        "url": "https://mhlibrary.libcal.com/event/17775814",
+        "fetchedAt": "2026-11-06T07:04:43Z"
+      }
+    ]
+  },
+  {
+    "id": "6b7df2002dff",
+    "title": "Cardinal Bloom",
+    "start": "2026-11-06T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Shrine Social Club",
+    "venueKey": "shrine-social-club",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "M",
+    "costTier": "$$",
+    "url": "https://www.mikebrowngroup.com/event/cardinal-bloom/",
+    "description": "Cardinal Bloom brings the Burn the House Tour to Shrine Social Club’s Basement on Friday, November 6, with Holdfast. Doors at 7 PM.",
+    "sources": [
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/cardinal-bloom/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "e62d7c81945c",
+    "title": "River Shook",
+    "start": "2026-11-06T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Shrine Social Club",
+    "venueKey": "shrine-social-club",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "M",
+    "costTier": "$$",
+    "url": "https://www.mikebrowngroup.com/event/river-shook/",
+    "description": "River Shook plays Shrine Social Club on Friday, November 6, with Ismay and Cactus Moon. Doors at 7 PM.",
+    "sources": [
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/river-shook/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "7b8a41a59f86",
+    "title": "JSTJR",
+    "start": "2026-11-06T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Knitting Factory",
+    "venueKey": "knitting-factory",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "L",
+    "costTier": "$$",
+    "url": "https://www.mikebrowngroup.com/event/jstjr/",
+    "description": "JSTJR plays Knitting Factory on Friday, November 6. Doors at 7 PM, show at 8 PM. All ages.",
+    "sources": [
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/jstjr/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
+    "id": "80fdd00bcd2a",
+    "title": "Sparta, Public Opinion, Mylo Bybee",
+    "start": "2026-11-06T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Neurolux",
+    "venueKey": "neurolux",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "M",
+    "costTier": "$$",
+    "url": "https://www.ticketweb.com/event/sparta-public-opinion-mylo-bybee-neurolux-lounge-tickets/14288784",
+    "sources": [
+      {
+        "name": "neurolux",
+        "url": "https://www.ticketweb.com/event/sparta-public-opinion-mylo-bybee-neurolux-lounge-tickets/14288784",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "ticketmaster-metro",
+        "url": "https://www.ticketweb.com/event/sparta-public-opinion-mylo-bybee-neurolux-lounge-tickets/14288784",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      }
+    ]
+  },
+  {
+    "id": "c57104d17de4",
+    "title": "Spoonful Night – A Benefit Concert For Radio Boise w/ Jontavious Willis, Eilen Jewell, The Country Club, Tater Patch",
+    "start": "2026-11-06T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Treefort Music Hall",
+    "venueKey": "treefort-music-hall",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "M",
+    "url": "https://www.mikebrowngroup.com/event/spoonful-night-a-benefit-concert-for-radio-boise-w-jontavious-willis-eilen-jewell-the-country-club-tater-patch/",
+    "description": "Duck Club and Radio Boise present Spoonful Night, a benefit concert for Radio Boise, at Treefort Music Hall on Friday, November 6. The lineup features Jontavious Willis, Eilen Jewell, The Country Club, and Tater Patch. Doors at 7 PM, show at 8 PM. All ages.",
+    "sources": [
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/spoonful-night-a-benefit-concert-for-radio-boise-w-jontavious-willis-eilen-jewell-the-country-club-tater-patch/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "dcd0cee7c874",
+    "title": "JSTJR, EZA, Elijah Andres",
+    "start": "2026-11-06T20:00:00-07:00",
+    "allDay": false,
+    "venue": "Knitting Factory",
+    "venueKey": "knitting-factory",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "L",
+    "costTier": "$",
+    "url": "https://www.ticketweb.com/event/jstjr-eza-elijah-andres-knitting-factory-boise-tickets/14297494",
+    "description": "ALL AGESDELAYED DELIVERY: There is a ticket delivery delay in place for this event. Tickets will be emailed 48 hours prior to the event.",
+    "sources": [
+      {
+        "name": "knitting-factory-boise",
+        "url": "https://www.ticketweb.com/event/jstjr-eza-elijah-andres-knitting-factory-boise-tickets/14297494",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/jstjr/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "ticketmaster-metro",
+        "url": "https://www.ticketweb.com/event/jstjr-eza-elijah-andres-knitting-factory-boise-tickets/14297494",
+        "fetchedAt": "2026-11-03T17:00:01Z"
       }
     ]
   }
