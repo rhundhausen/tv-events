@@ -4497,6 +4497,29 @@
     ]
   },
   {
+    "id": "88580065474a",
+    "title": "Veteran’s Day Potato Feed",
+    "start": "2026-11-06",
+    "allDay": true,
+    "venue": "Liberty Hall",
+    "venueKey": "liberty-hall",
+    "city": "Star",
+    "category": "holiday-seasonal",
+    "tags": [
+      "veterans"
+    ],
+    "size": "M",
+    "url": "https://www.mikebrowngroup.com/event/veterans-day-potato-feed-4/",
+    "description": "The City of Star’s annual Veterans Day Potato Feed honoring local veterans. The city calendar lists it as an all-day event on Friday, November 6; check with the City of Star for serving times.",
+    "sources": [
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/veterans-day-potato-feed-4/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
     "id": "4d0e23bef2a0",
     "title": "Flower Bundle Friday",
     "start": "2026-11-06T08:00:00-07:00",
@@ -5231,6 +5254,30 @@
     ]
   },
   {
+    "id": "3b9ae010a258",
+    "title": "Magic the Gathering: Commander League | Fridays At ABU Games",
+    "start": "2026-11-06T17:00:00-07:00",
+    "end": "2026-11-06T21:00:00-07:00",
+    "allDay": false,
+    "venue": "ABU Games",
+    "venueKey": "abu-games",
+    "city": "Boise",
+    "category": "nightlife-social",
+    "tags": [
+      "board-games"
+    ],
+    "size": "S",
+    "url": "https://www.meetup.com/abu-games-events/events/317029002/",
+    "description": "Welcome to Friday Night Commander League at ABU Games! A Magic the Gathering event devoted entirely to Commander Format!00 \\- Format: Commander \\- Event Details: Open League Structure \\- Prizes: Based on attendance \\- Prize support will be paid out in standard MTG packs\\.\\*\\* \\*\\*Prize support us...",
+    "sources": [
+      {
+        "name": "meetup-abu-games-events",
+        "url": "https://www.meetup.com/abu-games-events/events/317029002/",
+        "fetchedAt": "2026-11-07T03:22:23Z"
+      }
+    ]
+  },
+  {
     "id": "a6d90a4bd087",
     "title": "Mitch Wieland Book Launch",
     "start": "2026-11-06T17:00:00-07:00",
@@ -5288,14 +5335,14 @@
     ],
     "size": "M",
     "url": "https://www.yoteathletics.com/calendar.aspx?game_id=8479&sport_id=3",
-    "description": "Streaming Video: https://www.cascadesportsnetwork.com/",
     "sources": [
       {
         "name": "college-of-idaho-athletics",
         "url": "https://www.yoteathletics.com/calendar.aspx?game_id=8479&sport_id=3",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
-    ]
+    ],
+    "description": "L 92-95 Streaming Video: https://www.cascadesportsnetwork.com/"
   },
   {
     "id": "672fda685857",
@@ -5408,6 +5455,50 @@
     "city": "Boise"
   },
   {
+    "id": "0a78bcd795bc",
+    "title": "CHAZ",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T21:15:00-07:00",
+    "allDay": false,
+    "venue": "The Riverside Hotel",
+    "venueKey": "the-riverside-hotel",
+    "city": "Garden City",
+    "category": "music",
+    "tags": [],
+    "size": "M",
+    "url": "https://sapphiresocietyboise.com/events/chaz6",
+    "sources": [
+      {
+        "name": "riverside-hotel",
+        "url": "https://sapphiresocietyboise.com/events/chaz6",
+        "fetchedAt": "2026-11-07T03:22:23Z"
+      }
+    ]
+  },
+  {
+    "id": "0bcb4fbb6a83",
+    "title": "Country Swing Dancing At the Farm",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T23:59:00-07:00",
+    "allDay": false,
+    "venue": "The Farm",
+    "venueKey": "the-farm",
+    "city": "Garden City",
+    "category": "nightlife-social",
+    "tags": [],
+    "size": "S",
+    "costTier": "$",
+    "url": "https://www.meetup.com/boise-country-dancers/events/317030231/",
+    "description": "Join us for Country Swing Dancing every Friday at Boise Largest ALL AGE Dance Hub!! Doors Open at 7pm Lesson starts at 7:30pm with Dirt Road Dancing Social dancing from 9pm to Midnight. No experience/partner necessary. Learn a few basics for beginners then how to up your dance game with a cool mo...",
+    "sources": [
+      {
+        "name": "meetup-boise-country-dancers",
+        "url": "https://www.meetup.com/boise-country-dancers/events/317030231/",
+        "fetchedAt": "2026-11-07T03:22:23Z"
+      }
+    ]
+  },
+  {
     "id": "5bc4002ea817",
     "title": "The Cabin Presents: Tony Shalhoub and Josie Adams",
     "start": "2026-11-06T19:00:00-07:00",
@@ -5475,6 +5566,114 @@
     ]
   },
   {
+    "id": "80f15ff6add8",
+    "title": "Killers of Kill Tony",
+    "start": "2026-11-06T19:00:00-07:00",
+    "allDay": false,
+    "venue": "Morrison Center for the Performing Arts",
+    "venueKey": "morrison-center-for-the-performing-arts",
+    "city": "Boise",
+    "category": "performing-arts",
+    "tags": [
+      "comedy"
+    ],
+    "size": "L",
+    "url": "https://www.ticketmaster.com/killers-of-kill-tony-boise-idaho-11-06-2026/event/1E00645B9DCA9455",
+    "description": "-All seats are reserved. -Everyone through the door, regardless of age, requires a ticket. -Guests who arrive late will be seated at the discretion of Management. -The Morrison Center reserves the right to search all bags. -Clutches or purses no larger than 14×14 are permitted. -Large purses, tot...",
+    "sources": [
+      {
+        "name": "boise-state-arts",
+        "url": "https://events.boisestate.edu/event/killers-of-kill-tony",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/killers-of-kill-tony/",
+        "fetchedAt": "2026-11-03T17:00:01Z"
+      },
+      {
+        "name": "morrison-center",
+        "url": "https://www.ticketmaster.com/killers-of-kill-tony-boise-idaho-11-06-2026/event/1E00645B9DCA9455",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "visit-boise",
+        "url": "https://www.morrisoncenter.com/events/detail/killers-of-kill-tony",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ],
+    "end": "2026-11-06T21:00:00-07:00",
+    "costTier": "$$$"
+  },
+  {
+    "id": "9d6d8cf5d20b",
+    "title": "Killers of Kill Tony with David Lucas, Martin Phillips, Dedrick Flynn and Ahren Balisle",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T22:00:00-07:00",
+    "allDay": false,
+    "venue": "Morrison Center for the Performing Arts",
+    "venueKey": "morrison-center-for-the-performing-arts",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "L",
+    "url": "https://www.ticketsmarter.com/e/killers-of-kill-tony-with-david-lucas-martin-phillips-dedrick-flynn-and-ahren-balisle-tickets-boise-11-6-2026-morrison-center-for-the-performing-arts/3331935?utm_source=dmo&utm_medium=visitboise&utm_campaign=3331935",
+    "description": "Killers of Kill Tony brings a stand-up comedy showcase to the Morrison Center, featuring comedians associated with the live podcast Kill Tony. The performers take the stage for extended stand-up sets, each bringing their own comedic style. The announced lineup includes David Lucas, Martin Phillip...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://www.ticketsmarter.com/e/killers-of-kill-tony-with-david-lucas-martin-phillips-dedrick-flynn-and-ahren-balisle-tickets-boise-11-6-2026-morrison-center-for-the-performing-arts/3331935?utm_source=dmo&utm_medium=visitboise&utm_campaign=3331935",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
+    "id": "9e307d99e025",
+    "title": "4th Annual Spoonful Night",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T23:00:00-07:00",
+    "allDay": false,
+    "venue": "Treefort Music Hall",
+    "venueKey": "treefort-music-hall",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "M",
+    "url": "https://dice.fm/event/oeaola-spoonful-night-a-benefit-concert-for-radio-boise-6th-nov-treefort-music-hall-boise-tickets?lng=en-US",
+    "description": "Come and join us for a spoonful of Georgia blues, country, and bluegrass with grammy-nominated artist Jontavious Willis, queen of the minor key Eilen Jewell, country swing legends The Country Club, and local bluegrass veterans Tater Patch. All tickets support independent, community radio at Radio...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://dice.fm/event/oeaola-spoonful-night-a-benefit-concert-for-radio-boise-6th-nov-treefort-music-hall-boise-tickets?lng=en-US",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
+    "id": "b6bd53caf17f",
+    "title": "Karaoke Friday Nights",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T22:00:00-07:00",
+    "allDay": false,
+    "venue": "Boran Lounge",
+    "venueKey": "boran-lounge",
+    "city": "Meridian",
+    "category": "food-drink",
+    "tags": [
+      "karaoke"
+    ],
+    "size": "S",
+    "url": "https://www.meetup.com/boranloungecoffee-meridian/events/317030391/",
+    "description": "If you’re not at Karaoke Night Friday night at Boran Lounge… you’re missing out DJ bringing the energy with a packed house, great drinks, music, laughs, and people just having a great time all night long. Bring your friends and family, grab some food from local places, meet up for drinks, and com...",
+    "sources": [
+      {
+        "name": "meetup-boranloungecoffee-meridian",
+        "url": "https://www.meetup.com/boranloungecoffee-meridian/events/317030391/",
+        "fetchedAt": "2026-11-07T03:22:23Z"
+      }
+    ]
+  },
+  {
     "id": "e62d7c81945c",
     "title": "River Shook",
     "start": "2026-11-06T19:00:00-07:00",
@@ -5494,6 +5693,153 @@
       {
         "name": "mike-brown-group",
         "url": "https://www.mikebrowngroup.com/event/river-shook/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "fb8acda7cd8a",
+    "title": "Paint Nite @ Amsterdam Lounge",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T21:00:00-07:00",
+    "allDay": false,
+    "venue": "Amsterdam Lounge",
+    "venueKey": "amsterdam-lounge",
+    "city": "Boise",
+    "category": "community-civic",
+    "tags": [],
+    "size": "S",
+    "costTier": "$$",
+    "url": "https://tinyurl.com/y8v52twy",
+    "description": "Paint Nite at Amsterdam Lounge: Sip, Paint & Unwind! Looking for a fun night out in Boise? Join Paint Nite Boise at Amsterdam Lounge for a creative evening filled with painting, laughter, and good company! Follow along with a guided painting experience and create your own artwork to take home, al...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://tinyurl.com/y8v52twy",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
+    "id": "fd42e6928a3a",
+    "title": "Spoonful Night – A Benefit Concert For Radio Boise",
+    "start": "2026-11-06T19:00:00-07:00",
+    "end": "2026-11-06T23:00:00-07:00",
+    "allDay": false,
+    "venue": "Treefort Music Hall",
+    "venueKey": "treefort-music-hall",
+    "city": "Boise",
+    "category": "music",
+    "tags": [
+      "concert"
+    ],
+    "size": "M",
+    "costTier": "$$",
+    "url": "https://dice.fm/event/oeaola-spoonful-night-a-benefit-concert-for-radio-boise-6th-nov-treefort-music-hall-boise-tickets?lng=en-US",
+    "description": "Come and join us for Spoonful Night – A Benefit Concert For Radio Boise w/ Jontavious Willis, Eilen Jewell, The Country Club, Tater Patch at Treefort Music Hall Friday, November 6th, 2026 DOORS: 7pm SHOW: 8pm https://dice.fm/event/oeaola-spoonful-night-a-benefit-concert-for-radio-boise-6th-nov-tr...",
+    "sources": [
+      {
+        "name": "visit-boise",
+        "url": "https://dice.fm/event/oeaola-spoonful-night-a-benefit-concert-for-radio-boise-6th-nov-treefort-music-hall-boise-tickets?lng=en-US",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
+    "id": "a0a9fb3ef6f2",
+    "title": "Rapid City Rush @ Idaho Steelheads",
+    "start": "2026-11-06T19:10:00-07:00",
+    "end": "2026-11-06T22:10:00-07:00",
+    "allDay": false,
+    "venue": "Idaho Central Arena",
+    "venueKey": "idaho-central-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "hockey"
+    ],
+    "size": "L",
+    "url": "https://idahosteelheads.com/games/2026/11/06/rapid-city-rush",
+    "sources": [
+      {
+        "name": "idaho-steelheads",
+        "url": "https://idahosteelheads.com/games/2026/11/06/rapid-city-rush",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      },
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/idaho-steelheads-vs-rapid-city-rush-2/",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ],
+    "description": "The Idaho Steelheads host the Rapid City Rush at Idaho Central Arena on Friday, November 6. Doors at 6:15 PM, puck drop at 7:10 PM."
+  },
+  {
+    "id": "b09ecc711d22",
+    "title": "Idaho Steelheads vs. Rapid City Rush",
+    "start": "2026-11-06T19:10:00-07:00",
+    "allDay": false,
+    "venue": "Idaho Central Arena",
+    "venueKey": "idaho-central-arena",
+    "city": "Boise",
+    "category": "sports",
+    "tags": [
+      "hockey"
+    ],
+    "size": "L",
+    "url": "https://www.mikebrowngroup.com/event/idaho-steelheads-vs-rapid-city-rush-2/",
+    "description": "The Idaho Steelheads host the Rapid City Rush at Idaho Central Arena on Friday, November 6. Doors at 6:15 PM, puck drop at 7:10 PM.",
+    "sources": [
+      {
+        "name": "mike-brown-group",
+        "url": "https://www.mikebrowngroup.com/event/idaho-steelheads-vs-rapid-city-rush-2/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
+    "id": "319845db5036",
+    "title": "Boise Chamber Music Series: The Horszowski Trio",
+    "start": "2026-11-06T19:30:00-07:00",
+    "end": "2026-11-06T21:00:00-07:00",
+    "allDay": false,
+    "venue": "Morrison Center for the Performing Arts",
+    "venueKey": "morrison-center-for-the-performing-arts",
+    "city": "Boise",
+    "category": "arts-culture",
+    "tags": [],
+    "size": "L",
+    "costTier": "$$$",
+    "url": "https://events.boisestate.edu/event/boise-chamber-music-society-the-horszowski-trio",
+    "description": "Back (again and again) by popular demand, The Horszowski Trio are proven winners with the BCMS audience. Giving performances that are “lithe, persuasive” (The New York Times), “eloquent and enthralling” (The Boston Globe), and described as “the most compelling American group to come on the scene”...",
+    "sources": [
+      {
+        "name": "boise-state-arts",
+        "url": "https://events.boisestate.edu/event/boise-chamber-music-society-the-horszowski-trio",
+        "fetchedAt": "2026-11-02T21:24:51Z"
+      }
+    ]
+  },
+  {
+    "id": "7b55a3cc32b3",
+    "title": "College of Idaho Men's Basketball vs University of Providence (Mont.)",
+    "start": "2026-11-06T19:30:00-07:00",
+    "end": "2026-11-06T21:30:00-07:00",
+    "allDay": false,
+    "venue": "J.A. Albertson Activities Center",
+    "venueKey": "j-a-albertson-activities-center",
+    "city": "Caldwell",
+    "category": "sports",
+    "tags": [
+      "college-sports"
+    ],
+    "size": "M",
+    "url": "https://www.yoteathletics.com/calendar.aspx?game_id=8475&sport_id=3",
+    "description": "W 85-61 Streaming Video: https://www.cascadesportsnetwork.com/collegeofidaho/",
+    "sources": [
+      {
+        "name": "college-of-idaho-athletics",
+        "url": "https://www.yoteathletics.com/calendar.aspx?game_id=8475&sport_id=3",
         "fetchedAt": "2026-11-02T21:24:51Z"
       }
     ]
