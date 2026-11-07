@@ -186,152 +186,6 @@
     ]
   },
   {
-    "id": "c5a1ffef53f3",
-    "title": "Northwest Nazarene University Women's Basketball vs Walla Walla - Homecoming | Exhibition",
-    "start": "2026-11-06T15:00:00-07:00",
-    "end": "2026-11-06T17:00:00-07:00",
-    "allDay": false,
-    "venue": "Johnson Sports Center",
-    "venueKey": "johnson-sports-center",
-    "city": "Nampa",
-    "category": "sports",
-    "tags": [
-      "college-sports",
-      "museum"
-    ],
-    "size": "M",
-    "url": "https://nnusports.com/calendar.aspx?game_id=9537&sport_id=13",
-    "description": "Streaming Video: https://www.gnacnetwork.com/nnunighthawks/?B=4757623 Tickets: https://northwest-nazarene-university-ogbx.vivenushop.com/event/mens-basketball-vs-walla-walla-uyir40",
-    "sources": [
-      {
-        "name": "nnu-athletics",
-        "url": "https://nnusports.com/calendar.aspx?game_id=9537&sport_id=13",
-        "fetchedAt": "2026-11-05T10:10:50Z"
-      }
-    ]
-  },
-  {
-    "id": "70a286ec19f0",
-    "title": "Game Day",
-    "start": "2026-11-06T15:30:00-07:00",
-    "end": "2026-11-06T17:00:00-07:00",
-    "allDay": false,
-    "venue": "Kuna Library",
-    "venueKey": "kuna-library",
-    "city": "Kuna",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://kunalibrary.libcal.com/event/17360163",
-    "description": "We are breaking out all the fun games on Fridays! During September, our weekly game themes are: 9/4 Cooperative Games 9/11 Dice Games 9/18 Fun Pieces Games 9/25 Number Games",
-    "sources": [
-      {
-        "name": "kuna-library",
-        "url": "https://kunalibrary.libcal.com/event/17360163",
-        "fetchedAt": "2026-11-06T07:04:43Z"
-      }
-    ]
-  },
-  {
-    "id": "b649c17f8024",
-    "title": "Mountain Home City Youth Council",
-    "start": "2026-11-06T15:30:00-07:00",
-    "end": "2026-11-06T17:00:00-07:00",
-    "allDay": false,
-    "venue": "Mountain Home Public Library",
-    "venueKey": "mountain-home-public-library",
-    "city": "Mountain Home",
-    "category": "learning-business",
-    "tags": [],
-    "size": "S",
-    "url": "https://mhlibrary.libcal.com/event/17187478",
-    "description": "The Mountain Home City Youth Council or MHCYC is a group of teens (ages 12-18). The purpose of the MHCYC is to provide the City Council with a youth perspective on issues that affect the City of Mountain Home and to provide youth with an active role in making a difference in their community. Teen...",
-    "sources": [
-      {
-        "name": "mountain-home-library",
-        "url": "https://mhlibrary.libcal.com/event/17187478",
-        "fetchedAt": "2026-11-06T07:04:43Z"
-      }
-    ]
-  },
-  {
-    "id": "0b8f298965dd",
-    "title": "Sewing Club for Kids",
-    "start": "2026-11-06T16:00:00-07:00",
-    "end": "2026-11-06T17:00:00-07:00",
-    "allDay": false,
-    "venue": "Library! at Collister",
-    "venueKey": "library-at-collister",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "free-admission",
-      "kids",
-      "library-program"
-    ],
-    "size": "S",
-    "costTier": "free",
-    "url": "https://boisemom.com/event/sewing-club-for-kids-6/2026-11-06/",
-    "description": "Come learn how to sew or expand your skills at our weekly Sewing Club for Kids! We’ll have sewing machines, fabric, and all the notions you need to sew your own projects. A variety of beginner and intermediate patterns will be provided for both hand and machine stitching.",
-    "sources": [
-      {
-        "name": "boise-mom",
-        "url": "https://boisemom.com/event/sewing-club-for-kids-6/2026-11-06/",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
-    "id": "3eb93ea65fc3",
-    "title": "Sewing Club for Kids",
-    "start": "2026-11-06T16:00:00-07:00",
-    "end": "2026-11-06T17:00:00-07:00",
-    "allDay": false,
-    "venue": "Boise Public Library",
-    "venueKey": "boise-public-library",
-    "city": "Boise",
-    "category": "learning-business",
-    "tags": [
-      "kids"
-    ],
-    "size": "S",
-    "url": "https://boisepubliclibrary.libcal.com/event/15302392",
-    "description": "Come learn how to sew or expand your skills at our weekly Sewing Club for Kids! We'll have sewing machines, fabric, and all the notions you need to sew your own projects. A variety of beginner and intermediate patterns will be provided for both hand and machine stitching.",
-    "sources": [
-      {
-        "name": "boise-public-library",
-        "url": "https://boisepubliclibrary.libcal.com/event/15302392",
-        "fetchedAt": "2026-11-04T06:01:16Z"
-      }
-    ]
-  },
-  {
-    "id": "a220992c0765",
-    "title": "\"A Little Afternoon Music\" with The Horszowski Trio and Boise State Piano Trio",
-    "start": "2026-11-06T16:00:00-07:00",
-    "end": "2026-11-06T16:50:00-07:00",
-    "allDay": false,
-    "venue": "Morrison Center for the Performing Arts",
-    "venueKey": "morrison-center-for-the-performing-arts",
-    "city": "Boise",
-    "category": "arts-culture",
-    "tags": [
-      "family-friendly",
-      "free-admission"
-    ],
-    "size": "L",
-    "costTier": "free",
-    "url": "https://events.boisestate.edu/event/a-little-afternoon-music-Horzowski-Trio-Fall-2026",
-    "description": "Date: Friday, November 6, 2026 Time: 4-4:50 PM The Boise Chamber Music Society presents \"A Little Afternoon Music\" with The Horszowski Trio and Boise State Piano Trio. Join the HORSZOWSKI TRIO and the Boise State Piano Trio for an afternoon of chamber music coaching and performance. This free, ca...",
-    "sources": [
-      {
-        "name": "boise-state-arts",
-        "url": "https://events.boisestate.edu/event/a-little-afternoon-music-Horzowski-Trio-Fall-2026",
-        "fetchedAt": "2026-11-02T21:24:51Z"
-      }
-    ]
-  },
-  {
     "id": "0e91eaddc76b",
     "title": "Holiday Makers Market",
     "start": "2026-11-06T17:00:00-07:00",
@@ -69849,6 +69703,28 @@
       {
         "name": "boise-mom",
         "url": "https://boisemom.com/event/after-school-art-ages-10-12-wed-430p/2027-05-05/",
+        "fetchedAt": "2026-11-06T19:12:30Z"
+      }
+    ]
+  },
+  {
+    "id": "9c46bd7c34c6",
+    "title": "Guitar for Beginners with Mike",
+    "start": "2027-05-05T18:00:00-06:00",
+    "end": "2027-05-05T19:00:00-06:00",
+    "allDay": false,
+    "venue": "Nampa Public Library",
+    "venueKey": "nampa-public-library",
+    "city": "Nampa",
+    "category": "learning-business",
+    "tags": [],
+    "size": "S",
+    "url": "https://nampalibrary.libcal.com/event/16805268",
+    "description": "Interested in learning to play the guitar? Join volunteer Mike every Wednesday evening from 6-7pm. The weekly class is designed for ages 13 and older. You'll learn basic chords, how to prepare yourself, strumming patterns, and more. Bring your own guitar and lets have fun!",
+    "sources": [
+      {
+        "name": "nampa-public-library",
+        "url": "https://nampalibrary.libcal.com/event/16805268",
         "fetchedAt": "2026-11-06T19:12:30Z"
       }
     ]
