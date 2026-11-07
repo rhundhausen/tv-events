@@ -106,7 +106,12 @@
       </label>
       <button id="reset" class="btn" type="button">Reset</button>
     </div>
-    <div class="chips" id="cats" role="group" aria-label="Categories"></div>
+    {{- /* Category chips, then the Meetup toggle on the same row. Meetup events are hidden until it
+         is checked, because Meetup groups are only partly public. */}}
+    <div class="chips">
+      <div class="chip-group" id="cats" role="group" aria-label="Categories"></div>
+      <label class="chip toggle" id="meetup-chip"><input type="checkbox" id="meetup"><span>Show Meetups</span><span class="n" id="meetup-n"></span></label>
+    </div>
     <p class="source-note" id="source-note" hidden></p>
   </section>
 

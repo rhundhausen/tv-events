@@ -55,7 +55,8 @@
               {{- .displayName }} <span class="via">via Ticketmaster<span class="m-only">{{ $more }}</span></span>
             {{- else }}
               {{- $u := urls.Parse .url }}
-              <a href="{{ printf "%s://%s/" $u.Scheme $u.Host }}" rel="noopener" target="_blank">{{ .displayName }}</a>
+              {{- /* The second line already says meetup.com, so " (Meetup)" is dropped from the name. */}}
+              <a href="{{ printf "%s://%s/" $u.Scheme $u.Host }}" rel="noopener" target="_blank">{{ cond (eq .adapter "meetup") (strings.TrimSuffix " (Meetup)" .displayName) .displayName }}</a>
               <span class="via">{{ strings.TrimPrefix "www." $u.Host }}<span class="m-only">{{ $more }}</span></span>
             {{- end }}
           </td>
@@ -69,7 +70,6 @@
       </tbody>
     </table>
   </div>
-  <p class="note">A source with 0 upcoming events is still read every night; it has nothing listed in the next 180 days, often because it is out of season.</p>
 </main>
 
 <footer class="wrap foot">

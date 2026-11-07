@@ -17,6 +17,7 @@ const el = {
   q: $('q'), when: $('when'), from: $('from'), to: $('to'), city: $('city'), size: $('size'), cost: $('cost'),
   reset: $('reset'), cats: $('cats'), count: $('count'), rows: $('rows'), sourceNote: $('source-note'),
   pagerTop: $('pager-top'), pagerBottom: $('pager-bottom'), per: $('per'),
+  meetup: $('meetup'), meetupCount: $('meetup-n'), meetupChip: $('meetup-chip'),
 };
 
 // Dates are handled as YYYY-MM-DD strings in Boise time; noon UTC keeps day math clear of DST edges.
@@ -45,7 +46,7 @@ const COST_TIERS = { free: 'free', 1: '$', 2: '$$', 3: '$$$' };
 const COST_LABELS = { free: 'Free', $: '$', $$: '$$', $$$: '$$$' };
 const NO_LINK = 'Information not available';
 
-const state = { q: '', cats: new Set(), city: '', size: '', cost: '', source: '', when: '', from: '', to: '', sort: 'date', dir: 1, page: 1, per: DEFAULT_PER };
+const state = { q: '', cats: new Set(), city: '', size: '', cost: '', source: '', meetup: false, when: '', from: '', to: '', sort: 'date', dir: 1, page: 1, per: DEFAULT_PER };
 let events = [];
 
 function prepare(e) {
@@ -55,7 +56,7 @@ function prepare(e) {
   if (ed < sd) ed = sd;
   const catLabel = cfg.categories[e.k] || e.k;
   return {
-    title: e.t, venue: e.v, shortTitle: shorten(e.t), shortVenue: shorten(dropAddress(e.v || '')), city: e.c, cat: e.k, catLabel, tags: e.g || [], size: e.z, cost: e.p || '', broken: Boolean(e.x), url: e.u, desc: e.d, src: e.r || [],
+    title: e.t, venue: e.v, shortTitle: shorten(e.t), shortVenue: shorten(dropAddress(e.v || '')), city: e.c, cat: e.k, catLabel, tags: e.g || [], size: e.z, cost: e.p || '', broken: Boolean(e.x), url: e.u, desc: e.d, src: e.r || [], meetup: isMeetup(e.u),
     sd, ed, allDay,
     instant: allDay ? 0 : Date.parse(e.s),
     dateText: sd === ed ? dayFmt.format(asDate(sd)) : `${dayFmt.format(asDate(sd))} to ${shortFmt.format(asDate(ed))}`,
@@ -83,8 +84,13 @@ function presetRange(when) {
   }
 }
 
-function matches(e, words, from, to, skipCats) {
+// Meetup events are hidden until "Show Meetups" is checked. Opening the page for one Meetup group
+// from the sources page shows that group's events without it.
+const meetupsShown = () => state.meetup || state.source.startsWith('meetup-');
+
+function matches(e, words, from, to, skipCats, skipMeetup) {
   if (e.ed < from) return false;
+  if (!skipMeetup && e.meetup && !meetupsShown()) return false;
   if (to && e.sd > to) return false;
   if (state.city && e.city !== state.city) return false;
   if (state.size && e.size !== state.size) return false;
@@ -108,12 +114,17 @@ function render() {
   const from = rangeFrom && rangeFrom > today() ? rangeFrom : today();
 
   // Category counts reflect every other filter, so a chip shows what clicking it would give.
+  // The Meetup count is how many Meetup events checking the box would add, or did add.
   const counts = {};
   const shown = [];
+  let meetups = 0;
   for (const e of events) {
-    if (!matches(e, words, from, to, true)) continue;
+    if (!matches(e, words, from, to, true, true)) continue;
+    const inCats = !state.cats.size || state.cats.has(e.cat);
+    if (e.meetup && inCats) meetups += 1;
+    if (e.meetup && !meetupsShown()) continue;
     counts[e.cat] = (counts[e.cat] || 0) + 1;
-    if (!state.cats.size || state.cats.has(e.cat)) shown.push(e);
+    if (inCats) shown.push(e);
   }
   const sorter = sorters[state.sort] || sorters.date;
   shown.sort((a, b) => sorter(a, b) * state.dir);
@@ -124,6 +135,10 @@ function render() {
   const slice = shown.slice(start, start + state.per);
 
   renderChips(counts);
+  el.meetup.checked = meetupsShown();
+  el.meetup.disabled = state.source.startsWith('meetup-');
+  el.meetupCount.textContent = numFmt.format(meetups);
+  el.meetupChip.classList.toggle('empty', !meetups);
   renderSourceNote();
   renderRows(slice);
   el.count.textContent = shown.length
@@ -358,6 +373,7 @@ function readUrl() {
   state.size = p.get('size') || '';
   state.cost = ['free', '1', '2', '3'].includes(p.get('cost')) ? p.get('cost') : '';
   state.source = p.get('source') || '';
+  state.meetup = p.get('meetup') === '1';
   state.when = p.get('when') || '';
   state.from = p.get('from') || '';
   state.to = p.get('to') || '';
@@ -378,6 +394,7 @@ function writeUrl() {
   if (state.size) p.set('size', state.size);
   if (state.cost) p.set('cost', state.cost);
   if (state.source) p.set('source', state.source);
+  if (state.meetup) p.set('meetup', '1');
   if (state.when === 'custom') {
     if (state.from) p.set('from', state.from);
     if (state.to) p.set('to', state.to);
@@ -392,7 +409,7 @@ function writeUrl() {
 }
 
 function resetAll() {
-  Object.assign(state, { q: '', cats: new Set(), city: '', size: '', cost: '', source: '', when: '', from: '', to: '', sort: 'date', dir: 1, page: 1 });
+  Object.assign(state, { q: '', cats: new Set(), city: '', size: '', cost: '', source: '', meetup: false, when: '', from: '', to: '', sort: 'date', dir: 1, page: 1 });
   syncControls();
   render();
 }
@@ -424,6 +441,7 @@ for (const input of [el.from, el.to]) {
 el.city.addEventListener('change', onFilter(() => { state.city = el.city.value; }));
 el.size.addEventListener('change', onFilter(() => { state.size = el.size.value; }));
 el.cost.addEventListener('change', onFilter(() => { state.cost = el.cost.value; }));
+el.meetup.addEventListener('change', onFilter(() => { state.meetup = el.meetup.checked; }));
 el.reset.addEventListener('click', resetAll);
 for (const n of PAGE_SIZES) {
   const o = document.createElement('option');
