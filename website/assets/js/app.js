@@ -41,7 +41,7 @@ const isMeetup = (u) => /^https?:\/\/([^/?#]+\.)?meetup\.com([/?#:]|$)/i.test(u 
 const dropAddress = (v) => (/^\D[^,]*,.*(\b\d{5}\b|,\s*(ID|Idaho)\b)/.test(v) ? v.split(',')[0] : v);
 
 // Cost filter values (kept in the URL as ?cost=) to tiers. An unknown cost matches only "Any cost".
-// The ranges are in the Cost header's tooltip and the footer, not on each cell (docs/cost-tiers.md).
+// The ranges are in the Cost header's tooltip, not on each cell (docs/cost-tiers.md).
 const COST_TIERS = { free: 'free', 1: '$', 2: '$$', 3: '$$$' };
 const COST_LABELS = { free: 'Free', $: '$', $$: '$$', $$$: '$$$' };
 const NO_LINK = 'Information not available';
@@ -55,13 +55,21 @@ function prepare(e) {
   let ed = e.e ? (allDay ? e.e.slice(0, 10) : boiseDay(new Date(e.e))) : sd;
   if (ed < sd) ed = sd;
   const catLabel = cfg.categories[e.k] || e.k;
+  const meetup = isMeetup(e.u);
+  const dateText = sd === ed ? dayFmt.format(asDate(sd)) : `${dayFmt.format(asDate(sd))} to ${shortFmt.format(asDate(ed))}`;
+  const timeText = allDay ? 'All day' : timeFmt.format(new Date(e.s));
+  // Search reads everything a card shows (date, time, size, title, Meetup, city, venue, category,
+  // cost) plus the tags, the description, and the names of the sources that listed the event.
+  const searchable = [
+    dateText, timeText, (cfg.sizes[e.z] || '').split(':')[0], e.t, shorten(e.t), meetup ? 'Meetup' : '', e.c, e.v,
+    catLabel, e.p === 'free' ? 'Free' : '', (e.g || []).join(' '), e.d, (e.r || []).map((n) => cfg.sources[n] || n).join(' '),
+  ];
   return {
-    title: e.t, venue: e.v, shortTitle: shorten(e.t), shortVenue: shorten(dropAddress(e.v || '')), city: e.c, cat: e.k, catLabel, tags: e.g || [], size: e.z, cost: e.p || '', broken: Boolean(e.x), url: e.u, desc: e.d, src: e.r || [], meetup: isMeetup(e.u),
+    title: e.t, venue: e.v, shortTitle: shorten(e.t), shortVenue: shorten(dropAddress(e.v || '')), city: e.c, cat: e.k, catLabel, tags: e.g || [], size: e.z, cost: e.p || '', broken: Boolean(e.x), url: e.u, desc: e.d, src: e.r || [], meetup,
     sd, ed, allDay,
     instant: allDay ? 0 : Date.parse(e.s),
-    dateText: sd === ed ? dayFmt.format(asDate(sd)) : `${dayFmt.format(asDate(sd))} to ${shortFmt.format(asDate(ed))}`,
-    timeText: allDay ? 'All day' : timeFmt.format(new Date(e.s)),
-    hay: fold([e.t, shorten(e.t), e.v, e.c, catLabel, (e.g || []).join(' '), e.d].join(' ')),
+    dateText, timeText,
+    hay: fold(searchable.join(' ')),
   };
 }
 

@@ -336,6 +336,9 @@ input:focus-visible, select:focus-visible, button:focus-visible {
   font-weight: 600;
 }
 .chip.toggle:has(input:disabled) { cursor: default; }
+/* Sources page: rows with no upcoming events stay hidden until the toggle is checked. */
+.sources-toggle { margin-top: 16px; }
+.hide-empty .empty-source { display: none !important; }
 .chip.toggle:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Status and paging */
@@ -485,7 +488,6 @@ input:focus-visible, select:focus-visible, button:focus-visible {
   color: var(--cost-text);
 }
 .c-size .cost { margin-left: 4px; }
-.cost-legend { margin-top: 4px; }
 .c-title.no-link { color: var(--muted); cursor: help; }
 .v-sep { color: var(--muted); opacity: 0.6; }
 

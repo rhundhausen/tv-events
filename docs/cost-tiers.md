@@ -52,8 +52,7 @@ description names none, is unknown.
 - Table cell shows `Free`, `$`, `$$`, or `$$$`. Unknown renders blank.
 - No hover on the cell: the price is not stored. The legend explains the tiers.
 - Cost filter offers: Any cost, Free, $, $$, $$$. Unknown appears under Any only.
-- Legend with the dollar ranges goes in the Cost column header tooltip and in
-  the footer line.
+- Legend with the dollar ranges goes in the Cost column header tooltip.
 
 ## Backfill
 

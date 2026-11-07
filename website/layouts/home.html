@@ -110,7 +110,7 @@
          is checked, because Meetup groups are only partly public. */}}
     <div class="chips">
       <div class="chip-group" id="cats" role="group" aria-label="Categories"></div>
-      <label class="chip toggle" id="meetup-chip"><input type="checkbox" id="meetup"><span>Show Meetups</span><span class="n" id="meetup-n"></span></label>
+      <label class="chip toggle" id="meetup-chip"><input type="checkbox" id="meetup"><span>Include Meetups</span><span class="n" id="meetup-n"></span></label>
     </div>
     <p class="source-note" id="source-note" hidden></p>
   </section>
@@ -148,13 +148,9 @@
 </main>
 
 <footer class="wrap foot">
-  <p>Every listing links to the organizer's own page. Collected nightly from public calendars and APIs by <a href="https://github.com/rhundhausen/weekendboise">WeekendBoise</a>.</p>
-  {{- with $costLegend }}
-  <p class="cost-legend">Cost: {{ . }}</p>
-  {{- end }}
-  {{- /* A new-issue link with the title filled in. Opening one needs a GitHub account. */}}
+  {{- /* The feedback link opens a new GitHub issue with the title filled in; it needs a GitHub account. */}}
   {{- $feedback := querify "title" "Feedback: " "body" "What's on your mind (a wrong listing, a missing event, an idea):\n" }}
-  <p class="feedback">We welcome feedback. Spot a mistake, miss an event, or have an idea? <a href="{{ print "https://github.com/rhundhausen/weekendboise/issues/new?" $feedback }}" rel="noopener" target="_blank">Create a GitHub issue</a>.</p>
+  <p>Every listing links to the organizer's own page. Collected nightly from public calendars and APIs by <a href="https://github.com/rhundhausen/weekendboise">WeekendBoise</a>. We welcome feedback. Spot a mistake, miss an event, or have an idea? <a href="{{ print "https://github.com/rhundhausen/weekendboise/issues/new?" $feedback }}" rel="noopener" target="_blank">Create a GitHub issue</a>.</p>
 </footer>
 
 <script type="application/json" id="tv-config">{{ $cfg | jsonify | safeJS }}</script>

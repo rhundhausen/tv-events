@@ -30,7 +30,9 @@
 </header>
 
 <main class="wrap">
-  <div class="table-wrap sources-table">
+  {{- /* Sources with no upcoming events are hidden until this is checked; ?empty=1 checks it. */}}
+  <label class="chip toggle sources-toggle"><input type="checkbox" id="show-empty"><span>Show sources with no events</span><span class="n">{{ $empty := 0 }}{{ range $running }}{{ if not (index $counts .name) }}{{ $empty = add $empty 1 }}{{ end }}{{ end }}{{ $empty | lang.FormatNumber 0 }}</span></label>
+  <div class="table-wrap sources-table hide-empty" id="sources-table">
     <table class="grid list">
       <thead>
         <tr>
@@ -43,7 +45,7 @@
       <tbody>
         {{- range $running }}
         {{- $n := index $counts .name | default 0 }}
-        <tr>
+        <tr{{ if not $n }} class="empty-source"{{ end }}>
           {{- $type := index $types .adapter | default .adapter }}
           {{- /* On phones the second line reads "host | City | How it's read"; the City and
                How it's read cells are hidden there, and the extra parts are hidden on desktop. */}}
@@ -71,6 +73,21 @@
     </table>
   </div>
 </main>
+<script>
+  (function () {
+    var box = document.getElementById('show-empty');
+    var table = document.getElementById('sources-table');
+    function apply() {
+      table.classList.toggle('hide-empty', !box.checked);
+      var url = new URL(location.href);
+      if (box.checked) url.searchParams.set('empty', '1'); else url.searchParams.delete('empty');
+      history.replaceState(null, '', url.search ? url.pathname + url.search : url.pathname);
+    }
+    box.checked = new URLSearchParams(location.search).get('empty') === '1';
+    box.addEventListener('change', apply);
+    apply();
+  })();
+</script>
 
 <footer class="wrap foot">
   {{- /* New-issue links with the title and prompts filled in. Opening one needs a GitHub account. */}}
