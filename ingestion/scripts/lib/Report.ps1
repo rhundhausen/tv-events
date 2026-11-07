@@ -317,8 +317,8 @@ function Send-TvReport {
     [Parameter(Mandatory)][string]$To,
     [Parameter(Mandatory)][string]$ApiKey,
     [string]$From = 'WeekendBoise Reports <reports@weekendboise.com>',
-    # A file to attach, sent base64-encoded under its own name. Resend allows 40 MB per email.
-    [string]$Attachment
+    # Files to attach, each sent base64-encoded under its own name. Resend allows 40 MB per email.
+    [string[]]$Attachment
   )
 
   $recipients = @($To -split '[,;]' | ForEach-Object Trim | Where-Object { $_ })
@@ -331,10 +331,13 @@ function Send-TvReport {
     html     = $Report.Html
     text     = $Report.Text
   }
-  if ($Attachment) {
-    $message.attachments = @(@{
-        filename = [IO.Path]::GetFileName($Attachment)
-        content  = [Convert]::ToBase64String([IO.File]::ReadAllBytes($Attachment))
+  $files = @($Attachment | Where-Object { $_ })
+  if ($files.Count) {
+    $message.attachments = @($files | ForEach-Object {
+        @{
+          filename = [IO.Path]::GetFileName($_)
+          content  = [Convert]::ToBase64String([IO.File]::ReadAllBytes($_))
+        }
       })
   }
   $body = $message | ConvertTo-Json -Depth 4

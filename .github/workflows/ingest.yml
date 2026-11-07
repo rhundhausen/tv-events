@@ -102,13 +102,42 @@ jobs:
         run: |
           ./ingestion/scripts/Publish-Data.ps1 -Path data/raw-events.json -Message 'data: raw ingest' -SkipDeploy
 
-      # Always, so a failed run is emailed too. The address is a secret because the repo is public.
+  # The summary email, in its own job because GitHub serves a job's log only once that job has
+  # finished, and the email attaches the ingest job's log. Runs whatever ingest's outcome, so a
+  # failed run is emailed too.
+  report:
+    needs: [when, ingest]
+    if: always() && needs.when.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - name: Check out
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Download raw output
+        continue-on-error: true
+        uses: actions/download-artifact@v5
+        with:
+          name: out
+          path: out
+
+      - name: Save the job logs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+        run: ./ingestion/scripts/Save-RunLogs.ps1
+
+      # The address is a secret because the repo is public.
       - name: Email the report
-        if: always()
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           REPORT_EMAIL: ${{ secrets.REPORT_EMAIL }}
-          JOB_STATUS: ${{ job.status }}
+          JOB_STATUS: ${{ needs.ingest.result }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           EVENT: ${{ github.event_name }}
           SOURCE: ${{ inputs.source }}

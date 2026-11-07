@@ -54,7 +54,26 @@ Describe 'Send-Report' {
     'x' | Set-Content -LiteralPath (Join-Path $out 'alpha.json')
     $preview = Join-Path $TestDrive 'preview-big'
     & $send -Kind ingest -OutDir $out -SourcesPath $sourcesPath -PreviewPath $preview -ZipDir (Join-Path $TestDrive 'zip-big') -MaxAttachmentBytes 1 -WarningAction SilentlyContinue
-    Get-Content "$preview.txt" -Raw | Should -Match 'Attached: +none, out\.zip is .* over the .* limit; download the artifact from the workflow run'
+    Get-Content "$preview.txt" -Raw | Should -Match 'Attached: +none, out\.zip is .* over the .* limit; download it from the workflow run'
+  }
+
+  It 'zips the job logs as a second attachment' {
+    'x' | Set-Content -LiteralPath (Join-Path $out 'alpha.json')
+    $logs = Join-Path $TestDrive "logs-$([guid]::NewGuid().ToString('n'))"
+    $null = New-Item -ItemType Directory -Path $logs
+    'step output' | Set-Content -LiteralPath (Join-Path $logs 'ingest.log')
+    $zipDir = Join-Path $TestDrive "zip-$([guid]::NewGuid().ToString('n'))"
+    $preview = Join-Path $TestDrive 'preview-logs'
+    & $send -Kind ingest -OutDir $out -LogDir $logs -SourcesPath $sourcesPath -PreviewPath $preview -ZipDir $zipDir -WarningAction SilentlyContinue
+    Test-Path -LiteralPath (Join-Path $zipDir 'ingest-logs.zip') | Should -BeTrue
+    Get-Content "$preview.txt" -Raw | Should -Match 'Attached: +out\.zip \([^)]*\), ingest-logs\.zip \([^)]*\)'
+  }
+
+  It 'says so when there are no job logs' {
+    'x' | Set-Content -LiteralPath (Join-Path $out 'alpha.json')
+    $preview = Join-Path $TestDrive 'preview-nologs'
+    & $send -Kind refine -OutDir $out -LogDir (Join-Path $TestDrive 'missing-logs') -SourcesPath $sourcesPath -PreviewPath $preview -ZipDir (Join-Path $TestDrive 'zip-nologs') -WarningAction SilentlyContinue
+    Get-Content "$preview.txt" -Raw | Should -Match 'Attached: +refine-out\.zip \([^)]*\); no job logs'
   }
 
   It 'reports a refine that wrote no refine.json' {

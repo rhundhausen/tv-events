@@ -164,6 +164,19 @@ Describe 'Send-TvReport attachments' {
     }
   }
 
+  It 'sends several files as separate attachments' {
+    $out = Join-Path $TestDrive 'out.zip'
+    $logs = Join-Path $TestDrive 'ingest-logs.zip'
+    [IO.File]::WriteAllBytes($out, [byte[]](1))
+    [IO.File]::WriteAllBytes($logs, [byte[]](2))
+    Mock Invoke-RestMethod { [pscustomobject]@{ id = 'abc' } }
+    $null = Send-TvReport -Report @{ Subject = 'S'; Html = 'H'; Text = 'T' } -To 'me@test.example' -ApiKey 'k' -Attachment $out, $logs
+    Should -Invoke Invoke-RestMethod -Times 1 -ParameterFilter {
+      $body = $Body | ConvertFrom-Json
+      ($body.attachments.filename -join ',') -eq 'out.zip,ingest-logs.zip'
+    }
+  }
+
   It 'names the attachment in the report' {
     $report = New-TvIngestReport -Run $run -Sources $sources -Context ($context + @{ Attachment = 'out.zip (415 KB)' })
     $report.Text | Should -Match 'Attached: +out\.zip \(415 KB\)'
