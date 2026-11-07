@@ -35,6 +35,8 @@ const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 const PHRASES = (cfg.phrases || []).map(([long, short]) => [new RegExp(`\\b${escapeRe(long)}(?=\\W|$)`, 'gi'), short]);
 const shorten = (s) => PHRASES.reduce((text, [re, short]) => text.replace(re, short), s || '');
 // "Wassmuth Center for Human Rights, 777 South 8th Street, Boise, ID 83702" keeps only the name.
+// True when an event's link goes to meetup.com (or a subdomain of it).
+const isMeetup = (u) => /^https?:\/\/([^/?#]+\.)?meetup\.com([/?#:]|$)/i.test(u || '');
 const dropAddress = (v) => (/^\D[^,]*,.*(\b\d{5}\b|,\s*(ID|Idaho)\b)/.test(v) ? v.split(',')[0] : v);
 
 // Cost filter values (kept in the URL as ?cost=) to tiers. An unknown cost matches only "Any cost".
@@ -212,17 +214,20 @@ function renderRows(list) {
     // Hover shows the full title, then the description.
     if (!e.broken) title.title = e.desc ? `${e.title}\n\n${e.desc}` : e.title;
 
-    // On phones the venue line reads "Nampa | Ford Idaho Center"; the city part is hidden on desktop.
+    // On phones the venue line reads "Nampa | Ford Idaho Center", or "Meetup | Boise | Shift Cafe"
+    // when the link goes to meetup.com; those parts are hidden on desktop.
     const venue = cell('', 'c-venue');
-    if (e.city && e.city !== 'Other') {
-      const place = document.createElement('span');
-      place.className = 'v-city';
-      place.textContent = e.city;
+    const lead = (text) => {
+      const part = document.createElement('span');
+      part.className = 'v-city';
+      part.textContent = text;
       const sep = document.createElement('span');
       sep.className = 'v-sep';
       sep.textContent = ' | ';
-      venue.append(place, sep);
-    }
+      venue.append(part, sep);
+    };
+    if (isMeetup(e.url)) lead('Meetup');
+    if (e.city && e.city !== 'Other') lead(e.city);
     venue.append(e.shortVenue || '');
     if (e.venue) venue.title = e.venue;
     venue.dataset.label = 'Venue';

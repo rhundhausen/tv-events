@@ -10,6 +10,7 @@
   "cityofboise" "City of Boise events API"
   "eventbrite" "Eventbrite API"
   "ics" "Calendar feed (ICS)"
+  "meetup" "Meetup group calendar"
   "rss" "RSS feed"
   "scrape" "Event web pages"
   "seatgeek" "SeatGeek API"
@@ -43,17 +44,23 @@
         {{- range $running }}
         {{- $n := index $counts .name | default 0 }}
         <tr>
+          {{- $type := index $types .adapter | default .adapter }}
+          {{- /* On phones the second line reads "host | City | How it's read"; the City and
+               How it's read cells are hidden there, and the extra parts are hidden on desktop. */}}
+          {{- $more := "" }}
+          {{- with .city }}{{ $more = print $more " | " . }}{{ end }}
+          {{- $more = print $more " | " $type }}
           <td class="s-name">
             {{- if eq .adapter "ticketmaster" }}
-              {{- .displayName }} <span class="via">via Ticketmaster</span>
+              {{- .displayName }} <span class="via">via Ticketmaster<span class="m-only">{{ $more }}</span></span>
             {{- else }}
               {{- $u := urls.Parse .url }}
               <a href="{{ printf "%s://%s/" $u.Scheme $u.Host }}" rel="noopener" target="_blank">{{ .displayName }}</a>
-              <span class="via">{{ strings.TrimPrefix "www." $u.Host }}</span>
+              <span class="via">{{ strings.TrimPrefix "www." $u.Host }}<span class="m-only">{{ $more }}</span></span>
             {{- end }}
           </td>
           <td class="s-city">{{ .city }}</td>
-          <td class="s-type">{{ index $types .adapter | default .adapter }}</td>
+          <td class="s-type">{{ $type }}</td>
           <td class="num s-count">
             {{- if $n }}<a href="{{ relURL "/" }}?source={{ .name }}">{{ $n | lang.FormatNumber 0 }}</a>{{ else }}<span class="none">0</span>{{ end -}}
           </td>
